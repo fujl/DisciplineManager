@@ -36,6 +36,8 @@
 @property (nonatomic, assign) DMDateType endDateType;
 @property (nonatomic, strong) NSMutableArray *holidayList;
 @property (nonatomic, strong) NSMutableArray *holidayStringList;
+@property (nonatomic, strong) NSMutableArray<DMLeaveTicketModel *> *leaveTickets;
+@property (nonatomic, assign) CGFloat leaveTicketDays;
 
 @end
 
@@ -239,6 +241,14 @@
         __weak typeof(self) weakSelf = self;
         _leaveTicketNumberView.clickEntryBlock = ^(NSString *value) {
             DMLeaveTicketViewController *controller = [[DMLeaveTicketViewController alloc] init];
+            controller.selectedLeaveTicketBlock = ^(NSMutableArray<DMLeaveTicketModel *> *leaveTickets) {
+                weakSelf.leaveTickets = leaveTickets;
+                weakSelf.leaveTicketDays = 0;
+                for (DMLeaveTicketModel *mdl in leaveTickets) {
+                    weakSelf.leaveTicketDays += mdl.days;
+                }
+                weakSelf.leaveTicketNumberView.value = [NSString stringWithFormat:@"%0.1f", weakSelf.leaveTicketDays];
+            };
             [weakSelf.navigationController pushViewController:controller animated:YES];
         };
     }
@@ -468,6 +478,8 @@
         return;
     }
     
+    
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd";
     NSDate *startdt = [NSDate dateWithTimeIntervalSince1970:self.startTimeInterval];
@@ -487,6 +499,42 @@
     if (self.type == LeaveTypeVacation) {
         requester.ticket = self.leaveTicketNumberView.value;
     }
+    
+    if (self.type == LeaveTypeVacation) {
+        if (self.leaveTickets.count > 0) {
+            if (self.leaveTicketDays < requester.days) {
+                NSString *show = [NSString stringWithFormat:@"休假票天数为：%0.1f天, 实际请假天数为：%0.1f天, 请重新选择", self.leaveTicketDays, requester.days];
+                showToast(show);
+                return;
+            } else if (self.leaveTicketDays > requester.days) {
+                NSString *message = @"您所选择的休假票天数大于请假天数，是否确定使用？";
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    showLoadingDialog();
+                    [requester postRequest:^(DMResultCode code, id data) {
+                        dismissLoadingDialog();
+                        if (code == ResultCodeOK) {
+                            [self.navigationController popViewControllerAnimated:YES];
+                        } else {
+                            NSString *errMsg = data;
+                            showToast(errMsg);
+                        }
+                    }];
+                }];
+                [alertController addAction:cancelAction];
+                [alertController addAction:okAction];
+                [self presentViewController:alertController animated:YES completion:^{
+                    
+                }];
+                return;
+            }
+        } else {
+            showToast(@"请选择休假票");
+            return;
+        }
+    }
+    
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
         dismissLoadingDialog();
