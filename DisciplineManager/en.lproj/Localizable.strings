@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  DisciplineManager
+
+  Created by fujl-mac on 2017/6/9.
+  Copyright © 2017年 fujl-mac. All rights reserved.
+*/
+
+"app_name" = "纪管系统";
+"goback" = "返回";

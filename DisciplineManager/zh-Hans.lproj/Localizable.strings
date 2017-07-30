@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  DisciplineManager
+
+  Created by fujl-mac on 2017/6/9.
+  Copyright © 2017年 fujl-mac. All rights reserved.
+*/
+
+"app_name" = "纪管系统";
+"goback" = "返回";
+"hint" = "提示";
+"sure" = "确定";
+"Cancel" = "取消";
+"company_name" = "兴义市石头科技有限公司";
+"copyright" = "Copyright© 2016-2017 www.gzstkj.cn";
+"morning" = "上午";
+"afternoon" = "下午";
+
+"Detail" = "详情";
+
+"user_name_tip" = "请输入用户名";
+"password_tip" = "请输入密码";
+"login_user" = "登录";
+
+"Todo" = "待办任务";
+"ApplyOut" = "外出申请";
+"ApplyBus" = "公车申请";
+"ApplyCompensatory" = "补休申请";
+"ApplyLeave" = "请假申请";
+"AddressBook" = "通讯录";
+"More" = "更多";
+
+"Apply" = "申请";
+"FillinApplyOut" = "填写外出申请单";
+"OutTime" = "外出时间";
+"OutTimePlaceholder" = "必选，请选择外出时间";
+"ReturnTime" = "回岗时间";
+"ReturnTimePlaceholder" = "必选，请选择回岗时间";
+"OutReason" = "外出事由";
+"Commit" = "提交";
+"OutReasonPlaceholder" = "必填，请输入外出事由";
+"Save" = "保存";
+"Pending" = "待审核";
+"Complete" = "已完成";
+"Rejected" = "驳回";
+"DataError" = "错误数据";
+
+"FillinApplyBus" = "填写公车申请单";
+"OutAddress" = "外出地址";
+"OutAddressPlaceholder" = "必选，请选择外出地址";
+"OutDetailAddress" = "外出详细地址";
+"DetailAddressPlaceholder" = "必填，请输入详细地址";
+"Close" = "关闭";
+"Complete" = "完成";
+
+"FillinApplyCompensatory" = "填写补休申请单";
+"StartOvertime" = "加班开始时间";
+"StartOvertimePlaceholder" = "必选，请选择加班开始时间";
+"EndOvertime" = "加班结束时间";
+"EndOvertimePlaceholder" = "必选，请选择加班结束时间";
+"OvertimeReason" = "加班事由";
+"OvertimeReasonPlaceholder" = "必填，请输入加班事由";
+
+"FillinApplyLeave" = "填写请(休)假申请单";
+"LeaveType" = "请(休)假类别";
+"LeaveTypePlaceholder" = "必选，当选择请假时，无需选择休假票";
+"StartTime" = "开始时间";
+"StartTimePlaceholder" = "必选，请选择开始时间";
+"EndTime" = "结束时间";
+"EndTimePlaceholder" = "必选，请选择结束时间";
+"ActualLeaveNumber" = "实际请(休)假天数";
+"ActualLeaveNumberPlaceholder" = "请假天数由系统计算完成，此天数不包含节假日";
+"Holidays" = "节假日";
+"HolidaysPlaceholder" = "系统计算的节假日天数";
+"LeaveTicketNumber" = "请(休)假票天数";
+"LeaveTicketNumberPlaceholder" = "必选，请选择休假票";
+"LeaveReason" = "请(休)假事由";
+"LeaveReasonPlaceholder" = "必填，请输入请(休)假事由";
+"Leave" = "请假";
+"Vacation" = "休假";
+
+"call_phone_number" = "呼叫%@";
+"call_phone" = "呼叫";

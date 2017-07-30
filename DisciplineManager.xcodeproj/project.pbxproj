@@ -7,14 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */; };
+		DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322C1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m */; };
+		DF1F32301F0E2590004358E3 /* DMDetailApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322F1F0E2590004358E3 /* DMDetailApplyCompensatoryController.m */; };
+		DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F32321F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m */; };
+		DF1F32361F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F32351F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m */; };
+		DF1F32391F0E260C004358E3 /* DMApplyCompensatoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F32381F0E260C004358E3 /* DMApplyCompensatoryListInfo.m */; };
+		DF1F323C1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F323B1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m */; };
+		DF1F323F1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F323E1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m */; };
+		DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F32411F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m */; };
+		DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F32441F0E30AC004358E3 /* DMApplyLeaveListInfo.m */; };
+		DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2E43D91F28B82D00C0BFBA /* DMMineItemView.m */; };
+		DF2E43DD1F28BC1E00C0BFBA /* DMUserDetailRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2E43DC1F28BC1E00C0BFBA /* DMUserDetailRequester.m */; };
+		DF377CB51EF281A100522AF7 /* DMLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CB41EF281A100522AF7 /* DMLaunchViewController.m */; };
+		DF377CB81EF284CF00522AF7 /* DMMainItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CB71EF284CF00522AF7 /* DMMainItemView.m */; };
+		DF377CD71EF2965D00522AF7 /* DMTodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CD61EF2965D00522AF7 /* DMTodoViewController.m */; };
+		DF377CDA1EF2969D00522AF7 /* DMAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CD91EF2969D00522AF7 /* DMAddressBookViewController.m */; };
+		DF377CDD1EF296F100522AF7 /* DMApplyBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CDC1EF296F100522AF7 /* DMApplyBusViewController.m */; };
+		DF377CE01EF2980500522AF7 /* DMApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CDF1EF2980500522AF7 /* DMApplyCompensatoryController.m */; };
+		DF377CE31EF2985500522AF7 /* DMApplyLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE21EF2985500522AF7 /* DMApplyLeaveViewController.m */; };
+		DF377CE61EF299C200522AF7 /* DMApplyOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE51EF299C200522AF7 /* DMApplyOutViewController.m */; };
+		DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE81EF29A0500522AF7 /* DMMoreViewController.m */; };
+		DF50A1531EE7F3320091E098 /* DMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A1481EE7F3320091E098 /* DMJson.m */; };
+		DF50A1541EE7F3320091E098 /* DMWeakReferencesArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A14A1EE7F3320091E098 /* DMWeakReferencesArray.m */; };
+		DF50A1551EE7F3320091E098 /* NSString+DMMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A14B1EE7F3320091E098 /* NSString+DMMD5.m */; };
+		DF50A1561EE7F3320091E098 /* NSString+DMFontWitdh.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A14D1EE7F3320091E098 /* NSString+DMFontWitdh.m */; };
+		DF50A1571EE7F3320091E098 /* UIColor+DMDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A1501EE7F3320091E098 /* UIColor+DMDefine.m */; };
+		DF50A1581EE7F3320091E098 /* UIImage+DMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A1521EE7F3320091E098 /* UIImage+DMColor.m */; };
+		DF54440A1EF3CF75000EE89F /* DMFillinApplyOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5444091EF3CF75000EE89F /* DMFillinApplyOutController.m */; };
+		DF54440E1EF3D2D9000EE89F /* DMEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF54440D1EF3D2D9000EE89F /* DMEntryView.m */; };
+		DF5444111EF3D7AD000EE89F /* DMEntrySelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5444101EF3D7AD000EE89F /* DMEntrySelectView.m */; };
+		DF5ED6821F2360EF00374C8A /* DMLeaveTicketRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5ED6811F2360EF00374C8A /* DMLeaveTicketRequester.m */; };
+		DF5ED6851F23634E00374C8A /* DMLeaveTicketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5ED6841F23634E00374C8A /* DMLeaveTicketModel.m */; };
+		DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BDE1F048CA50075F100 /* DMHttpManager.m */; };
+		DF6A9BE21F048DC00075F100 /* DMHttpRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BE11F048DC00075F100 /* DMHttpRequester.m */; };
+		DF6A9BE61F0490BC0075F100 /* DMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BE51F0490BC0075F100 /* DMConfig.m */; };
+		DF6A9BE91F0494D20075F100 /* DMLoginRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BE81F0494D20075F100 /* DMLoginRequester.m */; };
+		DF6A9BEC1F0499490075F100 /* DMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BEB1F0499490075F100 /* DMUserInfo.m */; };
+		DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BEE1F04AC040075F100 /* DMLoginInfo.m */; };
+		DF6A9BF21F04D7F20075F100 /* DMCommitApplyOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BF11F04D7F20075F100 /* DMCommitApplyOutRequester.m */; };
+		DF6A9BF51F04F33B0075F100 /* DMSearchApplyOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BF41F04F33B0075F100 /* DMSearchApplyOutRequester.m */; };
+		DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BF81F04F48D0075F100 /* DMListBaseModel.m */; };
+		DF6A9BFC1F04F5CC0075F100 /* DMApplyOutListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BFB1F04F5CC0075F100 /* DMApplyOutListInfo.m */; };
+		DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BFE1F04FADD0075F100 /* DMApplyOutCell.m */; };
+		DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864CD1F25F80900477D3C /* DMDetailApplyLeaveController.m */; };
+		DF7864D11F25FCDC00477D3C /* DMSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D01F25FCDC00477D3C /* DMSingleView.m */; };
+		DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D31F2607DA00477D3C /* DMTaskTracksModel.m */; };
+		DF7864D71F26105200477D3C /* DMTaskTracksView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D61F26105200477D3C /* DMTaskTracksView.m */; };
+		DF7864DA1F2610D600477D3C /* DMTaskTracksItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */; };
+		DF7A8B091EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A8B081EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m */; };
+		DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A8B0B1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m */; };
+		DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DCB1EF521B40025A21C /* DMEntryCommitView.m */; };
+		DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DCE1EF52A120025A21C /* DMDatePickerView.m */; };
+		DF7B1DD21EF532010025A21C /* DMFillinApplyBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DD11EF532010025A21C /* DMFillinApplyBusController.m */; };
+		DF7B1DD51EF536D80025A21C /* DMMultiLineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DD41EF536D80025A21C /* DMMultiLineTextView.m */; };
+		DF7B1DD81EF5370C0025A21C /* DMSingleTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DD71EF5370C0025A21C /* DMSingleTextView.m */; };
+		DF84E5E31EF75DFB00F8A23A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = DF84E5E21EF75DFB00F8A23A /* city.json */; };
+		DF84E5E81EF75F6800F8A23A /* DMAddressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5E71EF75F6800F8A23A /* DMAddressManager.m */; };
+		DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5EA1EF75F7E00F8A23A /* DMDBManager.m */; };
+		DF84E5EE1EF77CC300F8A23A /* DMDBBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5ED1EF77CC300F8A23A /* DMDBBaseManager.m */; };
+		DF84E5F11EF77CFB00F8A23A /* DMDBCommonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5F01EF77CFB00F8A23A /* DMDBCommonManager.m */; };
+		DF84E5F41EF7A71100F8A23A /* DMAddressInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5F31EF7A71100F8A23A /* DMAddressInfo.m */; };
+		DF84E5F71EF7CC4D00F8A23A /* DMAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF84E5F61EF7CC4D00F8A23A /* DMAddressPickerView.m */; };
+		DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF88770F1F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m */; };
+		DF8877131F276D490048F3AA /* DMUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8877121F276D490048F3AA /* DMUserModel.m */; };
+		DF8877161F276F280048F3AA /* DMTaskOperatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8877151F276F280048F3AA /* DMTaskOperatorView.m */; };
+		DF8A220C1F29D49C00617974 /* DMOrgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A220B1F29D49C00617974 /* DMOrgModel.m */; };
+		DF8A220F1F29E27900617974 /* DMUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A220E1F29E27900617974 /* DMUserDetailViewController.m */; };
+		DF8A22121F29E2EF00617974 /* DMUserDetailHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A22111F29E2EF00617974 /* DMUserDetailHeadView.m */; };
+		DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A22141F29E8D000617974 /* DMAvatarViewController.m */; };
+		DF8DA40C1F0F178900619AF0 /* DMFindHolidayRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8DA40B1F0F178900619AF0 /* DMFindHolidayRequester.m */; };
+		DF8FD72C1EEA3DB70060FE34 /* DMBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD7261EEA3DB70060FE34 /* DMBaseManager.m */; };
+		DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD7281EEA3DB70060FE34 /* UIApplication+Manager.m */; };
+		DF8FD72E1EEA3DB70060FE34 /* DMUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD72B1EEA3DB70060FE34 /* DMUserManager.m */; };
+		DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD7361EEA42F80060FE34 /* DMBaseViewController.m */; };
+		DF8FD73D1EEA43680060FE34 /* DMNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD73A1EEA43680060FE34 /* DMNetworkManager.m */; };
+		DF8FD73E1EEA43680060FE34 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD73C1EEA43680060FE34 /* Reachability.m */; };
+		DF8FD7411EEA45B40060FE34 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF8FD7431EEA45B40060FE34 /* Localizable.strings */; };
+		DF8FD74A1EEA47400060FE34 /* DMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD7491EEA47400060FE34 /* DMNavigationController.m */; };
+		DF8FD74D1EEA47E50060FE34 /* DMLinearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD74C1EEA47E50060FE34 /* DMLinearViewController.m */; };
+		DF8FD7501EEA4A630060FE34 /* DMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8FD74F1EEA4A630060FE34 /* DMLoginViewController.m */; };
+		DF9A0D481F2B0E410015CD27 /* DMOrganizationStructureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9A0D471F2B0E410015CD27 /* DMOrganizationStructureCell.m */; };
+		DF9A0D4B1F2B11ED0015CD27 /* DMSearchUserRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9A0D4A1F2B11ED0015CD27 /* DMSearchUserRequester.m */; };
+		DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9A0D4D1F2B13030015CD27 /* DMUserBookModel.m */; };
+		DF9A0D511F2B15720015CD27 /* DMUserBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9A0D501F2B15720015CD27 /* DMUserBookViewController.m */; };
+		DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9A0D531F2B16840015CD27 /* DMUserBookCell.m */; };
+		DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA2769E1F26BFCE0063D8AA /* DMActivitiTaskRequester.m */; };
+		DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A11F26C1620063D8AA /* DMTodoCell.m */; };
+		DFA276A51F26C29A0063D8AA /* DMActivitiTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */; };
+		DFB202A11F2C18160063AE30 /* DMLeaveTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */; };
+		DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB36A1D1F1F0056001A25CF /* DMLeaveTicketViewController.m */; };
 		DFB4533C1EE557060000DDC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4533B1EE557060000DDC9 /* main.m */; };
 		DFB4533F1EE557070000DDC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4533E1EE557060000DDC9 /* AppDelegate.m */; };
-		DFB453421EE557070000DDC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB453411EE557070000DDC9 /* ViewController.m */; };
 		DFB453451EE557070000DDC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB453431EE557070000DDC9 /* Main.storyboard */; };
 		DFB453471EE557070000DDC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFB453461EE557070000DDC9 /* Assets.xcassets */; };
 		DFB4534A1EE557070000DDC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB453481EE557070000DDC9 /* LaunchScreen.storyboard */; };
 		DFB453551EE557070000DDC9 /* DisciplineManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB453541EE557070000DDC9 /* DisciplineManagerTests.m */; };
 		DFB453601EE557070000DDC9 /* DisciplineManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4535F1EE557070000DDC9 /* DisciplineManagerUITests.m */; };
+		DFBCD6D91F2B0B92009FAA24 /* DMSearchOrgRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */; };
+		DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */; };
+		DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B41F05DF9C00AD40AE /* DMDetailApplyOutController.m */; };
+		DFCE28B81F05E1A700AD40AE /* DMDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B71F05E1A700AD40AE /* DMDetailView.m */; };
+		DFCE28BB1F0634D000AD40AE /* DMCommitApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28BA1F0634D000AD40AE /* DMCommitApplyBusRequester.m */; };
+		DFCE28BE1F06350D00AD40AE /* DMSearchApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28BD1F06350D00AD40AE /* DMSearchApplyBusRequester.m */; };
+		DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28C01F06352300AD40AE /* DMDetailApplyBusRequester.m */; };
+		DFE023CA1F063D95007BD7AC /* DMFormBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */; };
+		DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */; };
+		DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */; };
+		DFED74B11EEA71F5006DDEE8 /* DMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFED74B01EEA71F5006DDEE8 /* DMGlobal.m */; };
+		DFED74B41EEA73CB006DDEE8 /* DMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFED74B31EEA73CB006DDEE8 /* DMMainViewController.m */; };
+		DFF428211F137F8600BB1069 /* DMCheckLoginRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF428201F137F8600BB1069 /* DMCheckLoginRequester.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +137,194 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30A223FD905002D7494D91AA /* Pods-DisciplineManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.release.xcconfig"; sourceTree = "<group>"; };
+		BA36FAF67584546C059C14AD /* Pods-DisciplineManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.debug.xcconfig"; sourceTree = "<group>"; };
+		DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisciplineManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1F322B1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCommitApplyCompensatoryRequester.h; sourceTree = "<group>"; };
+		DF1F322C1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCommitApplyCompensatoryRequester.m; sourceTree = "<group>"; };
+		DF1F322E1F0E2590004358E3 /* DMDetailApplyCompensatoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyCompensatoryController.h; sourceTree = "<group>"; };
+		DF1F322F1F0E2590004358E3 /* DMDetailApplyCompensatoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyCompensatoryController.m; sourceTree = "<group>"; };
+		DF1F32311F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchApplyCompensatoryRequester.h; sourceTree = "<group>"; };
+		DF1F32321F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchApplyCompensatoryRequester.m; sourceTree = "<group>"; };
+		DF1F32341F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyCompensatoryRequester.h; sourceTree = "<group>"; };
+		DF1F32351F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyCompensatoryRequester.m; sourceTree = "<group>"; };
+		DF1F32371F0E260C004358E3 /* DMApplyCompensatoryListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyCompensatoryListInfo.h; sourceTree = "<group>"; };
+		DF1F32381F0E260C004358E3 /* DMApplyCompensatoryListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyCompensatoryListInfo.m; sourceTree = "<group>"; };
+		DF1F323A1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCommitApplyLeaveRequester.h; sourceTree = "<group>"; };
+		DF1F323B1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCommitApplyLeaveRequester.m; sourceTree = "<group>"; };
+		DF1F323D1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchApplyLeaveRequester.h; sourceTree = "<group>"; };
+		DF1F323E1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchApplyLeaveRequester.m; sourceTree = "<group>"; };
+		DF1F32401F0E2F41004358E3 /* DMDetailApplyLeaveRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyLeaveRequester.h; sourceTree = "<group>"; };
+		DF1F32411F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyLeaveRequester.m; sourceTree = "<group>"; };
+		DF1F32431F0E30AC004358E3 /* DMApplyLeaveListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyLeaveListInfo.h; sourceTree = "<group>"; };
+		DF1F32441F0E30AC004358E3 /* DMApplyLeaveListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyLeaveListInfo.m; sourceTree = "<group>"; };
+		DF2E43D81F28B82D00C0BFBA /* DMMineItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMineItemView.h; sourceTree = "<group>"; };
+		DF2E43D91F28B82D00C0BFBA /* DMMineItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMineItemView.m; sourceTree = "<group>"; };
+		DF2E43DB1F28BC1E00C0BFBA /* DMUserDetailRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserDetailRequester.h; sourceTree = "<group>"; };
+		DF2E43DC1F28BC1E00C0BFBA /* DMUserDetailRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserDetailRequester.m; sourceTree = "<group>"; };
+		DF377CB31EF281A100522AF7 /* DMLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLaunchViewController.h; sourceTree = "<group>"; };
+		DF377CB41EF281A100522AF7 /* DMLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLaunchViewController.m; sourceTree = "<group>"; };
+		DF377CB61EF284CF00522AF7 /* DMMainItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainItemView.h; sourceTree = "<group>"; };
+		DF377CB71EF284CF00522AF7 /* DMMainItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMainItemView.m; sourceTree = "<group>"; };
+		DF377CD51EF2965D00522AF7 /* DMTodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTodoViewController.h; sourceTree = "<group>"; };
+		DF377CD61EF2965D00522AF7 /* DMTodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTodoViewController.m; sourceTree = "<group>"; };
+		DF377CD81EF2969D00522AF7 /* DMAddressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAddressBookViewController.h; sourceTree = "<group>"; };
+		DF377CD91EF2969D00522AF7 /* DMAddressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMAddressBookViewController.m; sourceTree = "<group>"; };
+		DF377CDB1EF296F100522AF7 /* DMApplyBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyBusViewController.h; sourceTree = "<group>"; };
+		DF377CDC1EF296F100522AF7 /* DMApplyBusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyBusViewController.m; sourceTree = "<group>"; };
+		DF377CDE1EF2980500522AF7 /* DMApplyCompensatoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyCompensatoryController.h; sourceTree = "<group>"; };
+		DF377CDF1EF2980500522AF7 /* DMApplyCompensatoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyCompensatoryController.m; sourceTree = "<group>"; };
+		DF377CE11EF2985500522AF7 /* DMApplyLeaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyLeaveViewController.h; sourceTree = "<group>"; };
+		DF377CE21EF2985500522AF7 /* DMApplyLeaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyLeaveViewController.m; sourceTree = "<group>"; };
+		DF377CE41EF299C200522AF7 /* DMApplyOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyOutViewController.h; sourceTree = "<group>"; };
+		DF377CE51EF299C200522AF7 /* DMApplyOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutViewController.m; sourceTree = "<group>"; };
+		DF377CE71EF29A0500522AF7 /* DMMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMoreViewController.h; sourceTree = "<group>"; };
+		DF377CE81EF29A0500522AF7 /* DMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMoreViewController.m; sourceTree = "<group>"; };
+		DF50A1441EE7EC780091E098 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DF50A1471EE7F3320091E098 /* DMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMJson.h; sourceTree = "<group>"; };
+		DF50A1481EE7F3320091E098 /* DMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMJson.m; sourceTree = "<group>"; };
+		DF50A1491EE7F3320091E098 /* DMWeakReferencesArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWeakReferencesArray.h; sourceTree = "<group>"; };
+		DF50A14A1EE7F3320091E098 /* DMWeakReferencesArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWeakReferencesArray.m; sourceTree = "<group>"; };
+		DF50A14B1EE7F3320091E098 /* NSString+DMMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMMD5.m"; sourceTree = "<group>"; };
+		DF50A14C1EE7F3320091E098 /* NSString+DMFontWitdh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMFontWitdh.h"; sourceTree = "<group>"; };
+		DF50A14D1EE7F3320091E098 /* NSString+DMFontWitdh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMFontWitdh.m"; sourceTree = "<group>"; };
+		DF50A14E1EE7F3320091E098 /* NSString+DMMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMMD5.h"; sourceTree = "<group>"; };
+		DF50A14F1EE7F3320091E098 /* UIColor+DMDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DMDefine.h"; sourceTree = "<group>"; };
+		DF50A1501EE7F3320091E098 /* UIColor+DMDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DMDefine.m"; sourceTree = "<group>"; };
+		DF50A1511EE7F3320091E098 /* UIImage+DMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DMColor.h"; sourceTree = "<group>"; };
+		DF50A1521EE7F3320091E098 /* UIImage+DMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DMColor.m"; sourceTree = "<group>"; };
+		DF5444081EF3CF75000EE89F /* DMFillinApplyOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyOutController.h; sourceTree = "<group>"; };
+		DF5444091EF3CF75000EE89F /* DMFillinApplyOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFillinApplyOutController.m; sourceTree = "<group>"; };
+		DF54440C1EF3D2D9000EE89F /* DMEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMEntryView.h; sourceTree = "<group>"; };
+		DF54440D1EF3D2D9000EE89F /* DMEntryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEntryView.m; sourceTree = "<group>"; };
+		DF54440F1EF3D7AD000EE89F /* DMEntrySelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMEntrySelectView.h; sourceTree = "<group>"; };
+		DF5444101EF3D7AD000EE89F /* DMEntrySelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEntrySelectView.m; sourceTree = "<group>"; };
+		DF5ED6801F2360EF00374C8A /* DMLeaveTicketRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketRequester.h; sourceTree = "<group>"; };
+		DF5ED6811F2360EF00374C8A /* DMLeaveTicketRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketRequester.m; sourceTree = "<group>"; };
+		DF5ED6831F23634E00374C8A /* DMLeaveTicketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketModel.h; sourceTree = "<group>"; };
+		DF5ED6841F23634E00374C8A /* DMLeaveTicketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketModel.m; sourceTree = "<group>"; };
+		DF6A9BDD1F048CA50075F100 /* DMHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHttpManager.h; sourceTree = "<group>"; };
+		DF6A9BDE1F048CA50075F100 /* DMHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHttpManager.m; sourceTree = "<group>"; };
+		DF6A9BE01F048DC00075F100 /* DMHttpRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHttpRequester.h; sourceTree = "<group>"; };
+		DF6A9BE11F048DC00075F100 /* DMHttpRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHttpRequester.m; sourceTree = "<group>"; };
+		DF6A9BE31F048E530075F100 /* DMResultCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMResultCode.h; sourceTree = "<group>"; };
+		DF6A9BE41F0490BC0075F100 /* DMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMConfig.h; sourceTree = "<group>"; };
+		DF6A9BE51F0490BC0075F100 /* DMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMConfig.m; sourceTree = "<group>"; };
+		DF6A9BE71F0494D20075F100 /* DMLoginRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLoginRequester.h; sourceTree = "<group>"; };
+		DF6A9BE81F0494D20075F100 /* DMLoginRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLoginRequester.m; sourceTree = "<group>"; };
+		DF6A9BEA1F0499490075F100 /* DMUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserInfo.h; sourceTree = "<group>"; };
+		DF6A9BEB1F0499490075F100 /* DMUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserInfo.m; sourceTree = "<group>"; };
+		DF6A9BED1F04AC040075F100 /* DMLoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLoginInfo.h; sourceTree = "<group>"; };
+		DF6A9BEE1F04AC040075F100 /* DMLoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLoginInfo.m; sourceTree = "<group>"; };
+		DF6A9BF01F04D7F20075F100 /* DMCommitApplyOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCommitApplyOutRequester.h; sourceTree = "<group>"; };
+		DF6A9BF11F04D7F20075F100 /* DMCommitApplyOutRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCommitApplyOutRequester.m; sourceTree = "<group>"; };
+		DF6A9BF31F04F33B0075F100 /* DMSearchApplyOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchApplyOutRequester.h; sourceTree = "<group>"; };
+		DF6A9BF41F04F33B0075F100 /* DMSearchApplyOutRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchApplyOutRequester.m; sourceTree = "<group>"; };
+		DF6A9BF71F04F48D0075F100 /* DMListBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMListBaseModel.h; sourceTree = "<group>"; };
+		DF6A9BF81F04F48D0075F100 /* DMListBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMListBaseModel.m; sourceTree = "<group>"; };
+		DF6A9BFA1F04F5CC0075F100 /* DMApplyOutListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyOutListInfo.h; sourceTree = "<group>"; };
+		DF6A9BFB1F04F5CC0075F100 /* DMApplyOutListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutListInfo.m; sourceTree = "<group>"; };
+		DF6A9BFD1F04FADD0075F100 /* DMApplyOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyOutCell.h; sourceTree = "<group>"; };
+		DF6A9BFE1F04FADD0075F100 /* DMApplyOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutCell.m; sourceTree = "<group>"; };
+		DF7864CC1F25F80900477D3C /* DMDetailApplyLeaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyLeaveController.h; sourceTree = "<group>"; };
+		DF7864CD1F25F80900477D3C /* DMDetailApplyLeaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyLeaveController.m; sourceTree = "<group>"; };
+		DF7864CF1F25FCDC00477D3C /* DMSingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSingleView.h; sourceTree = "<group>"; };
+		DF7864D01F25FCDC00477D3C /* DMSingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSingleView.m; sourceTree = "<group>"; };
+		DF7864D21F2607DA00477D3C /* DMTaskTracksModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTaskTracksModel.h; sourceTree = "<group>"; };
+		DF7864D31F2607DA00477D3C /* DMTaskTracksModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTaskTracksModel.m; sourceTree = "<group>"; };
+		DF7864D51F26105200477D3C /* DMTaskTracksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTaskTracksView.h; sourceTree = "<group>"; };
+		DF7864D61F26105200477D3C /* DMTaskTracksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTaskTracksView.m; sourceTree = "<group>"; };
+		DF7864D81F2610D600477D3C /* DMTaskTracksItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTaskTracksItemView.h; sourceTree = "<group>"; };
+		DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTaskTracksItemView.m; sourceTree = "<group>"; };
+		DF7A8B071EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyCompensatoryController.h; sourceTree = "<group>"; };
+		DF7A8B081EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFillinApplyCompensatoryController.m; sourceTree = "<group>"; };
+		DF7A8B0A1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyLeaveController.h; sourceTree = "<group>"; };
+		DF7A8B0B1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFillinApplyLeaveController.m; sourceTree = "<group>"; };
+		DF7B1DCA1EF521B40025A21C /* DMEntryCommitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMEntryCommitView.h; sourceTree = "<group>"; };
+		DF7B1DCB1EF521B40025A21C /* DMEntryCommitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMEntryCommitView.m; sourceTree = "<group>"; };
+		DF7B1DCD1EF52A120025A21C /* DMDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDatePickerView.h; sourceTree = "<group>"; };
+		DF7B1DCE1EF52A120025A21C /* DMDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDatePickerView.m; sourceTree = "<group>"; };
+		DF7B1DD01EF532010025A21C /* DMFillinApplyBusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyBusController.h; sourceTree = "<group>"; };
+		DF7B1DD11EF532010025A21C /* DMFillinApplyBusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFillinApplyBusController.m; sourceTree = "<group>"; };
+		DF7B1DD31EF536D80025A21C /* DMMultiLineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMultiLineTextView.h; sourceTree = "<group>"; };
+		DF7B1DD41EF536D80025A21C /* DMMultiLineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMultiLineTextView.m; sourceTree = "<group>"; };
+		DF7B1DD61EF5370C0025A21C /* DMSingleTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSingleTextView.h; sourceTree = "<group>"; };
+		DF7B1DD71EF5370C0025A21C /* DMSingleTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSingleTextView.m; sourceTree = "<group>"; };
+		DF84E5E21EF75DFB00F8A23A /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		DF84E5E61EF75F6800F8A23A /* DMAddressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAddressManager.h; sourceTree = "<group>"; };
+		DF84E5E71EF75F6800F8A23A /* DMAddressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMAddressManager.m; sourceTree = "<group>"; };
+		DF84E5E91EF75F7E00F8A23A /* DMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDBManager.h; sourceTree = "<group>"; };
+		DF84E5EA1EF75F7E00F8A23A /* DMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDBManager.m; sourceTree = "<group>"; };
+		DF84E5EC1EF77CC300F8A23A /* DMDBBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDBBaseManager.h; sourceTree = "<group>"; };
+		DF84E5ED1EF77CC300F8A23A /* DMDBBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDBBaseManager.m; sourceTree = "<group>"; };
+		DF84E5EF1EF77CFB00F8A23A /* DMDBCommonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDBCommonManager.h; sourceTree = "<group>"; };
+		DF84E5F01EF77CFB00F8A23A /* DMDBCommonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDBCommonManager.m; sourceTree = "<group>"; };
+		DF84E5F21EF7A71100F8A23A /* DMAddressInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAddressInfo.h; sourceTree = "<group>"; };
+		DF84E5F31EF7A71100F8A23A /* DMAddressInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMAddressInfo.m; sourceTree = "<group>"; };
+		DF84E5F51EF7CC4D00F8A23A /* DMAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAddressPickerView.h; sourceTree = "<group>"; };
+		DF84E5F61EF7CC4D00F8A23A /* DMAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMAddressPickerView.m; sourceTree = "<group>"; };
+		DF88770E1F27633B0048F3AA /* DMSubmitTaskLeaveRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSubmitTaskLeaveRequester.h; sourceTree = "<group>"; };
+		DF88770F1F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSubmitTaskLeaveRequester.m; sourceTree = "<group>"; };
+		DF8877111F276D490048F3AA /* DMUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserModel.h; sourceTree = "<group>"; };
+		DF8877121F276D490048F3AA /* DMUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserModel.m; sourceTree = "<group>"; };
+		DF8877141F276F280048F3AA /* DMTaskOperatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTaskOperatorView.h; sourceTree = "<group>"; };
+		DF8877151F276F280048F3AA /* DMTaskOperatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTaskOperatorView.m; sourceTree = "<group>"; };
+		DF8A220A1F29D49C00617974 /* DMOrgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOrgModel.h; sourceTree = "<group>"; };
+		DF8A220B1F29D49C00617974 /* DMOrgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOrgModel.m; sourceTree = "<group>"; };
+		DF8A220D1F29E27900617974 /* DMUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserDetailViewController.h; sourceTree = "<group>"; };
+		DF8A220E1F29E27900617974 /* DMUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserDetailViewController.m; sourceTree = "<group>"; };
+		DF8A22101F29E2EF00617974 /* DMUserDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserDetailHeadView.h; sourceTree = "<group>"; };
+		DF8A22111F29E2EF00617974 /* DMUserDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserDetailHeadView.m; sourceTree = "<group>"; };
+		DF8A22131F29E8D000617974 /* DMAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAvatarViewController.h; sourceTree = "<group>"; };
+		DF8A22141F29E8D000617974 /* DMAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMAvatarViewController.m; sourceTree = "<group>"; };
+		DF8DA40A1F0F178900619AF0 /* DMFindHolidayRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFindHolidayRequester.h; sourceTree = "<group>"; };
+		DF8DA40B1F0F178900619AF0 /* DMFindHolidayRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFindHolidayRequester.m; sourceTree = "<group>"; };
+		DF8FD71C1EEA33E40060FE34 /* DMDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDefine.h; sourceTree = "<group>"; };
+		DF8FD7251EEA3DB70060FE34 /* DMBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBaseManager.h; sourceTree = "<group>"; };
+		DF8FD7261EEA3DB70060FE34 /* DMBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBaseManager.m; sourceTree = "<group>"; };
+		DF8FD7271EEA3DB70060FE34 /* UIApplication+Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Manager.h"; sourceTree = "<group>"; };
+		DF8FD7281EEA3DB70060FE34 /* UIApplication+Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Manager.m"; sourceTree = "<group>"; };
+		DF8FD72A1EEA3DB70060FE34 /* DMUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserManager.h; sourceTree = "<group>"; };
+		DF8FD72B1EEA3DB70060FE34 /* DMUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserManager.m; sourceTree = "<group>"; };
+		DF8FD7351EEA42F80060FE34 /* DMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBaseViewController.h; sourceTree = "<group>"; };
+		DF8FD7361EEA42F80060FE34 /* DMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBaseViewController.m; sourceTree = "<group>"; };
+		DF8FD7391EEA43680060FE34 /* DMNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNetworkManager.h; sourceTree = "<group>"; };
+		DF8FD73A1EEA43680060FE34 /* DMNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNetworkManager.m; sourceTree = "<group>"; };
+		DF8FD73B1EEA43680060FE34 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DF8FD73C1EEA43680060FE34 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DF8FD7441EEA46970060FE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		DF8FD7451EEA46970060FE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		DF8FD7461EEA46980060FE34 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		DF8FD7481EEA47400060FE34 /* DMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNavigationController.h; sourceTree = "<group>"; };
+		DF8FD7491EEA47400060FE34 /* DMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNavigationController.m; sourceTree = "<group>"; };
+		DF8FD74B1EEA47E50060FE34 /* DMLinearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLinearViewController.h; sourceTree = "<group>"; };
+		DF8FD74C1EEA47E50060FE34 /* DMLinearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLinearViewController.m; sourceTree = "<group>"; };
+		DF8FD74E1EEA4A630060FE34 /* DMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLoginViewController.h; sourceTree = "<group>"; };
+		DF8FD74F1EEA4A630060FE34 /* DMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLoginViewController.m; sourceTree = "<group>"; };
+		DF9A0D461F2B0E410015CD27 /* DMOrganizationStructureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOrganizationStructureCell.h; sourceTree = "<group>"; };
+		DF9A0D471F2B0E410015CD27 /* DMOrganizationStructureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOrganizationStructureCell.m; sourceTree = "<group>"; };
+		DF9A0D491F2B11ED0015CD27 /* DMSearchUserRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchUserRequester.h; sourceTree = "<group>"; };
+		DF9A0D4A1F2B11ED0015CD27 /* DMSearchUserRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchUserRequester.m; sourceTree = "<group>"; };
+		DF9A0D4C1F2B13030015CD27 /* DMUserBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserBookModel.h; sourceTree = "<group>"; };
+		DF9A0D4D1F2B13030015CD27 /* DMUserBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserBookModel.m; sourceTree = "<group>"; };
+		DF9A0D4F1F2B15720015CD27 /* DMUserBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserBookViewController.h; sourceTree = "<group>"; };
+		DF9A0D501F2B15720015CD27 /* DMUserBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserBookViewController.m; sourceTree = "<group>"; };
+		DF9A0D521F2B16840015CD27 /* DMUserBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserBookCell.h; sourceTree = "<group>"; };
+		DF9A0D531F2B16840015CD27 /* DMUserBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserBookCell.m; sourceTree = "<group>"; };
+		DFA2769D1F26BFCE0063D8AA /* DMActivitiTaskRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMActivitiTaskRequester.h; sourceTree = "<group>"; };
+		DFA2769E1F26BFCE0063D8AA /* DMActivitiTaskRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMActivitiTaskRequester.m; sourceTree = "<group>"; };
+		DFA276A01F26C1620063D8AA /* DMTodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTodoCell.h; sourceTree = "<group>"; };
+		DFA276A11F26C1620063D8AA /* DMTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTodoCell.m; sourceTree = "<group>"; };
+		DFA276A31F26C29A0063D8AA /* DMActivitiTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMActivitiTaskModel.h; sourceTree = "<group>"; };
+		DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMActivitiTaskModel.m; sourceTree = "<group>"; };
+		DFB2029F1F2C18160063AE30 /* DMLeaveTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketCell.h; sourceTree = "<group>"; };
+		DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketCell.m; sourceTree = "<group>"; };
+		DFB36A1C1F1F0056001A25CF /* DMLeaveTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketViewController.h; sourceTree = "<group>"; };
+		DFB36A1D1F1F0056001A25CF /* DMLeaveTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketViewController.m; sourceTree = "<group>"; };
 		DFB453371EE557060000DDC9 /* DisciplineManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisciplineManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB4533B1EE557060000DDC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFB4533D1EE557060000DDC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DFB4533E1EE557060000DDC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DFB453401EE557070000DDC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DFB453411EE557070000DDC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DFB453441EE557070000DDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFB453461EE557070000DDC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFB453491EE557070000DDC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +335,32 @@
 		DFB4535B1EE557070000DDC9 /* DisciplineManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisciplineManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB4535F1EE557070000DDC9 /* DisciplineManagerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisciplineManagerUITests.m; sourceTree = "<group>"; };
 		DFB453611EE557070000DDC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFBCD6D71F2B0B92009FAA24 /* DMSearchOrgRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOrgRequester.h; sourceTree = "<group>"; };
+		DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchOrgRequester.m; sourceTree = "<group>"; };
+		DFCE28B01F05DEAC00AD40AE /* DMDetailApplyOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyOutRequester.h; sourceTree = "<group>"; };
+		DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyOutRequester.m; sourceTree = "<group>"; };
+		DFCE28B31F05DF9C00AD40AE /* DMDetailApplyOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyOutController.h; sourceTree = "<group>"; };
+		DFCE28B41F05DF9C00AD40AE /* DMDetailApplyOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyOutController.m; sourceTree = "<group>"; };
+		DFCE28B61F05E1A700AD40AE /* DMDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailView.h; sourceTree = "<group>"; };
+		DFCE28B71F05E1A700AD40AE /* DMDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailView.m; sourceTree = "<group>"; };
+		DFCE28B91F0634D000AD40AE /* DMCommitApplyBusRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCommitApplyBusRequester.h; sourceTree = "<group>"; };
+		DFCE28BA1F0634D000AD40AE /* DMCommitApplyBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCommitApplyBusRequester.m; sourceTree = "<group>"; };
+		DFCE28BC1F06350D00AD40AE /* DMSearchApplyBusRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchApplyBusRequester.h; sourceTree = "<group>"; };
+		DFCE28BD1F06350D00AD40AE /* DMSearchApplyBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchApplyBusRequester.m; sourceTree = "<group>"; };
+		DFCE28BF1F06352300AD40AE /* DMDetailApplyBusRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyBusRequester.h; sourceTree = "<group>"; };
+		DFCE28C01F06352300AD40AE /* DMDetailApplyBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyBusRequester.m; sourceTree = "<group>"; };
+		DFE023C81F063D95007BD7AC /* DMFormBaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFormBaseInfo.h; sourceTree = "<group>"; };
+		DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFormBaseInfo.m; sourceTree = "<group>"; };
+		DFE023CB1F063F02007BD7AC /* DMApplyBusListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyBusListInfo.h; sourceTree = "<group>"; };
+		DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyBusListInfo.m; sourceTree = "<group>"; };
+		DFE023CE1F0641E6007BD7AC /* DMDetailApplyBusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyBusController.h; sourceTree = "<group>"; };
+		DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyBusController.m; sourceTree = "<group>"; };
+		DFED74AF1EEA71F5006DDEE8 /* DMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGlobal.h; sourceTree = "<group>"; };
+		DFED74B01EEA71F5006DDEE8 /* DMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGlobal.m; sourceTree = "<group>"; };
+		DFED74B21EEA73CB006DDEE8 /* DMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainViewController.h; sourceTree = "<group>"; };
+		DFED74B31EEA73CB006DDEE8 /* DMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMainViewController.m; sourceTree = "<group>"; };
+		DFF4281F1F137F8600BB1069 /* DMCheckLoginRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCheckLoginRequester.h; sourceTree = "<group>"; };
+		DFF428201F137F8600BB1069 /* DMCheckLoginRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCheckLoginRequester.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +389,596 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EBC322678840432B353300C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA36FAF67584546C059C14AD /* Pods-DisciplineManager.debug.xcconfig */,
+				30A223FD905002D7494D91AA /* Pods-DisciplineManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5FEC93F4EA6BF16E2E62F3DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF377CB91EF2963800522AF7 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CBA1EF2963800522AF7 /* Controller */,
+				DF377CBB1EF2963800522AF7 /* Model */,
+				DF377CBC1EF2963800522AF7 /* View */,
+			);
+			path = AddressBook;
+			sourceTree = "<group>";
+		};
+		DF377CBA1EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CD81EF2969D00522AF7 /* DMAddressBookViewController.h */,
+				DF377CD91EF2969D00522AF7 /* DMAddressBookViewController.m */,
+				DF9A0D4F1F2B15720015CD27 /* DMUserBookViewController.h */,
+				DF9A0D501F2B15720015CD27 /* DMUserBookViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CBB1EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CBC1EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A0D461F2B0E410015CD27 /* DMOrganizationStructureCell.h */,
+				DF9A0D471F2B0E410015CD27 /* DMOrganizationStructureCell.m */,
+				DF9A0D521F2B16840015CD27 /* DMUserBookCell.h */,
+				DF9A0D531F2B16840015CD27 /* DMUserBookCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CBD1EF2963800522AF7 /* ApplyBus */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CBE1EF2963800522AF7 /* Controller */,
+				DF377CBF1EF2963800522AF7 /* Model */,
+				DF377CC01EF2963800522AF7 /* View */,
+			);
+			path = ApplyBus;
+			sourceTree = "<group>";
+		};
+		DF377CBE1EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CDB1EF296F100522AF7 /* DMApplyBusViewController.h */,
+				DF377CDC1EF296F100522AF7 /* DMApplyBusViewController.m */,
+				DF7B1DD01EF532010025A21C /* DMFillinApplyBusController.h */,
+				DF7B1DD11EF532010025A21C /* DMFillinApplyBusController.m */,
+				DFE023CE1F0641E6007BD7AC /* DMDetailApplyBusController.h */,
+				DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CBF1EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CC01EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF84E5F51EF7CC4D00F8A23A /* DMAddressPickerView.h */,
+				DF84E5F61EF7CC4D00F8A23A /* DMAddressPickerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CC11EF2963800522AF7 /* ApplyCompensatory */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CC21EF2963800522AF7 /* Controller */,
+				DF377CC31EF2963800522AF7 /* Model */,
+				DF377CC41EF2963800522AF7 /* View */,
+			);
+			path = ApplyCompensatory;
+			sourceTree = "<group>";
+		};
+		DF377CC21EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CDE1EF2980500522AF7 /* DMApplyCompensatoryController.h */,
+				DF377CDF1EF2980500522AF7 /* DMApplyCompensatoryController.m */,
+				DF7A8B071EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.h */,
+				DF7A8B081EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m */,
+				DF1F322E1F0E2590004358E3 /* DMDetailApplyCompensatoryController.h */,
+				DF1F322F1F0E2590004358E3 /* DMDetailApplyCompensatoryController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CC31EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CC41EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CC51EF2963800522AF7 /* ApplyLeave */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CC61EF2963800522AF7 /* Controller */,
+				DF377CC71EF2963800522AF7 /* Model */,
+				DF377CC81EF2963800522AF7 /* View */,
+			);
+			path = ApplyLeave;
+			sourceTree = "<group>";
+		};
+		DF377CC61EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CE11EF2985500522AF7 /* DMApplyLeaveViewController.h */,
+				DF377CE21EF2985500522AF7 /* DMApplyLeaveViewController.m */,
+				DF7A8B0A1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.h */,
+				DF7A8B0B1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m */,
+				DFB36A1C1F1F0056001A25CF /* DMLeaveTicketViewController.h */,
+				DFB36A1D1F1F0056001A25CF /* DMLeaveTicketViewController.m */,
+				DF7864CC1F25F80900477D3C /* DMDetailApplyLeaveController.h */,
+				DF7864CD1F25F80900477D3C /* DMDetailApplyLeaveController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CC71EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CC81EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFB2029F1F2C18160063AE30 /* DMLeaveTicketCell.h */,
+				DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CC91EF2963800522AF7 /* ApplyOut */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CCA1EF2963800522AF7 /* Controller */,
+				DF377CCB1EF2963800522AF7 /* Model */,
+				DF377CCC1EF2963800522AF7 /* View */,
+			);
+			path = ApplyOut;
+			sourceTree = "<group>";
+		};
+		DF377CCA1EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CE41EF299C200522AF7 /* DMApplyOutViewController.h */,
+				DF377CE51EF299C200522AF7 /* DMApplyOutViewController.m */,
+				DF5444081EF3CF75000EE89F /* DMFillinApplyOutController.h */,
+				DF5444091EF3CF75000EE89F /* DMFillinApplyOutController.m */,
+				DFCE28B31F05DF9C00AD40AE /* DMDetailApplyOutController.h */,
+				DFCE28B41F05DF9C00AD40AE /* DMDetailApplyOutController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CCB1EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CCC1EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A9BFD1F04FADD0075F100 /* DMApplyOutCell.h */,
+				DF6A9BFE1F04FADD0075F100 /* DMApplyOutCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CCD1EF2963800522AF7 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CCE1EF2963800522AF7 /* Controller */,
+				DF377CCF1EF2963800522AF7 /* Model */,
+				DF377CD01EF2963800522AF7 /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		DF377CCE1EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CE71EF29A0500522AF7 /* DMMoreViewController.h */,
+				DF377CE81EF29A0500522AF7 /* DMMoreViewController.m */,
+				DF8A220D1F29E27900617974 /* DMUserDetailViewController.h */,
+				DF8A220E1F29E27900617974 /* DMUserDetailViewController.m */,
+				DF8A22131F29E8D000617974 /* DMAvatarViewController.h */,
+				DF8A22141F29E8D000617974 /* DMAvatarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CCF1EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CD01EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF2E43D81F28B82D00C0BFBA /* DMMineItemView.h */,
+				DF2E43D91F28B82D00C0BFBA /* DMMineItemView.m */,
+				DF8A22101F29E2EF00617974 /* DMUserDetailHeadView.h */,
+				DF8A22111F29E2EF00617974 /* DMUserDetailHeadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF377CD11EF2963800522AF7 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CD21EF2963800522AF7 /* Controller */,
+				DF377CD31EF2963800522AF7 /* Model */,
+				DF377CD41EF2963800522AF7 /* View */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		DF377CD21EF2963800522AF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CD51EF2965D00522AF7 /* DMTodoViewController.h */,
+				DF377CD61EF2965D00522AF7 /* DMTodoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF377CD31EF2963800522AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF377CD41EF2963800522AF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFA276A01F26C1620063D8AA /* DMTodoCell.h */,
+				DFA276A11F26C1620063D8AA /* DMTodoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF50A1451EE7F3320091E098 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF54440B1EF3D264000EE89F /* View */,
+				DF50A1461EE7F3320091E098 /* Common */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DF50A1461EE7F3320091E098 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DF50A1471EE7F3320091E098 /* DMJson.h */,
+				DF50A1481EE7F3320091E098 /* DMJson.m */,
+				DF50A1491EE7F3320091E098 /* DMWeakReferencesArray.h */,
+				DF50A14A1EE7F3320091E098 /* DMWeakReferencesArray.m */,
+				DF50A14E1EE7F3320091E098 /* NSString+DMMD5.h */,
+				DF50A14B1EE7F3320091E098 /* NSString+DMMD5.m */,
+				DF50A14C1EE7F3320091E098 /* NSString+DMFontWitdh.h */,
+				DF50A14D1EE7F3320091E098 /* NSString+DMFontWitdh.m */,
+				DF50A14F1EE7F3320091E098 /* UIColor+DMDefine.h */,
+				DF50A1501EE7F3320091E098 /* UIColor+DMDefine.m */,
+				DF50A1511EE7F3320091E098 /* UIImage+DMColor.h */,
+				DF50A1521EE7F3320091E098 /* UIImage+DMColor.m */,
+				DF8FD71C1EEA33E40060FE34 /* DMDefine.h */,
+				DFED74AF1EEA71F5006DDEE8 /* DMGlobal.h */,
+				DFED74B01EEA71F5006DDEE8 /* DMGlobal.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DF54440B1EF3D264000EE89F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF7B1DCD1EF52A120025A21C /* DMDatePickerView.h */,
+				DF7B1DCE1EF52A120025A21C /* DMDatePickerView.m */,
+				DF54440C1EF3D2D9000EE89F /* DMEntryView.h */,
+				DF54440D1EF3D2D9000EE89F /* DMEntryView.m */,
+				DF54440F1EF3D7AD000EE89F /* DMEntrySelectView.h */,
+				DF5444101EF3D7AD000EE89F /* DMEntrySelectView.m */,
+				DF7B1DCA1EF521B40025A21C /* DMEntryCommitView.h */,
+				DF7B1DCB1EF521B40025A21C /* DMEntryCommitView.m */,
+				DF7B1DD31EF536D80025A21C /* DMMultiLineTextView.h */,
+				DF7B1DD41EF536D80025A21C /* DMMultiLineTextView.m */,
+				DF7B1DD61EF5370C0025A21C /* DMSingleTextView.h */,
+				DF7B1DD71EF5370C0025A21C /* DMSingleTextView.m */,
+				DFCE28B61F05E1A700AD40AE /* DMDetailView.h */,
+				DFCE28B71F05E1A700AD40AE /* DMDetailView.m */,
+				DF7864CF1F25FCDC00477D3C /* DMSingleView.h */,
+				DF7864D01F25FCDC00477D3C /* DMSingleView.m */,
+				DF7864D51F26105200477D3C /* DMTaskTracksView.h */,
+				DF7864D61F26105200477D3C /* DMTaskTracksView.m */,
+				DF7864D81F2610D600477D3C /* DMTaskTracksItemView.h */,
+				DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */,
+				DF8877141F276F280048F3AA /* DMTaskOperatorView.h */,
+				DF8877151F276F280048F3AA /* DMTaskOperatorView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF6A9BDB1F048C6D0075F100 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A9BF61F04F4730075F100 /* Model */,
+				DF6A9BDC1F048C6D0075F100 /* Requester */,
+				DF6A9BDD1F048CA50075F100 /* DMHttpManager.h */,
+				DF6A9BDE1F048CA50075F100 /* DMHttpManager.m */,
+				DF6A9BE01F048DC00075F100 /* DMHttpRequester.h */,
+				DF6A9BE11F048DC00075F100 /* DMHttpRequester.m */,
+				DF6A9BE31F048E530075F100 /* DMResultCode.h */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		DF6A9BDC1F048C6D0075F100 /* Requester */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A9BE71F0494D20075F100 /* DMLoginRequester.h */,
+				DF6A9BE81F0494D20075F100 /* DMLoginRequester.m */,
+				DFF4281F1F137F8600BB1069 /* DMCheckLoginRequester.h */,
+				DFF428201F137F8600BB1069 /* DMCheckLoginRequester.m */,
+				DF6A9BF01F04D7F20075F100 /* DMCommitApplyOutRequester.h */,
+				DF6A9BF11F04D7F20075F100 /* DMCommitApplyOutRequester.m */,
+				DF6A9BF31F04F33B0075F100 /* DMSearchApplyOutRequester.h */,
+				DF6A9BF41F04F33B0075F100 /* DMSearchApplyOutRequester.m */,
+				DFCE28B01F05DEAC00AD40AE /* DMDetailApplyOutRequester.h */,
+				DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */,
+				DFCE28B91F0634D000AD40AE /* DMCommitApplyBusRequester.h */,
+				DFCE28BA1F0634D000AD40AE /* DMCommitApplyBusRequester.m */,
+				DFCE28BC1F06350D00AD40AE /* DMSearchApplyBusRequester.h */,
+				DFCE28BD1F06350D00AD40AE /* DMSearchApplyBusRequester.m */,
+				DFCE28BF1F06352300AD40AE /* DMDetailApplyBusRequester.h */,
+				DFCE28C01F06352300AD40AE /* DMDetailApplyBusRequester.m */,
+				DF1F322B1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.h */,
+				DF1F322C1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m */,
+				DF1F32311F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.h */,
+				DF1F32321F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m */,
+				DF1F32341F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.h */,
+				DF1F32351F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m */,
+				DF1F323A1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.h */,
+				DF1F323B1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m */,
+				DF1F323D1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.h */,
+				DF1F323E1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m */,
+				DF1F32401F0E2F41004358E3 /* DMDetailApplyLeaveRequester.h */,
+				DF1F32411F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m */,
+				DF88770E1F27633B0048F3AA /* DMSubmitTaskLeaveRequester.h */,
+				DF88770F1F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m */,
+				DF8DA40A1F0F178900619AF0 /* DMFindHolidayRequester.h */,
+				DF8DA40B1F0F178900619AF0 /* DMFindHolidayRequester.m */,
+				DF5ED6801F2360EF00374C8A /* DMLeaveTicketRequester.h */,
+				DF5ED6811F2360EF00374C8A /* DMLeaveTicketRequester.m */,
+				DFA2769D1F26BFCE0063D8AA /* DMActivitiTaskRequester.h */,
+				DFA2769E1F26BFCE0063D8AA /* DMActivitiTaskRequester.m */,
+				DF2E43DB1F28BC1E00C0BFBA /* DMUserDetailRequester.h */,
+				DF2E43DC1F28BC1E00C0BFBA /* DMUserDetailRequester.m */,
+				DFBCD6D71F2B0B92009FAA24 /* DMSearchOrgRequester.h */,
+				DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */,
+				DF9A0D491F2B11ED0015CD27 /* DMSearchUserRequester.h */,
+				DF9A0D4A1F2B11ED0015CD27 /* DMSearchUserRequester.m */,
+			);
+			path = Requester;
+			sourceTree = "<group>";
+		};
+		DF6A9BF61F04F4730075F100 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A9BF71F04F48D0075F100 /* DMListBaseModel.h */,
+				DF6A9BF81F04F48D0075F100 /* DMListBaseModel.m */,
+				DFE023C81F063D95007BD7AC /* DMFormBaseInfo.h */,
+				DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */,
+				DF6A9BFA1F04F5CC0075F100 /* DMApplyOutListInfo.h */,
+				DF6A9BFB1F04F5CC0075F100 /* DMApplyOutListInfo.m */,
+				DFE023CB1F063F02007BD7AC /* DMApplyBusListInfo.h */,
+				DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */,
+				DF1F32371F0E260C004358E3 /* DMApplyCompensatoryListInfo.h */,
+				DF1F32381F0E260C004358E3 /* DMApplyCompensatoryListInfo.m */,
+				DF1F32431F0E30AC004358E3 /* DMApplyLeaveListInfo.h */,
+				DF1F32441F0E30AC004358E3 /* DMApplyLeaveListInfo.m */,
+				DF5ED6831F23634E00374C8A /* DMLeaveTicketModel.h */,
+				DF5ED6841F23634E00374C8A /* DMLeaveTicketModel.m */,
+				DF7864D21F2607DA00477D3C /* DMTaskTracksModel.h */,
+				DF7864D31F2607DA00477D3C /* DMTaskTracksModel.m */,
+				DFA276A31F26C29A0063D8AA /* DMActivitiTaskModel.h */,
+				DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */,
+				DF9A0D4C1F2B13030015CD27 /* DMUserBookModel.h */,
+				DF9A0D4D1F2B13030015CD27 /* DMUserBookModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF84E5E01EF75DFB00F8A23A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF84E5E11EF75DFB00F8A23A /* json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DF84E5E11EF75DFB00F8A23A /* json */ = {
+			isa = PBXGroup;
+			children = (
+				DF84E5E21EF75DFB00F8A23A /* city.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		DF84E5E41EF75F4600F8A23A /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				DF84E5E61EF75F6800F8A23A /* DMAddressManager.h */,
+				DF84E5E71EF75F6800F8A23A /* DMAddressManager.m */,
+				DF84E5F21EF7A71100F8A23A /* DMAddressInfo.h */,
+				DF84E5F31EF7A71100F8A23A /* DMAddressInfo.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		DF84E5E51EF75F4600F8A23A /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				DF84E5E91EF75F7E00F8A23A /* DMDBManager.h */,
+				DF84E5EA1EF75F7E00F8A23A /* DMDBManager.m */,
+				DF84E5EC1EF77CC300F8A23A /* DMDBBaseManager.h */,
+				DF84E5ED1EF77CC300F8A23A /* DMDBBaseManager.m */,
+				DF84E5EF1EF77CFB00F8A23A /* DMDBCommonManager.h */,
+				DF84E5F01EF77CFB00F8A23A /* DMDBCommonManager.m */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		DF8FD7241EEA3DB70060FE34 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DF6A9BDB1F048C6D0075F100 /* Http */,
+				DF84E5E41EF75F4600F8A23A /* Address */,
+				DF84E5E51EF75F4600F8A23A /* DB */,
+				DF8FD7291EEA3DB70060FE34 /* User */,
+				DF8FD7381EEA43680060FE34 /* Network */,
+				DF8FD7251EEA3DB70060FE34 /* DMBaseManager.h */,
+				DF8FD7261EEA3DB70060FE34 /* DMBaseManager.m */,
+				DF8FD7271EEA3DB70060FE34 /* UIApplication+Manager.h */,
+				DF8FD7281EEA3DB70060FE34 /* UIApplication+Manager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DF8FD7291EEA3DB70060FE34 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FD72A1EEA3DB70060FE34 /* DMUserManager.h */,
+				DF8FD72B1EEA3DB70060FE34 /* DMUserManager.m */,
+				DF6A9BEA1F0499490075F100 /* DMUserInfo.h */,
+				DF6A9BEB1F0499490075F100 /* DMUserInfo.m */,
+				DF6A9BED1F04AC040075F100 /* DMLoginInfo.h */,
+				DF6A9BEE1F04AC040075F100 /* DMLoginInfo.m */,
+				DF8877111F276D490048F3AA /* DMUserModel.h */,
+				DF8877121F276D490048F3AA /* DMUserModel.m */,
+				DF8A220A1F29D49C00617974 /* DMOrgModel.h */,
+				DF8A220B1F29D49C00617974 /* DMOrgModel.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DF8FD72F1EEA42CD0060FE34 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CB91EF2963800522AF7 /* AddressBook */,
+				DF377CBD1EF2963800522AF7 /* ApplyBus */,
+				DF377CC11EF2963800522AF7 /* ApplyCompensatory */,
+				DF377CC51EF2963800522AF7 /* ApplyLeave */,
+				DF377CC91EF2963800522AF7 /* ApplyOut */,
+				DF377CCD1EF2963800522AF7 /* More */,
+				DF377CD11EF2963800522AF7 /* Todo */,
+				DF8FD7301EEA42CD0060FE34 /* Base */,
+				DF8FD7311EEA42CD0060FE34 /* User */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		DF8FD7301EEA42CD0060FE34 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FD74B1EEA47E50060FE34 /* DMLinearViewController.h */,
+				DF8FD74C1EEA47E50060FE34 /* DMLinearViewController.m */,
+				DF8FD7351EEA42F80060FE34 /* DMBaseViewController.h */,
+				DF8FD7361EEA42F80060FE34 /* DMBaseViewController.m */,
+				DF8FD7481EEA47400060FE34 /* DMNavigationController.h */,
+				DF8FD7491EEA47400060FE34 /* DMNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DF8FD7311EEA42CD0060FE34 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FD7321EEA42CD0060FE34 /* Controller */,
+				DF8FD7331EEA42CD0060FE34 /* Model */,
+				DF8FD7341EEA42CD0060FE34 /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DF8FD7321EEA42CD0060FE34 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FD74E1EEA4A630060FE34 /* DMLoginViewController.h */,
+				DF8FD74F1EEA4A630060FE34 /* DMLoginViewController.m */,
+				DFED74B21EEA73CB006DDEE8 /* DMMainViewController.h */,
+				DFED74B31EEA73CB006DDEE8 /* DMMainViewController.m */,
+				DF377CB31EF281A100522AF7 /* DMLaunchViewController.h */,
+				DF377CB41EF281A100522AF7 /* DMLaunchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF8FD7331EEA42CD0060FE34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF8FD7341EEA42CD0060FE34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF377CB61EF284CF00522AF7 /* DMMainItemView.h */,
+				DF377CB71EF284CF00522AF7 /* DMMainItemView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF8FD7381EEA43680060FE34 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DF8FD7391EEA43680060FE34 /* DMNetworkManager.h */,
+				DF8FD73A1EEA43680060FE34 /* DMNetworkManager.m */,
+				DF8FD73B1EEA43680060FE34 /* Reachability.h */,
+				DF8FD73C1EEA43680060FE34 /* Reachability.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		DFB4532E1EE557060000DDC9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +986,8 @@
 				DFB453531EE557070000DDC9 /* DisciplineManagerTests */,
 				DFB4535E1EE557070000DDC9 /* DisciplineManagerUITests */,
 				DFB453381EE557060000DDC9 /* Products */,
+				0EBC322678840432B353300C /* Pods */,
+				5FEC93F4EA6BF16E2E62F3DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +1004,20 @@
 		DFB453391EE557060000DDC9 /* DisciplineManager */ = {
 			isa = PBXGroup;
 			children = (
+				DF84E5E01EF75DFB00F8A23A /* Resources */,
+				DF8FD72F1EEA42CD0060FE34 /* UserInterface */,
+				DF8FD7241EEA3DB70060FE34 /* Manager */,
+				DF50A1451EE7F3320091E098 /* Utils */,
 				DFB4533D1EE557060000DDC9 /* AppDelegate.h */,
 				DFB4533E1EE557060000DDC9 /* AppDelegate.m */,
-				DFB453401EE557070000DDC9 /* ViewController.h */,
-				DFB453411EE557070000DDC9 /* ViewController.m */,
 				DFB453431EE557070000DDC9 /* Main.storyboard */,
 				DFB453461EE557070000DDC9 /* Assets.xcassets */,
 				DFB453481EE557070000DDC9 /* LaunchScreen.storyboard */,
 				DFB4534B1EE557070000DDC9 /* Info.plist */,
 				DFB4533A1EE557060000DDC9 /* Supporting Files */,
+				DF50A1441EE7EC780091E098 /* PrefixHeader.pch */,
+				DF6A9BE41F0490BC0075F100 /* DMConfig.h */,
+				DF6A9BE51F0490BC0075F100 /* DMConfig.m */,
 			);
 			path = DisciplineManager;
 			sourceTree = "<group>";
@@ -118,6 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB4533B1EE557060000DDC9 /* main.m */,
+				DF8FD7431EEA45B40060FE34 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,9 +1056,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFB453641EE557070000DDC9 /* Build configuration list for PBXNativeTarget "DisciplineManager" */;
 			buildPhases = (
+				721ABE93D64E726013103941 /* [CP] Check Pods Manifest.lock */,
 				DFB453331EE557060000DDC9 /* Sources */,
 				DFB453341EE557060000DDC9 /* Frameworks */,
 				DFB453351EE557060000DDC9 /* Resources */,
+				4440ED56E0A325E039486615 /* [CP] Embed Pods Frameworks */,
+				F4F36E5473A72F64E90F540C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,12 +1114,13 @@
 		DFB4532F1EE557060000DDC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DM;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "fujl-mac";
 				TargetAttributes = {
 					DFB453361EE557060000DDC9 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = QP647MDN7U;
+						DevelopmentTeam = X7N27ZW4ED;
 						ProvisioningStyle = Automatic;
 					};
 					DFB4534F1EE557070000DDC9 = {
@@ -231,6 +1144,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DFB4532E1EE557060000DDC9;
 			productRefGroup = DFB453381EE557060000DDC9 /* Products */;
@@ -250,6 +1164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB4534A1EE557070000DDC9 /* LaunchScreen.storyboard in Resources */,
+				DF84E5E31EF75DFB00F8A23A /* city.json in Resources */,
+				DF8FD7411EEA45B40060FE34 /* Localizable.strings in Resources */,
 				DFB453471EE557070000DDC9 /* Assets.xcassets in Resources */,
 				DFB453451EE557070000DDC9 /* Main.storyboard in Resources */,
 			);
@@ -271,14 +1187,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4440ED56E0A325E039486615 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		721ABE93D64E726013103941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F36E5473A72F64E90F540C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DFB453331EE557060000DDC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFB453421EE557070000DDC9 /* ViewController.m in Sources */,
+				DF2E43DD1F28BC1E00C0BFBA /* DMUserDetailRequester.m in Sources */,
+				DF1F323F1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m in Sources */,
+				DF50A1551EE7F3320091E098 /* NSString+DMMD5.m in Sources */,
+				DF7A8B091EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m in Sources */,
+				DF84E5F41EF7A71100F8A23A /* DMAddressInfo.m in Sources */,
+				DFE023CA1F063D95007BD7AC /* DMFormBaseInfo.m in Sources */,
+				DFB202A11F2C18160063AE30 /* DMLeaveTicketCell.m in Sources */,
+				DF9A0D4B1F2B11ED0015CD27 /* DMSearchUserRequester.m in Sources */,
+				DF6A9BEC1F0499490075F100 /* DMUserInfo.m in Sources */,
+				DF84E5F11EF77CFB00F8A23A /* DMDBCommonManager.m in Sources */,
+				DF50A1571EE7F3320091E098 /* UIColor+DMDefine.m in Sources */,
+				DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */,
+				DF377CD71EF2965D00522AF7 /* DMTodoViewController.m in Sources */,
+				DF377CE61EF299C200522AF7 /* DMApplyOutViewController.m in Sources */,
+				DFF428211F137F8600BB1069 /* DMCheckLoginRequester.m in Sources */,
+				DFA276A51F26C29A0063D8AA /* DMActivitiTaskModel.m in Sources */,
+				DF6A9BE91F0494D20075F100 /* DMLoginRequester.m in Sources */,
+				DF50A1561EE7F3320091E098 /* NSString+DMFontWitdh.m in Sources */,
+				DF377CE31EF2985500522AF7 /* DMApplyLeaveViewController.m in Sources */,
+				DFED74B11EEA71F5006DDEE8 /* DMGlobal.m in Sources */,
+				DF6A9BFC1F04F5CC0075F100 /* DMApplyOutListInfo.m in Sources */,
+				DF377CDD1EF296F100522AF7 /* DMApplyBusViewController.m in Sources */,
+				DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */,
+				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
+				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
+				DF8FD74D1EEA47E50060FE34 /* DMLinearViewController.m in Sources */,
+				DF6A9BF51F04F33B0075F100 /* DMSearchApplyOutRequester.m in Sources */,
+				DF6A9BF21F04D7F20075F100 /* DMCommitApplyOutRequester.m in Sources */,
+				DF9A0D511F2B15720015CD27 /* DMUserBookViewController.m in Sources */,
+				DF8877131F276D490048F3AA /* DMUserModel.m in Sources */,
+				DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */,
+				DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */,
+				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
+				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
+				DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */,
+				DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */,
+				DFBCD6D91F2B0B92009FAA24 /* DMSearchOrgRequester.m in Sources */,
+				DF54440E1EF3D2D9000EE89F /* DMEntryView.m in Sources */,
+				DF84E5EE1EF77CC300F8A23A /* DMDBBaseManager.m in Sources */,
+				DF84E5F71EF7CC4D00F8A23A /* DMAddressPickerView.m in Sources */,
+				DF1F32391F0E260C004358E3 /* DMApplyCompensatoryListInfo.m in Sources */,
+				DFED74B41EEA73CB006DDEE8 /* DMMainViewController.m in Sources */,
+				DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */,
+				DF8FD73E1EEA43680060FE34 /* Reachability.m in Sources */,
+				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
+				DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */,
+				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
+				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,
+				DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */,
+				DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */,
+				DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */,
+				DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */,
+				DF50A1541EE7F3320091E098 /* DMWeakReferencesArray.m in Sources */,
+				DF8FD73D1EEA43680060FE34 /* DMNetworkManager.m in Sources */,
+				DF7B1DD51EF536D80025A21C /* DMMultiLineTextView.m in Sources */,
+				DF8FD74A1EEA47400060FE34 /* DMNavigationController.m in Sources */,
+				DFCE28BB1F0634D000AD40AE /* DMCommitApplyBusRequester.m in Sources */,
+				DF377CB81EF284CF00522AF7 /* DMMainItemView.m in Sources */,
+				DF8FD72C1EEA3DB70060FE34 /* DMBaseManager.m in Sources */,
+				DF8A22121F29E2EF00617974 /* DMUserDetailHeadView.m in Sources */,
 				DFB4533F1EE557070000DDC9 /* AppDelegate.m in Sources */,
+				DF84E5E81EF75F6800F8A23A /* DMAddressManager.m in Sources */,
+				DFCE28BE1F06350D00AD40AE /* DMSearchApplyBusRequester.m in Sources */,
+				DF1F323C1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m in Sources */,
+				DF377CDA1EF2969D00522AF7 /* DMAddressBookViewController.m in Sources */,
+				DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */,
+				DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */,
+				DF50A1531EE7F3320091E098 /* DMJson.m in Sources */,
+				DF8FD72E1EEA3DB70060FE34 /* DMUserManager.m in Sources */,
 				DFB4533C1EE557060000DDC9 /* main.m in Sources */,
+				DF7864D11F25FCDC00477D3C /* DMSingleView.m in Sources */,
+				DF50A1581EE7F3320091E098 /* UIImage+DMColor.m in Sources */,
+				DF7864DA1F2610D600477D3C /* DMTaskTracksItemView.m in Sources */,
+				DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */,
+				DF7B1DD81EF5370C0025A21C /* DMSingleTextView.m in Sources */,
+				DF9A0D481F2B0E410015CD27 /* DMOrganizationStructureCell.m in Sources */,
+				DF54440A1EF3CF75000EE89F /* DMFillinApplyOutController.m in Sources */,
+				DF8877161F276F280048F3AA /* DMTaskOperatorView.m in Sources */,
+				DF377CB51EF281A100522AF7 /* DMLaunchViewController.m in Sources */,
+				DF7864D71F26105200477D3C /* DMTaskTracksView.m in Sources */,
+				DF1F32361F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m in Sources */,
+				DF8A220C1F29D49C00617974 /* DMOrgModel.m in Sources */,
+				DFCE28B81F05E1A700AD40AE /* DMDetailView.m in Sources */,
+				DF8FD7501EEA4A630060FE34 /* DMLoginViewController.m in Sources */,
+				DF5ED6821F2360EF00374C8A /* DMLeaveTicketRequester.m in Sources */,
+				DF7B1DD21EF532010025A21C /* DMFillinApplyBusController.m in Sources */,
+				DF6A9BE21F048DC00075F100 /* DMHttpRequester.m in Sources */,
+				DF1F32301F0E2590004358E3 /* DMDetailApplyCompensatoryController.m in Sources */,
+				DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */,
+				DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */,
+				DF377CE01EF2980500522AF7 /* DMApplyCompensatoryController.m in Sources */,
+				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
+				DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */,
+				DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */,
+				DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */,
+				DF8A220F1F29E27900617974 /* DMUserDetailViewController.m in Sources */,
+				DF5ED6851F23634E00374C8A /* DMLeaveTicketModel.m in Sources */,
+				DF6A9BE61F0490BC0075F100 /* DMConfig.m in Sources */,
+				DF5444111EF3D7AD000EE89F /* DMEntrySelectView.m in Sources */,
+				DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */,
+				DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */,
+				DF8DA40C1F0F178900619AF0 /* DMFindHolidayRequester.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +1377,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DF8FD7431EEA45B40060FE34 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF8FD7461EEA46980060FE34 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		DFB453431EE557070000DDC9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DFB453441EE557070000DDC9 /* Base */,
+				DF8FD7441EEA46970060FE34 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -326,6 +1398,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DFB453491EE557070000DDC9 /* Base */,
+				DF8FD7451EEA46970060FE34 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -337,6 +1410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -386,6 +1460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -427,24 +1502,32 @@
 		};
 		DFB453651EE557070000DDC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA36FAF67584546C059C14AD /* Pods-DisciplineManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QP647MDN7U;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = X7N27ZW4ED;
+				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fujl.gz.com.DisciplineManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		DFB453661EE557070000DDC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30A223FD905002D7494D91AA /* Pods-DisciplineManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QP647MDN7U;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = X7N27ZW4ED;
+				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fujl.gz.com.DisciplineManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -518,6 +1601,7 @@
 				DFB453661EE557070000DDC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFB453671EE557070000DDC9 /* Build configuration list for PBXNativeTarget "DisciplineManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +1610,7 @@
 				DFB453691EE557070000DDC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFB4536A1EE557070000DDC9 /* Build configuration list for PBXNativeTarget "DisciplineManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +1619,7 @@
 				DFB4536C1EE557070000DDC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
