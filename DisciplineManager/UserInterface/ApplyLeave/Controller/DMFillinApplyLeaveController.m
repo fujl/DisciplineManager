@@ -511,6 +511,7 @@
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    requester.ticket = [NSString stringWithFormat:@""];
                     showLoadingDialog();
                     [requester postRequest:^(DMResultCode code, id data) {
                         dismissLoadingDialog();
@@ -528,6 +529,8 @@
                     
                 }];
                 return;
+            } else {
+                requester.ticket = [NSString stringWithFormat:@""];
             }
         } else {
             showToast(@"请选择休假票");
