@@ -83,7 +83,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DMActivitiTaskModel *mdl = [self.dataSource objectAtIndex:indexPath.row];
-    if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ]) {
+    if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]) {
         [self gotoQJSQDetail:mdl];
     }
 //    DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];

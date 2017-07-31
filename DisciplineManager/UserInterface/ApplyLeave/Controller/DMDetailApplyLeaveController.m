@@ -60,7 +60,7 @@
             [self.actualLeaveNumberView setTitle:NSLocalizedString(@"ActualLeaveNumber", @"实际请(休)假天数") detail:[NSString stringWithFormat:@"%0.1f天", info.days]];
             self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:info.reason];
             if (self.activitiTaskModel) {
-                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP] && info.state==ACTIVITI_STATE_PENDING];
+                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && info.state==ACTIVITI_STATE_PENDING];
             } else {
                 self.taskTracksView.taskTracks = info.taskTracks;
             }

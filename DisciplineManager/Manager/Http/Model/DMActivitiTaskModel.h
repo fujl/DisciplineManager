@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "DMUserModel.h"
 
-#define kDefinitionKeyQJSQ  @"qjsp_bmld"
+#define kDefinitionKeyQJSQ_BMLD  @"qjsp_bmld"
+#define kDefinitionKeyQJSQ_FGLD  @"qjsp_fgld"
 #define kDefinitionKeyBXP   @"bxp_fgld"
 #define kDefinitionKeyGCSQ  @"gcsq_sjld";
 

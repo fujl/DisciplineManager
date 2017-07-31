@@ -51,8 +51,8 @@
         make.height.equalTo(@44);
     }];
     if (showTransferComment) {
-        self.transferCommentButton.hidden = YES;
-        [self.rejectedButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        self.transferCommentButton.hidden = NO;
+        [self.transferCommentButton mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);
             make.top.equalTo(self).offset(10);
             make.width.equalTo(@(width));
