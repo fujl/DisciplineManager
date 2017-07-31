@@ -38,6 +38,7 @@
 @property (nonatomic, strong) NSMutableArray *holidayStringList;
 @property (nonatomic, strong) NSMutableArray<DMLeaveTicketModel *> *leaveTickets;
 @property (nonatomic, assign) CGFloat leaveTicketDays;
+@property (nonatomic, strong) NSString *tickets;
 
 @end
 
@@ -244,9 +245,12 @@
             controller.selectedLeaveTicketBlock = ^(NSMutableArray<DMLeaveTicketModel *> *leaveTickets) {
                 weakSelf.leaveTickets = leaveTickets;
                 weakSelf.leaveTicketDays = 0;
+                NSString *tickets = @"";
                 for (DMLeaveTicketModel *mdl in leaveTickets) {
                     weakSelf.leaveTicketDays += mdl.days;
+                    tickets = [tickets isEqualToString:@""] ? [NSString stringWithFormat:@"%@", mdl.ltId] : [NSString stringWithFormat:@"%@,%@", tickets, mdl.ltId];
                 }
+                weakSelf.tickets = tickets;
                 weakSelf.leaveTicketNumberView.value = [NSString stringWithFormat:@"%0.1f", weakSelf.leaveTicketDays];
             };
             [weakSelf.navigationController pushViewController:controller animated:YES];
@@ -478,8 +482,6 @@
         return;
     }
     
-    
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd";
     NSDate *startdt = [NSDate dateWithTimeIntervalSince1970:self.startTimeInterval];
@@ -511,7 +513,7 @@
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    requester.ticket = [NSString stringWithFormat:@""];
+                    requester.ticket = self.tickets;
                     showLoadingDialog();
                     [requester postRequest:^(DMResultCode code, id data) {
                         dismissLoadingDialog();
@@ -530,7 +532,7 @@
                 }];
                 return;
             } else {
-                requester.ticket = [NSString stringWithFormat:@""];
+                requester.ticket = self.tickets;
             }
         } else {
             showToast(@"请选择休假票");
