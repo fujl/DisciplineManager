@@ -14,6 +14,7 @@
 #import "DMMainViewController.h"
 #import "DMNavigationController.h"
 #import "DMLaunchViewController.h"
+#import "DMPushManager.h"
 
 @interface AppDelegate ()
 
@@ -57,6 +58,9 @@
     
     // 通知 程序的界面创建完成
     [[UIApplication sharedApplication] windowCreated];
+    
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    [pushManager didFinishLaunchingWithOptions:launchOptions application:application];
     return YES;
 }
 

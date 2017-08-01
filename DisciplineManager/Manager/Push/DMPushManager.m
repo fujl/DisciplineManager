@@ -13,6 +13,7 @@
 
 - (void)didFinishLaunchingWithOptions:(NSDictionary *)launchOptions application:(UIApplication *)application {
     
+    [BPush registerChannel:launchOptions apiKey:@"CcXRpllwd2kwcYqhAyDjrumX" pushMode:BPushModeDevelopment withFirstAction:@"打开" withSecondAction:@"关闭" withCategory:@"test" useBehaviorTextInput:YES isDebug:YES];
 }
 
 @end

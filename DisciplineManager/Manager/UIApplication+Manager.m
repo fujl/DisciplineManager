@@ -13,6 +13,7 @@
 #import "DMDBManager.h"
 #import "DMDBCommonManager.h"
 #import "DMHttpManager.h"
+#import "DMPushManager.h"
 
 static NSMutableArray<__kindof DMBaseManager *> *managers;
 
@@ -86,6 +87,7 @@ static NSMutableArray<__kindof DMBaseManager *> *managers;
     [list addObject:[DMDBCommonManager class]];
     [list addObject:[DMNetworkManager class]]; // 网络管理
     [list addObject:[DMAddressManager class]];    // 地址管理
+    [list addObject:[DMPushManager class]];    // 推送管理
     //    [list addObject:[LMDCacheManager class]]; // 缓存管理
     //    [list addObject:[LMDSettingManager class]]; // 设置管理
     [list addObject:[DMHttpManager class]];    // 网络请求
