@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186360401F30E75A00E2FE23 /* DMPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863603F1F30E75A00E2FE23 /* DMPushManager.m */; };
+		186360461F30E81300E2FE23 /* BPushCerResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186360431F30E81300E2FE23 /* BPushCerResource.bundle */; };
+		186360471F30E81300E2FE23 /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186360441F30E81300E2FE23 /* libBPush.a */; };
+		186360481F30E81300E2FE23 /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 186360451F30E81300E2FE23 /* test.caf */; };
+		1863604A1F30E85B00E2FE23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186360491F30E85B00E2FE23 /* SystemConfiguration.framework */; };
+		1863604C1F30E86A00E2FE23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604B1F30E86A00E2FE23 /* libz.tbd */; };
+		1863604E1F30E87900E2FE23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604D1F30E87900E2FE23 /* CoreTelephony.framework */; };
+		186360501F30E88200E2FE23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604F1F30E88200E2FE23 /* CoreGraphics.framework */; };
 		18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */; };
 		18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */; };
 		2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */; };
@@ -143,6 +151,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1863603D1F30E64800E2FE23 /* DisciplineManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DisciplineManager.entitlements; sourceTree = "<group>"; };
+		1863603E1F30E75A00E2FE23 /* DMPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPushManager.h; sourceTree = "<group>"; };
+		1863603F1F30E75A00E2FE23 /* DMPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPushManager.m; sourceTree = "<group>"; };
+		186360421F30E81300E2FE23 /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
+		186360431F30E81300E2FE23 /* BPushCerResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BPushCerResource.bundle; sourceTree = "<group>"; };
+		186360441F30E81300E2FE23 /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
+		186360451F30E81300E2FE23 /* test.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.caf; sourceTree = "<group>"; };
+		186360491F30E85B00E2FE23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1863604B1F30E86A00E2FE23 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1863604D1F30E87900E2FE23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1863604F1F30E88200E2FE23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		18FBAB611F30C37F00E6E67B /* DMOfficialCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfficialCarModel.h; sourceTree = "<group>"; };
 		18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOfficialCarModel.m; sourceTree = "<group>"; };
 		18FBAB641F30C51B00E6E67B /* DMSearchOfficialCarRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOfficialCarRequester.h; sourceTree = "<group>"; };
@@ -386,6 +405,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186360501F30E88200E2FE23 /* CoreGraphics.framework in Frameworks */,
+				1863604E1F30E87900E2FE23 /* CoreTelephony.framework in Frameworks */,
+				1863604C1F30E86A00E2FE23 /* libz.tbd in Frameworks */,
+				1863604A1F30E85B00E2FE23 /* SystemConfiguration.framework in Frameworks */,
+				186360471F30E81300E2FE23 /* libBPush.a in Frameworks */,
 				2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,9 +440,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1863603C1F30E61900E2FE23 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				186360411F30E81300E2FE23 /* normalversion */,
+				1863603E1F30E75A00E2FE23 /* DMPushManager.h */,
+				1863603F1F30E75A00E2FE23 /* DMPushManager.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		186360411F30E81300E2FE23 /* normalversion */ = {
+			isa = PBXGroup;
+			children = (
+				186360421F30E81300E2FE23 /* BPush.h */,
+				186360431F30E81300E2FE23 /* BPushCerResource.bundle */,
+				186360441F30E81300E2FE23 /* libBPush.a */,
+				186360451F30E81300E2FE23 /* test.caf */,
+			);
+			path = normalversion;
+			sourceTree = "<group>";
+		};
 		5FEC93F4EA6BF16E2E62F3DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1863604F1F30E88200E2FE23 /* CoreGraphics.framework */,
+				1863604D1F30E87900E2FE23 /* CoreTelephony.framework */,
+				1863604B1F30E86A00E2FE23 /* libz.tbd */,
+				186360491F30E85B00E2FE23 /* SystemConfiguration.framework */,
 				DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */,
 			);
 			name = Frameworks;
@@ -900,6 +949,7 @@
 		DF8FD7241EEA3DB70060FE34 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1863603C1F30E61900E2FE23 /* Push */,
 				DF6A9BDB1F048C6D0075F100 /* Http */,
 				DF84E5E41EF75F4600F8A23A /* Address */,
 				DF84E5E51EF75F4600F8A23A /* DB */,
@@ -1034,6 +1084,7 @@
 		DFB453391EE557060000DDC9 /* DisciplineManager */ = {
 			isa = PBXGroup;
 			children = (
+				1863603D1F30E64800E2FE23 /* DisciplineManager.entitlements */,
 				DF84E5E01EF75DFB00F8A23A /* Resources */,
 				DF8FD72F1EEA42CD0060FE34 /* UserInterface */,
 				DF8FD7241EEA3DB70060FE34 /* Manager */,
@@ -1152,6 +1203,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = X7N27ZW4ED;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					DFB4534F1EE557070000DDC9 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -1193,7 +1249,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186360481F30E81300E2FE23 /* test.caf in Resources */,
 				DFB4534A1EE557070000DDC9 /* LaunchScreen.storyboard in Resources */,
+				186360461F30E81300E2FE23 /* BPushCerResource.bundle in Resources */,
 				DF84E5E31EF75DFB00F8A23A /* city.json in Resources */,
 				DF8FD7411EEA45B40060FE34 /* Localizable.strings in Resources */,
 				DFB453471EE557070000DDC9 /* Assets.xcassets in Resources */,
@@ -1307,6 +1365,7 @@
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
 				DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */,
 				DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */,
+				186360401F30E75A00E2FE23 /* DMPushManager.m in Sources */,
 				DFBCD6D91F2B0B92009FAA24 /* DMSearchOrgRequester.m in Sources */,
 				DF54440E1EF3D2D9000EE89F /* DMEntryView.m in Sources */,
 				DF84E5EE1EF77CC300F8A23A /* DMDBBaseManager.m in Sources */,
@@ -1542,11 +1601,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/normalversion",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1558,11 +1622,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/normalversion",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
