@@ -48,6 +48,10 @@
     return self.textView.text;
 }
 
+- (void)setKeyboardType:(UIKeyboardType)keyboardType {
+    self.textView.keyboardType = keyboardType;
+}
+
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *valueString = textField.text;

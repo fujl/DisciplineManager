@@ -10,5 +10,6 @@
 
 @interface DMSingleTextView : UIView
 - (void)setPlaceholder:(NSString *)placeholder;
+- (void)setKeyboardType:(UIKeyboardType)keyboardType;
 - (NSString *)getSingleText;
 @end

@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIButton *agreeButton;
 @property (nonatomic, strong) UIButton *rejectedButton;
 @property (nonatomic, strong) UIButton *transferCommentButton;
+@property (nonatomic, strong) UIButton *finishButton;
 
 @end
 
@@ -25,11 +26,13 @@
         [self addSubview:self.agreeButton];
         [self addSubview:self.rejectedButton];
         [self addSubview:self.transferCommentButton];
+        [self addSubview:self.finishButton];
     }
     return self;
 }
 
 - (void)refreshView:(BOOL)showTransferComment {
+    self.finishButton.hidden = YES;
     CGFloat sep = 20;
     CGFloat width;
     if (showTransferComment) {
@@ -63,6 +66,22 @@
     }
 }
 
+- (void)refreshFinishHuigangView {
+    self.agreeButton.hidden = YES;
+    self.rejectedButton.hidden = YES;
+    self.transferCommentButton.hidden = YES;
+    
+    self.finishButton.hidden = NO;
+    CGFloat sep = 20;
+    CGFloat width = SCREEN_WIDTH-2*sep;
+    [self.finishButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.top.equalTo(self).offset(10);
+        make.width.equalTo(@(width));
+        make.height.equalTo(@44);
+    }];
+}
+
 - (UIButton *)agreeButton {
     if (!_agreeButton) {
         _agreeButton = [[UIButton alloc] init];
@@ -74,6 +93,19 @@
         [_agreeButton addTarget:self action:@selector(clickAgree) forControlEvents:UIControlEventTouchUpInside];
     }
     return _agreeButton;
+}
+
+- (UIButton *)finishButton {
+    if (!_finishButton) {
+        _finishButton = [[UIButton alloc] init];
+        [_finishButton setTitle:@"完成回岗" forState:UIControlStateNormal];
+        [_finishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_finishButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0x5cb85c]] forState:UIControlStateNormal];
+        _finishButton.layer.masksToBounds = YES;
+        _finishButton.layer.cornerRadius = 3;
+        [_finishButton addTarget:self action:@selector(clickFinish) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _finishButton;
 }
 
 - (UIButton *)rejectedButton {
@@ -119,4 +151,11 @@
         self.clickTaskOperatorBlock(TaskOperator_TransferComment);
     }
 }
+
+- (void)clickFinish {
+    if (self.clickTaskOperatorBlock) {
+        self.clickTaskOperatorBlock(TaskOperator_Finish);
+    }
+}
+
 @end

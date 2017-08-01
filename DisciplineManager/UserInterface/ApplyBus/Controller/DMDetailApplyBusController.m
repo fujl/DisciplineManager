@@ -11,6 +11,11 @@
 #import "DMApplyBusListInfo.h"
 #import "DMTaskTracksView.h"
 #import "DMSubmitTaskBusRequester.h"
+#import "DMUserBookModel.h"
+#import "DMSearchUserRequester.h"
+#import "DMPickerView.h"
+#import "DMSearchOfficialCarRequester.h"
+#import "DMOfficialCarModel.h"
 
 @interface DMDetailApplyBusController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -26,11 +31,22 @@
 @property (nonatomic, strong) DMDetailView *outReasonDetailView;
 @property (nonatomic, strong) DMTaskTracksView *taskTracksView;
 
+@property (nonatomic, strong) DMEntryView *driverTitleView;
+@property (nonatomic, strong) DMEntrySelectView *driverView;
+
+@property (nonatomic, strong) DMEntryView *officialCarIdTitleView;
+@property (nonatomic, strong) DMEntrySelectView *officialCarIdView;
+
 @property (nonatomic, strong) DMEntryView *commentTitleView;
 @property (nonatomic, strong) DMMultiLineTextView *commentTextView;
 @property (nonatomic, strong) DMTaskOperatorView *taskOperatorView;
 
 @property (nonatomic, strong) DMApplyBusListInfo *info;
+@property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *driverList;
+@property (nonatomic, strong) DMUserBookModel *driver;
+
+@property (nonatomic, strong) NSMutableArray<DMOfficialCarModel*> *officialCarList;
+@property (nonatomic, strong) DMOfficialCarModel *officialCar;
 
 @end
 
@@ -106,6 +122,17 @@
     [self.subviewList addObject:self.outReasonDetailView];
     
     if (self.activitiTaskModel) {
+        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP]) {
+            [self loadDriverData];
+            [self loadOfficialCarData];
+            
+            [self.subviewList addObject:self.driverTitleView];
+            [self.subviewList addObject:self.driverView];
+            [self.subviewList addObject:self.officialCarIdTitleView];
+            [self.subviewList addObject:self.officialCarIdView];
+        }
+        
+        
         [self.subviewList addObject:self.commentTitleView];
         [self.subviewList addObject:self.commentTextView];
         [self.subviewList addObject:self.taskOperatorView];
@@ -239,6 +266,82 @@
     return _taskTracksView;
 }
 
+- (DMEntryView *)driverTitleView {
+    if (!_driverTitleView) {
+        _driverTitleView = [[DMEntryView alloc] init];
+        [_driverTitleView setTitle:@"选择司机"];
+        _driverTitleView.lcHeight = 44;
+    }
+    return _driverTitleView;
+}
+
+- (DMEntrySelectView *)driverView {
+    if (!_driverView) {
+        _driverView = [[DMEntrySelectView alloc] init];
+        _driverView.backgroundColor = [UIColor whiteColor];
+        [_driverView setPlaceholder:@"请选择司机"];
+        _driverView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _driverView.clickEntryBlock = ^(NSString *value) {
+            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
+            if (weakSelf.driver) {
+                [pickerView selectID:weakSelf.driver.userId];
+            } else {
+                [pickerView selectID:weakSelf.driverList.firstObject.userId];
+            }
+            pickerView.onCompleteClick = ^(NSDictionary *dic){
+                for (DMUserBookModel *mdl in weakSelf.driverList) {
+                    if ([mdl.userId isEqualToString:dic[@"value"]]) {
+                        weakSelf.driver = mdl;
+                        break;
+                    }
+                }
+                [weakSelf.driverView setValue:weakSelf.driver.name];
+            };
+            [pickerView showPickerView];
+        };
+    }
+    return _driverView;
+}
+
+- (DMEntryView *)officialCarIdTitleView {
+    if (!_officialCarIdTitleView) {
+        _officialCarIdTitleView = [[DMEntryView alloc] init];
+        [_officialCarIdTitleView setTitle:@"选择车辆"];
+        _officialCarIdTitleView.lcHeight = 44;
+    }
+    return _officialCarIdTitleView;
+}
+
+- (DMEntrySelectView *)officialCarIdView {
+    if (!_officialCarIdView) {
+        _officialCarIdView = [[DMEntrySelectView alloc] init];
+        _officialCarIdView.backgroundColor = [UIColor whiteColor];
+        [_officialCarIdView setPlaceholder:@"请选择车辆"];
+        _officialCarIdView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _officialCarIdView.clickEntryBlock = ^(NSString *value) {
+            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicOfficialCarIdArr]];
+            if (weakSelf.driver) {
+                [pickerView selectID:weakSelf.officialCar.ocId];
+            } else {
+                [pickerView selectID:weakSelf.officialCarList.firstObject.ocId];
+            }
+            pickerView.onCompleteClick = ^(NSDictionary *dic){
+                for (DMOfficialCarModel *mdl in weakSelf.officialCarList) {
+                    if ([mdl.ocId isEqualToString:dic[@"value"]]) {
+                        weakSelf.officialCar = mdl;
+                        break;
+                    }
+                }
+                [weakSelf.officialCarIdView setValue:weakSelf.officialCar.state>0?[NSString stringWithFormat:@"%@ (外出)", weakSelf.officialCar.number]:weakSelf.officialCar.number];
+            };
+            [pickerView showPickerView];
+        };
+    }
+    return _officialCarIdView;
+}
+
 - (DMEntryView *)commentTitleView {
     if (!_commentTitleView) {
         _commentTitleView = [[DMEntryView alloc] init];
@@ -284,6 +387,29 @@
     }];
 }
 
+- (void)loadDriverData {
+    DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
+    requester.limit = kPageSize;
+    requester.offset = 0;
+    requester.orgId = @"001004001";
+    [requester postRequest:^(DMResultCode code, id data) {
+        if (code == ResultCodeOK) {
+            DMListBaseModel *listModel = data;
+            self.driverList = listModel.rows;
+        }
+    }];
+}
+
+- (void)loadOfficialCarData {
+    DMSearchOfficialCarRequester *requester = [[DMSearchOfficialCarRequester alloc] init];
+    [requester postRequest:^(DMResultCode code, id data) {
+        if (code == ResultCodeOK) {
+            DMListBaseModel *listModel = data;
+            self.officialCarList = listModel.rows;
+        }
+    }];
+}
+
 #pragma mark - 审核
 - (void)submitTask:(DMTaskOperator)taskOperator {
     if ([[self.commentTextView getMultiLineText] isEqualToString:@""]) {
@@ -295,7 +421,18 @@
     requester.taskId = self.activitiTaskModel.atId;
     requester.message = [self.commentTextView getMultiLineText];
     if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP]) {
+        if (!self.driver) {
+            showToast(@"请选择司机");
+            return;
+        }
+        requester.driverId = self.driver.userId;
+        requester.driverName = self.driver.name;
         
+        if (!self.officialCar) {
+            showToast(@"请选择车牌");
+            return;
+        }
+        requester.officialCarId = self.officialCar.ocId;
     } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD]) {
         requester.emp = @"BGSZR";
     } else {
@@ -315,6 +452,24 @@
             showToast(data);
         }
     }];
+}
+
+- (NSMutableArray *)dicArr {
+    NSMutableArray *dicArr = [[NSMutableArray alloc] init];
+    for (DMUserBookModel *mdl in self.driverList) {
+        NSDictionary *dic = @{@"name":mdl.name,@"value":[NSString stringWithFormat:@"%@",mdl.userId]};
+        [dicArr addObject:dic];
+    }
+    return dicArr;
+}
+
+- (NSMutableArray *)dicOfficialCarIdArr {
+    NSMutableArray *dicArr = [[NSMutableArray alloc] init];
+    for (DMOfficialCarModel *mdl in self.officialCarList) {
+        NSDictionary *dic = @{@"name":mdl.state>0?[NSString stringWithFormat:@"%@ (外出)", mdl.number]:mdl.number,@"value":[NSString stringWithFormat:@"%@",mdl.ocId]};
+        [dicArr addObject:dic];
+    }
+    return dicArr;
 }
 
 @end

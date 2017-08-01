@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */; };
+		18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */; };
 		2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */; };
 		DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322C1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m */; };
 		DF1F32301F0E2590004358E3 /* DMDetailApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322F1F0E2590004358E3 /* DMDetailApplyCompensatoryController.m */; };
@@ -141,6 +143,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18FBAB611F30C37F00E6E67B /* DMOfficialCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfficialCarModel.h; sourceTree = "<group>"; };
+		18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOfficialCarModel.m; sourceTree = "<group>"; };
+		18FBAB641F30C51B00E6E67B /* DMSearchOfficialCarRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOfficialCarRequester.h; sourceTree = "<group>"; };
+		18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchOfficialCarRequester.m; sourceTree = "<group>"; };
 		30A223FD905002D7494D91AA /* Pods-DisciplineManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.release.xcconfig"; sourceTree = "<group>"; };
 		BA36FAF67584546C059C14AD /* Pods-DisciplineManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisciplineManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -816,6 +822,8 @@
 				DFA4FA031F309370002258DD /* DMSubmitTaskOutRequester.m */,
 				DFA4FA051F3093D3002258DD /* DMSubmitTaskCtaRequester.h */,
 				DFA4FA061F3093D3002258DD /* DMSubmitTaskCtaRequester.m */,
+				18FBAB641F30C51B00E6E67B /* DMSearchOfficialCarRequester.h */,
+				18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -843,6 +851,8 @@
 				DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */,
 				DF9A0D4C1F2B13030015CD27 /* DMUserBookModel.h */,
 				DF9A0D4D1F2B13030015CD27 /* DMUserBookModel.m */,
+				18FBAB611F30C37F00E6E67B /* DMOfficialCarModel.h */,
+				18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1311,6 +1321,7 @@
 				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
 				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,
 				DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */,
+				18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */,
 				DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */,
 				DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */,
 				DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */,
@@ -1354,6 +1365,7 @@
 				DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */,
 				DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */,
 				DF377CE01EF2980500522AF7 /* DMApplyCompensatoryController.m in Sources */,
+				18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */,
 				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
 				DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */,
 				DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */,
@@ -1562,6 +1574,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fujl.gz.com.DisciplineManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1575,6 +1588,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fujl.gz.com.DisciplineManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

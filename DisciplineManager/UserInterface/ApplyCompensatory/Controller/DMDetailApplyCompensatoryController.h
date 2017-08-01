@@ -7,7 +7,9 @@
 //
 
 #import "DMLinearViewController.h"
+#import "DMActivitiTaskModel.h"
 
 @interface DMDetailApplyCompensatoryController : DMLinearViewController
 @property (nonatomic, strong) NSString *acId;
+@property (nonatomic, strong) DMActivitiTaskModel *activitiTaskModel;
 @end

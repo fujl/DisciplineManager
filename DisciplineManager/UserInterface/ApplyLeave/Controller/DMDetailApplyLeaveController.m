@@ -35,8 +35,8 @@
 @property (nonatomic, strong) DMMultiLineTextView *commentTextView;
 @property (nonatomic, strong) DMTaskOperatorView *taskOperatorView;
 
-@property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *leaderList;
 @property (nonatomic, strong) DMApplyLeaveListInfo *info;
+@property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *leaderList;
 @property (nonatomic, strong) DMUserBookModel *leader;
 
 @end

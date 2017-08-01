@@ -12,6 +12,8 @@
 #import "DMActivitiTaskModel.h"
 #import "DMDetailApplyLeaveController.h"
 #import "DMDetailApplyBusController.h"
+#import "DMDetailApplyOutController.h"
+#import "DMDetailApplyCompensatoryController.h"
 
 @interface DMTodoViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -88,11 +90,11 @@
         [self gotoQJSQDetail:mdl];
     } else if([mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
         [self gotoGCSQDetail:mdl];
+    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyWCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
+        [self gotoWCSQDetail:mdl];
+    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
+        [self gotoBXPDetail:mdl];
     }
-//    DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];
-//    DMApplyOutListInfo *info = [self.dataSource objectAtIndex:indexPath.row];
-//    controller.abId = info.formId;
-//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - load data
@@ -166,6 +168,20 @@
 - (void)gotoGCSQDetail:(DMActivitiTaskModel *)model {
     DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];
     controller.abId = model.businessId;
+    controller.activitiTaskModel = model;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)gotoWCSQDetail:(DMActivitiTaskModel *)model {
+    DMDetailApplyOutController *controller = [[DMDetailApplyOutController alloc] init];
+    controller.aoId = model.businessId;
+    controller.activitiTaskModel = model;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)gotoBXPDetail:(DMActivitiTaskModel *)model {
+    DMDetailApplyCompensatoryController *controller = [[DMDetailApplyCompensatoryController alloc] init];
+    controller.acId = model.businessId;
     controller.activitiTaskModel = model;
     [self.navigationController pushViewController:controller animated:YES];
 }
