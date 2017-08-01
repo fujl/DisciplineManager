@@ -95,6 +95,7 @@
 		DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA2769E1F26BFCE0063D8AA /* DMActivitiTaskRequester.m */; };
 		DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A11F26C1620063D8AA /* DMTodoCell.m */; };
 		DFA276A51F26C29A0063D8AA /* DMActivitiTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */; };
+		DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA4F9FD1F3040CD002258DD /* DMPickerView.m */; };
 		DFB202A11F2C18160063AE30 /* DMLeaveTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */; };
 		DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB36A1D1F1F0056001A25CF /* DMLeaveTicketViewController.m */; };
 		DFB4533C1EE557060000DDC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4533B1EE557060000DDC9 /* main.m */; };
@@ -317,6 +318,8 @@
 		DFA276A11F26C1620063D8AA /* DMTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTodoCell.m; sourceTree = "<group>"; };
 		DFA276A31F26C29A0063D8AA /* DMActivitiTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMActivitiTaskModel.h; sourceTree = "<group>"; };
 		DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMActivitiTaskModel.m; sourceTree = "<group>"; };
+		DFA4F9FC1F3040CD002258DD /* DMPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPickerView.h; sourceTree = "<group>"; };
+		DFA4F9FD1F3040CD002258DD /* DMPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPickerView.m; sourceTree = "<group>"; };
 		DFB2029F1F2C18160063AE30 /* DMLeaveTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketCell.h; sourceTree = "<group>"; };
 		DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketCell.m; sourceTree = "<group>"; };
 		DFB36A1C1F1F0056001A25CF /* DMLeaveTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketViewController.h; sourceTree = "<group>"; };
@@ -733,6 +736,8 @@
 				DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */,
 				DF8877141F276F280048F3AA /* DMTaskOperatorView.h */,
 				DF8877151F276F280048F3AA /* DMTaskOperatorView.m */,
+				DFA4F9FC1F3040CD002258DD /* DMPickerView.h */,
+				DFA4F9FD1F3040CD002258DD /* DMPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1285,6 +1290,7 @@
 				DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */,
 				DF8FD73E1EEA43680060FE34 /* Reachability.m in Sources */,
 				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
+				DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */,
 				DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */,
 				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
 				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,

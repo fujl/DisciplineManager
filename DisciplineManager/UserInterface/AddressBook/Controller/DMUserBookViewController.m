@@ -125,7 +125,7 @@
     DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = self.currentPage;
-    requester.orgId = self.orgInfo.orgId;
+    requester.orgId = self.orgInfo.code;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
         if (code == ResultCodeOK) {
@@ -148,7 +148,7 @@
     DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = self.currentPage+1;
-    requester.orgId = self.orgInfo.orgId;
+    requester.orgId = self.orgInfo.code;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
         if (code == ResultCodeOK) {
