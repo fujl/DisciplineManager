@@ -11,6 +11,9 @@
 #import "DMApplyLeaveListInfo.h"
 #import "DMTaskTracksView.h"
 #import "DMSubmitTaskLeaveRequester.h"
+#import "DMSearchUserRequester.h"
+#import "DMUserBookModel.h"
+#import "DMPickerView.h"
 
 @interface DMDetailApplyLeaveController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -25,9 +28,17 @@
 @property (nonatomic, strong) DMDetailView *leaveReasonDetailView;
 @property (nonatomic, strong) DMTaskTracksView *taskTracksView;
 
+@property (nonatomic, strong) DMEntryView *leaderTitleView;
+@property (nonatomic, strong) DMEntrySelectView *leaderView;
+
 @property (nonatomic, strong) DMEntryView *commentTitleView;
 @property (nonatomic, strong) DMMultiLineTextView *commentTextView;
 @property (nonatomic, strong) DMTaskOperatorView *taskOperatorView;
+
+@property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *leaderList;
+@property (nonatomic, strong) DMApplyLeaveListInfo *info;
+@property (nonatomic, strong) DMUserBookModel *leader;
+
 @end
 
 @implementation DMDetailApplyLeaveController
@@ -44,25 +55,25 @@
     [self getDetailInfo:^(DMResultCode code, id data) {
         dismissLoadingDialog();
         if (code == ResultCodeOK) {
-            DMApplyLeaveListInfo *info = data;
+            self.info = data;
             if (self.activitiTaskModel) {
                 [self.userView setTitle:@"申请人" detail:self.activitiTaskModel.user.userInfo.name];
             } else {
                 [self.stateView setTitle:@"任务状态" detail:@"待审核"];
-                [self refreshState:info];
+                [self refreshState:self.info];
             }
-            [self.typeView setTitle:NSLocalizedString(@"LeaveType", @"请(休)假类别") detail:info.type == LeaveTypeDefault ? @"请假" : @"休假"];
-            NSString *startDtString = [NSString stringWithFormat:@"%@ %@", info.startTime, info.startTimeType == DMDateTypeMorning ? NSLocalizedString(@"morning", @"上午") : NSLocalizedString(@"afternoon", @"上午")];
+            [self.typeView setTitle:NSLocalizedString(@"LeaveType", @"请(休)假类别") detail:self.info.type == LeaveTypeDefault ? @"请假" : @"休假"];
+            NSString *startDtString = [NSString stringWithFormat:@"%@ %@", self.info.startTime, self.info.startTimeType == DMDateTypeMorning ? NSLocalizedString(@"morning", @"上午") : NSLocalizedString(@"afternoon", @"上午")];
             [self.startDtView setTitle:NSLocalizedString(@"StartTime", @"开始时间") detail:startDtString];
-            NSString *endDtString = [NSString stringWithFormat:@"%@ %@", info.endTime, info.endTimeType == DMDateTypeMorning ? NSLocalizedString(@"morning", @"上午") : NSLocalizedString(@"afternoon", @"上午")];
+            NSString *endDtString = [NSString stringWithFormat:@"%@ %@", self.info.endTime, self.info.endTimeType == DMDateTypeMorning ? NSLocalizedString(@"morning", @"上午") : NSLocalizedString(@"afternoon", @"上午")];
             [self.endDtView setTitle:NSLocalizedString(@"EndTime", @"结束时间") detail:endDtString];
-            [self.holidaysView setTitle:NSLocalizedString(@"Holidays", @"节假日") detail:info.holiday];
-            [self.actualLeaveNumberView setTitle:NSLocalizedString(@"ActualLeaveNumber", @"实际请(休)假天数") detail:[NSString stringWithFormat:@"%0.1f天", info.days]];
-            self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:info.reason];
+            [self.holidaysView setTitle:NSLocalizedString(@"Holidays", @"节假日") detail:self.info.holiday];
+            [self.actualLeaveNumberView setTitle:NSLocalizedString(@"ActualLeaveNumber", @"实际请(休)假天数") detail:[NSString stringWithFormat:@"%0.1f天", self.info.days]];
+            self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
-                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && info.state==ACTIVITI_STATE_PENDING];
+                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING];
             } else {
-                self.taskTracksView.taskTracks = info.taskTracks;
+                self.taskTracksView.taskTracks = self.info.taskTracks;
             }
             [self loadSubview];
         } else {
@@ -91,6 +102,11 @@
     [self.subviewList addObject:self.leaveReasonTitleView];
     [self.subviewList addObject:self.leaveReasonDetailView];
     if (self.activitiTaskModel) {
+        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING) {
+            [self loadLeaderData];
+            [self.subviewList addObject:self.leaderTitleView];
+            [self.subviewList addObject:self.leaderView];
+        }
         [self.subviewList addObject:self.commentTitleView];
         [self.subviewList addObject:self.commentTextView];
         [self.subviewList addObject:self.taskOperatorView];
@@ -189,6 +205,44 @@
     return _taskTracksView;
 }
 
+- (DMEntryView *)leaderTitleView {
+    if (!_leaderTitleView) {
+        _leaderTitleView = [[DMEntryView alloc] init];
+        [_leaderTitleView setTitle:@"转批领导"];
+        _leaderTitleView.lcHeight = 44;
+    }
+    return _leaderTitleView;
+}
+
+- (DMEntrySelectView *)leaderView {
+    if (!_leaderView) {
+        _leaderView = [[DMEntrySelectView alloc] init];
+        _leaderView.backgroundColor = [UIColor whiteColor];
+        [_leaderView setPlaceholder:@"请选择转批领导"];
+        _leaderView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _leaderView.clickEntryBlock = ^(NSString *value) {
+            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
+            if (weakSelf.leader) {
+                [pickerView selectID:weakSelf.leader.userId];
+            } else {
+                [pickerView selectID:weakSelf.leaderList.firstObject.userId];
+            }
+            pickerView.onCompleteClick = ^(NSDictionary *dic){
+                for (DMUserBookModel *mdl in weakSelf.leaderList) {
+                    if ([mdl.userId isEqualToString:dic[@"value"]]) {
+                        weakSelf.leader = mdl;
+                        break;
+                    }
+                }
+                [weakSelf.leaderView setValue:weakSelf.leader.name];
+            };
+            [pickerView showPickerView];
+        };
+    }
+    return _leaderView;
+}
+
 - (DMEntryView *)commentTitleView {
     if (!_commentTitleView) {
         _commentTitleView = [[DMEntryView alloc] init];
@@ -230,6 +284,19 @@
         } else {
             NSString *errMsg = data;
             showToast(errMsg);
+        }
+    }];
+}
+
+- (void)loadLeaderData {
+    DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
+    requester.limit = kPageSize;
+    requester.offset = 0;
+    requester.orgId = @"001002";
+    [requester postRequest:^(DMResultCode code, id data) {
+        if (code == ResultCodeOK) {
+            DMListBaseModel *listModel = data;
+            self.leaderList = listModel.rows;
         }
     }];
 }
@@ -277,8 +344,13 @@
     } else if (taskOperator == TaskOperator_Rejected) {
         requester.state = ACTIVITI_STATE_REJECTED;
     } else {
+        // 转批
+        if (!self.leader) {
+            showToast(@"请选择转批领导");
+            return;
+        }
+        requester.leaderId = self.leader.userId;
         requester.state = ACTIVITI_STATE_PENDING;
-        requester.leaderId = self.activitiTaskModel.businessId;
     }
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
@@ -289,5 +361,14 @@
             showToast(data);
         }
     }];
+}
+
+- (NSMutableArray *)dicArr {
+    NSMutableArray *dicArr = [[NSMutableArray alloc] init];
+    for (DMUserBookModel *mdl in self.leaderList) {
+        NSDictionary *dic = @{@"name":mdl.name,@"value":[NSString stringWithFormat:@"%@",mdl.userId]};
+        [dicArr addObject:dic];
+    }
+    return dicArr;
 }
 @end

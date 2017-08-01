@@ -11,8 +11,12 @@
 
 #define kDefinitionKeyQJSQ_BMLD  @"qjsp_bmld"
 #define kDefinitionKeyQJSQ_FGLD  @"qjsp_fgld"
+
 #define kDefinitionKeyBXP   @"bxp_fgld"
-#define kDefinitionKeyGCSQ  @"gcsq_sjld";
+
+#define kDefinitionKeyGCSQ_SJLD     @"gcsq_sjld"        // 上级审批
+#define kDefinitionKeyGCSQ_BGSSP    @"gcsq_bgssp"       // 办公室审批
+#define kDefinitionKeyGCSQ_JSY      @"gcsq_jsy"         // 驾驶员审批
 
 @interface DMActivitiTaskModel : NSObject
 @property (nonatomic, strong) NSString *atId;
@@ -24,4 +28,5 @@
 @property (nonatomic, strong) DMUserModel *user;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
+
 @end

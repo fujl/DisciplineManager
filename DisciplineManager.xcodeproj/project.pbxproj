@@ -95,6 +95,10 @@
 		DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA2769E1F26BFCE0063D8AA /* DMActivitiTaskRequester.m */; };
 		DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A11F26C1620063D8AA /* DMTodoCell.m */; };
 		DFA276A51F26C29A0063D8AA /* DMActivitiTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */; };
+		DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA4F9FD1F3040CD002258DD /* DMPickerView.m */; };
+		DFA4FA011F305AD8002258DD /* DMSubmitTaskBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA4FA001F305AD8002258DD /* DMSubmitTaskBusRequester.m */; };
+		DFA4FA041F309370002258DD /* DMSubmitTaskOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA4FA031F309370002258DD /* DMSubmitTaskOutRequester.m */; };
+		DFA4FA071F3093D3002258DD /* DMSubmitTaskCtaRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA4FA061F3093D3002258DD /* DMSubmitTaskCtaRequester.m */; };
 		DFB202A11F2C18160063AE30 /* DMLeaveTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */; };
 		DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB36A1D1F1F0056001A25CF /* DMLeaveTicketViewController.m */; };
 		DFB4533C1EE557060000DDC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4533B1EE557060000DDC9 /* main.m */; };
@@ -317,6 +321,14 @@
 		DFA276A11F26C1620063D8AA /* DMTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTodoCell.m; sourceTree = "<group>"; };
 		DFA276A31F26C29A0063D8AA /* DMActivitiTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMActivitiTaskModel.h; sourceTree = "<group>"; };
 		DFA276A41F26C29A0063D8AA /* DMActivitiTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMActivitiTaskModel.m; sourceTree = "<group>"; };
+		DFA4F9FC1F3040CD002258DD /* DMPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPickerView.h; sourceTree = "<group>"; };
+		DFA4F9FD1F3040CD002258DD /* DMPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPickerView.m; sourceTree = "<group>"; };
+		DFA4F9FF1F305AD8002258DD /* DMSubmitTaskBusRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSubmitTaskBusRequester.h; sourceTree = "<group>"; };
+		DFA4FA001F305AD8002258DD /* DMSubmitTaskBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSubmitTaskBusRequester.m; sourceTree = "<group>"; };
+		DFA4FA021F309370002258DD /* DMSubmitTaskOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSubmitTaskOutRequester.h; sourceTree = "<group>"; };
+		DFA4FA031F309370002258DD /* DMSubmitTaskOutRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSubmitTaskOutRequester.m; sourceTree = "<group>"; };
+		DFA4FA051F3093D3002258DD /* DMSubmitTaskCtaRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSubmitTaskCtaRequester.h; sourceTree = "<group>"; };
+		DFA4FA061F3093D3002258DD /* DMSubmitTaskCtaRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSubmitTaskCtaRequester.m; sourceTree = "<group>"; };
 		DFB2029F1F2C18160063AE30 /* DMLeaveTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketCell.h; sourceTree = "<group>"; };
 		DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketCell.m; sourceTree = "<group>"; };
 		DFB36A1C1F1F0056001A25CF /* DMLeaveTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketViewController.h; sourceTree = "<group>"; };
@@ -733,6 +745,8 @@
 				DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */,
 				DF8877141F276F280048F3AA /* DMTaskOperatorView.h */,
 				DF8877151F276F280048F3AA /* DMTaskOperatorView.m */,
+				DFA4F9FC1F3040CD002258DD /* DMPickerView.h */,
+				DFA4F9FD1F3040CD002258DD /* DMPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -796,6 +810,12 @@
 				DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */,
 				DF9A0D491F2B11ED0015CD27 /* DMSearchUserRequester.h */,
 				DF9A0D4A1F2B11ED0015CD27 /* DMSearchUserRequester.m */,
+				DFA4F9FF1F305AD8002258DD /* DMSubmitTaskBusRequester.h */,
+				DFA4FA001F305AD8002258DD /* DMSubmitTaskBusRequester.m */,
+				DFA4FA021F309370002258DD /* DMSubmitTaskOutRequester.h */,
+				DFA4FA031F309370002258DD /* DMSubmitTaskOutRequester.m */,
+				DFA4FA051F3093D3002258DD /* DMSubmitTaskCtaRequester.h */,
+				DFA4FA061F3093D3002258DD /* DMSubmitTaskCtaRequester.m */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -1249,6 +1269,7 @@
 				DFB202A11F2C18160063AE30 /* DMLeaveTicketCell.m in Sources */,
 				DF9A0D4B1F2B11ED0015CD27 /* DMSearchUserRequester.m in Sources */,
 				DF6A9BEC1F0499490075F100 /* DMUserInfo.m in Sources */,
+				DFA4FA041F309370002258DD /* DMSubmitTaskOutRequester.m in Sources */,
 				DF84E5F11EF77CFB00F8A23A /* DMDBCommonManager.m in Sources */,
 				DF50A1571EE7F3320091E098 /* UIColor+DMDefine.m in Sources */,
 				DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */,
@@ -1285,6 +1306,7 @@
 				DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */,
 				DF8FD73E1EEA43680060FE34 /* Reachability.m in Sources */,
 				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
+				DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */,
 				DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */,
 				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
 				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,
@@ -1303,6 +1325,7 @@
 				DFB4533F1EE557070000DDC9 /* AppDelegate.m in Sources */,
 				DF84E5E81EF75F6800F8A23A /* DMAddressManager.m in Sources */,
 				DFCE28BE1F06350D00AD40AE /* DMSearchApplyBusRequester.m in Sources */,
+				DFA4FA071F3093D3002258DD /* DMSubmitTaskCtaRequester.m in Sources */,
 				DF1F323C1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m in Sources */,
 				DF377CDA1EF2969D00522AF7 /* DMAddressBookViewController.m in Sources */,
 				DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */,
@@ -1334,6 +1357,7 @@
 				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
 				DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */,
 				DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */,
+				DFA4FA011F305AD8002258DD /* DMSubmitTaskBusRequester.m in Sources */,
 				DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */,
 				DF8A220F1F29E27900617974 /* DMUserDetailViewController.m in Sources */,
 				DF5ED6851F23634E00374C8A /* DMLeaveTicketModel.m in Sources */,
