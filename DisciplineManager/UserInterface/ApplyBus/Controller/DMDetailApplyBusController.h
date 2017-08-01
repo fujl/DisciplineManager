@@ -7,7 +7,9 @@
 //
 
 #import "DMLinearViewController.h"
+#import "DMActivitiTaskModel.h"
 
 @interface DMDetailApplyBusController : DMLinearViewController
 @property (nonatomic, strong) NSString *abId;
+@property (nonatomic, strong) DMActivitiTaskModel *activitiTaskModel;
 @end

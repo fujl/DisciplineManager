@@ -27,13 +27,9 @@
 @implementation DMDatePickerView
 
 - (instancetype)initWithDateType:(DMDateType)dateType {
-    self.dateType = dateType;
-    return [self init];
-}
-
-- (instancetype)init {
     self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     if (self) {
+        _dateType = dateType;
         _backgroundView = [[UIButton alloc] init];
         _backgroundView.backgroundColor = [UIColor colorWithRGB:0x000000 alpha:0.4f];
         _backgroundView.alpha = 0;
@@ -110,6 +106,10 @@
         }];
     }
     return self;
+}
+
+- (instancetype)init {
+    return [self initWithDateType:DMDateTypeNone];
 }
 
 #pragma mark - getters and setters

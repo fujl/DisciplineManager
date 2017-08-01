@@ -11,6 +11,7 @@
 #import "DMTodoCell.h"
 #import "DMActivitiTaskModel.h"
 #import "DMDetailApplyLeaveController.h"
+#import "DMDetailApplyBusController.h"
 
 @interface DMTodoViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -85,6 +86,8 @@
     DMActivitiTaskModel *mdl = [self.dataSource objectAtIndex:indexPath.row];
     if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]) {
         [self gotoQJSQDetail:mdl];
+    } else if([mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
+        [self gotoGCSQDetail:mdl];
     }
 //    DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];
 //    DMApplyOutListInfo *info = [self.dataSource objectAtIndex:indexPath.row];
@@ -156,6 +159,13 @@
 - (void)gotoQJSQDetail:(DMActivitiTaskModel *)model {
     DMDetailApplyLeaveController *controller = [[DMDetailApplyLeaveController alloc] init];
     controller.alId = model.businessId;
+    controller.activitiTaskModel = model;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)gotoGCSQDetail:(DMActivitiTaskModel *)model {
+    DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];
+    controller.abId = model.businessId;
     controller.activitiTaskModel = model;
     [self.navigationController pushViewController:controller animated:YES];
 }
