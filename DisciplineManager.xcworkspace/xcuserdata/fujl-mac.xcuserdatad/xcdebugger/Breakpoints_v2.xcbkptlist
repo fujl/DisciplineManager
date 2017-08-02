@@ -116,12 +116,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMFillinApplyLeaveController.m"
-                  timestampString = "523338573.203715"
+                  timestampString = "523356283.415642"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "404">
+                  offsetFromSymbolStart = "408">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +131,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMFillinApplyLeaveController.m"
-                  timestampString = "523338573.204882"
+                  timestampString = "523356283.417003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
                   endingLineNumber = "135"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "47">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -244,12 +244,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "523338573.219259"
+                  timestampString = "523356283.43559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
                   endingLineNumber = "103"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -259,12 +259,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "523338573.220502"
+                  timestampString = "523356283.436798"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
                   endingLineNumber = "104"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -292,12 +292,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "523338573.223397"
+                  timestampString = "523356283.439645"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "128">
+                  offsetFromSymbolStart = "105">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -307,12 +307,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "523338573.224684"
+                  timestampString = "523356283.440885"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -420,12 +420,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMLeaveTicketViewController.m"
-                  timestampString = "523338573.239724"
+                  timestampString = "523356283.455235"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
                   endingLineNumber = "113"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "39">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -435,12 +435,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMLeaveTicketViewController.m"
-                  timestampString = "523338573.240932"
+                  timestampString = "523356283.456487"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
                   endingLineNumber = "114"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -660,12 +660,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyBus/Controller/DMDetailApplyBusController.m"
-                  timestampString = "523338573.282915"
+                  timestampString = "523356283.488703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "293"
                   endingLineNumber = "293"
-                  offsetFromSymbolStart = "104">
+                  offsetFromSymbolStart = "93">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -675,12 +675,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyBus/Controller/DMDetailApplyBusController.m"
-                  timestampString = "523338573.284105"
+                  timestampString = "523356283.49011"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "293"
                   endingLineNumber = "293"
-                  offsetFromSymbolStart = "116">
+                  offsetFromSymbolStart = "101">
                </Location>
             </Locations>
          </BreakpointContent>

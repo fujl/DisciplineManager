@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         // 配置服务器地址
-        _serverName = ServerNameTest;
+        _serverName = ServerNameNormal;
     }
     return self;
 }
@@ -35,7 +35,7 @@
  */
 - (NSString *)getServerUrl {
     if (self.serverName == ServerNameNormal) {
-        return @"http://38434122.ngrok.cc/jgxt/";
+        return @"http://m.xygs.gov.cn:8088/";
     } else {
         return @"http://m.xygs.gov.cn:8088/";
     }
