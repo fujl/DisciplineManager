@@ -93,5 +93,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    [pushManager didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+// 当 DeviceToken 获取失败时，系统会回调此方法
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"DeviceToken 获取失败，原因：%@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    [pushManager handleNotification:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    [pushManager showLocalNotificationAtFront:notification];
+}
 
 @end

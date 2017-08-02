@@ -12,6 +12,7 @@
 
 @interface DMMainItemView ()
 @property (nonatomic, strong) UILabel *titleView;
+@property (nonatomic, strong) UIView *dotView;// cc3126
 @end
 
 @implementation DMMainItemView
@@ -33,6 +34,15 @@
             make.centerX.equalTo(self);
             make.bottom.equalTo(self.mas_bottom).offset(-5);
         }];
+        
+        [self addSubview:self.dotView];
+        [self.dotView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.mas_right).offset(-15);
+            make.top.equalTo(self.mas_top).offset(10);
+            make.width.equalTo(@6);
+            make.height.equalTo(@6);
+        }];
+        [self hiddenDot:YES];
     }
     return self;
 }
@@ -48,8 +58,22 @@
     return _titleView;
 }
 
+- (UIView *)dotView {
+    if (!_dotView) {
+        _dotView = [[UIView alloc] init];
+        _dotView.backgroundColor = [UIColor colorWithRGB:0xe73223];
+        _dotView.layer.masksToBounds = YES;
+        _dotView.layer.cornerRadius = 3;
+    }
+    return _dotView;
+}
+
 - (void)setTitleViewText:(NSString *)titleText {
     self.titleView.text = titleText;
+}
+
+- (void)hiddenDot:(BOOL)hidden {
+    self.dotView.hidden = hidden;
 }
 
 @end

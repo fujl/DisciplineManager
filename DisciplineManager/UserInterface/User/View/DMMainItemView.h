@@ -24,4 +24,6 @@
 
 - (void)setTitleViewText:(NSString *)titleText;
 
+- (void)hiddenDot:(BOOL)hidden;
+
 @end

@@ -32,6 +32,9 @@
 /** 当前的用户信息 */
 @property(nonatomic, readonly) DMLoginInfo *loginInfo;
 
+/** 设备token */
+@property(nonatomic, strong) NSString *deviceToken;
+
 /** 添加用户登录、登出的监听 */
 - (void)addOnUserChangeDelegate:(id <OnUserChangeDelegate>)delegate;
 - (void)removeOnUserChangeDelegate:(id <OnUserChangeDelegate>)delegate;
@@ -41,6 +44,8 @@
 - (void)logout:(void (^)(DMResultCode code, NSString *errMsg))callback;
 
 - (void)autoLogin:(void (^)(DMResultCode code))callback;
+
+- (void)bindPush;
 
 - (void)startMainController;
 

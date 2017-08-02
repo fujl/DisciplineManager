@@ -13,6 +13,8 @@
 #import "DMMainViewController.h"
 #import "DMNavigationController.h"
 #import "DMLoginViewController.h"
+#import "DMBindPushRequester.h"
+#import "DMPushManager.h"
 
 #define kDMUserManagerLoginDataName @"login.info"
 #define kDMUserManagerUserDataName @"user.info"
@@ -107,6 +109,22 @@
             }];
         }
     }];
+}
+
+- (void)bindPush {
+    if ([self isNeedLogin]) {
+        return;
+    }
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    if (pushManager.isBindChannel) {
+        DMBindPushRequester *requester = [[DMBindPushRequester alloc] init];
+        requester.channelId = [pushManager getChannelId];
+        [requester postRequest:^(DMResultCode code, id data) {
+            if (code == ResultCodeOK) {
+                [pushManager setTag:[NSString stringWithFormat:@"%@", self.loginInfo.userId]];
+            }
+        }];
+    }
 }
 
 - (void)startMainController {

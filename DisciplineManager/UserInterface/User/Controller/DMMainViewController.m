@@ -18,9 +18,12 @@
 #import "DMAddressBookViewController.h"
 #import "DMMoreViewController.h"
 #import "SDCycleScrollView.h"
+#import "DMUserManager.h"
+#import "DMPushManager.h"
 
 @interface DMMainViewController () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *logoView;
+@property (nonatomic, strong) DMMainItemView *todoView;
 @end
 
 @implementation DMMainViewController
@@ -30,6 +33,14 @@
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"app_name", @"纪管系统");
     [self createView];
+    
+    DMUserManager *manager = getManager([DMUserManager class]);
+    [manager bindPush];
+    DMPushManager *push = getManager([DMPushManager class]);
+    __weak typeof(self) weakSelf = self;
+    push.onNewMsgBlock = ^{
+        [weakSelf onNewMsg];
+    };
 }
 
 - (void)createView {
@@ -81,6 +92,9 @@
         CGFloat x = (index%3)*(mainItemView.width+0.5);
         CGFloat y = (index/3)*(mainItemView.height+0.5)+SCREEN_WIDTH*0.618;
         mainItemView.frame = CGRectMake(x, y, mainItemView.width, mainItemView.height);
+        if (i == kMainItemTodo) {
+            self.todoView = mainItemView;
+        }
         [self.view addSubview:mainItemView];
     }
 }
@@ -127,6 +141,7 @@
         {
             DMTodoViewController *controller = [[DMTodoViewController alloc] init];
             [self.navigationController pushViewController:controller animated:YES];
+            [self.todoView hiddenDot:YES];
         }
             break;
         case kMainItemApplyOut:
@@ -166,6 +181,10 @@
         }
             break;
     }
+}
+
+- (void)onNewMsg {
+    [self.todoView hiddenDot:NO];
 }
 
 @end
