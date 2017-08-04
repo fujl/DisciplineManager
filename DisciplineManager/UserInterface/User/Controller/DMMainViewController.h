@@ -6,8 +6,8 @@
 //  Copyright © 2017年 fujl-mac. All rights reserved.
 //
 
-#import "DMBaseViewController.h"
+#import "DMLinearViewController.h"
 
-@interface DMMainViewController : DMBaseViewController
+@interface DMMainViewController : DMLinearViewController
 
 @end

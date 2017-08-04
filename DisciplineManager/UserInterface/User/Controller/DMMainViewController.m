@@ -23,6 +23,7 @@
 
 @interface DMMainViewController () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *logoView;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) DMMainItemView *todoView;
 @end
 
@@ -44,14 +45,17 @@
 }
 
 - (void)createView {
-    [self.view addSubview:self.logoView];
+    NSMutableArray<__kindof UIView*> *childViews  = [[NSMutableArray alloc] init];
+    [childViews addObject:self.logoView];
     
-    [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.top.equalTo(self.view);
-        make.height.equalTo(@(SCREEN_WIDTH*0.618));
-    }];
-    
+//    [self.view addSubview:self.logoView];
+//    
+//    [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.equalTo(self.view);
+//        make.top.equalTo(self.view);
+//        make.height.equalTo(@(SCREEN_WIDTH*0.618));
+//    }];
+    CGFloat h = 0;
     for (NSInteger i=kMainItemTodo; i<1007; i++) {
         NSString *title;
         NSString *icon;
@@ -90,28 +94,22 @@
         [mainItemView addTarget:self action:@selector(clickMainItemView:) forControlEvents:UIControlEventTouchUpInside];
         NSInteger index = i-kMainItemTodo;
         CGFloat x = (index%3)*(mainItemView.width+0.5);
-        CGFloat y = (index/3)*(mainItemView.height+0.5)+SCREEN_WIDTH*0.618;
+        CGFloat y = (index/3)*(mainItemView.height+0.5);
         mainItemView.frame = CGRectMake(x, y, mainItemView.width, mainItemView.height);
         if (i == kMainItemTodo) {
             self.todoView = mainItemView;
         }
-        [self.view addSubview:mainItemView];
+        [self.contentView addSubview:mainItemView];
+        h = y + mainItemView.height + 0.5;
     }
+    self.contentView.lcHeight = h;
+    [childViews addObject:self.contentView];
+    
+    [self setChildViews:childViews];
 }
 
 #pragma mark - getters and setters
-//- (UILabel *)titleLabel {
-//    if (!_titleLabel) {
-//        _titleLabel = [[UILabel alloc] init];
-//        _titleLabel.backgroundColor = [UIColor clearColor];
-//        _titleLabel.textAlignment = NSTextAlignmentCenter;
-//        _titleLabel.font = [UIFont systemFontOfSize:17];
-//        _titleLabel.textColor = [UIColor blackColor];
-//        _titleLabel.text = NSLocalizedString(@"app_name", @"纪管系统");
-//    }
-//    return _titleLabel;
-//}
-//
+
 - (SDCycleScrollView *)logoView {
     if (!_logoView) {
         NSArray *urls = @[[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1917120263,2189330565&fm=11&gp=0.jpg"],
@@ -123,8 +121,17 @@
         _logoView.infiniteLoop = YES;
         _logoView.autoScrollTimeInterval = 5;
         _logoView.imageURLStringsGroup = urls;
+        _logoView.lcHeight = SCREEN_WIDTH*0.618;
     }
     return _logoView;
+}
+
+- (UIView *)contentView {
+    if (!_contentView) {
+        _contentView = [[UIView alloc] init];
+        _contentView.backgroundColor = [UIColor clearColor];
+    }
+    return _contentView;
 }
 
 - (DMMainItemView *)getMainItemView:(NSInteger)tag title:(NSString *)title icon:(NSString *)icon {

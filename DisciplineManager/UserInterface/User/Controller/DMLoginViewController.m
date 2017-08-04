@@ -119,7 +119,7 @@
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont systemFontOfSize:16];
         _titleLabel.textColor = [UIColor whiteColor];
-        _titleLabel.text = @"登录";
+        _titleLabel.text = NSLocalizedString(@"login_user", @"登录");
     }
     return _titleLabel;
 }
@@ -137,7 +137,7 @@
         _nameLabel.textAlignment = NSTextAlignmentCenter;
         _nameLabel.font = [UIFont systemFontOfSize:22];
         _nameLabel.textColor = [UIColor whiteColor];
-        _nameLabel.text = @"纪管系统";
+        _nameLabel.text = NSLocalizedString(@"app_name", @"纪管系统");
     }
     return _nameLabel;
 }
