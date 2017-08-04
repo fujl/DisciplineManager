@@ -342,39 +342,40 @@
     requester.businessId = self.acId;
     requester.taskId = self.activitiTaskModel.atId;
     requester.message = [self.commentTextView getMultiLineText];
-    if (taskOperator == TaskOperator_Agree) {
-        requester.state = ACTIVITI_STATE_COMPLETE;
-    } else if (taskOperator == TaskOperator_Rejected) {
+    if (taskOperator == TaskOperator_Rejected) {
         requester.state = ACTIVITI_STATE_REJECTED;
-    }
-    if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
-        // 点击同意按钮时，必须传递 补休（半天）天数、补休（一天）天数，以及有效期，需判断天数必须大于等于0， 有效期时间只能选择当前时间之后
-        if (taskOperator == TaskOperator_Agree) {
-            if ([[self.halfDayTextView getSingleText] isEqualToString:@""]) {
-                showToast(@"请输入发放补休票(半天)数量");
-                return;
-            }
-            if ([[self.dayTextView getSingleText] isEqualToString:@""]) {
-                showToast(@"请输入发放补休票(一天)数量");
-                return;
-            }
-            if ([self.expiryDateView.value isEqualToString:@""]) {
-                showToast(@"请选择有效期至时间");
-                return;
-            }
-            requester.number = [self.halfDayTextView getSingleText];
-            requester.number2 = [self.dayTextView getSingleText];
-        }
-    } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD]) {
-        requester.emp = @"HR";
     } else {
-        
+        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
+            // 点击同意按钮时，必须传递 补休（半天）天数、补休（一天）天数，以及有效期，需判断天数必须大于等于0， 有效期时间只能选择当前时间之后
+            if (taskOperator == TaskOperator_Agree) {
+                requester.state = ACTIVITI_STATE_COMPLETE;
+                if ([[self.halfDayTextView getSingleText] isEqualToString:@""]) {
+                    showToast(@"请输入发放补休票(半天)数量");
+                    return;
+                }
+                if ([[self.dayTextView getSingleText] isEqualToString:@""]) {
+                    showToast(@"请输入发放补休票(一天)数量");
+                    return;
+                }
+                if ([self.expiryDateView.value isEqualToString:@""]) {
+                    showToast(@"请选择有效期至时间");
+                    return;
+                }
+                requester.number = [self.halfDayTextView getSingleText];
+                requester.number2 = [self.dayTextView getSingleText];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                formatter.dateFormat = @"yyyy-MM-dd";
+                NSDate *dt = [NSDate dateWithTimeIntervalSince1970:self.expiryDateInterval];
+                requester.expiryDate = [formatter stringFromDate:dt];
+            }
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD]) {
+            requester.emp = @"HR";
+            requester.state = ACTIVITI_STATE_PENDING;
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD]) {
+            requester.state = ACTIVITI_STATE_PENDING;
+        }
     }
-    if (taskOperator == TaskOperator_Agree) {
-        requester.state = ACTIVITI_STATE_COMPLETE;
-    } else if (taskOperator == TaskOperator_Rejected) {
-        requester.state = ACTIVITI_STATE_REJECTED;
-    }
+    
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
         dismissLoadingDialog();
