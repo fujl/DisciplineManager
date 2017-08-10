@@ -50,7 +50,7 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:myTypes];
     }
     
-    [BPush registerChannel:launchOptions apiKey:@"CcXRpllwd2kwcYqhAyDjrumX" pushMode:BPushModeDevelopment withFirstAction:@"打开" withSecondAction:@"关闭" withCategory:@"test" useBehaviorTextInput:YES isDebug:YES];
+    [BPush registerChannel:launchOptions apiKey:@"CcXRpllwd2kwcYqhAyDjrumX" pushMode:BPushModeDevelopment withFirstAction:@"打开" withSecondAction:@"关闭" withCategory:@"test" useBehaviorTextInput:YES isDebug:[DMConfig mainConfig].serverName == ServerNameTest];
     
     // App 是用户点击推送消息启动
     NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
