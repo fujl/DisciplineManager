@@ -32,6 +32,7 @@
         self.baiduChannelId = parseStringFromObject([dict objectForKey:@"baiduChannelId"]);
         self.deviceType = [parseNumberFromObject([dict objectForKey:@"deviceType"]) integerValue];
         self.pinyin = parseStringFromObject([dict objectForKey:@"pinyin"]);
+        self.gender = [parseNumberFromObject([dict objectForKey:@"gender"]) integerValue];
         self.optLock = [parseNumberFromObject([dict objectForKey:@"optLock"]) integerValue];
     }
     return self;

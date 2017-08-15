@@ -116,9 +116,9 @@
         return;
     }
     DMPushManager *pushManager = getManager([DMPushManager class]);
-    if (pushManager.isBindChannel) {
+    if (pushManager.isBindClientId) {
         DMBindPushRequester *requester = [[DMBindPushRequester alloc] init];
-        requester.channelId = [pushManager getChannelId];
+        requester.clientId = [pushManager getClientId];
         [requester postRequest:^(DMResultCode code, id data) {
             if (code == ResultCodeOK) {
                 [pushManager setTag:[NSString stringWithFormat:@"%@", self.loginInfo.userId]];

@@ -48,7 +48,7 @@
             }
         }];
     }
-    
+
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     window.rootViewController = rootController;
     [window makeKeyAndVisible];
@@ -101,13 +101,16 @@
 // 当 DeviceToken 获取失败时，系统会回调此方法
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSLog(@"DeviceToken 获取失败，原因：%@",error);
+    DMPushManager *pushManager = getManager([DMPushManager class]);
+    [pushManager didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     DMPushManager *pushManager = getManager([DMPushManager class]);
     [pushManager handleNotification:userInfo];
 }
 
+#pragma mark - iOS 10中收到推送消息
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     DMPushManager *pushManager = getManager([DMPushManager class]);
     [pushManager showLocalNotificationAtFront:notification];

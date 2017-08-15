@@ -97,6 +97,8 @@
     _user = user;
     self.nameView.text = user.operatorName;
     self.orgNameView.text = user.orgInfo.name;
+    UIImage *avatar = [UIImage imageNamed:user.userInfo.gender == Male ? @"male" : @"female"];
+    self.avatarView.image = avatar;
 }
 
 @end

@@ -10,6 +10,6 @@
 
 @interface DMBindPushRequester : DMHttpRequester
 
-@property (nonatomic, strong) NSString *channelId;
+@property (nonatomic, strong) NSString *clientId;
 
 @end

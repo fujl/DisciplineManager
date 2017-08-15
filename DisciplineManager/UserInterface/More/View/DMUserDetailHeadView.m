@@ -26,7 +26,7 @@
         [self addSubview:self.arrowView];
         [self addSubview:self.line];
         
-        UIImage *avatar = [UIImage imageNamed:@"face"];
+        UIImage *avatar = [UIImage imageNamed:@"male"];
         UIImage *arrow = [UIImage imageNamed:@"ic_action_right"];
         self.avatarView.image = avatar;
         self.arrowView.image = arrow;
@@ -79,7 +79,7 @@
 - (UIImageView *)arrowView {
     if (!_arrowView) {
         _arrowView = [[UIImageView alloc] init];
-        _arrowView.userInteractionEnabled = YES;
+        _arrowView.userInteractionEnabled = NO;
     }
     return _arrowView;
 }
@@ -90,5 +90,10 @@
         _line.backgroundColor = [UIColor colorWithRGB:0xebebeb];
     }
     return _line;
+}
+
+- (void)setGender:(DMGender)gender {
+    UIImage *avatar = [UIImage imageNamed:gender == Male ? @"male" : @"female"];
+    self.avatarView.image = avatar;
 }
 @end

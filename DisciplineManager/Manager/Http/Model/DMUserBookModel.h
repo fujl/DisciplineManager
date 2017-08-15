@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DMUserInfo.h"
 
 @interface DMUserBookModel : NSObject
 
@@ -30,6 +31,8 @@
 @property (nonatomic, assign) NSInteger goOutState; // ": 0,  //如果大于0 通讯录人员状态为 外出
 @property (nonatomic, assign) NSInteger ocarState; // ": 0,  // 如果大于0 通讯录人员状态为 外出
 @property (nonatomic, assign) NSInteger leaveState; // ": 0  // 如果大于0 通讯录人员状态为 请假
+@property (nonatomic, assign) DMGender gender;
+@property (nonatomic, strong) NSString *jobName;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 @end

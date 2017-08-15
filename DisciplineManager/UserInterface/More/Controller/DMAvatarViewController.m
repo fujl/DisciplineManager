@@ -23,7 +23,7 @@
     self.title = @"个人头像";
     [self.view addSubview:self.avatarView];
     
-    UIImage *avatar = [UIImage imageNamed:@"face"];
+    UIImage *avatar = [UIImage imageNamed:self.gender == Male ? @"male" : @"female"];
     self.avatarView.image = avatar;
     
     [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -10,4 +10,6 @@
 
 @interface DMUserDetailHeadView : UIButton
 
+- (void)setGender:(DMGender)gender;
+
 @end

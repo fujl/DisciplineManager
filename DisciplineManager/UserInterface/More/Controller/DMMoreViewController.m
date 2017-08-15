@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMMineItemView *mineView;
+@property (nonatomic, strong) UIButton *updatePwdView;
 @property (nonatomic, strong) UIButton *logoutView;
 
 @property (nonatomic, strong) DMUserModel *user;
@@ -29,6 +30,7 @@
     self.title = NSLocalizedString(@"More",@"更多");
     
     [self.subviewList addObject:self.mineView];
+    [self.subviewList addObject:self.updatePwdView];
     [self.subviewList addObject:self.logoutView];
     [self setChildViews:self.subviewList];
     
@@ -57,6 +59,20 @@
         [_mineView addTarget:self action:@selector(clickUserInfo) forControlEvents:UIControlEventTouchUpInside];
     }
     return _mineView;
+}
+
+- (UIButton *)updatePwdView {
+    if (!_updatePwdView) {
+        _updatePwdView = [[UIButton alloc] init];
+        [_updatePwdView setTitle:@"修改密码" forState:UIControlStateNormal];
+        [_updatePwdView setTitleColor:[UIColor colorWithRGB:0xd9534f] forState:UIControlStateNormal];
+        [_updatePwdView setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+        _updatePwdView.titleLabel.font = [UIFont systemFontOfSize:16];
+        _updatePwdView.lcHeight = 44;
+        _updatePwdView.lcTopMargin = 10;
+        [_updatePwdView addTarget:self action:@selector(clickUpdatePwd) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _updatePwdView;
 }
 
 - (UIButton *)logoutView {
@@ -99,6 +115,10 @@
             showToast(errMsg);
         }
     }];
+}
+
+- (void)clickUpdatePwd {
+    
 }
 
 @end

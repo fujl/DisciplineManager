@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+// 1 男  2 女
+typedef NS_ENUM(NSInteger, DMGender) {
+    Male        = 1,                // 男
+    Female      = 2,                // 女
+};
+
 @interface DMUserInfo : NSObject
 
 /*"id":"E53B405C1167411E805F7DA5A78A2B58",
@@ -52,6 +58,7 @@
 @property (nonatomic, copy) NSString *baiduChannelId; //":"4594165929953927487",
 @property (nonatomic, assign) NSInteger deviceType;   //":3,
 @property (nonatomic, copy) NSString *pinyin;       //":"IOSceshi",
+@property (nonatomic, assign) DMGender gender;
 @property (nonatomic, assign) NSInteger optLock;      //":4
 
 - (instancetype)initWithDict:(NSDictionary *)dict;

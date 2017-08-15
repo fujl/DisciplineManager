@@ -32,6 +32,8 @@
         self.goOutState = [parseNumberFromObject([dict objectForKey:@"goOutState"]) integerValue];
         self.ocarState = [parseNumberFromObject([dict objectForKey:@"ocarState"]) integerValue];
         self.leaveState = [parseNumberFromObject([dict objectForKey:@"leaveState"]) integerValue];
+        self.gender = [parseNumberFromObject([dict objectForKey:@"gender"]) integerValue];
+        self.jobName = parseStringFromObject([dict objectForKey:@"jobName"]);
     }
     return self;
 }

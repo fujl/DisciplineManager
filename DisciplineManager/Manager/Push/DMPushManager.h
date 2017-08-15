@@ -12,11 +12,13 @@
  个推账号
  starzhang
  worinimab110
+ 
+ zhengshu pwd dm123456
  */
 @interface DMPushManager : DMBaseManager
 
-@property (nonatomic, assign) BOOL isBindChannel;
-@property(nonatomic, strong) void (^onNewMsgBlock)();
+@property (nonatomic, assign) BOOL isBindClientId;
+@property (nonatomic, strong) void (^onNewMsgBlock)();
 
 - (void)didFinishLaunchingWithOptions:(NSDictionary *)launchOptions application:(UIApplication *)application;
 
@@ -24,12 +26,14 @@
 
 - (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 
+- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+
 - (void)handleNotification:(NSDictionary *)userInfo;
 
 - (void)showLocalNotificationAtFront:(UILocalNotification *)notification;
 
 - (void)setTag:(NSString *)tag;
 
-- (NSString *)getChannelId;
+- (NSString *)getClientId;
 
 @end

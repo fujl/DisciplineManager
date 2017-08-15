@@ -42,15 +42,15 @@
     
     [self.nameView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
-        make.top.equalTo(self.iconView);
+        make.top.equalTo(self.iconView).offset(-5);
     }];
-    UIImage *icon = [UIImage imageNamed:@"face"];
+    UIImage *icon = [UIImage imageNamed:@"male"];
     self.iconView.image = icon;
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(10);
         make.top.equalTo(self.contentView).offset(10);
-        make.width.equalTo(@(icon.size.width-30));
-        make.height.equalTo(@(icon.size.height-30));
+        make.width.equalTo(@(icon.size.width));
+        make.height.equalTo(@(icon.size.height));
     }];
     [self.orgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
@@ -58,11 +58,11 @@
     }];
     [self.phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
-        make.bottom.equalTo(self.iconView.mas_bottom);
+        make.bottom.equalTo(self.iconView.mas_bottom).offset(5);
     }];
     [self.stateView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView.mas_right).offset(-10);
-        make.centerY.equalTo(self.nameView);
+        make.top.equalTo(self.nameView);
         make.width.equalTo(@(45));
         make.height.equalTo(@(30));
     }];
@@ -136,8 +136,11 @@
     _userInfo = userInfo;
     
     self.nameView.text = userInfo.name;
-    self.orgView.text = userInfo.orgName;
+    self.orgView.text = userInfo.jobName;
     self.phoneView.text = userInfo.mobile;
+    
+    UIImage *avatar = [UIImage imageNamed:userInfo.gender == Male ? @"male" : @"female"];
+    self.iconView.image = avatar;
     
     BOOL isOut = userInfo.goOutState > 0 || userInfo.ocarState > 0;
     if (isOut) {

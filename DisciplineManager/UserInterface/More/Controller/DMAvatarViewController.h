@@ -9,5 +9,5 @@
 #import "DMBaseViewController.h"
 
 @interface DMAvatarViewController : DMBaseViewController
-
+@property (nonatomic, assign) DMGender gender;
 @end

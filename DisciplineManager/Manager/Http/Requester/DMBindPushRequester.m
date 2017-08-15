@@ -47,7 +47,7 @@
     NSString *userId = [params objectForKey:@"userId"];
     [params removeAllObjects];
     params[@"userId"] = userId;
-    params[@"channelId"] = self.channelId;
+    params[@"clientId"] = self.clientId;
     params[@"deviceType"] = @(4);
 }
 
