@@ -539,7 +539,10 @@
             return;
         }
     }
-    
+    if (requester.days <= 0) {
+        showToast(@"请假天数小于或等于0, 请重新选择请休假日期");
+        return;
+    }
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
         dismissLoadingDialog();

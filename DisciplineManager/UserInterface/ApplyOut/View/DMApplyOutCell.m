@@ -111,6 +111,10 @@
             self.stateView.text = NSLocalizedString(@"Complete", @"已完成");
             self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
             break;
+        case ACTIVITI_STATE_RATIFIED:
+            self.stateView.text = @"已批准";
+            self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+            break;
         case ACTIVITI_STATE_REJECTED:
             self.stateView.text = NSLocalizedString(@"Rejected", @"驳回");
             self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];

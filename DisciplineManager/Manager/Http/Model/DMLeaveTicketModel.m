@@ -19,7 +19,7 @@
         self.expiryDate = [dict objectForKey:@"expiryDate"];
         self.name = [dict objectForKey:@"name"];
         
-        self.days = [[dict objectForKey:@"days"] integerValue];
+        self.days = [[dict objectForKey:@"days"] floatValue];
         self.state = [[dict objectForKey:@"state"] integerValue];
         self.sfgq = [[dict objectForKey:@"sfgq"] integerValue];
         
