@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *createDate;
 @property (nonatomic, strong) NSString *expiryDate;
-@property (nonatomic, assign) NSInteger days;
+@property (nonatomic, assign) CGFloat days;
 @property (nonatomic, assign) NSInteger state;
 @property (nonatomic, assign) BOOL sfgq;
 

@@ -8,6 +8,11 @@
 
 #import "DMBaseManager.h"
 
+/*
+ 个推账号
+ starzhang
+ worinimab110
+ */
 @interface DMPushManager : DMBaseManager
 
 @property (nonatomic, assign) BOOL isBindChannel;

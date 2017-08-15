@@ -114,7 +114,7 @@
     _leaveTicketModel = leaveTicketModel;
     
     self.titleView.text = _leaveTicketModel.title;
-    self.leaveCountView.text = [NSString stringWithFormat:@"休假天数：%zd天", _leaveTicketModel.days];
+    self.leaveCountView.text = [NSString stringWithFormat:@"休假天数：%0.1f天", _leaveTicketModel.days];
     self.expiryDateView.text = [NSString stringWithFormat:@"有效期至：%@", _leaveTicketModel.expiryDate];
     
     [self selectedTicket];
