@@ -39,7 +39,8 @@
             self.user = data;
             self.mineView.user = self.user;
         } else {
-            showToast(@"拉取用户详情失败");
+            showToast(@"拉取用户详情失败, 稍后重试！");
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
 }

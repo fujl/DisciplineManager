@@ -56,6 +56,12 @@
             }
         }
         resultListener(code, dumpData);
+        if (code == ResultCodeAuthenticationFailure) {
+            DMUserManager *userManager = getManager([DMUserManager class]);
+            [userManager autoLogin:^(DMResultCode code) {
+                
+            }];
+        }
     } else {
         // 网络不给力
         resultListener(ResultCodeTimeOut, nil);
