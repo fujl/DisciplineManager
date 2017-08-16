@@ -55,12 +55,21 @@
                 dumpData = [delegate onDumpErrorData:resultData];
             }
         }
-        resultListener(code, dumpData);
         if (code == ResultCodeAuthenticationFailure) {
-            DMUserManager *userManager = getManager([DMUserManager class]);
-            [userManager autoLogin:^(DMResultCode code) {
-                
-            }];
+            if ([[delegate getChildrenUrl] isEqualToString:@"api/isLogin.do"]) {
+                resultListener(code, dumpData);
+            } else {
+                DMUserManager *userManager = getManager([DMUserManager class]);
+                [userManager autoLogin:^(DMResultCode code) {
+                    if (code == ResultCodeOK) {
+                        [userManager startMainController];
+                    } else {
+                        [userManager startLoginController];
+                    }
+                }];
+            }
+        } else {
+            resultListener(code, dumpData);
         }
     } else {
         // 网络不给力
