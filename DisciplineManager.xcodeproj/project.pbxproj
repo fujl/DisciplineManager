@@ -1674,6 +1674,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/GtSdkLib",
@@ -1700,6 +1701,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/GtSdkLib",

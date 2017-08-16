@@ -443,16 +443,26 @@
             return;
         }
         requester.officialCarId = self.officialCar.ocId;
+        if (taskOperator == TaskOperator_Agree) {
+            requester.state = ACTIVITI_STATE_PENDING;
+        } else if (taskOperator == TaskOperator_Rejected) {
+            requester.state = ACTIVITI_STATE_REJECTED;
+        }
     } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD]) {
         requester.emp = @"BGSZR";
+        if (taskOperator == TaskOperator_Agree) {
+            requester.state = ACTIVITI_STATE_PENDING;
+        } else if (taskOperator == TaskOperator_Rejected) {
+            requester.state = ACTIVITI_STATE_REJECTED;
+        }
     } else {
-        
+        if (taskOperator == TaskOperator_Agree) {
+            requester.state = ACTIVITI_STATE_COMPLETE;
+        } else if (taskOperator == TaskOperator_Rejected) {
+            requester.state = ACTIVITI_STATE_REJECTED;
+        }
     }
-    if (taskOperator == TaskOperator_Agree) {
-        requester.state = ACTIVITI_STATE_COMPLETE;
-    } else if (taskOperator == TaskOperator_Rejected) {
-        requester.state = ACTIVITI_STATE_REJECTED;
-    }
+    
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
         dismissLoadingDialog();

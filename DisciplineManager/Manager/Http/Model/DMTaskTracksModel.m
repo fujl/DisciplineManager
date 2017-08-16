@@ -18,6 +18,7 @@
         self.operatorDate = parseStringFromObject([dict objectForKey:@"operatorDate"]);
         self.operatorId = parseStringFromObject([dict objectForKey:@"operatorId"]);
         self.operatorName = parseStringFromObject([dict objectForKey:@"operatorName"]);
+        self.userInfo = [[DMUserInfo alloc] initWithDict:[dict objectForKey:@"userInfo"]];
     }
     return self;
 }

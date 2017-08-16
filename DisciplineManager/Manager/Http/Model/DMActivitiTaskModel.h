@@ -14,6 +14,7 @@
 
 #define kDefinitionKeyQJSQ_BMLD  @"qjsp_bmld"
 #define kDefinitionKeyQJSQ_FGLD  @"qjsp_fgld"
+#define kDefinitionKeyQJSQ_TJFGLD @"qjsq_tjfgld"
 
 #define kDefinitionKeyBXP   @"bxp_fgld"
 

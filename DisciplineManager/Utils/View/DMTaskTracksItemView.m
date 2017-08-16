@@ -143,7 +143,7 @@
             break;
     }
     
-    self.taskNameView.text = [NSString stringWithFormat:@"[%@] %@", _taskTracksModel.operatorUser.operatorName, _taskTracksModel.name];
+    self.taskNameView.text = [NSString stringWithFormat:@"[%@] %@", _taskTracksModel.operatorUser.userInfo.name, _taskTracksModel.name];
     self.messageView.text = _taskTracksModel.message;
     self.startTimeView.text = _taskTracksModel.endTime;
 }

@@ -342,7 +342,15 @@
     requester.taskId = self.activitiTaskModel.atId;
     requester.message = [self.commentTextView getMultiLineText];
     if (taskOperator == TaskOperator_Agree) {
-        requester.state = ACTIVITI_STATE_COMPLETE;
+        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]) {
+            if(self.info.days <= 3) {
+                requester.state = ACTIVITI_STATE_COMPLETE;
+            } else {
+                requester.state = ACTIVITI_STATE_PENDING;
+            }
+        } else {
+            requester.state = ACTIVITI_STATE_COMPLETE;
+        }
     } else if (taskOperator == TaskOperator_Rejected) {
         requester.state = ACTIVITI_STATE_REJECTED;
     } else {

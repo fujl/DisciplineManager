@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface OperatorUser : NSObject
+
 @property (nonatomic, assign) NSInteger oId;
 @property (nonatomic, strong) NSString *createDate;
 @property (nonatomic, strong) NSString *operatorDate;
 @property (nonatomic, strong) NSString *operatorId;
 @property (nonatomic, strong) NSString *operatorName;
+@property (nonatomic, strong) DMUserInfo *userInfo;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 @end

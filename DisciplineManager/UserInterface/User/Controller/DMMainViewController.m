@@ -118,10 +118,10 @@
 
 - (SDCycleScrollView *)logoView {
     if (!_logoView) {
-        NSArray *urls = @[[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1917120263,2189330565&fm=11&gp=0.jpg"],
+        NSArray *urls = @[/*[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1917120263,2189330565&fm=11&gp=0.jpg"],
                           [NSURL URLWithString:@"http://gbres.dfcfw.com/Files/picture/20140507/size500/024FDDE0195A318FC88E185936C1A24D.jpg"],
                           [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150924/b_12511282_1443057242001.jpg"],
-                          [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150626/b_12511282_1435306319621.jpg"]];
+                          [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150626/b_12511282_1435306319621.jpg"]*/];
         _logoView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH*0.618) delegate:self placeholderImage:[UIImage imageNamed:@"HomeLogo"]];
         
         _logoView.infiniteLoop = YES;
@@ -229,10 +229,10 @@
 #pragma mark - SDCycleScrollViewDelegate
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    DMCmsContentModel *mdl = [self.cmsContentList objectAtIndex:index];
-        DMWebViewController *controller = [[DMWebViewController alloc] init];
-        controller.hidesBottomBarWhenPushed = YES;
-        controller.cmsModel = mdl;
-        [self.navigationController pushViewController:controller animated:YES];
+//    DMCmsContentModel *mdl = [self.cmsContentList objectAtIndex:index];
+//    DMWebViewController *controller = [[DMWebViewController alloc] init];
+//    controller.hidesBottomBarWhenPushed = YES;
+//    controller.cmsModel = mdl;
+//    [self.navigationController pushViewController:controller animated:YES];
 }
 @end

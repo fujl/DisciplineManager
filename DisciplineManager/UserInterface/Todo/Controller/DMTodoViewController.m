@@ -86,7 +86,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DMActivitiTaskModel *mdl = [self.dataSource objectAtIndex:indexPath.row];
-    if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]) {
+    if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_TJFGLD]) {
         [self gotoQJSQDetail:mdl];
     } else if([mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
         [self gotoGCSQDetail:mdl];

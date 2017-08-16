@@ -12,6 +12,10 @@
 #define kComponentCity      1
 #define kComponentArea      2
 
+#define kDefaultProvinceId  2585
+#define kDefaultCityId      2644
+#define kDefaultAreaId      2645
+
 @interface DMAddressPickerView () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (nonatomic, strong) UIPickerView *pickerView;
 @property (nonatomic, strong) UIButton *backgroundView;
@@ -198,6 +202,13 @@
     if (isUpdate) {
         if (self.onCompleteClick) {
             self.onCompleteClick(tmpProvinceInfo, tmpCityInfo, tmpAreaInfo);
+        }
+    } else {
+        // 默认值
+        if (tmpProvinceInfo.addressId == kDefaultProvinceId && tmpCityInfo.addressId == kDefaultCityId && tmpAreaInfo.addressId == kDefaultAreaId) {
+            if (self.onCompleteClick) {
+                self.onCompleteClick(tmpProvinceInfo, tmpCityInfo, tmpAreaInfo);
+            }
         }
     }
     [self dismiss];

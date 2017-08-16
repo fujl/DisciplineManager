@@ -130,12 +130,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "524584032.260053"
+                  timestampString = "524597622.931334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "76">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -145,14 +145,46 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "524584032.26231"
+                  timestampString = "524597622.933553"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
                   endingLineNumber = "35"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/ApplyBus/Controller/DMDetailApplyBusController.m"
+            timestampString = "524594819.759844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-refreshView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Todo/Controller/DMTodoViewController.m"
+            timestampString = "524597620.445704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
