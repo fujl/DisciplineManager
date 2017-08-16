@@ -34,9 +34,9 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.provinceId = 0;
-        self.cityId = 0;
-        self.areaId = 0;
+        self.provinceId = 2585;
+        self.cityId = 2644;
+        self.areaId = 2645;
     }
     return self;
 }

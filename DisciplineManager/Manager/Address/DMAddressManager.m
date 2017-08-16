@@ -27,7 +27,7 @@
 
 /**
  *
- * 得到地址信息
+ * 得到地址信息 
  *
  */
 - (void)getAllAddress:(void (^)(NSMutableArray<DMAddressInfo *> *addressList))callback {

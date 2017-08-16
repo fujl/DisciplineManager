@@ -39,7 +39,8 @@ static const int commonDBVersion = 0;
         [_queue close];
     }
     
-    NSString *path = [[self getAppDocumentDirectory] stringByAppendingPathComponent:kCommonDBPath];
+//    NSString *path = [[self getAppDocumentDirectory] stringByAppendingPathComponent:kCommonDBPath];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"dm_common_db" ofType:@"sqlite"];
     _queue = [FMDatabaseQueue databaseQueueWithPath:path];
     
     [self submitDatabaseTask:(id) ^(FMDatabase *db) {

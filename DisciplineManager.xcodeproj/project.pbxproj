@@ -12,6 +12,7 @@
 		1863604C1F30E86A00E2FE23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604B1F30E86A00E2FE23 /* libz.tbd */; };
 		1863604E1F30E87900E2FE23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604D1F30E87900E2FE23 /* CoreTelephony.framework */; };
 		186360501F30E88200E2FE23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604F1F30E88200E2FE23 /* CoreGraphics.framework */; };
+		188ED8D01F448392009BF26D /* dm_common_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 188ED8CF1F448392009BF26D /* dm_common_db.sqlite */; };
 		18C1591E1F43499F005B98C0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591D1F43499F005B98C0 /* libc++.tbd */; };
 		18C159201F4349B4005B98C0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */; };
 		18C159221F4349C3005B98C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159211F4349C3005B98C0 /* Security.framework */; };
@@ -165,6 +166,7 @@
 		1863604B1F30E86A00E2FE23 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1863604D1F30E87900E2FE23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1863604F1F30E88200E2FE23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		188ED8CF1F448392009BF26D /* dm_common_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dm_common_db.sqlite; sourceTree = "<group>"; };
 		18C1591D1F43499F005B98C0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18C159211F4349C3005B98C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -965,6 +967,7 @@
 		DF84E5E51EF75F4600F8A23A /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				188ED8CF1F448392009BF26D /* dm_common_db.sqlite */,
 				DF84E5E91EF75F7E00F8A23A /* DMDBManager.h */,
 				DF84E5EA1EF75F7E00F8A23A /* DMDBManager.m */,
 				DF84E5EC1EF77CC300F8A23A /* DMDBBaseManager.h */,
@@ -1284,6 +1287,7 @@
 				DFB4534A1EE557070000DDC9 /* LaunchScreen.storyboard in Resources */,
 				DF84E5E31EF75DFB00F8A23A /* city.json in Resources */,
 				DF8FD7411EEA45B40060FE34 /* Localizable.strings in Resources */,
+				188ED8D01F448392009BF26D /* dm_common_db.sqlite in Resources */,
 				DFB453471EE557070000DDC9 /* Assets.xcassets in Resources */,
 				DFB453451EE557070000DDC9 /* Main.storyboard in Resources */,
 			);
