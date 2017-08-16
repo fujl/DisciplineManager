@@ -32,11 +32,11 @@
         make.left.width.equalTo(self.view);
         make.bottom.equalTo(self.view);
     }];
+    [self setRefreshView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setRefreshView];
 }
 
 #pragma mark - getters and setters
