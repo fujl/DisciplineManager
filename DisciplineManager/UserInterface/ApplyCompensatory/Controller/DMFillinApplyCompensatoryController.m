@@ -38,8 +38,8 @@
     [self.subviewList addObject:self.commitView];
     [self addChildViews:self.subviewList];
     
-    self.startOvertimeInterval = [[NSDate date] timeIntervalSince1970];
-    self.endOvertimeInterval = [[NSDate date] timeIntervalSince1970];
+    self.startOvertimeInterval = [[NSDate date] timeIntervalSince1970] - 7*24*60*60;
+    self.endOvertimeInterval = [[NSDate date] timeIntervalSince1970] - 7*24*60*60 + 1;
 }
 
 #pragma mark - getters and setters
@@ -114,10 +114,15 @@
             picker.datePicker.minimumDate = minDt;
             picker.datePicker.maximumDate = maxDt;
             picker.onCompleteClick = ^(DMDatePickerView *datePicker, NSDate *date) {
-                weakSelf.endOvertimeInterval = [date timeIntervalSince1970];
-                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-                formatter.dateFormat = @"yyyy年MM月dd日 HH时mm分";
-                weakSelf.endOvertimeView.value = [formatter stringFromDate:date];
+                NSTimeInterval endInterval = [date timeIntervalSince1970];
+                if (endInterval <= self.startOvertimeInterval) {
+                    showToast(@"加班结束时间必须大于加班开始时间");
+                } else {
+                    weakSelf.endOvertimeInterval = endInterval;
+                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                    formatter.dateFormat = @"yyyy年MM月dd日 HH时mm分";
+                    weakSelf.endOvertimeView.value = [formatter stringFromDate:date];
+                }
             };
             [picker show];
         };
