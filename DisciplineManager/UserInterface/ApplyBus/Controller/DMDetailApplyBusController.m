@@ -283,22 +283,26 @@
         _driverView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _driverView.clickEntryBlock = ^(NSString *value) {
-            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
-            if (weakSelf.driver) {
-                [pickerView selectID:weakSelf.driver.userId];
-            } else {
-                [pickerView selectID:weakSelf.driverList.firstObject.userId];
-            }
-            pickerView.onCompleteClick = ^(NSDictionary *dic){
-                for (DMUserBookModel *mdl in weakSelf.driverList) {
-                    if ([mdl.userId isEqualToString:dic[@"value"]]) {
-                        weakSelf.driver = mdl;
-                        break;
-                    }
+            if ([weakSelf dicArr].count > 0) {
+                DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
+                if (weakSelf.driver) {
+                    [pickerView selectID:weakSelf.driver.userId];
+                } else {
+                    [pickerView selectID:weakSelf.driverList.firstObject.userId];
                 }
-                [weakSelf.driverView setValue:weakSelf.driver.name];
-            };
-            [pickerView showPickerView];
+                pickerView.onCompleteClick = ^(NSDictionary *dic){
+                    for (DMUserBookModel *mdl in weakSelf.driverList) {
+                        if ([mdl.userId isEqualToString:dic[@"value"]]) {
+                            weakSelf.driver = mdl;
+                            break;
+                        }
+                    }
+                    [weakSelf.driverView setValue:weakSelf.driver.name];
+                };
+                [pickerView showPickerView];
+            } else {
+                showToast(@"数据异常，请联系管理员");
+            }
         };
     }
     return _driverView;
@@ -321,22 +325,26 @@
         _officialCarIdView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _officialCarIdView.clickEntryBlock = ^(NSString *value) {
-            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicOfficialCarIdArr]];
-            if (weakSelf.driver) {
-                [pickerView selectID:weakSelf.officialCar.ocId];
-            } else {
-                [pickerView selectID:weakSelf.officialCarList.firstObject.ocId];
-            }
-            pickerView.onCompleteClick = ^(NSDictionary *dic){
-                for (DMOfficialCarModel *mdl in weakSelf.officialCarList) {
-                    if ([mdl.ocId isEqualToString:dic[@"value"]]) {
-                        weakSelf.officialCar = mdl;
-                        break;
-                    }
+            if (weakSelf.officialCarList && weakSelf.officialCarList.count > 0) {
+                DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicOfficialCarIdArr]];
+                if (weakSelf.driver) {
+                    [pickerView selectID:weakSelf.officialCar.ocId];
+                } else {
+                    [pickerView selectID:weakSelf.officialCarList.firstObject.ocId];
                 }
-                [weakSelf.officialCarIdView setValue:weakSelf.officialCar.state>0?[NSString stringWithFormat:@"%@ (外出)", weakSelf.officialCar.number]:weakSelf.officialCar.number];
-            };
-            [pickerView showPickerView];
+                pickerView.onCompleteClick = ^(NSDictionary *dic) {
+                    for (DMOfficialCarModel *mdl in weakSelf.officialCarList) {
+                        if ([mdl.ocId isEqualToString:dic[@"value"]]) {
+                            weakSelf.officialCar = mdl;
+                            break;
+                        }
+                    }
+                    [weakSelf.officialCarIdView setValue:weakSelf.officialCar.state>0?[NSString stringWithFormat:@"%@ (外出)", weakSelf.officialCar.number]:weakSelf.officialCar.number];
+                };
+                [pickerView showPickerView];
+            } else {
+                showToast(@"数据异常，请联系管理员");
+            }
         };
     }
     return _officialCarIdView;
@@ -391,7 +399,9 @@
     DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = 0;
-    requester.orgId = @"001004001";
+//    requester.orgId = @"001004001";
+    // 司机选择接口orgId传递: 001002001
+    requester.orgId = @"001002001";
     [requester postRequest:^(DMResultCode code, id data) {
         if (code == ResultCodeOK) {
             DMListBaseModel *listModel = data;

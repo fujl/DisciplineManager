@@ -20,11 +20,15 @@
 #import "SDCycleScrollView.h"
 #import "DMUserManager.h"
 #import "DMPushManager.h"
+#import "DMCmsContentModel.h"
+#import "DMCmsContentRequster.h"
+#import "DMWebViewController.h"
 
 @interface DMMainViewController () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *logoView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) DMMainItemView *todoView;
+@property (nonatomic, strong) NSMutableArray<DMCmsContentModel *> *cmsContentList;
 @end
 
 @implementation DMMainViewController
@@ -42,6 +46,8 @@
     push.onNewMsgBlock = ^{
         [weakSelf onNewMsg];
     };
+    
+    [self loadCMSContent];
 }
 
 - (void)createView {
@@ -126,6 +132,13 @@
     return _logoView;
 }
 
+- (NSMutableArray<DMCmsContentModel *> *)cmsContentList {
+    if (!_cmsContentList) {
+        _cmsContentList = [[NSMutableArray<DMCmsContentModel *> alloc] init];
+    }
+    return _cmsContentList;
+}
+
 - (UIView *)contentView {
     if (!_contentView) {
         _contentView = [[UIView alloc] init];
@@ -194,4 +207,32 @@
     [self.todoView hiddenDot:NO];
 }
 
+#pragma mark - load data
+- (void)loadCMSContent {
+    [self.cmsContentList removeAllObjects];
+    DMCmsContentRequster *requester = [[DMCmsContentRequster alloc] init];
+    [requester postRequest:^(DMResultCode code, id data) {
+        if (code == ResultCodeOK) {
+            DMListBaseModel *listModel = data;
+            [self.cmsContentList addObjectsFromArray:listModel.rows];
+            
+            NSMutableArray *imagesURLStrings = [[NSMutableArray alloc] init];
+            for (DMCmsContentModel *mdl in self.cmsContentList) {
+                [imagesURLStrings addObject:mdl.imgPath];
+            }
+            [self.logoView setImageURLStringsGroup:imagesURLStrings];
+            self.logoView.delegate = self;
+        }
+    }];
+}
+
+#pragma mark - SDCycleScrollViewDelegate
+/** 点击图片回调 */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    DMCmsContentModel *mdl = [self.cmsContentList objectAtIndex:index];
+        DMWebViewController *controller = [[DMWebViewController alloc] init];
+        controller.hidesBottomBarWhenPushed = YES;
+        controller.cmsModel = mdl;
+        [self.navigationController pushViewController:controller animated:YES];
+}
 @end

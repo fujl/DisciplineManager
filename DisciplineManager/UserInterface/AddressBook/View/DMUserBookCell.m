@@ -147,7 +147,7 @@
         self.stateView.text = @"外出";
         self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
     } else if (userInfo.leaveState > 0) {
-        self.stateView.text = @"请假";
+        self.stateView.text = @"休假";
         self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
     } else {
         self.stateView.text = @"在岗";

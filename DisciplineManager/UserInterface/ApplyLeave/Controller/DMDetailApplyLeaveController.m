@@ -292,7 +292,9 @@
     DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = 0;
-    requester.orgId = @"001002";
+    // 转批领导人员选择接口传递参数: 001001
+    // requester.orgId = @"001002";
+    requester.orgId = @"001001";
     [requester postRequest:^(DMResultCode code, id data) {
         if (code == ResultCodeOK) {
             DMListBaseModel *listModel = data;

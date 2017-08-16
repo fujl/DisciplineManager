@@ -11,7 +11,7 @@
 #import "DMMineItemView.h"
 #import "DMUserModel.h"
 #import "DMUserDetailViewController.h"
-
+#import "DMModifyPasswordViewController.h"
 @interface DMMoreViewController ()
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -116,7 +116,8 @@
 }
 
 - (void)clickUpdatePwd {
-    
+    DMModifyPasswordViewController *controller = [[DMModifyPasswordViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

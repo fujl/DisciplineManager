@@ -95,7 +95,7 @@
 
 - (void)setUser:(DMUserModel *)user {
     _user = user;
-    self.nameView.text = user.operatorName;
+    self.nameView.text = user.userInfo.name;
     self.orgNameView.text = user.orgInfo.name;
     UIImage *avatar = [UIImage imageNamed:user.userInfo.gender == Male ? @"male" : @"female"];
     self.avatarView.image = avatar;

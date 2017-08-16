@@ -52,6 +52,10 @@
     self.textView.keyboardType = keyboardType;
 }
 
+- (void)setSecureTextEntry:(BOOL)secureTextEntry {
+    self.textView.secureTextEntry = secureTextEntry;
+}
+
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *valueString = textField.text;

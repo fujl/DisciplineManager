@@ -13,6 +13,12 @@
 		1863604E1F30E87900E2FE23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604D1F30E87900E2FE23 /* CoreTelephony.framework */; };
 		186360501F30E88200E2FE23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604F1F30E88200E2FE23 /* CoreGraphics.framework */; };
 		188ED8D01F448392009BF26D /* dm_common_db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 188ED8CF1F448392009BF26D /* dm_common_db.sqlite */; };
+		188ED8D61F448BFC009BF26D /* DMModifyPasswordRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8D51F448BFC009BF26D /* DMModifyPasswordRequester.m */; };
+		188ED8D91F448D11009BF26D /* DMModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8D81F448D11009BF26D /* DMModifyPasswordViewController.m */; };
+		188ED8DC1F449506009BF26D /* DMCmsContentRequster.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8DB1F449506009BF26D /* DMCmsContentRequster.m */; };
+		188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8DE1F449551009BF26D /* DMCmsContentModel.m */; };
+		188ED8E21F449722009BF26D /* DMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8E11F449722009BF26D /* DMWebViewController.m */; };
+		188ED8E51F4497A8009BF26D /* DMCMSDetailRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8E41F4497A8009BF26D /* DMCMSDetailRequester.m */; };
 		18C1591E1F43499F005B98C0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591D1F43499F005B98C0 /* libc++.tbd */; };
 		18C159201F4349B4005B98C0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */; };
 		18C159221F4349C3005B98C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159211F4349C3005B98C0 /* Security.framework */; };
@@ -167,6 +173,18 @@
 		1863604D1F30E87900E2FE23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		1863604F1F30E88200E2FE23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		188ED8CF1F448392009BF26D /* dm_common_db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dm_common_db.sqlite; sourceTree = "<group>"; };
+		188ED8D41F448BFC009BF26D /* DMModifyPasswordRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMModifyPasswordRequester.h; sourceTree = "<group>"; };
+		188ED8D51F448BFC009BF26D /* DMModifyPasswordRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMModifyPasswordRequester.m; sourceTree = "<group>"; };
+		188ED8D71F448D11009BF26D /* DMModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMModifyPasswordViewController.h; sourceTree = "<group>"; };
+		188ED8D81F448D11009BF26D /* DMModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMModifyPasswordViewController.m; sourceTree = "<group>"; };
+		188ED8DA1F449506009BF26D /* DMCmsContentRequster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCmsContentRequster.h; sourceTree = "<group>"; };
+		188ED8DB1F449506009BF26D /* DMCmsContentRequster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCmsContentRequster.m; sourceTree = "<group>"; };
+		188ED8DD1F449551009BF26D /* DMCmsContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCmsContentModel.h; sourceTree = "<group>"; };
+		188ED8DE1F449551009BF26D /* DMCmsContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCmsContentModel.m; sourceTree = "<group>"; };
+		188ED8E01F449722009BF26D /* DMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWebViewController.h; sourceTree = "<group>"; };
+		188ED8E11F449722009BF26D /* DMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWebViewController.m; sourceTree = "<group>"; };
+		188ED8E31F4497A8009BF26D /* DMCMSDetailRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCMSDetailRequester.h; sourceTree = "<group>"; };
+		188ED8E41F4497A8009BF26D /* DMCMSDetailRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCMSDetailRequester.m; sourceTree = "<group>"; };
 		18C1591D1F43499F005B98C0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18C159211F4349C3005B98C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -716,6 +734,8 @@
 				DF8A220E1F29E27900617974 /* DMUserDetailViewController.m */,
 				DF8A22131F29E8D000617974 /* DMAvatarViewController.h */,
 				DF8A22141F29E8D000617974 /* DMAvatarViewController.m */,
+				188ED8D71F448D11009BF26D /* DMModifyPasswordViewController.h */,
+				188ED8D81F448D11009BF26D /* DMModifyPasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -852,6 +872,10 @@
 		DF6A9BDC1F048C6D0075F100 /* Requester */ = {
 			isa = PBXGroup;
 			children = (
+				188ED8E31F4497A8009BF26D /* DMCMSDetailRequester.h */,
+				188ED8E41F4497A8009BF26D /* DMCMSDetailRequester.m */,
+				188ED8DA1F449506009BF26D /* DMCmsContentRequster.h */,
+				188ED8DB1F449506009BF26D /* DMCmsContentRequster.m */,
 				DF6A9BE71F0494D20075F100 /* DMLoginRequester.h */,
 				DF6A9BE81F0494D20075F100 /* DMLoginRequester.m */,
 				DFF4281F1F137F8600BB1069 /* DMCheckLoginRequester.h */,
@@ -904,6 +928,8 @@
 				18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */,
 				DF5A04641F316F5B00A2D8BC /* DMBindPushRequester.h */,
 				DF5A04651F316F5B00A2D8BC /* DMBindPushRequester.m */,
+				188ED8D41F448BFC009BF26D /* DMModifyPasswordRequester.h */,
+				188ED8D51F448BFC009BF26D /* DMModifyPasswordRequester.m */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -911,6 +937,8 @@
 		DF6A9BF61F04F4730075F100 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				188ED8DD1F449551009BF26D /* DMCmsContentModel.h */,
+				188ED8DE1F449551009BF26D /* DMCmsContentModel.m */,
 				DF6A9BF71F04F48D0075F100 /* DMListBaseModel.h */,
 				DF6A9BF81F04F48D0075F100 /* DMListBaseModel.m */,
 				DFE023C81F063D95007BD7AC /* DMFormBaseInfo.h */,
@@ -1054,6 +1082,8 @@
 		DF8FD7321EEA42CD0060FE34 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				188ED8E01F449722009BF26D /* DMWebViewController.h */,
+				188ED8E11F449722009BF26D /* DMWebViewController.m */,
 				DF8FD74E1EEA4A630060FE34 /* DMLoginViewController.h */,
 				DF8FD74F1EEA4A630060FE34 /* DMLoginViewController.m */,
 				DFED74B21EEA73CB006DDEE8 /* DMMainViewController.h */,
@@ -1389,6 +1419,7 @@
 				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
 				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
 				DF8FD74D1EEA47E50060FE34 /* DMLinearViewController.m in Sources */,
+				188ED8DC1F449506009BF26D /* DMCmsContentRequster.m in Sources */,
 				DF6A9BF51F04F33B0075F100 /* DMSearchApplyOutRequester.m in Sources */,
 				DF6A9BF21F04D7F20075F100 /* DMCommitApplyOutRequester.m in Sources */,
 				DF9A0D511F2B15720015CD27 /* DMUserBookViewController.m in Sources */,
@@ -1397,6 +1428,7 @@
 				DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
+				188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */,
 				DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */,
 				DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */,
 				186360401F30E75A00E2FE23 /* DMPushManager.m in Sources */,
@@ -1406,6 +1438,7 @@
 				DF84E5F71EF7CC4D00F8A23A /* DMAddressPickerView.m in Sources */,
 				DF1F32391F0E260C004358E3 /* DMApplyCompensatoryListInfo.m in Sources */,
 				DFED74B41EEA73CB006DDEE8 /* DMMainViewController.m in Sources */,
+				188ED8D91F448D11009BF26D /* DMModifyPasswordViewController.m in Sources */,
 				DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */,
 				DF8FD73E1EEA43680060FE34 /* Reachability.m in Sources */,
 				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
@@ -1415,11 +1448,13 @@
 				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,
 				DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */,
 				DF5A04661F316F5B00A2D8BC /* DMBindPushRequester.m in Sources */,
+				188ED8E51F4497A8009BF26D /* DMCMSDetailRequester.m in Sources */,
 				18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */,
 				DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */,
 				DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */,
 				DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */,
 				DF50A1541EE7F3320091E098 /* DMWeakReferencesArray.m in Sources */,
+				188ED8D61F448BFC009BF26D /* DMModifyPasswordRequester.m in Sources */,
 				DF8FD73D1EEA43680060FE34 /* DMNetworkManager.m in Sources */,
 				DF7B1DD51EF536D80025A21C /* DMMultiLineTextView.m in Sources */,
 				DF8FD74A1EEA47400060FE34 /* DMNavigationController.m in Sources */,
@@ -1471,6 +1506,7 @@
 				DF5444111EF3D7AD000EE89F /* DMEntrySelectView.m in Sources */,
 				DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */,
 				DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */,
+				188ED8E21F449722009BF26D /* DMWebViewController.m in Sources */,
 				DF8DA40C1F0F178900619AF0 /* DMFindHolidayRequester.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

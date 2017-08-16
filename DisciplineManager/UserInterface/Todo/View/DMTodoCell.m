@@ -75,7 +75,7 @@
 
 - (void)setActivitiTaskModel:(DMActivitiTaskModel *)activitiTaskModel {
     _activitiTaskModel = activitiTaskModel;
-    self.nameView.text = activitiTaskModel.name;
+    self.nameView.text = activitiTaskModel.user.userInfo.name;
     self.createDateView.text = activitiTaskModel.createDate;
 }
 @end
