@@ -121,9 +121,7 @@
         _outAddressView.clickEntryBlock = ^(NSString *value) {
             [AppWindow endEditing:YES];
             DMAddressManager *manager = getManager([DMAddressManager class]);
-            showLoadingDialog();
             [manager getAllAddress:^(NSMutableArray<DMAddressInfo *> *addressList) {
-                dismissLoadingDialog();
                 DMAddressPickerView *pickerView = [[DMAddressPickerView alloc] init];
                 if (weakSelf.provinceId > 0 && weakSelf.cityId > 0 && weakSelf.areaId > 0) {
                     [pickerView selected:weakSelf.provinceId city:weakSelf.cityId area:weakSelf.areaId];

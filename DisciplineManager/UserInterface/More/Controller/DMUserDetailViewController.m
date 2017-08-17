@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"详细信息";
     [self loadData];
     [self loadSubview];
 }
@@ -36,7 +37,7 @@
     [self.nameView setTitle:@"名字" detail:self.user.userInfo.name];
     [self.phoneView setTitle:@"手机号" detail:self.user.userInfo.mobile];
     [self.deptView setTitle:@"所属部门" detail:self.user.orgInfo.name];
-    [self.leaderView setTitle:@"部门领导" detail:self.user.orgInfo.operatorName];
+    [self.leaderView setTitle:@"部门领导" detail:self.user.userInfo.deptUserName];
     [self.emailView setTitle:@"电子邮箱" detail:self.user.userInfo.email];
     [self.addressView setTitle:@"地区" detail:[NSString stringWithFormat:@"%@%@%@", self.user.userInfo.province, self.user.userInfo.city, self.user.userInfo.county]];
     [self.detailView setTitle:@"详细地址" detail:self.user.userInfo.address];
