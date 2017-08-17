@@ -42,15 +42,15 @@
     
     [self.nameView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
-        make.top.equalTo(self.iconView).offset(-5);
+        make.top.equalTo(self.iconView);
     }];
     UIImage *icon = [UIImage imageNamed:@"male"];
     self.iconView.image = icon;
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(10);
         make.top.equalTo(self.contentView).offset(10);
-        make.width.equalTo(@(icon.size.width));
-        make.height.equalTo(@(icon.size.height));
+        make.width.equalTo(@(icon.size.width/2.0f));
+        make.height.equalTo(@(icon.size.height/2.0f));
     }];
     [self.orgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
@@ -58,7 +58,7 @@
     }];
     [self.phoneView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
-        make.bottom.equalTo(self.iconView.mas_bottom).offset(5);
+        make.bottom.equalTo(self.iconView.mas_bottom);
     }];
     [self.stateView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView.mas_right).offset(-10);

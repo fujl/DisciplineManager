@@ -69,7 +69,7 @@
                 [self.stateView setTitle:@"任务状态" detail:@"待审核"];
                 [self refreshState];
             } else {
-                [self.userView setTitle:@"申请人" detail:self.activitiTaskModel.user.userInfo.name];
+                [self.userView setTitle:@"申请人" detail:self.info.user.userInfo.name];
             }
             [self.outTimeView setTitle:NSLocalizedString(@"OutTime", @"外出时间") detail:self.info.startTime];
             if (self.activitiTaskModel) {

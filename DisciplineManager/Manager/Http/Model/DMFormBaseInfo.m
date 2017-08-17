@@ -30,6 +30,7 @@
                 [self.taskTracks addObject:ttModel];
             }
         }
+        self.user = [[DMUserModel alloc] initWithDict:[dict objectForKey:@"user"]];
     }
     return self;
 }

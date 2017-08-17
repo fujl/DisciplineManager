@@ -64,7 +64,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     DMUserBookModel *userInfo = [self.dataSource objectAtIndex:indexPath.row];
     UIImage *icon = [UIImage imageNamed:userInfo.gender == Male ? @"male" : @"female"];
-    return icon.size.height+20;
+    return icon.size.height/2.0f+20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

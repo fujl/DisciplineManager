@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DMTaskTracksModel.h"
+#import "DMUserModel.h"
 
 @interface DMFormBaseInfo : NSObject
 @property (nonatomic, strong) NSString *formId;
@@ -18,5 +19,6 @@
 @property (nonatomic, assign) DMActivitiState state;
 @property (nonatomic, assign) NSInteger processInstanceId;
 @property (nonatomic, strong) NSMutableArray<DMTaskTracksModel *> *taskTracks;
+@property (nonatomic, strong) DMUserModel *user;
 - (instancetype)initWithDict:(NSDictionary *)dict;
 @end

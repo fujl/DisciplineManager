@@ -18,8 +18,10 @@
 @property (nonatomic, strong) DMSingleView *stateView;
 @property (nonatomic, strong) DMSingleView *startOvertimeView;
 @property (nonatomic, strong) DMSingleView *endOvertimeView;
+@property (nonatomic, strong) DMSingleView *totalTimeView;
 @property (nonatomic, strong) DMEntryView *overtimeReasonTitleView;
 @property (nonatomic, strong) DMDetailView *overtimeReasonDetailView;
+
 @property (nonatomic, strong) DMTaskTracksView *taskTracksView;
 
 @property (nonatomic, strong) DMEntryView *halfDayTitleView;
@@ -57,13 +59,14 @@
         if (code == ResultCodeOK) {
             self.info = data;
             if (self.activitiTaskModel) {
-                [self.userView setTitle:@"申请人" detail:self.activitiTaskModel.user.userInfo.name];
+                [self.userView setTitle:@"申请人" detail:self.info.user.userInfo.name];
             } else {
                 [self.stateView setTitle:@"任务状态" detail:@"待审核"];
                 [self refreshState];
             }
             [self.startOvertimeView setTitle:NSLocalizedString(@"StartOvertime", @"加班开始时间") detail:self.info.startTime];
             [self.endOvertimeView setTitle:NSLocalizedString(@"EndOvertime", @"加班结束时间") detail:self.info.endTime];
+            [self.totalTimeView setTitle:@"加班总时间" detail:self.info.totalTime];
             self.overtimeReasonDetailView.lcHeight = [self.overtimeReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
                 [self.taskOperatorView refreshView:NO];
@@ -89,6 +92,7 @@
     
     [self.subviewList addObject:self.startOvertimeView];
     [self.subviewList addObject:self.endOvertimeView];
+    [self.subviewList addObject:self.totalTimeView];
     [self.subviewList addObject:self.overtimeReasonTitleView];
     [self.subviewList addObject:self.overtimeReasonDetailView];
     
@@ -181,6 +185,14 @@
         _endOvertimeView.lcHeight = 44;
     }
     return _endOvertimeView;
+}
+
+- (DMSingleView *)totalTimeView {
+    if (!_totalTimeView) {
+        _totalTimeView = [[DMSingleView alloc] init];
+        _totalTimeView.lcHeight = 44;
+    }
+    return _totalTimeView;
 }
 
 - (DMEntryView *)overtimeReasonTitleView {
