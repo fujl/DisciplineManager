@@ -58,7 +58,7 @@
         _reasonView = [[UILabel alloc] init];
         _reasonView.textColor = [UIColor colorWithRGB:0x000000];
         _reasonView.font = [UIFont systemFontOfSize:14];
-        _reasonView.numberOfLines = 2;
+        _reasonView.numberOfLines = 0;
         _reasonView.textAlignment = NSTextAlignmentLeft;
     }
     return _reasonView;
@@ -126,4 +126,10 @@
     }
 }
 
++ (CGFloat)getFormHeight:(DMFormBaseInfo *)info {
+    CGFloat height = 0;
+    CGFloat reasonHeight = [info.reason heightForFont:[UIFont systemFontOfSize:14] width:SCREEN_WIDTH-10];
+    height = reasonHeight + 15 + 25;
+    return height;
+}
 @end

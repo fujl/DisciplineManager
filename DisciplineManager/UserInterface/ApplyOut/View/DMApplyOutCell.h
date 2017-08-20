@@ -11,4 +11,5 @@
 
 @interface DMApplyOutCell : UITableViewCell
 @property (nonatomic, strong) DMFormBaseInfo *info;
++ (CGFloat)getFormHeight:(DMFormBaseInfo *)info;
 @end
