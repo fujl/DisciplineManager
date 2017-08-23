@@ -23,6 +23,7 @@
 "login_user" = "登录";
 
 "Todo" = "待办任务";
+"Out" = "外出";
 "ApplyOut" = "外出申请";
 "ApplyBus" = "公车申请";
 "ApplyCompensatory" = "补休申请";
@@ -44,6 +45,9 @@
 "Complete" = "已完成";
 "Rejected" = "驳回";
 "DataError" = "错误数据";
+"Agree" = "同意";
+"CompleteOnGuard" = "完成回岗";
+"TransferComment" = "转批";
 
 "FillinApplyBus" = "填写公车申请单";
 "OutAddress" = "外出地址";
@@ -78,6 +82,22 @@
 "LeaveReasonPlaceholder" = "必填，请输入请(休)假事由";
 "Leave" = "请假";
 "Vacation" = "休假";
+"VacationSureHint" = "您所选择的休假票天数大于请假天数，是否确定使用？";
 
 "call_phone_number" = "呼叫%@";
 "call_phone" = "呼叫";
+"all_department" = "所有部门";
+"contacts" = "联系人";
+"OnGuard" = "在岗";
+"CozyHint" = "温馨提示";
+"MyLeaveTicket" = "我的休假票";
+"Ratified" = "已批准";
+"PersonalAvatar" = "个人头像";
+"Avatar" = "头像";
+"ModifyPassword" = "修改密码";
+"OriginalPassword" = "原密码";
+"SurePassword" = "确认密码";
+"NewPassword" = "新密码";
+"Logout" = "注销";
+"DetailInfo" = "详细信息";
+"TaskTrack" = "任务跟踪";

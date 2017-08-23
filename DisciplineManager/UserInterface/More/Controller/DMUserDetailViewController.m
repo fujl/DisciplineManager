@@ -27,7 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"详细信息";
+    self.title = NSLocalizedString(@"DetailInfo", @"详细信息");
+    
     [self loadData];
     [self loadSubview];
 }

@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"我的休假票";
+    self.title = NSLocalizedString(@"MyLeaveTicket", @"我的休假票");
     
     [self addNavRightItem:@selector(clickSure) andTitle:NSLocalizedString(@"sure",@"确定")];
     

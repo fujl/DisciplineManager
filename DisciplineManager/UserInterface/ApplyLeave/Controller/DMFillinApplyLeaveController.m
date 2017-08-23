@@ -509,10 +509,10 @@
                 showToast(show);
                 return;
             } else if (self.leaveTicketDays > requester.days) {
-                NSString *message = @"您所选择的休假票天数大于请假天数，是否确定使用？";
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSString *message = NSLocalizedString(@"VacationSureHint", @"您所选择的休假票天数大于请假天数，是否确定使用？");
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"CozyHint", @"温馨提示") message:message preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"取消") style:UIAlertActionStyleCancel handler:nil];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"sure", @"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     requester.ticket = self.tickets;
                     showLoadingDialog();
                     [requester postRequest:^(DMResultCode code, id data) {

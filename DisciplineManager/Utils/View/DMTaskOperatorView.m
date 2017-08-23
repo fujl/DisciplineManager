@@ -85,7 +85,7 @@
 - (UIButton *)agreeButton {
     if (!_agreeButton) {
         _agreeButton = [[UIButton alloc] init];
-        [_agreeButton setTitle:@"同意" forState:UIControlStateNormal];
+        [_agreeButton setTitle:NSLocalizedString(@"Agree", @"同意") forState:UIControlStateNormal];
         [_agreeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_agreeButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0x5cb85c]] forState:UIControlStateNormal];
         _agreeButton.layer.masksToBounds = YES;
@@ -98,7 +98,7 @@
 - (UIButton *)finishButton {
     if (!_finishButton) {
         _finishButton = [[UIButton alloc] init];
-        [_finishButton setTitle:@"完成回岗" forState:UIControlStateNormal];
+        [_finishButton setTitle:NSLocalizedString(@"CompleteOnGuard", @"完成回岗") forState:UIControlStateNormal];
         [_finishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_finishButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0x5cb85c]] forState:UIControlStateNormal];
         _finishButton.layer.masksToBounds = YES;
@@ -111,7 +111,7 @@
 - (UIButton *)rejectedButton {
     if (!_rejectedButton) {
         _rejectedButton = [[UIButton alloc] init];
-        [_rejectedButton setTitle:@"驳回" forState:UIControlStateNormal];
+        [_rejectedButton setTitle:NSLocalizedString(@"Rejected", @"驳回") forState:UIControlStateNormal];
         [_rejectedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_rejectedButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xd9534f]] forState:UIControlStateNormal];
         _rejectedButton.layer.masksToBounds = YES;
@@ -124,7 +124,7 @@
 - (UIButton *)transferCommentButton {
     if (!_transferCommentButton) {
         _transferCommentButton = [[UIButton alloc] init];
-        [_transferCommentButton setTitle:@"转批" forState:UIControlStateNormal];
+        [_transferCommentButton setTitle:NSLocalizedString(@"TransferComment", @"转批") forState:UIControlStateNormal];
         [_transferCommentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_transferCommentButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0x337ab7]] forState:UIControlStateNormal];
         _transferCommentButton.layer.masksToBounds = YES;

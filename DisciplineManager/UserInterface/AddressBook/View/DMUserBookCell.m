@@ -144,13 +144,13 @@
     
     BOOL isOut = userInfo.goOutState > 0 || userInfo.ocarState > 0;
     if (isOut) {
-        self.stateView.text = @"外出";
+        self.stateView.text = NSLocalizedString(@"Out", @"外出");
         self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
     } else if (userInfo.leaveState > 0) {
-        self.stateView.text = @"休假";
+        self.stateView.text = NSLocalizedString(@"Vacation", @"休假");
         self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
     } else {
-        self.stateView.text = @"在岗";
+        self.stateView.text = NSLocalizedString(@"OnGuard", @"在岗");
         self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
     }
 }

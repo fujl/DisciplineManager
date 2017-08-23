@@ -26,7 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"修改密码";
+    self.title = NSLocalizedString(@"ModifyPassword", @"修改密码");
+    
     [self refreshView];
 }
 
@@ -53,7 +54,7 @@
 - (DMEntryView *)passwordTitleView {
     if (!_passwordTitleView) {
         _passwordTitleView = [[DMEntryView alloc] init];
-        [_passwordTitleView setTitle:@"原密码"];
+        [_passwordTitleView setTitle:NSLocalizedString(@"OriginalPassword", @"原密码")];
         _passwordTitleView.lcHeight = 44;
     }
     return _passwordTitleView;
@@ -73,7 +74,7 @@
 - (DMEntryView *)nowPasswordTitleView {
     if (!_nowPasswordTitleView) {
         _nowPasswordTitleView = [[DMEntryView alloc] init];
-        [_nowPasswordTitleView setTitle:@"新密码"];
+        [_nowPasswordTitleView setTitle:NSLocalizedString(@"NewPassword", @"新密码")];
         _nowPasswordTitleView.lcHeight = 44;
     }
     return _nowPasswordTitleView;
@@ -93,7 +94,7 @@
 - (DMEntryView *)againPasswordTitleView {
     if (!_againPasswordTitleView) {
         _againPasswordTitleView = [[DMEntryView alloc] init];
-        [_againPasswordTitleView setTitle:@"确认密码"];
+        [_againPasswordTitleView setTitle:NSLocalizedString(@"SurePassword", @"确认密码")];
         _againPasswordTitleView.lcHeight = 44;
     }
     return _againPasswordTitleView;

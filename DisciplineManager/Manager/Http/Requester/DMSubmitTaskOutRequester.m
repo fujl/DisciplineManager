@@ -47,7 +47,7 @@
     params[@"id"] = self.businessId;
     params[@"taskId"] = self.taskId;
     params[@"message"] = self.message;
-    if (self.state) {
+    if (self.state != nil) {
         params[@"state"] = self.state;
     }
 }

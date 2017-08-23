@@ -85,12 +85,12 @@
     [self addSubview:self.pickerView];
     
     UIButton *cancelBtn = [[UIButton alloc] init];
-    [cancelBtn setTitle:@"关闭" forState:UIControlStateNormal];
+    [cancelBtn setTitle:NSLocalizedString(@"Close", @"关闭") forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(cancelClicked) forControlEvents:UIControlEventTouchUpInside];
     [cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     UIButton *submitBtn = [[UIButton alloc] init];
-    [submitBtn setTitle:@"完成" forState:UIControlStateNormal];
+    [submitBtn setTitle:NSLocalizedString(@"Complete", @"完成") forState:UIControlStateNormal];
     [submitBtn addTarget:self action:@selector(submitBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [submitBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     

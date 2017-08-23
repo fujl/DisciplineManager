@@ -71,7 +71,7 @@
         _nameView.textAlignment = NSTextAlignmentCenter;
         _nameView.font = [UIFont systemFontOfSize:14];
         _nameView.textColor = [UIColor colorWithRGB:0x7f7f7f];
-        _nameView.text = @"头像";
+        _nameView.text = NSLocalizedString(@"Avatar", @"头像");
     }
     return _nameView;
 }

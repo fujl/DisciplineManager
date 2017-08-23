@@ -20,7 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"个人头像";
+    self.title = NSLocalizedString(@"PersonalAvatar", @"个人头像");
+    
     [self.view addSubview:self.avatarView];
     
     UIImage *avatar = [UIImage imageNamed:self.gender == Male ? @"male" : @"female"];

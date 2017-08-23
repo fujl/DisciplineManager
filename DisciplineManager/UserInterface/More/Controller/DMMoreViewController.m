@@ -62,7 +62,7 @@
 - (UIButton *)updatePwdView {
     if (!_updatePwdView) {
         _updatePwdView = [[UIButton alloc] init];
-        [_updatePwdView setTitle:@"修改密码" forState:UIControlStateNormal];
+        [_updatePwdView setTitle:NSLocalizedString(@"ModifyPassword", @"修改密码") forState:UIControlStateNormal];
         [_updatePwdView setTitleColor:[UIColor colorWithRGB:0xd9534f] forState:UIControlStateNormal];
         [_updatePwdView setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         _updatePwdView.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -76,7 +76,7 @@
 - (UIButton *)logoutView {
     if (!_logoutView) {
         _logoutView = [[UIButton alloc] init];
-        [_logoutView setTitle:@"注销" forState:UIControlStateNormal];
+        [_logoutView setTitle:NSLocalizedString(@"Logout", @"注销") forState:UIControlStateNormal];
         [_logoutView setTitleColor:[UIColor colorWithRGB:0xd9534f] forState:UIControlStateNormal];
         [_logoutView setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         _logoutView.titleLabel.font = [UIFont systemFontOfSize:16];

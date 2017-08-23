@@ -47,7 +47,7 @@
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = kMainFont;
         _titleLabel.textColor = [UIColor colorWithRGB:0xff9135];
-        _titleLabel.text = @"任务跟踪";
+        _titleLabel.text = NSLocalizedString(@"TaskTrack", @"任务跟踪");
     }
     return _titleLabel;
 }
