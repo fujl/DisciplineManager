@@ -84,7 +84,11 @@
             self.addressDetailView.lcHeight = [self.addressDetailView getHeightFromDetail:self.info.address];
             self.outReasonDetailView.lcHeight = [self.outReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
-                [self.taskOperatorView refreshView:NO];
+                if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
+                    [self.taskOperatorView refreshFinishHuigangView];
+                } else {
+                    [self.taskOperatorView refreshView:NO];
+                }
             } else {
                 self.taskTracksView.taskTracks = self.info.taskTracks;
             }
@@ -460,6 +464,8 @@
             requester.state = ACTIVITI_STATE_COMPLETE;
         } else if (taskOperator == TaskOperator_Rejected) {
             requester.state = ACTIVITI_STATE_REJECTED;
+        } else if (taskOperator == TaskOperator_Finish) {
+            requester.state = ACTIVITI_STATE_COMPLETE;
         }
     }
     
