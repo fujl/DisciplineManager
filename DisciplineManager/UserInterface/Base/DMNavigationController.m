@@ -19,7 +19,11 @@
     // Do any additional setup after loading the view.
 }
 
+//push时隐藏tabbar
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
     [super pushViewController:viewController animated:animated];
     
     if (![viewController isKindOfClass:[DMBaseViewController class]]) {
