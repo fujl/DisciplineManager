@@ -28,6 +28,7 @@
 		18C1592A1F434A10005B98C0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159291F434A10005B98C0 /* UserNotifications.framework */; };
 		18C1592F1F434BAB005B98C0 /* GTSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1592D1F434BAB005B98C0 /* GTSDK.framework */; };
 		18C159311F43510B005B98C0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159301F43510B005B98C0 /* AdSupport.framework */; };
+		18D7A6221F66B54000B48BCD /* DMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7A6211F66B54000B48BCD /* DMHomeViewController.m */; };
 		18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */; };
 		18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */; };
 		2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */; };
@@ -194,6 +195,8 @@
 		18C159291F434A10005B98C0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		18C1592D1F434BAB005B98C0 /* GTSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTSDK.framework; sourceTree = "<group>"; };
 		18C159301F43510B005B98C0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		18D7A6201F66B54000B48BCD /* DMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHomeViewController.h; sourceTree = "<group>"; };
+		18D7A6211F66B54000B48BCD /* DMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHomeViewController.m; sourceTree = "<group>"; };
 		18FBAB611F30C37F00E6E67B /* DMOfficialCarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMOfficialCarModel.h; sourceTree = "<group>"; };
 		18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMOfficialCarModel.m; sourceTree = "<group>"; };
 		18FBAB641F30C51B00E6E67B /* DMSearchOfficialCarRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOfficialCarRequester.h; sourceTree = "<group>"; };
@@ -498,6 +501,39 @@
 				18C1592D1F434BAB005B98C0 /* GTSDK.framework */,
 			);
 			path = GtSdkLib;
+			sourceTree = "<group>";
+		};
+		18D7A61C1F66B44800B48BCD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18D7A61D1F66B44800B48BCD /* Controller */,
+				18D7A61E1F66B44800B48BCD /* Model */,
+				18D7A61F1F66B44800B48BCD /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18D7A61D1F66B44800B48BCD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18D7A6201F66B54000B48BCD /* DMHomeViewController.h */,
+				18D7A6211F66B54000B48BCD /* DMHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18D7A61E1F66B44800B48BCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18D7A61F1F66B44800B48BCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5FEC93F4EA6BF16E2E62F3DF /* Frameworks */ = {
@@ -1043,6 +1079,7 @@
 		DF8FD72F1EEA42CD0060FE34 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				18D7A61C1F66B44800B48BCD /* Home */,
 				DF377CB91EF2963800522AF7 /* AddressBook */,
 				DF377CBD1EF2963800522AF7 /* ApplyBus */,
 				DF377CC11EF2963800522AF7 /* ApplyCompensatory */,
@@ -1504,6 +1541,7 @@
 				DF5ED6851F23634E00374C8A /* DMLeaveTicketModel.m in Sources */,
 				DF6A9BE61F0490BC0075F100 /* DMConfig.m in Sources */,
 				DF5444111EF3D7AD000EE89F /* DMEntrySelectView.m in Sources */,
+				18D7A6221F66B54000B48BCD /* DMHomeViewController.m in Sources */,
 				DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */,
 				DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */,
 				188ED8E21F449722009BF26D /* DMWebViewController.m in Sources */,
