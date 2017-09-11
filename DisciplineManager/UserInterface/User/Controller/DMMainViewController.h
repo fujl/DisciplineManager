@@ -8,6 +8,6 @@
 
 #import "DMLinearViewController.h"
 
-@interface DMMainViewController : DMLinearViewController
+@interface DMMainViewController : UITabBarController
 
 @end

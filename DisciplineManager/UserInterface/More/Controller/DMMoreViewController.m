@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"More",@"更多");
+    self.title = NSLocalizedString(@"mine",@"我的");
     
     [self.subviewList addObject:self.mineView];
     [self.subviewList addObject:self.updatePwdView];

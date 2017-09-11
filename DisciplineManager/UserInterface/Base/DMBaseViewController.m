@@ -33,9 +33,10 @@ CGFloat itemSize = 44;
             backBtn.title = lastControllerTitle;
         }
         self.navigationItem.backBarButtonItem = backBtn;
+        self.hidesBottomBarWhenPushed = YES;
     }
     [self.navigationController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xebebeb] size:CGSizeMake(SCREEN_WIDTH, 0.5f)]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xefefef] size:CGSizeMake(1.0f, 1.0f)] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xd9534f] size:CGSizeMake(SCREEN_WIDTH, 64.0f)] forBarMetrics:UIBarMetricsDefault];
 }
 
 // 判断是否有网络

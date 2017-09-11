@@ -6,7 +6,7 @@
   Copyright © 2017年 fujl-mac. All rights reserved.
 */
 
-"app_name" = "纪管系统";
+"app_name" = "智慧行政";
 "goback" = "返回";
 "hint" = "提示";
 "sure" = "确定";
@@ -101,3 +101,6 @@
 "Logout" = "注销";
 "DetailInfo" = "详细信息";
 "TaskTrack" = "任务跟踪";
+
+"home" = "政";
+"mine" = "我的";

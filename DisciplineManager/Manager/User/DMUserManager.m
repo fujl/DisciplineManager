@@ -128,22 +128,22 @@
 }
 
 - (void)startMainController {
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x64C990]} forState:UIControlStateSelected];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x555555]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0xd9534f]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x858585]} forState:UIControlStateNormal];
     DMMainViewController *mainViewController = [[DMMainViewController alloc] init];
-    UINavigationController *mainNavigationController = [[DMNavigationController alloc] initWithRootViewController:mainViewController];
+//    UINavigationController *mainNavigationController = [[DMNavigationController alloc] initWithRootViewController:mainViewController];
     
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     UIView *currentView = window.rootViewController.view;
     
-    [UIView transitionFromView:currentView toView:mainNavigationController.view duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
-        [window setRootViewController:mainNavigationController];
+    [UIView transitionFromView:currentView toView:mainViewController.view duration:0.4 options:UIViewAnimationOptionTransitionCrossDissolve completion:^(BOOL finished) {
+        [window setRootViewController:mainViewController];
     }];
 }
 
 - (void)startLoginController {
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x64C990]} forState:UIControlStateSelected];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x555555]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0xd9534f]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRGB:0x858585]} forState:UIControlStateNormal];
     DMLoginViewController *loginViewController = [[DMLoginViewController alloc] init];
     
     UIWindow *window = [UIApplication sharedApplication].delegate.window;

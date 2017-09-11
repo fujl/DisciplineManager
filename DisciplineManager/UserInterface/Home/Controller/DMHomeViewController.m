@@ -38,7 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"app_name", @"纪管系统");
+    //self.title = NSLocalizedString(@"app_name", @"纪管系统");
+    //[self.navigationController setNavigationBarHidden:YES];
     [self createView];
     
     DMUserManager *manager = getManager([DMUserManager class]);
