@@ -143,6 +143,8 @@
 		DFE023CA1F063D95007BD7AC /* DMFormBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */; };
 		DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */; };
 		DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */; };
+		DFE4C72B1F678768004F4184 /* DMVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE4C72A1F678768004F4184 /* DMVoteViewController.m */; };
+		DFE4C7301F678BB3004F4184 /* DMNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE4C72F1F678BB3004F4184 /* DMNewsViewController.m */; };
 		DFED74B11EEA71F5006DDEE8 /* DMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = DFED74B01EEA71F5006DDEE8 /* DMGlobal.m */; };
 		DFED74B41EEA73CB006DDEE8 /* DMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFED74B31EEA73CB006DDEE8 /* DMMainViewController.m */; };
 		DFF428211F137F8600BB1069 /* DMCheckLoginRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF428201F137F8600BB1069 /* DMCheckLoginRequester.m */; };
@@ -429,6 +431,10 @@
 		DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyBusListInfo.m; sourceTree = "<group>"; };
 		DFE023CE1F0641E6007BD7AC /* DMDetailApplyBusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyBusController.h; sourceTree = "<group>"; };
 		DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyBusController.m; sourceTree = "<group>"; };
+		DFE4C7291F678768004F4184 /* DMVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMVoteViewController.h; sourceTree = "<group>"; };
+		DFE4C72A1F678768004F4184 /* DMVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMVoteViewController.m; sourceTree = "<group>"; };
+		DFE4C72E1F678BB3004F4184 /* DMNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNewsViewController.h; sourceTree = "<group>"; };
+		DFE4C72F1F678BB3004F4184 /* DMNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNewsViewController.m; sourceTree = "<group>"; };
 		DFED74AF1EEA71F5006DDEE8 /* DMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGlobal.h; sourceTree = "<group>"; };
 		DFED74B01EEA71F5006DDEE8 /* DMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGlobal.m; sourceTree = "<group>"; };
 		DFED74B21EEA73CB006DDEE8 /* DMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMainViewController.h; sourceTree = "<group>"; };
@@ -1079,6 +1085,8 @@
 		DF8FD72F1EEA42CD0060FE34 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				DFE4C72C1F678BB3004F4184 /* News */,
+				DFE4C7271F67874B004F4184 /* Vote */,
 				18D7A61C1F66B44800B48BCD /* Home */,
 				DF377CB91EF2963800522AF7 /* AddressBook */,
 				DF377CBD1EF2963800522AF7 /* ApplyBus */,
@@ -1227,6 +1235,40 @@
 				DFB453611EE557070000DDC9 /* Info.plist */,
 			);
 			path = DisciplineManagerUITests;
+			sourceTree = "<group>";
+		};
+		DFE4C7271F67874B004F4184 /* Vote */ = {
+			isa = PBXGroup;
+			children = (
+				DFE4C7281F67874B004F4184 /* Controller */,
+			);
+			path = Vote;
+			sourceTree = "<group>";
+		};
+		DFE4C7281F67874B004F4184 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFE4C7291F678768004F4184 /* DMVoteViewController.h */,
+				DFE4C72A1F678768004F4184 /* DMVoteViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DFE4C72C1F678BB3004F4184 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				DFE4C72D1F678BB3004F4184 /* Controller */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		DFE4C72D1F678BB3004F4184 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFE4C72E1F678BB3004F4184 /* DMNewsViewController.h */,
+				DFE4C72F1F678BB3004F4184 /* DMNewsViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1463,9 +1505,11 @@
 				DF8877131F276D490048F3AA /* DMUserModel.m in Sources */,
 				DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */,
 				DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */,
+				DFE4C7301F678BB3004F4184 /* DMNewsViewController.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
 				188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */,
+				DFE4C72B1F678768004F4184 /* DMVoteViewController.m in Sources */,
 				DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */,
 				DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */,
 				186360401F30E75A00E2FE23 /* DMPushManager.m in Sources */,

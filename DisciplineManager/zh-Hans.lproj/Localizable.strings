@@ -102,5 +102,8 @@
 "DetailInfo" = "详细信息";
 "TaskTrack" = "任务跟踪";
 
+"news" = "简讯";
+"AddressList" = "通讯";
 "home" = "政";
 "mine" = "我的";
+"vote" = "投票";

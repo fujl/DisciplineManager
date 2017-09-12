@@ -24,13 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"all_department", @"所有部门");
-    
+//    self.title = NSLocalizedString(@"all_department", @"所有部门");
+    self.title = NSLocalizedString(@"AddressList", @"通讯");
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.width.equalTo(self.view);
-        make.bottom.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     [self setRefreshView];
 }
