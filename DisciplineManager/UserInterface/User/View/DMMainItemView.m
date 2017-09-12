@@ -8,7 +8,7 @@
 
 #import "DMMainItemView.h"
 
-#define kMainItemWidth  ((SCREEN_WIDTH-1)/3.0f)
+#define kMainItemWidth  ((SCREEN_WIDTH-1)/4.0f)
 
 @interface DMMainItemView ()
 @property (nonatomic, strong) UILabel *titleView;

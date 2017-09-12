@@ -25,7 +25,7 @@
 #import "DMWebViewController.h"
 
 @interface DMHomeViewController () <SDCycleScrollViewDelegate>
-
+@property (nonatomic, strong) UIView *headView;
 @property (nonatomic, strong) SDCycleScrollView *logoView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) DMMainItemView *todoView;
@@ -53,8 +53,24 @@
     [self loadCMSContent];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    if(!self.navigationController.navigationBar.hidden){
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    NSUInteger childControllerCount = self.navigationController.viewControllers.count;
+    if(childControllerCount > 1){
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+}
+
 - (void)createView {
     NSMutableArray<__kindof UIView*> *childViews  = [[NSMutableArray alloc] init];
+    [childViews addObject:self.headView];
     [childViews addObject:self.logoView];
     
     //    [self.view addSubview:self.logoView];
@@ -102,8 +118,8 @@
         DMMainItemView *mainItemView = [self getMainItemView:i title:title icon:icon];
         [mainItemView addTarget:self action:@selector(clickMainItemView:) forControlEvents:UIControlEventTouchUpInside];
         NSInteger index = i-kMainItemTodo;
-        CGFloat x = (index%3)*(mainItemView.width+0.5);
-        CGFloat y = (index/3)*(mainItemView.height+0.5);
+        CGFloat x = (index%4)*(mainItemView.width+0.5);
+        CGFloat y = (index/4)*(mainItemView.height+0.5);
         mainItemView.frame = CGRectMake(x, y, mainItemView.width, mainItemView.height);
         if (i == kMainItemTodo) {
             self.todoView = mainItemView;
@@ -118,6 +134,25 @@
 }
 
 #pragma mark - getters and setters
+- (UIView *)headView {
+    if (!_headView) {
+        _headView = [[UIView alloc] init];
+        _headView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
+        _headView.lcHeight = 64;
+        _headView.lcTopMargin = -20;
+        UILabel *titleView = [[UILabel alloc] init];
+        titleView.text = NSLocalizedString(@"app_name", @"智慧行政");
+        titleView.textColor = [UIColor whiteColor];
+        titleView.textAlignment = NSTextAlignmentCenter;
+        titleView.font = [UIFont boldSystemFontOfSize:17];
+        [_headView addSubview:titleView];
+        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_headView);
+            make.centerY.equalTo(_headView).offset(10);
+        }];
+    }
+    return _headView;
+}
 
 - (SDCycleScrollView *)logoView {
     if (!_logoView) {
