@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         // 配置服务器地址
-        _serverName = ServerNameNormal;
+        _serverName = ServerNameTest;
     }
     return self;
 }
@@ -37,7 +37,7 @@
     if (self.serverName == ServerNameNormal) {
         return @"http://m.xygs.gov.cn:8088/";
     } else {
-        return @"http://m.xygs.gov.cn:8088/";
+        return @"http://m.xygs.gov.cn:8099/";
     }
 }
 
