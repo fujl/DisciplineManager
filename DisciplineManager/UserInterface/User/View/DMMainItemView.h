@@ -10,11 +10,12 @@
 
 #define kMainItemTodo               1000    // 待办任务
 #define kMainItemApplyOut           1001    // 外出申请
-#define kMainItemApplyBus           1002    // 公车申请
-#define kMainItemApplyCompensatory  1003    // 补休申请
+#define kMainItemTemporaryTask      1002    // 督办任务
+#define kMainItemExhibition         1003    // 工作展晒
 #define kMainItemApplyLeave         1004    // 请假申请
-#define kMainItemAddressBook        1005    // 通讯录
-#define kMainItemMore               1006    // 更多
+#define kMainItemApplyCompensatory  1005    // 补休申请
+#define kMainItemRepast             1006    // 就餐管理
+#define kMainItemNotice               1007    // 更多
 
 @interface DMMainItemView : UIButton
 @property (nonatomic, assign) CGFloat height;

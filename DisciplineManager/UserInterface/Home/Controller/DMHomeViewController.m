@@ -81,37 +81,41 @@
     //        make.height.equalTo(@(SCREEN_WIDTH*0.618));
     //    }];
     CGFloat h = 0;
-    for (NSInteger i=kMainItemTodo; i<1007; i++) {
+    for (NSInteger i=kMainItemTodo; i < 1008; i++) {
         NSString *title;
         NSString *icon;
         switch (i) {
             case kMainItemTodo:
-                title = NSLocalizedString(@"Todo",@"待办任务");
-                icon = @"Todo";
+                title = NSLocalizedString(@"Todo", @"待办任务");
+                icon = @"ic_task";
                 break;
             case kMainItemApplyOut:
-                title = NSLocalizedString(@"ApplyOut",@"外出申请");
-                icon = @"ApplyOut";
+                title = NSLocalizedString(@"ApplyOut", @"外出申请");
+                icon = @"ic_goout";
                 break;
-            case kMainItemApplyBus:
-                title = NSLocalizedString(@"ApplyBus",@"公车申请");
-                icon = @"ApplyBus";
+            case kMainItemTemporaryTask:
+                title = NSLocalizedString(@"temporary_task", @"督办任务");
+                icon = @"ic_temporary_task";
                 break;
-            case kMainItemApplyCompensatory:
-                title = NSLocalizedString(@"ApplyCompensatory",@"补休申请");
-                icon = @"ApplyCompensatory";
+            case kMainItemExhibition:
+                title = NSLocalizedString(@"exhibition", @"工作展晒");
+                icon = @"ic_exhibition";
                 break;
             case kMainItemApplyLeave:
-                title = NSLocalizedString(@"ApplyLeave",@"请假申请");
-                icon = @"ApplyLeave";
+                title = NSLocalizedString(@"ApplyLeave", @"请假申请");
+                icon = @"ic_leave";
                 break;
-            case kMainItemAddressBook:
-                title = NSLocalizedString(@"AddressBook",@"通讯录");
-                icon = @"AddressBook";
+            case kMainItemApplyCompensatory:
+                title = NSLocalizedString(@"ApplyCompensatory", @"补休申请");
+                icon = @"ic_compenstaed_leave";
+                break;
+            case kMainItemRepast:
+                title = NSLocalizedString(@"repast", @"就差管理");
+                icon = @"ic_repast";
                 break;
             default:
-                title = NSLocalizedString(@"More",@"更多");
-                icon = @"More";
+                title = NSLocalizedString(@"notice", @"通知公告");
+                icon = @"ic_notice";
                 break;
         }
         
@@ -208,9 +212,20 @@
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case kMainItemApplyBus:
+        case kMainItemTemporaryTask:
         {
-            DMApplyBusViewController *controller = [[DMApplyBusViewController alloc] init];
+            
+        }
+            break;
+        case kMainItemExhibition:
+        {
+//            DMApplyBusViewController *controller = [[DMApplyBusViewController alloc] init];
+//            [self.navigationController pushViewController:controller animated:YES];
+        }
+            break;
+        case kMainItemApplyLeave:
+        {
+            DMApplyLeaveViewController *controller = [[DMApplyLeaveViewController alloc] init];
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
@@ -220,22 +235,16 @@
             [self.navigationController pushViewController:controller animated:YES];
         }
             break;
-        case kMainItemApplyLeave:
+        case kMainItemRepast:
         {
-            DMApplyLeaveViewController *controller = [[DMApplyLeaveViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
-        }
-            break;
-        case kMainItemAddressBook:
-        {
-            DMAddressBookViewController *controller = [[DMAddressBookViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
+//            DMAddressBookViewController *controller = [[DMAddressBookViewController alloc] init];
+//            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
         default:
         {
-            DMMoreViewController *controller = [[DMMoreViewController alloc] init];
-            [self.navigationController pushViewController:controller animated:YES];
+//            DMMoreViewController *controller = [[DMMoreViewController alloc] init];
+//            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
     }
