@@ -36,6 +36,10 @@
 
 #define IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IOS11 @available(iOS 11.0, *)
+
 typedef NS_ENUM(NSInteger, DMActivitiState) {
     ACTIVITI_STATE_SAVE                 = 0,                // 审批状态, 保存 未启动流程
     ACTIVITI_STATE_PENDING              = 1,                // 审批状态, 审核中
