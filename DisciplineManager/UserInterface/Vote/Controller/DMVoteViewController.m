@@ -13,6 +13,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"vote",@"投票");
+    
+    [self addNavRightItem:@selector(clickPublish) andTitle:NSLocalizedString(@"Publish", @"发布")];
+    
+    
+}
+
+- (void)clickPublish {
+    
 }
 
 @end
