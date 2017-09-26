@@ -134,6 +134,7 @@
 		DFB453551EE557070000DDC9 /* DisciplineManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB453541EE557070000DDC9 /* DisciplineManagerTests.m */; };
 		DFB453601EE557070000DDC9 /* DisciplineManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4535F1EE557070000DDC9 /* DisciplineManagerUITests.m */; };
 		DFBCD6D91F2B0B92009FAA24 /* DMSearchOrgRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */; };
+		DFC2A6661F7A54CC00067C46 /* DMPublishVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */; };
 		DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */; };
 		DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B41F05DF9C00AD40AE /* DMDetailApplyOutController.m */; };
 		DFCE28B81F05E1A700AD40AE /* DMDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B71F05E1A700AD40AE /* DMDetailView.m */; };
@@ -413,6 +414,8 @@
 		DFB453611EE557070000DDC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBCD6D71F2B0B92009FAA24 /* DMSearchOrgRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOrgRequester.h; sourceTree = "<group>"; };
 		DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchOrgRequester.m; sourceTree = "<group>"; };
+		DFC2A6641F7A54CC00067C46 /* DMPublishVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMPublishVoteViewController.h; sourceTree = "<group>"; };
+		DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMPublishVoteViewController.m; sourceTree = "<group>"; };
 		DFCE28B01F05DEAC00AD40AE /* DMDetailApplyOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyOutRequester.h; sourceTree = "<group>"; };
 		DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyOutRequester.m; sourceTree = "<group>"; };
 		DFCE28B31F05DF9C00AD40AE /* DMDetailApplyOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyOutController.h; sourceTree = "<group>"; };
@@ -1250,6 +1253,8 @@
 			children = (
 				DFE4C7291F678768004F4184 /* DMVoteViewController.h */,
 				DFE4C72A1F678768004F4184 /* DMVoteViewController.m */,
+				DFC2A6641F7A54CC00067C46 /* DMPublishVoteViewController.h */,
+				DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1540,6 +1545,7 @@
 				DF7B1DD51EF536D80025A21C /* DMMultiLineTextView.m in Sources */,
 				DF8FD74A1EEA47400060FE34 /* DMNavigationController.m in Sources */,
 				DFCE28BB1F0634D000AD40AE /* DMCommitApplyBusRequester.m in Sources */,
+				DFC2A6661F7A54CC00067C46 /* DMPublishVoteViewController.m in Sources */,
 				DF377CB81EF284CF00522AF7 /* DMMainItemView.m in Sources */,
 				DF8FD72C1EEA3DB70060FE34 /* DMBaseManager.m in Sources */,
 				DF8A22121F29E2EF00617974 /* DMUserDetailHeadView.m in Sources */,

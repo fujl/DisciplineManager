@@ -7,6 +7,7 @@
 //
 
 #import "DMVoteViewController.h"
+#import "DMPublishVoteViewController.h"
 
 @implementation DMVoteViewController
 
@@ -15,12 +16,11 @@
     self.title = NSLocalizedString(@"vote",@"投票");
     
     [self addNavRightItem:@selector(clickPublish) andTitle:NSLocalizedString(@"Publish", @"发布")];
-    
-    
 }
 
 - (void)clickPublish {
-    
+    DMPublishVoteViewController *controller = [[DMPublishVoteViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
