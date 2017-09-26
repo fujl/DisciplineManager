@@ -142,8 +142,14 @@
     if (!_headView) {
         _headView = [[UIView alloc] init];
         _headView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
-        _headView.lcHeight = 64;
-        _headView.lcTopMargin = -20;
+        if (IPHONEX) {
+            _headView.lcHeight = 64+34;
+            _headView.lcTopMargin = -54;
+        } else {
+            _headView.lcHeight = 64;
+            _headView.lcTopMargin = -20;
+        }
+        
         UILabel *titleView = [[UILabel alloc] init];
         titleView.text = NSLocalizedString(@"app_name", @"智慧行政");
         titleView.textColor = [UIColor whiteColor];
@@ -152,7 +158,11 @@
         [_headView addSubview:titleView];
         [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_headView);
-            make.centerY.equalTo(_headView).offset(10);
+            if (IPHONEX) {
+                make.centerY.equalTo(_headView).offset(20);
+            } else {
+                make.centerY.equalTo(_headView).offset(10);
+            }
         }];
     }
     return _headView;

@@ -30,7 +30,11 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);
         make.left.width.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        if (IPHONEX) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-84);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        }
     }];
     [self setRefreshView];
 }
