@@ -10,7 +10,7 @@
 
 @interface DMAddressPickerView : UIView
 
-@property(nonatomic, strong) void (^onCompleteClick)(DMAddressInfo *provinceInfo, DMAddressInfo *cityInfo, DMAddressInfo *areaInfo);
+@property(nonatomic, copy) void (^onCompleteClick)(DMAddressInfo *provinceInfo, DMAddressInfo *cityInfo, DMAddressInfo *areaInfo);
 // 显示
 - (void)show;
 

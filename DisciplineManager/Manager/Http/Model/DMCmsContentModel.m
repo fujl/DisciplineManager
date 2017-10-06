@@ -15,10 +15,11 @@
     if (self) {
         self.ccId = [[dict objectForKey:@"id"] integerValue];
         self.createTime = [dict objectForKey:@"createTime"];
-        self.title = [dict objectForKey:@"title"];
+        self.title = parseStringFromObject([dict objectForKey:@"title"]);
         self.shortTitle = [dict objectForKey:@"shortTitle"];
         self.txt = parseStringFromObject([dict objectForKey:@"txt"]);
-        self.imgPath = [dict objectForKey:@"imgPath"];
+        self.imgPath = parseStringFromObject([dict objectForKey:@"imgPath"]);
+        self.type = [[dict objectForKey:@"type"] integerValue];
     }
     return self;
 }

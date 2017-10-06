@@ -20,6 +20,7 @@
 @property (nonatomic, assign) BOOL sfgq;
 
 @property (nonatomic, assign) BOOL selected;// 是否选择
+@property (nonatomic, assign) NSInteger type;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 @end

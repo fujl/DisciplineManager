@@ -39,8 +39,8 @@
         [self.dotView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.mas_right).offset(-15);
             make.top.equalTo(self.mas_top).offset(10);
-            make.width.equalTo(@6);
-            make.height.equalTo(@6);
+            make.width.equalTo(@10);
+            make.height.equalTo(@10);
         }];
         [self hiddenDot:YES];
     }

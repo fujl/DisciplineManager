@@ -9,6 +9,7 @@
 #import "DMHttpRequester.h"
 
 @interface DMCmsContentRequster : DMHttpRequester
+@property (nonatomic, assign) NSInteger channelId;
 @property (nonatomic, assign) NSInteger offset;
 @property (nonatomic, assign) NSInteger limit;
 @end

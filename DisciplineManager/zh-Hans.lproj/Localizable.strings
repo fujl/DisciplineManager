@@ -110,6 +110,29 @@
 
 "temporary_task" = "督办任务";
 "exhibition" = "工作展晒";
+"FillinExhibition" = "填写工作展晒";
 "repast" = "就餐管理";
 "notice" = "通知公告";
 "Publish" = "发布";
+"mood" = "这一刻的心情";
+"mood_placeholder" = "请输入您此刻的心情";
+
+"TakePhoto" = "拍照";
+"ChooseFromGallery" = "从相册选择";
+// 多图
+"Photo" = "照片";
+"photo_authorized" = "请在iPhone的\"设置-隐私-照片\"中允许访问照片。";
+"OK" = "确定";
+"album_nodata_tipone" = "当前没有照片";
+"album_nodata_tiptwo" = "使用相机拍摄";
+"Preview" = "预览";
+"Completed" = "完成";
+"photo_maxnumber" = "您最多只能选择%ld张照片";
+"ISee" = "我知道了";
+
+"cancel" = "取消";
+
+"vote_theme_placeholder" = "请输入投票主题，8-20字";
+"max_tip_publish_vote" = "最多支持%zd个选项，每个选项不超过%zd个字";
+"vote_item_placeholder" = "选项%zd";
+"add_item" = "添加选项";

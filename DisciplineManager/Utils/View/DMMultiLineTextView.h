@@ -11,4 +11,5 @@
 @interface DMMultiLineTextView : UIView
 - (void)setPlaceholder:(NSString *)placeholder;
 - (NSString *)getMultiLineText;
+- (void)setMaxMultiLineTextLength:(NSInteger)maxMultiLineTextLength;
 @end

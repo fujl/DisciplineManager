@@ -54,6 +54,7 @@
 @property (nonatomic, strong) NSString *shortTitle;
 @property (nonatomic, strong) NSString *txt;
 @property (nonatomic, strong) NSString *imgPath;
+@property (nonatomic, assign) NSInteger type;// 0普通, 1图文, 2焦点, 3头条
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 

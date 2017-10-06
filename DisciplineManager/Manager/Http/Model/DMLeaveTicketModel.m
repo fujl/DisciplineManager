@@ -22,7 +22,7 @@
         self.days = [[dict objectForKey:@"days"] floatValue];
         self.state = [[dict objectForKey:@"state"] integerValue];
         self.sfgq = [[dict objectForKey:@"sfgq"] integerValue];
-        
+        self.type = [[dict objectForKey:@"type"] integerValue];
         self.selected = NO;
     }
     return self;

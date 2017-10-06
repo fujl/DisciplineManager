@@ -8,7 +8,7 @@
 
 #import "DMHomeViewController.h"
 #import "DMNavigationController.h"
-#import "DMMainItemView.h"
+#import "DMHomeHeadView.h"
 
 #import "DMTodoViewController.h"
 #import "DMApplyOutViewController.h"
@@ -23,12 +23,16 @@
 #import "DMCmsContentModel.h"
 #import "DMCmsContentRequster.h"
 #import "DMWebViewController.h"
+#import "DMNewsCell.h"
 
-@interface DMHomeViewController () <SDCycleScrollViewDelegate>
-@property (nonatomic, strong) UIView *headView;
-@property (nonatomic, strong) SDCycleScrollView *logoView;
-@property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) DMMainItemView *todoView;
+#import "DMExhibitionViewController.h"
+#import "DMRepastViewController.h"
+
+@interface DMHomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UIView *titleView;
+@property (nonatomic, strong) DMHomeHeadView *headView;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray<DMCmsContentModel *> *cmsContentList;
 
 @end
@@ -50,7 +54,8 @@
         [weakSelf onNewMsg];
     };
     
-    [self loadCMSContent];
+    [self loadCMSContent:17];
+    [self loadCMSContent:18];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,10 +74,9 @@
 }
 
 - (void)createView {
-    NSMutableArray<__kindof UIView*> *childViews  = [[NSMutableArray alloc] init];
-    [childViews addObject:self.headView];
-    [childViews addObject:self.logoView];
-    
+    [self.view addSubview:self.titleView];
+    [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = self.headView;
     //    [self.view addSubview:self.logoView];
     //
     //    [self.logoView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,108 +84,79 @@
     //        make.top.equalTo(self.view);
     //        make.height.equalTo(@(SCREEN_WIDTH*0.618));
     //    }];
-    CGFloat h = 0;
-    for (NSInteger i=kMainItemTodo; i < 1008; i++) {
-        NSString *title;
-        NSString *icon;
-        switch (i) {
-            case kMainItemTodo:
-                title = NSLocalizedString(@"Todo", @"待办任务");
-                icon = @"ic_task";
-                break;
-            case kMainItemApplyOut:
-                title = NSLocalizedString(@"ApplyOut", @"外出申请");
-                icon = @"ic_goout";
-                break;
-            case kMainItemTemporaryTask:
-                title = NSLocalizedString(@"temporary_task", @"督办任务");
-                icon = @"ic_temporary_task";
-                break;
-            case kMainItemExhibition:
-                title = NSLocalizedString(@"exhibition", @"工作展晒");
-                icon = @"ic_exhibition";
-                break;
-            case kMainItemApplyLeave:
-                title = NSLocalizedString(@"ApplyLeave", @"请假申请");
-                icon = @"ic_leave";
-                break;
-            case kMainItemApplyCompensatory:
-                title = NSLocalizedString(@"ApplyCompensatory", @"补休申请");
-                icon = @"ic_compenstaed_leave";
-                break;
-            case kMainItemRepast:
-                title = NSLocalizedString(@"repast", @"就差管理");
-                icon = @"ic_repast";
-                break;
-            default:
-                title = NSLocalizedString(@"notice", @"通知公告");
-                icon = @"ic_notice";
-                break;
-        }
-        
-        DMMainItemView *mainItemView = [self getMainItemView:i title:title icon:icon];
-        [mainItemView addTarget:self action:@selector(clickMainItemView:) forControlEvents:UIControlEventTouchUpInside];
-        NSInteger index = i-kMainItemTodo;
-        CGFloat x = (index%4)*(mainItemView.width+0.5);
-        CGFloat y = (index/4)*(mainItemView.height+0.5);
-        mainItemView.frame = CGRectMake(x, y, mainItemView.width, mainItemView.height);
-        if (i == kMainItemTodo) {
-            self.todoView = mainItemView;
-        }
-        [self.contentView addSubview:mainItemView];
-        h = y + mainItemView.height + 0.5;
-    }
-    self.contentView.lcHeight = h;
-    [childViews addObject:self.contentView];
     
-    [self setChildViews:childViews];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleView.mas_bottom);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view.mas_right);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+    }];
 }
 
 #pragma mark - getters and setters
-- (UIView *)headView {
-    if (!_headView) {
-        _headView = [[UIView alloc] init];
-        _headView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
+- (UIView *)titleView {
+    if (!_titleView) {
+        _titleView = [[UIView alloc] init];
+        _titleView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
         if (IPHONEX) {
-            _headView.lcHeight = 64+34;
-            _headView.lcTopMargin = -54;
+            _titleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 64+34);
+//            _headView.lcHeight = 64+34;
+//            _headView.lcTopMargin = -54;
         } else {
-            _headView.lcHeight = 64;
-            _headView.lcTopMargin = -20;
+            _titleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 64);
+//            _headView.lcHeight = 64;
+//            _headView.lcTopMargin = -20;
         }
         
-        UILabel *titleView = [[UILabel alloc] init];
-        titleView.text = NSLocalizedString(@"app_name", @"智慧行政");
-        titleView.textColor = [UIColor whiteColor];
-        titleView.textAlignment = NSTextAlignmentCenter;
-        titleView.font = [UIFont boldSystemFontOfSize:17];
-        [_headView addSubview:titleView];
-        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(_headView);
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.text = NSLocalizedString(@"app_name", @"智慧行政");
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.font = [UIFont boldSystemFontOfSize:17];
+        [_titleView addSubview:titleLabel];
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_titleView);
             if (IPHONEX) {
-                make.centerY.equalTo(_headView).offset(20);
+                make.centerY.equalTo(_titleView).offset(20);
             } else {
-                make.centerY.equalTo(_headView).offset(10);
+                make.centerY.equalTo(_titleView).offset(10);
             }
         }];
+    }
+    return _titleView;
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] init];
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
+}
+
+- (DMHomeHeadView *)headView {
+    if (!_headView) {
+        _headView = [[DMHomeHeadView alloc] init];
+        _headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _headView.height+3);
+        __weak typeof(self) weakSelf = self;
+        _headView.clickItemEvent = ^(NSInteger tag) {
+            [weakSelf clickItemEvent:tag];
+        };
+        _headView.didSelectItemAtIndex = ^(NSInteger index) {
+            [weakSelf didSelectItemAtIndex:index];
+        };
     }
     return _headView;
 }
 
-- (SDCycleScrollView *)logoView {
-    if (!_logoView) {
-        NSArray *urls = @[/*[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1917120263,2189330565&fm=11&gp=0.jpg"],
-                           [NSURL URLWithString:@"http://gbres.dfcfw.com/Files/picture/20140507/size500/024FDDE0195A318FC88E185936C1A24D.jpg"],
-                           [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150924/b_12511282_1443057242001.jpg"],
-                           [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150626/b_12511282_1435306319621.jpg"]*/];
-        _logoView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH*0.618) delegate:self placeholderImage:[UIImage imageNamed:@"HomeLogo"]];
-        
-        _logoView.infiniteLoop = YES;
-        _logoView.autoScrollTimeInterval = 5;
-        _logoView.imageURLStringsGroup = urls;
-        _logoView.lcHeight = SCREEN_WIDTH*0.618;
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[NSMutableArray alloc] init];
     }
-    return _logoView;
+    return _dataSource;
 }
 
 - (NSMutableArray<DMCmsContentModel *> *)cmsContentList {
@@ -191,29 +166,15 @@
     return _cmsContentList;
 }
 
-- (UIView *)contentView {
-    if (!_contentView) {
-        _contentView = [[UIView alloc] init];
-        _contentView.backgroundColor = [UIColor clearColor];
-    }
-    return _contentView;
-}
 
-- (DMMainItemView *)getMainItemView:(NSInteger)tag title:(NSString *)title icon:(NSString *)icon {
-    DMMainItemView *mainItemView = [[DMMainItemView alloc] initWithIcon:icon];
-    mainItemView.tag = tag;
-    [mainItemView setTitleViewText:title];
-    return mainItemView;
-}
 
-- (void)clickMainItemView:(UIButton *)sender {
-    NSInteger tag = sender.tag;
+- (void)clickItemEvent:(NSInteger)tag {
     switch (tag) {
         case kMainItemTodo:
         {
             DMTodoViewController *controller = [[DMTodoViewController alloc] init];
             [self.navigationController pushViewController:controller animated:YES];
-            [self.todoView hiddenDot:YES];
+            [self.headView.todoView hiddenDot:YES];
         }
             break;
         case kMainItemApplyOut:
@@ -229,8 +190,8 @@
             break;
         case kMainItemExhibition:
         {
-//            DMApplyBusViewController *controller = [[DMApplyBusViewController alloc] init];
-//            [self.navigationController pushViewController:controller animated:YES];
+            DMExhibitionViewController *controller = [[DMExhibitionViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
         case kMainItemApplyLeave:
@@ -247,8 +208,8 @@
             break;
         case kMainItemRepast:
         {
-//            DMAddressBookViewController *controller = [[DMAddressBookViewController alloc] init];
-//            [self.navigationController pushViewController:controller animated:YES];
+            DMRepastViewController *controller = [[DMRepastViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
         default:
@@ -261,36 +222,82 @@
 }
 
 - (void)onNewMsg {
-    [self.todoView hiddenDot:NO];
+    [self.headView.todoView hiddenDot:NO];
 }
 
 #pragma mark - load data
-- (void)loadCMSContent {
-    [self.cmsContentList removeAllObjects];
+- (void)loadCMSContent:(NSInteger)channelId {
+    if (channelId == 17) {
+        [self.cmsContentList removeAllObjects];
+    } else {
+        [self.dataSource removeAllObjects];
+    }
+    
     DMCmsContentRequster *requester = [[DMCmsContentRequster alloc] init];
+    requester.channelId = channelId;
     [requester postRequest:^(DMResultCode code, id data) {
         if (code == ResultCodeOK) {
             DMListBaseModel *listModel = data;
-            [self.cmsContentList addObjectsFromArray:listModel.rows];
-            
             NSMutableArray *imagesURLStrings = [[NSMutableArray alloc] init];
-            for (DMCmsContentModel *mdl in self.cmsContentList) {
-                [imagesURLStrings addObject:mdl.imgPath];
+            for (DMCmsContentModel *mdl in listModel.rows) {
+                if (channelId == 17) {
+                    [imagesURLStrings addObject:mdl.imgPath];
+                    [self.cmsContentList addObject:mdl];
+                } else {
+                    if (self.dataSource.count <= 3) {
+                        [self.dataSource addObject:mdl];
+                    } else {
+                        break;
+                    }
+                }
             }
-            [self.logoView setImageURLStringsGroup:imagesURLStrings];
-            self.logoView.delegate = self;
+            if (channelId == 17) {
+                [self.headView setImageURLStringsGroup:imagesURLStrings];
+            } else {
+                [self.tableView reloadData];
+            }
         }
     }];
 }
 
 #pragma mark - SDCycleScrollViewDelegate
 /** 点击图片回调 */
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+- (void)didSelectItemAtIndex:(NSInteger)index {
     //    DMCmsContentModel *mdl = [self.cmsContentList objectAtIndex:index];
     //    DMWebViewController *controller = [[DMWebViewController alloc] init];
     //    controller.hidesBottomBarWhenPushed = YES;
     //    controller.cmsModel = mdl;
     //    [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *reusableCellName = @"dequeueReusableCell_OnlinePatientCell";
+    DMNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:reusableCellName];
+    if (!cell) {
+        cell = [[DMNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusableCellName];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.newsInfoModel = [self.dataSource objectAtIndex:indexPath.row];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DMCmsContentModel *mdl = [self.dataSource objectAtIndex:indexPath.row];
+    DMWebViewController *controller = [[DMWebViewController alloc] init];
+    controller.hidesBottomBarWhenPushed = YES;
+    controller.cmsModel = mdl;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

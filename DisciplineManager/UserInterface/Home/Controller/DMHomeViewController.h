@@ -8,6 +8,6 @@
 
 #import "DMLinearViewController.h"
 
-@interface DMHomeViewController : DMLinearViewController
+@interface DMHomeViewController : DMBaseViewController
 
 @end

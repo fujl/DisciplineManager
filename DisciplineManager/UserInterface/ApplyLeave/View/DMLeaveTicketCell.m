@@ -84,7 +84,11 @@
     if (!_titleView) {
         _titleView = [[UILabel alloc] init];
         _titleView.textColor = [UIColor colorWithRGB:0xffffff];
-        _titleView.font = [UIFont systemFontOfSize:15];
+        if (IPHONE5) {
+            _titleView.font = [UIFont systemFontOfSize:14];
+        } else {
+            _titleView.font = [UIFont systemFontOfSize:15];
+        }
         _titleView.textAlignment = NSTextAlignmentLeft;
     }
     return _titleView;
@@ -94,7 +98,7 @@
     if (!_leaveCountView) {
         _leaveCountView = [[UILabel alloc] init];
         _leaveCountView.textColor = [UIColor colorWithRGB:0xffffff];
-        _leaveCountView.font = [UIFont systemFontOfSize:14];
+        _leaveCountView.font = [UIFont systemFontOfSize:12];
         _leaveCountView.textAlignment = NSTextAlignmentLeft;
     }
     return _leaveCountView;
@@ -104,7 +108,7 @@
     if (!_expiryDateView) {
         _expiryDateView = [[UILabel alloc] init];
         _expiryDateView.textColor = [UIColor colorWithRGB:0xffffff];
-        _expiryDateView.font = [UIFont systemFontOfSize:14];
+        _expiryDateView.font = [UIFont systemFontOfSize:12];
         _expiryDateView.textAlignment = NSTextAlignmentLeft;
     }
     return _expiryDateView;
@@ -116,7 +120,11 @@
     self.titleView.text = _leaveTicketModel.title;
     self.leaveCountView.text = [NSString stringWithFormat:@"休假天数：%0.1f天", _leaveTicketModel.days];
     self.expiryDateView.text = [NSString stringWithFormat:@"有效期至：%@", _leaveTicketModel.expiryDate];
-    
+    if (_leaveTicketModel.type == 0) {
+        _bgView.backgroundColor = kCommitBtnColor;
+    } else {
+        _bgView.backgroundColor = [UIColor colorWithRGB:0xe6af5e];
+    }
     [self selectedTicket];
 }
 

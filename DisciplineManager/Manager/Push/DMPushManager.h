@@ -18,7 +18,7 @@
 @interface DMPushManager : DMBaseManager
 
 @property (nonatomic, assign) BOOL isBindClientId;
-@property (nonatomic, strong) void (^onNewMsgBlock)();
+@property (nonatomic, copy) void (^onNewMsgBlock)();
 
 - (void)didFinishLaunchingWithOptions:(NSDictionary *)launchOptions application:(UIApplication *)application;
 

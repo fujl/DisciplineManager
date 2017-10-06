@@ -32,7 +32,7 @@
 }
 
 - (NSString *)getChildrenUrl {
-    return @"xysgsj/jgxt/api/leave/submitTask.do";
+    return @"jgxt/api/leave/submitTask.do";
 }
 
 /**

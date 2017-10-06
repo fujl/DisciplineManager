@@ -20,10 +20,10 @@
 @property(nonatomic, strong) UIDatePicker *datePicker;
 
 // 完成被点击的属性
-@property(nonatomic, strong) void (^onCompleteClick)(DMDatePickerView *datePicker, NSDate *date);
+@property(nonatomic, copy) void (^onCompleteClick)(DMDatePickerView *datePicker, NSDate *date);
 
 // 完成被点击的属性
-@property(nonatomic, strong) void (^onCompleteDtClick)(DMDatePickerView *datePicker, NSDate *date, DMDateTypeModel *dtModel);
+@property(nonatomic, copy) void (^onCompleteDtClick)(DMDatePickerView *datePicker, NSDate *date, DMDateTypeModel *dtModel);
 
 - (instancetype)initWithDateType:(DMDateType)dateType;
 

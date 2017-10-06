@@ -36,9 +36,16 @@
 
 #define IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define IPHONE6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IPHONE6PLUS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
 #define IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IOS11 @available(iOS 11.0, *)
+
+#define kDismissPresentController           @"DismissPresentController"
 
 typedef NS_ENUM(NSInteger, DMActivitiState) {
     ACTIVITI_STATE_SAVE                 = 0,                // 审批状态, 保存 未启动流程
@@ -63,5 +70,24 @@ typedef NS_ENUM(NSInteger, DMDateType) {
     DMDateTypeMorning,          // 上午
     DMDateTypeAfternoon,        // 下午
 };
+
+#ifdef __OBJC__
+#define BEGIN_AUTORELEASE        NSAutoreleasePool* __lpPool = [[NSAutoreleasePool alloc] init];
+#define END_AUTORELEASE            [__lpPool drain];
+
+#define SAFE_RELEASE(x)    \
+if(x)                                   \
+{                                       \
+[x release];                        \
+x = nil;                            \
+}
+#define SAFE_RELEASE_SET(x)  \
+if(x)                                   \
+{                                       \
+[x removeAllObjects];               \
+[x release];                        \
+x = nil;                            \
+}
+#endif
 
 #endif /* DMDefine_h */

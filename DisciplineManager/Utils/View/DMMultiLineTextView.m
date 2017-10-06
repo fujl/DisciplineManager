@@ -13,6 +13,7 @@
 @interface DMMultiLineTextView () <UITextViewDelegate>
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UILabel *placeholderLabel;
+@property (nonatomic, assign) NSInteger maxTextLength;
 @end
 
 @implementation DMMultiLineTextView
@@ -33,6 +34,8 @@
             make.left.equalTo(self.textView).offset(5);
             make.height.equalTo(@(20));
         }];
+        
+        [self setMaxMultiLineTextLength:kMaxMultiLineTextLength];
     }
     return self;
 }
@@ -94,9 +97,13 @@
 }
 
 - (void)setMaxString{
-    if (self.textView.text.length > kMaxMultiLineTextLength) {
-        self.textView.text = [self.textView.text substringToIndex:kMaxMultiLineTextLength];
+    if (self.textView.text.length > self.maxTextLength) {
+        self.textView.text = [self.textView.text substringToIndex:self.maxTextLength];
     }
+}
+
+- (void)setMaxMultiLineTextLength:(NSInteger)maxMultiLineTextLength {
+    self.maxTextLength = maxMultiLineTextLength;
 }
 
 @end
