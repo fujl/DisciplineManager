@@ -34,7 +34,7 @@
 }
 
 - (void)loadData {
-    [self.headView setGender:self.user.userInfo.gender];
+    self.headView.user = self.user;
     [self.nameView setTitle:@"名字" detail:self.user.userInfo.name];
     [self.phoneView setTitle:@"手机号" detail:self.user.userInfo.mobile];
     [self.deptView setTitle:@"所属部门" detail:self.user.orgInfo.name];
@@ -134,7 +134,14 @@
 
 - (void)clickHead {
     DMAvatarViewController *controller = [[DMAvatarViewController alloc] init];
-    controller.gender = self.user.userInfo.gender;
+    controller.user = self.user;
+    __weak typeof(self) weakSelf = self;
+    controller.userAvatarChange = ^{
+        weakSelf.headView.user = self.user;
+        if (weakSelf.userAvatarChange) {
+            weakSelf.userAvatarChange();
+        }
+    };
     [self.navigationController pushViewController:controller animated:YES];
 }
 @end

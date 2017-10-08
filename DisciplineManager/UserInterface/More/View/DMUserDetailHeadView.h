@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DMUserModel.h"
 
 @interface DMUserDetailHeadView : UIButton
 
-- (void)setGender:(DMGender)gender;
+@property (nonatomic, strong) DMUserModel * _Nonnull user;
 
 @end

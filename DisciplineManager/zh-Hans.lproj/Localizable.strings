@@ -94,6 +94,7 @@
 "Ratified" = "已批准";
 "PersonalAvatar" = "个人头像";
 "Avatar" = "头像";
+"Modify" = "修改";
 "ModifyPassword" = "修改密码";
 "OriginalPassword" = "原密码";
 "SurePassword" = "确认密码";
@@ -136,3 +137,8 @@
 "max_tip_publish_vote" = "最多支持%zd个选项，每个选项不超过%zd个字";
 "vote_item_placeholder" = "选项%zd";
 "add_item" = "添加选项";
+"vote_type" = "投票类型";
+"radio" = "单选";
+"checkbox" = "多选";
+"vote_item_check" = "选项不允许为空，且不得超过40个字";
+"vote_end_time_check" = "投票结束时间不得小于当前时间";

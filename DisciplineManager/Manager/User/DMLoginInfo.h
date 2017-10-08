@@ -34,4 +34,10 @@
 /** optLock */
 @property (nonatomic, assign) NSInteger optLock;
 
+/** orgCodeOriginal */
+@property (nonatomic, copy) NSString *orgCodeOriginal;
+
+/** orgCode */
+@property (nonatomic, copy) NSString *orgCode;
+
 @end

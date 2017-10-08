@@ -14,6 +14,7 @@
 #import "ImageUtil.h"
 #import "LMDPhotosManager.h"
 #import "DMImageUploadReuester.h"
+#import "DMSubmitExhRequester.h"
 
 static const int MAX_IMAGE_COUNT = 9;
 
@@ -23,6 +24,8 @@ static const int MAX_IMAGE_COUNT = 9;
 @property (nonatomic, strong) DMMultiLineTextView *moodTextView;
 @property (nonatomic, strong) MsgInterviewImageContainer *imgContainer;
 //@property (nonatomic, strong) DMEntryCommitView *commitView;
+
+@property (nonatomic, strong) NSMutableArray *attrArray;
 
 @end
 
@@ -49,6 +52,13 @@ static const int MAX_IMAGE_COUNT = 9;
         _subviewList = [[NSMutableArray alloc] init];
     }
     return _subviewList;
+}
+
+- (NSMutableArray *)attrArray {
+    if (!_attrArray) {
+        _attrArray = [[NSMutableArray alloc] init];
+    }
+    return _attrArray;
 }
 
 - (DMMultiLineTextView *)moodTextView {
@@ -98,7 +108,6 @@ static const int MAX_IMAGE_COUNT = 9;
 }
 
 #pragma mark 选择照片弹窗
-
 - (void)showChoosePictureDialog {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"取消") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"TakePhoto", nil), NSLocalizedString(@"ChooseFromGallery", nil), nil];
     actionSheet.delegate = self;
@@ -109,8 +118,6 @@ static const int MAX_IMAGE_COUNT = 9;
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) { //拍照
-        //        PhotoCameraViewController *controller = [[PhotoCameraViewController alloc] initWithType:PhotoCameraTypeNormal andDelegate:self];
-        //        [self presentViewController:controller animated:YES completion:nil];
         [self takePhoto];
     } else if (buttonIndex == 1) { //相册
         NSInteger count = MAX_IMAGE_COUNT - self.imgContainer.pictures.count;
@@ -183,19 +190,39 @@ static const int MAX_IMAGE_COUNT = 9;
 }
 
 #pragma mark - event
-
 - (void)clickPublish {
     NSString *mood = [self.moodTextView getMultiLineText];
     if ([mood isEqualToString:@""]) {
         showToast(NSLocalizedString(@"mood_placeholder", @""));
         return;
     }
+    showLoadingDialog();
     if (self.imgContainer.pictures.count > 0) {
         // 上传图片
+        [self.attrArray removeAllObjects];
         [self uploadImage:0];
     } else {
         // 直接发布
+        [self publishExhibition];
     }
+}
+
+#pragma mark - 发布
+- (void)publishExhibition {
+    DMSubmitExhRequester *requester = [[DMSubmitExhRequester alloc] init];
+    requester.content = [self.moodTextView getMultiLineText];
+    if (self.attrArray.count > 0) {
+        requester.attrs = self.attrArray;
+    }
+    [requester postRequest:^(DMResultCode code, id data) {
+        dismissLoadingDialog();
+        if (code == ResultCodeOK) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            NSString *errMsg = data;
+            showToast(errMsg);
+        }
+    }];
 }
 
 #pragma mark - upload image
@@ -203,9 +230,31 @@ static const int MAX_IMAGE_COUNT = 9;
     DMImageUploadReuester *requester = [[DMImageUploadReuester alloc] init];
     NSString *filePath = self.imgContainer.pictures[index];
     [requester upload:filePath callback:^(DMResultCode code, id data) {
+        NSDictionary *dataDict = data;
         if (code == ResultCodeOK) {
-            NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"resultString:%@", resultString);
+            // {"errCode":2,"errMsg":"success","errData":{"total":1,"rows":[{"path":"upload/images/201710051324435024.jpg","size":386}]}}
+            NSDictionary *errData = [dataDict objectForKey:@"errData"];
+            NSArray *rows = [errData objectForKey:@"rows"];
+            for (NSDictionary *itemDict in rows) {
+                NSString *path = [itemDict objectForKey:@"path"];
+                [self.attrArray addObject:@{@"path":path, @"number":@(index)}];
+            }
+            NSInteger nextIndex = index+1;
+            if (nextIndex < self.imgContainer.pictures.count) {
+                [self uploadImage:nextIndex];
+            } else {
+                NSLog(@"上传完成");
+                [self publishExhibition];
+            }
+            NSLog(@"resultString:%@", dataDict);
+        } else {
+            dismissLoadingDialog();
+            if (data) {
+                NSString *errMsg = [dataDict objectForKey:@"errMsg"];
+                showToast(errMsg);
+            } else {
+                showToast(NSLocalizedString(@"", @""));
+            }
         }
     }];
 }

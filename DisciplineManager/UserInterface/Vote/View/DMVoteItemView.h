@@ -20,4 +20,5 @@
 
 - (void)setPlaceholder:(NSString *_Nonnull)placeholder;
 
+- (NSString *_Nonnull)itemText;
 @end

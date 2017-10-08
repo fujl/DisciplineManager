@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DMVoteItemView.h"
 
 @interface DMVoteItemsView : UIView
+
+@property (nonatomic, strong) NSMutableArray<DMVoteItemView *> *subItemViews;
 
 @end

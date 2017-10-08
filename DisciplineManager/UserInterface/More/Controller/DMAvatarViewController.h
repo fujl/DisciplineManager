@@ -7,7 +7,9 @@
 //
 
 #import "DMBaseViewController.h"
+#import "DMUserModel.h"
 
 @interface DMAvatarViewController : DMBaseViewController
-@property (nonatomic, assign) DMGender gender;
+@property (nullable, nonatomic, copy) void (^userAvatarChange)();
+@property (nonatomic, strong) DMUserModel * _Nonnull user;
 @end

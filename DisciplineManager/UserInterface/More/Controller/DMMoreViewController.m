@@ -99,6 +99,10 @@
     if (self.user) {
         DMUserDetailViewController *detail = [[DMUserDetailViewController alloc] init];
         detail.user = self.user;
+        __weak typeof(self) weakSelf = self;
+        detail.userAvatarChange = ^{
+            weakSelf.mineView.user = self.user;
+        };
         detail.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:detail animated:YES];
     }

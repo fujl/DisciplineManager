@@ -10,5 +10,6 @@
 #import "DMUserModel.h"
 
 @interface DMUserDetailViewController : DMLinearViewController
-@property (nonatomic, strong) DMUserModel *user;
+@property (nullable, nonatomic, copy) void (^userAvatarChange)();
+@property (nonatomic, strong) DMUserModel * _Nonnull user;
 @end

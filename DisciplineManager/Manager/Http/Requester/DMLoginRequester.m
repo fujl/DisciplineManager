@@ -48,6 +48,15 @@
     loginInfo.loginDt = [[NSDate date] timeIntervalSince1970];
     loginInfo.createTime = [errData objectForKey:@"createTime"];
     loginInfo.optLock = [[errData objectForKey:@"optLock"] integerValue];
+    NSDictionary *user = [errData objectForKey:@"user"];
+    NSDictionary *org = [user objectForKey:@"org"];
+    NSString *orgCode = [org objectForKey:@"code"];
+    loginInfo.orgCodeOriginal = orgCode;// 保存原始值
+    if (orgCode.length > 3) {
+        loginInfo.orgCode = [orgCode substringWithRange:NSMakeRange(0, 3)];
+    } else {
+        loginInfo.orgCode = orgCode;
+    }
     return loginInfo;
 }
 

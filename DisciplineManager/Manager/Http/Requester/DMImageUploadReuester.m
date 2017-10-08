@@ -43,7 +43,9 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"task:%@ responseObject:%@", task, responseObject);
-        callback(ResultCodeOK, responseObject);
+        NSDictionary *resultData = [DMJson getJsonObjectFormData:responseObject];
+        int code = [resultData[@"errCode"] intValue];
+        callback(code, resultData);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"task:%@ error:%@", task, error);
         callback(ResultCodeFailed, nil);

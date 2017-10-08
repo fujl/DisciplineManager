@@ -82,7 +82,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyBus/Controller/DMFillinApplyBusController.m"
-            timestampString = "524584017.303225"
+            timestampString = "528972599.290736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -114,7 +114,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "528964977.643302"
+                  timestampString = "529170262.299168"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -129,7 +129,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "528964977.645602"
+                  timestampString = "529170262.301403"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -177,24 +177,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/MBProgressHUD/MBProgressHUD.m"
-            timestampString = "526828745.872963"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1162"
-            endingLineNumber = "1162"
-            landmarkName = "-updateForBackgroundStyle"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMHomeViewController.m"
-            timestampString = "528967502.013922"
+            timestampString = "528988921.234928"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -210,7 +194,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMHomeViewController.m"
-            timestampString = "528967502.014008"
+            timestampString = "528988921.235024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "240"
@@ -226,11 +210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-            timestampString = "528873613.23546"
+            timestampString = "529172722.309643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-imagePickerController:didFinishPickingPhotos:"
             landmarkType = "7">
          </BreakpointContent>
@@ -242,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-            timestampString = "528873613.23555"
+            timestampString = "529172722.309726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-cutImgFinish:"
             landmarkType = "7">
             <Locations>
@@ -258,11 +242,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "528964977.67824"
+                  timestampString = "529170262.328697"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
@@ -273,11 +257,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "528964977.680488"
+                  timestampString = "529170262.331058"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
                   offsetFromSymbolStart = "96">
                </Location>
             </Locations>
@@ -290,11 +274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-            timestampString = "528873613.235623"
+            timestampString = "529172722.309797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-cutImgFinish:"
             landmarkType = "7">
          </BreakpointContent>
@@ -306,11 +290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-            timestampString = "528873613.235692"
+            timestampString = "529172722.309865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "-uploadImage:"
             landmarkType = "7">
             <Locations>
@@ -322,12 +306,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "528964977.690125"
+                  timestampString = "529170262.340588"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "205"
-                  endingLineNumber = "205"
-                  offsetFromSymbolStart = "220">
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "236">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -337,12 +321,12 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "528964977.692543"
+                  timestampString = "529170262.342788"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -354,7 +338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/Manager/Http/Requester/DMImageUploadReuester.m"
-            timestampString = "528873613.235764"
+            timestampString = "528988921.23537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -370,7 +354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/Manager/Http/Requester/DMImageUploadReuester.m"
-            timestampString = "528873613.236192"
+            timestampString = "528988921.235446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -386,7 +370,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/Manager/Http/Requester/DMImageUploadReuester.m"
-            timestampString = "528873613.236524"
+            timestampString = "528988921.235516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -402,11 +386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/Manager/Http/Requester/DMImageUploadReuester.m"
-            timestampString = "528873613.236842"
+            timestampString = "528988921.235584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-upload:callback:"
             landmarkType = "7">
          </BreakpointContent>
@@ -418,11 +402,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Vote/View/DMVoteItemsView.m"
-            timestampString = "528967502.01432"
+            timestampString = "528988921.235714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-layoutItemsView"
             landmarkType = "7">
             <Locations>
@@ -434,11 +418,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Vote/View/DMVoteItemsView.m"
-                  timestampString = "528964977.716436"
+                  timestampString = "529170262.365052"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "432">
                </Location>
                <Location
@@ -449,11 +433,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Vote/View/DMVoteItemsView.m"
-                  timestampString = "528964977.718865"
+                  timestampString = "529170262.367283"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "448">
                </Location>
             </Locations>
@@ -466,12 +450,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Vote/View/DMAddVoteItemView.m"
-            timestampString = "528967502.014389"
+            timestampString = "528988921.23591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "-addButton"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Vote/Controller/DMPublishVoteViewController.m"
+            timestampString = "528988921.236061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-clickPublish"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/Manager/Http/Requester/DMLoginRequester.m"
+            timestampString = "528988921.236173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-onDumpData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
+            timestampString = "529172722.310257"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-uploadImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
+            timestampString = "529172722.310324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "-publishExhibition"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
+            timestampString = "529172722.310391"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-publishExhibition"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/View/DMExhibitionCell.m"
+            timestampString = "529172722.310461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "-setInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/View/DMExhibitionCell.m"
+            timestampString = "529172722.310532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-setInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Home/View/DMImageCollectionView.m"
+            timestampString = "529172722.310604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-setImageStringList:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/Manager/User/DMUserModel.m"
+            timestampString = "529170262.127062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-initWithDict:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

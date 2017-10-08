@@ -40,6 +40,9 @@ typedef NS_ENUM(NSInteger, DMGender) {
 /** 用户名 */
 @property (nonatomic, copy) NSString *name;
 
+/** 用户头像 */
+@property (nonatomic, copy) NSString *face;
+
 /** 电话 */
 @property (nonatomic, copy) NSString *mobile;
 

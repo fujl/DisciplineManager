@@ -21,6 +21,8 @@
         self.loginDt = [[coder decodeObjectForKey:@"loginDt"] doubleValue];
         self.createTime = [coder decodeObjectForKey:@"createTime"];
         self.optLock = [[coder decodeObjectForKey:@"optLock"] integerValue];
+        self.orgCode = [coder decodeObjectForKey:@"orgCode"];
+        self.orgCodeOriginal = [coder decodeObjectForKey:@"orgCodeOriginal"];
     }
     return self;
 }
@@ -34,6 +36,8 @@
     [coder encodeObject:@(self.loginDt) forKey:@"loginDt"];
     [coder encodeObject:self.createTime forKey:@"createTime"];
     [coder encodeObject:@(self.optLock) forKey:@"optLock"];
+    [coder encodeObject:self.orgCode forKey:@"orgCode"];
+    [coder encodeObject:self.orgCodeOriginal forKey:@"orgCodeOriginal"];
 }
 
 @end

@@ -97,8 +97,18 @@
     _user = user;
     self.nameView.text = user.userInfo.name;
     self.orgNameView.text = user.orgInfo.name;
-    UIImage *avatar = [UIImage imageNamed:user.userInfo.gender == Male ? @"male" : @"female"];
-    self.avatarView.image = avatar;
+    
+    [self setUserAvatar];
+}
+
+- (void)setUserAvatar {
+    if ([self.user.userInfo.face isEqualToString:@""]) {
+        UIImage *avatar = [UIImage imageNamed:self.user.userInfo.gender == Male ? @"male" : @"female"];
+        self.avatarView.image = avatar;
+    } else {
+        UIImage *avatar = [UIImage imageNamed:self.user.userInfo.gender == Male ? @"male" : @"female"];
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, self.user.userInfo.face]] placeholderImage:avatar];
+    }
 }
 
 @end

@@ -71,6 +71,11 @@ typedef NS_ENUM(NSInteger, DMDateType) {
     DMDateTypeAfternoon,        // 下午
 };
 
+typedef NS_ENUM(NSUInteger, DMVoteType) {
+    DMVoteTypeRadio = 0,
+    DMVoteTypeCheckbox
+};
+
 #ifdef __OBJC__
 #define BEGIN_AUTORELEASE        NSAutoreleasePool* __lpPool = [[NSAutoreleasePool alloc] init];
 #define END_AUTORELEASE            [__lpPool drain];

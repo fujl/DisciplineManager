@@ -84,6 +84,10 @@
     [self.textView setPlaceholder:placeholder];
 }
 
+- (NSString *)itemText {
+    return self.textView.text;
+}
+
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSString *valueString = textField.text;

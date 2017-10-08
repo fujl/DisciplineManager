@@ -92,8 +92,18 @@
     return _line;
 }
 
-- (void)setGender:(DMGender)gender {
-    UIImage *avatar = [UIImage imageNamed:gender == Male ? @"male" : @"female"];
-    self.avatarView.image = avatar;
+- (void)setUser:(DMUserModel *)user {
+    _user = user;
+    [self setUserAvatar];
+}
+
+- (void)setUserAvatar {
+    if ([self.user.userInfo.face isEqualToString:@""]) {
+        UIImage *avatar = [UIImage imageNamed:self.user.userInfo.gender == Male ? @"male" : @"female"];
+        self.avatarView.image = avatar;
+    } else {
+        UIImage *avatar = [UIImage imageNamed:self.user.userInfo.gender == Male ? @"male" : @"female"];
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, self.user.userInfo.face]] placeholderImage:avatar];
+    }
 }
 @end

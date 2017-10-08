@@ -16,6 +16,7 @@
         if (![dict isEqual:[NSNull null]]) {
             self.userId = parseStringFromObject([dict objectForKey:@"id"]);
             self.name = parseStringFromObject([dict objectForKey:@"name"]);
+            self.face = parseStringFromObject([dict objectForKey:@"face"]);
             self.mobile = parseStringFromObject([dict objectForKey:@"mobile"]);
             self.email = parseStringFromObject([dict objectForKey:@"email"]);
             self.province = parseStringFromObject([dict objectForKey:@"province"]);

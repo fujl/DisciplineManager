@@ -69,6 +69,21 @@ NSString *parseStringFromObject(id obj) {
     }
 }
 
+NSArray *parseArrayFromObject(id obj) {
+    if ([obj isEqual:[NSNull null]]) {
+        return @[];
+    } else {
+        if ([obj isKindOfClass:[NSArray class]]) {
+            return obj;
+        } else {
+            if ([DMConfig mainConfig].serverName == ServerNameTest) {
+                assert("数据类型不对");
+            }
+            return @[];
+        }
+    }
+}
+
 NSNumber *parseNumberFromObject(id obj) {
     if ([obj isEqual:[NSNull null]]) {
         return @(0);

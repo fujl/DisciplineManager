@@ -7,14 +7,12 @@
 //
 
 #import "DMVoteItemsView.h"
-#import "DMVoteItemView.h"
 #import "DMAddVoteItemView.h"
 
 #define kMaxItemCount   5
 
 @interface DMVoteItemsView ()
 
-@property (nonatomic, strong) NSMutableArray<DMVoteItemView *> *subItemViews;
 @property (nonatomic, strong) DMAddVoteItemView *addItemView;
 @property (nonatomic, strong) UILabel *maxTipLabel;
 
@@ -80,8 +78,9 @@
 - (DMVoteItemView *)getVoteItemView {
     DMVoteItemView *item = [[DMVoteItemView alloc] init];
     __weak typeof(self) weakSelf = self;
+    __weak typeof(DMVoteItemView *) weakItem = item;
     item.clickMinusItem = ^{
-        [weakSelf clickMinusItem:item];
+        [weakSelf clickMinusItem:weakItem];
     };
     return item;
 }
