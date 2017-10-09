@@ -14,6 +14,7 @@
 #import "LMDPhotosManager.h"
 #import "DMImageUploadReuester.h"
 #import "DMModifyFaceRequester.h"
+#import "DMNavigationController.h"
 
 static const int MAX_IMAGE_COUNT = 1;
 
@@ -41,6 +42,13 @@ static const int MAX_IMAGE_COUNT = 1;
         make.width.equalTo(@(SCREEN_WIDTH-20));
         make.height.equalTo(@(SCREEN_WIDTH-20));
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.hidden) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
 }
 
 - (void)setUserAvatar {
@@ -109,12 +117,7 @@ static const int MAX_IMAGE_COUNT = 1;
     if(UIImageOrientationUp != image.imageOrientation) {
         image = [ImageUtil AdjustOrientationToUpReturnNew:image];
     }
-    CutAvatarImgViewController *cutpic = [[CutAvatarImgViewController alloc] init];
-    cutpic.delegate = self;
-    cutpic.sourceImage = image;
-    cutpic.backImageViewRect = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_WIDTH);
-    //    cutpic.healthType = enumHealthTypeFace;
-    [camera pushViewController:cutpic animated:YES];
+    [self cutAvatar:image controller:camera isAlbum:NO];
 }
 
 //取消回调。
@@ -137,11 +140,23 @@ static const int MAX_IMAGE_COUNT = 1;
     }];
 }
 
+- (void)cutAvatar:(UIImage *)image controller:(UINavigationController *)controller isAlbum:(BOOL)isAlbum {
+    CutAvatarImgViewController *cutpic = [[CutAvatarImgViewController alloc] init];
+    cutpic.delegate = self;
+    cutpic.sourceImage = image;
+    cutpic.backImageViewRect = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_WIDTH);
+    cutpic.isAlbum = isAlbum;
+    [controller pushViewController:cutpic animated:YES];
+}
+
 #pragma mark - LMDImagePickerDelegate
 - (void)imagePickerController:(LMDAlbumPickerViewController *)picker didFinishPickingPhotos:(NSArray<NSString *> *)photos {
     for (NSString *path in photos) {
-        // 上传
-        [self uploadImage:path];
+        // 裁剪图片
+        UIImage *image = [UIImage imageWithContentsOfFile:path];
+        
+        [self cutAvatar:image controller:self.navigationController isAlbum:YES];
+        break;
     }
 }
 

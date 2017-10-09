@@ -31,6 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _isAlbum = NO;
         _imageContainer = [[UIScrollView alloc]init];
         [self.view addSubview:_imageContainer];
         _imageContainer.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -179,8 +180,11 @@
                     if (self.delegate&&[self.delegate respondsToSelector:@selector(cutImgFinish:)]) {
                         [self.delegate cutImgFinish:subImage];
                     }
-                    
-                    [self dismissViewControllerAnimated:NO completion:nil];
+                    if (self.isAlbum) {
+                        [self.navigationController popViewControllerAnimated:NO];
+                    } else {
+                        [self dismissViewControllerAnimated:NO completion:nil];
+                    }
                 }];
             }
         }];

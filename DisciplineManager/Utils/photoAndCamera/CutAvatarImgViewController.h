@@ -28,6 +28,7 @@
 @property (nonatomic,retain) UIImage* sourceImage;
 @property (nonatomic,assign) id<CutAvatarImgViewControllerDelegate> delegate;
 @property (nonatomic,assign) CGRect backImageViewRect;
+@property (nonatomic, assign) BOOL isAlbum;
 
 @end
 
