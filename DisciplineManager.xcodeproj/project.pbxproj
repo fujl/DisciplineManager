@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1802F06B1F8B9C7400E74FB6 /* DMVoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F06A1F8B9C7400E74FB6 /* DMVoteDetailController.m */; };
+		1802F06E1F8BA0B800E74FB6 /* DMDetailVoteRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F06D1F8BA0B800E74FB6 /* DMDetailVoteRequester.m */; };
+		1802F0711F8BA6ED00E74FB6 /* DMVoteDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0701F8BA6ED00E74FB6 /* DMVoteDetailInfo.m */; };
+		1802F0741F8BA80B00E74FB6 /* DMVoteOptionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0731F8BA80B00E74FB6 /* DMVoteOptionInfo.m */; };
+		1802F0771F8BA8A400E74FB6 /* DMVoteResultInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0761F8BA8A400E74FB6 /* DMVoteResultInfo.m */; };
 		180EDDF71F889D5200DD1812 /* DMImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDF61F889D5200DD1812 /* DMImageCollectionView.m */; };
 		180EDDFA1F88B79200DD1812 /* DMImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDF91F88B79200DD1812 /* DMImageCollectionCell.m */; };
 		180EDDFE1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDFD1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m */; };
@@ -260,6 +265,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1802F0691F8B9C7400E74FB6 /* DMVoteDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteDetailController.h; sourceTree = "<group>"; };
+		1802F06A1F8B9C7400E74FB6 /* DMVoteDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteDetailController.m; sourceTree = "<group>"; };
+		1802F06C1F8BA0B800E74FB6 /* DMDetailVoteRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDetailVoteRequester.h; sourceTree = "<group>"; };
+		1802F06D1F8BA0B800E74FB6 /* DMDetailVoteRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMDetailVoteRequester.m; sourceTree = "<group>"; };
+		1802F06F1F8BA6ED00E74FB6 /* DMVoteDetailInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteDetailInfo.h; sourceTree = "<group>"; };
+		1802F0701F8BA6ED00E74FB6 /* DMVoteDetailInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteDetailInfo.m; sourceTree = "<group>"; };
+		1802F0721F8BA80B00E74FB6 /* DMVoteOptionInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteOptionInfo.h; sourceTree = "<group>"; };
+		1802F0731F8BA80B00E74FB6 /* DMVoteOptionInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteOptionInfo.m; sourceTree = "<group>"; };
+		1802F0751F8BA8A400E74FB6 /* DMVoteResultInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteResultInfo.h; sourceTree = "<group>"; };
+		1802F0761F8BA8A400E74FB6 /* DMVoteResultInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteResultInfo.m; sourceTree = "<group>"; };
 		180EDDF51F889D5200DD1812 /* DMImageCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMImageCollectionView.h; sourceTree = "<group>"; };
 		180EDDF61F889D5200DD1812 /* DMImageCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMImageCollectionView.m; sourceTree = "<group>"; };
 		180EDDF81F88B79200DD1812 /* DMImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMImageCollectionCell.h; sourceTree = "<group>"; };
@@ -1306,6 +1321,8 @@
 				DF508AA41F8B1FFE00F1D07C /* DMReleaseVoteRequester.m */,
 				DF508AA61F8B202C00F1D07C /* DMSearchVoteRequester.h */,
 				DF508AA71F8B202C00F1D07C /* DMSearchVoteRequester.m */,
+				1802F06C1F8BA0B800E74FB6 /* DMDetailVoteRequester.h */,
+				1802F06D1F8BA0B800E74FB6 /* DMDetailVoteRequester.m */,
 			);
 			path = Vote;
 			sourceTree = "<group>";
@@ -1328,6 +1345,12 @@
 			children = (
 				DF508AB41F8B231200F1D07C /* DMVoteListInfo.h */,
 				DF508AB51F8B231200F1D07C /* DMVoteListInfo.m */,
+				1802F06F1F8BA6ED00E74FB6 /* DMVoteDetailInfo.h */,
+				1802F0701F8BA6ED00E74FB6 /* DMVoteDetailInfo.m */,
+				1802F0721F8BA80B00E74FB6 /* DMVoteOptionInfo.h */,
+				1802F0731F8BA80B00E74FB6 /* DMVoteOptionInfo.m */,
+				1802F0751F8BA8A400E74FB6 /* DMVoteResultInfo.h */,
+				1802F0761F8BA8A400E74FB6 /* DMVoteResultInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1764,6 +1787,8 @@
 				DFE4C72A1F678768004F4184 /* DMVoteViewController.m */,
 				DFC2A6641F7A54CC00067C46 /* DMPublishVoteViewController.h */,
 				DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */,
+				1802F0691F8B9C7400E74FB6 /* DMVoteDetailController.h */,
+				1802F06A1F8B9C7400E74FB6 /* DMVoteDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2055,6 +2080,7 @@
 				DF6A9BFC1F04F5CC0075F100 /* DMApplyOutListInfo.m in Sources */,
 				DF377CDD1EF296F100522AF7 /* DMApplyBusViewController.m in Sources */,
 				DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */,
+				1802F06B1F8B9C7400E74FB6 /* DMVoteDetailController.m in Sources */,
 				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
 				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
 				180EDDFE1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m in Sources */,
@@ -2070,6 +2096,7 @@
 				DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */,
 				18468E091F837DE6006B36D1 /* DMNewsInfoModel.m in Sources */,
 				DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */,
+				1802F0711F8BA6ED00E74FB6 /* DMVoteDetailInfo.m in Sources */,
 				DFE4C7301F678BB3004F4184 /* DMNewsViewController.m in Sources */,
 				18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
@@ -2077,6 +2104,7 @@
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
 				188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */,
 				DFE4C72B1F678768004F4184 /* DMVoteViewController.m in Sources */,
+				1802F0741F8BA80B00E74FB6 /* DMVoteOptionInfo.m in Sources */,
 				DF9A0D4E1F2B13030015CD27 /* DMUserBookModel.m in Sources */,
 				DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */,
 				18411EF51F87691800CE7750 /* DMSelectItemView.m in Sources */,
@@ -2107,6 +2135,7 @@
 				18E8EEDD1F84B77F00E42CD2 /* LMDPhotoPickCollectionViewCell.m in Sources */,
 				DF508AA51F8B1FFE00F1D07C /* DMReleaseVoteRequester.m in Sources */,
 				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
+				1802F06E1F8BA0B800E74FB6 /* DMDetailVoteRequester.m in Sources */,
 				DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */,
 				DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */,
 				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
@@ -2143,6 +2172,7 @@
 				DFA4FA071F3093D3002258DD /* DMSubmitTaskCtaRequester.m in Sources */,
 				DF1F323C1F0E2F20004358E3 /* DMCommitApplyLeaveRequester.m in Sources */,
 				18E8EEC71F84B77F00E42CD2 /* LMDAlbumPickerViewController.m in Sources */,
+				1802F0771F8BA8A400E74FB6 /* DMVoteResultInfo.m in Sources */,
 				DF377CDA1EF2969D00522AF7 /* DMAddressBookViewController.m in Sources */,
 				DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */,
 				180EDE0A1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m in Sources */,

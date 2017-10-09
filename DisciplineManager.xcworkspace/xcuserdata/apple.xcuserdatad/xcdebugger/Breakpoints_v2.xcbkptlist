@@ -114,7 +114,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "529170262.299168"
+                  timestampString = "529247950.096027"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -129,7 +129,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/Manager/Address/DMAddressManager.m"
-                  timestampString = "529170262.301403"
+                  timestampString = "529247950.098296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -146,7 +146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyBus/Controller/DMDetailApplyBusController.m"
-            timestampString = "524594819.759844"
+            timestampString = "529247928.111469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -242,11 +242,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "529170262.328697"
+                  timestampString = "529247950.125289"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
@@ -257,11 +257,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "529170262.331058"
+                  timestampString = "529247950.127573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "181"
-                  endingLineNumber = "181"
+                  startingLineNumber = "178"
+                  endingLineNumber = "178"
                   offsetFromSymbolStart = "96">
                </Location>
             </Locations>
@@ -306,11 +306,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "529170262.340588"
+                  timestampString = "529247950.137413"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "235"
-                  endingLineNumber = "235"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
                   offsetFromSymbolStart = "236">
                </Location>
                <Location
@@ -321,11 +321,11 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Home/Controller/DMExhibitionPublishController.m"
-                  timestampString = "529170262.342788"
+                  timestampString = "529247950.139668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
                   offsetFromSymbolStart = "92">
                </Location>
             </Locations>
@@ -418,7 +418,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Vote/View/DMVoteItemsView.m"
-                  timestampString = "529170262.365052"
+                  timestampString = "529247950.162242"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -433,7 +433,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/apple/Documents/project/DisciplineManager/DisciplineManager/DisciplineManager/UserInterface/Vote/View/DMVoteItemsView.m"
-                  timestampString = "529170262.367283"
+                  timestampString = "529247950.164573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -599,6 +599,54 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
+            landmarkName = "-initWithDict:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Vote/Controller/DMVoteDetailController.m"
+            timestampString = "529247928.112018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-getDetailInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/Manager/Http/Requester/Vote/DMDetailVoteRequester.m"
+            timestampString = "529247928.112083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-onDumpData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Vote/Model/DMVoteDetailInfo.m"
+            timestampString = "529247967.493104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "-initWithDict:"
             landmarkType = "7">
          </BreakpointContent>
