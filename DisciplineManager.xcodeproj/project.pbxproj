@@ -12,6 +12,10 @@
 		1802F0711F8BA6ED00E74FB6 /* DMVoteDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0701F8BA6ED00E74FB6 /* DMVoteDetailInfo.m */; };
 		1802F0741F8BA80B00E74FB6 /* DMVoteOptionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0731F8BA80B00E74FB6 /* DMVoteOptionInfo.m */; };
 		1802F0771F8BA8A400E74FB6 /* DMVoteResultInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0761F8BA8A400E74FB6 /* DMVoteResultInfo.m */; };
+		1802F07A1F8BB1B000E74FB6 /* DMVoteHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0791F8BB1B000E74FB6 /* DMVoteHeadView.m */; };
+		1802F07D1F8BB95C00E74FB6 /* DMVoteOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F07C1F8BB95C00E74FB6 /* DMVoteOptionsView.m */; };
+		1802F0801F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F07F1F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m */; };
+		1802F0831F8BC2B400E74FB6 /* DMVoteOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1802F0821F8BC2B400E74FB6 /* DMVoteOptionView.m */; };
 		180EDDF71F889D5200DD1812 /* DMImageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDF61F889D5200DD1812 /* DMImageCollectionView.m */; };
 		180EDDFA1F88B79200DD1812 /* DMImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDF91F88B79200DD1812 /* DMImageCollectionCell.m */; };
 		180EDDFE1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDDFD1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m */; };
@@ -275,6 +279,14 @@
 		1802F0731F8BA80B00E74FB6 /* DMVoteOptionInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteOptionInfo.m; sourceTree = "<group>"; };
 		1802F0751F8BA8A400E74FB6 /* DMVoteResultInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteResultInfo.h; sourceTree = "<group>"; };
 		1802F0761F8BA8A400E74FB6 /* DMVoteResultInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteResultInfo.m; sourceTree = "<group>"; };
+		1802F0781F8BB1B000E74FB6 /* DMVoteHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteHeadView.h; sourceTree = "<group>"; };
+		1802F0791F8BB1B000E74FB6 /* DMVoteHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteHeadView.m; sourceTree = "<group>"; };
+		1802F07B1F8BB95C00E74FB6 /* DMVoteOptionsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteOptionsView.h; sourceTree = "<group>"; };
+		1802F07C1F8BB95C00E74FB6 /* DMVoteOptionsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteOptionsView.m; sourceTree = "<group>"; };
+		1802F07E1F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteOptionsHeadView.h; sourceTree = "<group>"; };
+		1802F07F1F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteOptionsHeadView.m; sourceTree = "<group>"; };
+		1802F0811F8BC2B400E74FB6 /* DMVoteOptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteOptionView.h; sourceTree = "<group>"; };
+		1802F0821F8BC2B400E74FB6 /* DMVoteOptionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMVoteOptionView.m; sourceTree = "<group>"; };
 		180EDDF51F889D5200DD1812 /* DMImageCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMImageCollectionView.h; sourceTree = "<group>"; };
 		180EDDF61F889D5200DD1812 /* DMImageCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMImageCollectionView.m; sourceTree = "<group>"; };
 		180EDDF81F88B79200DD1812 /* DMImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMImageCollectionCell.h; sourceTree = "<group>"; };
@@ -979,6 +991,14 @@
 				18E8EEEA1F84EBCD00E42CD2 /* DMAddVoteItemView.m */,
 				DF508AB71F8B24F300F1D07C /* DMVoteListCell.h */,
 				DF508AB81F8B24F300F1D07C /* DMVoteListCell.m */,
+				1802F0781F8BB1B000E74FB6 /* DMVoteHeadView.h */,
+				1802F0791F8BB1B000E74FB6 /* DMVoteHeadView.m */,
+				1802F07B1F8BB95C00E74FB6 /* DMVoteOptionsView.h */,
+				1802F07C1F8BB95C00E74FB6 /* DMVoteOptionsView.m */,
+				1802F07E1F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.h */,
+				1802F07F1F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m */,
+				1802F0811F8BC2B400E74FB6 /* DMVoteOptionView.h */,
+				1802F0821F8BC2B400E74FB6 /* DMVoteOptionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2093,9 +2113,11 @@
 				DF9A0D511F2B15720015CD27 /* DMUserBookViewController.m in Sources */,
 				DF508AB61F8B231200F1D07C /* DMVoteListInfo.m in Sources */,
 				DF8877131F276D490048F3AA /* DMUserModel.m in Sources */,
+				1802F0831F8BC2B400E74FB6 /* DMVoteOptionView.m in Sources */,
 				DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */,
 				18468E091F837DE6006B36D1 /* DMNewsInfoModel.m in Sources */,
 				DF2E43DA1F28B82D00C0BFBA /* DMMineItemView.m in Sources */,
+				1802F07A1F8BB1B000E74FB6 /* DMVoteHeadView.m in Sources */,
 				1802F0711F8BA6ED00E74FB6 /* DMVoteDetailInfo.m in Sources */,
 				DFE4C7301F678BB3004F4184 /* DMNewsViewController.m in Sources */,
 				18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */,
@@ -2208,7 +2230,9 @@
 				DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */,
 				DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */,
 				18E8EE6F1F84B39100E42CD2 /* DMExhibitionViewController.m in Sources */,
+				1802F07D1F8BB95C00E74FB6 /* DMVoteOptionsView.m in Sources */,
 				DF377CE01EF2980500522AF7 /* DMApplyCompensatoryController.m in Sources */,
+				1802F0801F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m in Sources */,
 				18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */,
 				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
 				DF508A9D1F8B149A00F1D07C /* UIImage+MSSScale.m in Sources */,

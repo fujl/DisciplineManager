@@ -10,4 +10,5 @@
 
 @interface DMEntryCommitView : UIView
 @property (nonatomic, copy) void (^clickCommitBlock)();
+- (void)setCommitTitle:(NSString *)title;
 @end

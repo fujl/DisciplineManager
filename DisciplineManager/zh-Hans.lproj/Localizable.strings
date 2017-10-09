@@ -149,3 +149,5 @@
 "voted_view_results" = "已投票，查看结果";
 "not_voting_view_results" = "未投票，查看结果";
 "total_ticket" = "共%zd票";
+"CutoffTime" = "截止时间";
+"number_ticket" = "%zd票";
