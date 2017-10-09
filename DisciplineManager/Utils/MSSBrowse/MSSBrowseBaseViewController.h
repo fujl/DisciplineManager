@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "MSSBrowseCollectionViewCell.h"
 #import "MSSBrowseModel.h"
-#import "DMBaseViewController.h"
-@interface MSSBrowseBaseViewController : DMBaseViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIViewControllerTransitioningDelegate>
+
+typedef void(^deleteAction)(NSInteger index);
+@interface MSSBrowseBaseViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic,assign)BOOL isEqualRatio;// 大小图是否等比（默认为等比）
 
 @property (nonatomic,strong)UICollectionView *collectionView;
 @property (nonatomic,assign)BOOL isFirstOpen;
+@property (nonatomic,assign)BOOL showNav;
 @property (nonatomic,assign)CGFloat screenWidth;
 @property (nonatomic,assign)CGFloat screenHeight;
+@property (nonatomic,copy) deleteAction deleteBlock;
 
 - (instancetype)initWithBrowseItemArray:(NSArray *)browseItemArray currentIndex:(NSInteger)currentIndex;
 - (void)showBrowseViewController;

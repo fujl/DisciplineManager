@@ -19,41 +19,44 @@
     // 停止加载
     [cell.loadingView stopAnimation];
     // 判断大图是否存在
-    if([[SDImageCache sharedImageCache]diskImageExistsWithKey:browseItem.bigImageUrl])
-    {
-        // 显示大图
-        [self showBigImage:cell.zoomScrollView.zoomImageView browseItem:browseItem rect:bigImageRect];
-    }
-    // 如果大图不存在
-    else
-    {
-        self.isFirstOpen = NO;
-        // 加载大图
-        [self loadBigImageWithBrowseItem:browseItem cell:cell rect:bigImageRect];
-    }
+    [[SDImageCache sharedImageCache] diskImageExistsWithKey:browseItem.bigImageUrl completion:^(BOOL isInCache) {
+        if(isInCache)
+        {
+            // 显示大图
+            [self showBigImage:cell.zoomScrollView.zoomImageView browseItem:browseItem rect:bigImageRect];
+        }
+        // 如果大图不存在
+        else
+        {
+            self.isFirstOpen = NO;
+            // 加载大图
+            [self loadBigImageWithBrowseItem:browseItem cell:cell rect:bigImageRect];
+        }
+
+    }];
 }
 
 - (void)showBigImage:(UIImageView *)imageView browseItem:(MSSBrowseModel *)browseItem rect:(CGRect)rect
 {
     // 取消当前请求防止复用问题
-    [imageView sd_cancelCurrentImageLoad];
+    [imageView sd_cancelCurrentAnimationImagesLoad];
     // 如果存在直接显示图片
     imageView.image = [[SDImageCache sharedImageCache]imageFromDiskCacheForKey:browseItem.bigImageUrl];
     // 当大图frame为空时，需要大图加载完成后重新计算坐标
     CGRect bigRect = [self getBigImageRectIfIsEmptyRect:rect bigImage:imageView.image];
     // 第一次打开浏览页需要加载动画
-//    if(self.isFirstOpen)
-//    {
-//        self.isFirstOpen = NO;
-//        imageView.frame = [self getFrameInWindow:browseItem.smallImageView];
-//        [UIView animateWithDuration:0.5 animations:^{
-//            imageView.frame = bigRect;
-//        }];
-//    }
-//    else
-//    {
+    if(self.isFirstOpen)
+    {
+        self.isFirstOpen = NO;
+        imageView.frame = [self getFrameInWindow:browseItem.smallImageView];
+        [UIView animateWithDuration:0.5 animations:^{
+            imageView.frame = bigRect;
+        }];
+    }
+    else
+    {
         imageView.frame = bigRect;
-//    }
+    }
 }
 
 // 加载大图
