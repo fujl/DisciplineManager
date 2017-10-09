@@ -143,3 +143,9 @@
 "vote_item_check" = "选项不允许为空，且不得超过40个字";
 "vote_end_time_check" = "投票结束时间不得小于当前时间";
 "unkown_error" = "未知错误";
+"under_way" = "进行中";
+"has_ended" = "已结束";
+"immediate_voting" = "立即投票";
+"voted_view_results" = "已投票，查看结果";
+"not_voting_view_results" = "未投票，查看结果";
+"total_ticket" = "共%zd票";

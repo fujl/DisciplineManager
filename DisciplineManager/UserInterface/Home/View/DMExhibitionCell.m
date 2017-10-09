@@ -12,8 +12,6 @@
 #import "DMImageCollectionCell.h"
 #import "DMExhPraiseRequester.h"
 
-#define  kUserAvatarSize    30
-
 @interface DMExhibitionCell ()
 
 @property (nonatomic, strong) UIView *bgView;
