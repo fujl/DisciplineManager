@@ -142,3 +142,4 @@
 "checkbox" = "多选";
 "vote_item_check" = "选项不允许为空，且不得超过40个字";
 "vote_end_time_check" = "投票结束时间不得小于当前时间";
+"unkown_error" = "未知错误";

@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface DMImageUploadReuester : NSObject
-- (void)upload:(NSString *)imagePath callback:(void (^)(DMResultCode code, id data))callback;
+- (void)upload:(NSString *)imagePath  isFace:(BOOL)isFace callback:(void (^)(DMResultCode code, id data))callback;
 @end

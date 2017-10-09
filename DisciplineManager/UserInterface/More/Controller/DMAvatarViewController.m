@@ -13,6 +13,7 @@
 #import "ImageUtil.h"
 #import "LMDPhotosManager.h"
 #import "DMImageUploadReuester.h"
+#import "DMModifyFaceRequester.h"
 
 static const int MAX_IMAGE_COUNT = 1;
 
@@ -147,27 +148,42 @@ static const int MAX_IMAGE_COUNT = 1;
 - (void)uploadImage:(NSString *)filePath {
     DMImageUploadReuester *requester = [[DMImageUploadReuester alloc] init];
     showLoadingDialog();
-    [requester upload:filePath callback:^(DMResultCode code, id data) {
+    [requester upload:filePath isFace:YES callback:^(DMResultCode code, id data) {
         NSDictionary *dataDict = data;
-        dismissLoadingDialog();
         if (code == ResultCodeOK) {
             NSDictionary *errData = [dataDict objectForKey:@"errData"];
-            NSArray *rows = [errData objectForKey:@"rows"];
-            for (NSDictionary *itemDict in rows) {
-                NSString *path = [itemDict objectForKey:@"path"];
-                self.user.userInfo.face = path;
-                [self setUserAvatar];
-                if (self.userAvatarChange) {
-                    self.userAvatarChange();
-                }
-            }
+            NSString *path = [errData objectForKey:@"path"];
+            [self modifyFace:path];
             NSLog(@"resultString:%@", dataDict);
         } else {
+            dismissLoadingDialog();
             if (data) {
                 NSString *errMsg = [dataDict objectForKey:@"errMsg"];
                 showToast(errMsg);
             } else {
-                showToast(NSLocalizedString(@"", @""));
+                showToast(NSLocalizedString(@"unkown_error", @"未知错误"));
+            }
+        }
+    }];
+}
+
+- (void)modifyFace:(NSString *)faceImagePath {
+    DMModifyFaceRequester *requester = [[DMModifyFaceRequester alloc] init];
+    requester.faceImagePath = faceImagePath;
+    [requester postRequest:^(DMResultCode code, id data) {
+        dismissLoadingDialog();
+        if (code == ResultCodeOK) {
+            self.user.userInfo.face = faceImagePath;
+            [self setUserAvatar];
+            if (self.userAvatarChange) {
+                self.userAvatarChange();
+            }
+        } else {
+            if (data) {
+                NSString *errMsg = data;
+                showToast(errMsg);
+            } else {
+                showToast(NSLocalizedString(@"unkown_error", @"未知错误"));
             }
         }
     }];

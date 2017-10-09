@@ -229,7 +229,7 @@ static const int MAX_IMAGE_COUNT = 9;
 - (void)uploadImage:(NSInteger)index {
     DMImageUploadReuester *requester = [[DMImageUploadReuester alloc] init];
     NSString *filePath = self.imgContainer.pictures[index];
-    [requester upload:filePath callback:^(DMResultCode code, id data) {
+    [requester upload:filePath isFace:NO callback:^(DMResultCode code, id data) {
         NSDictionary *dataDict = data;
         if (code == ResultCodeOK) {
             // {"errCode":2,"errMsg":"success","errData":{"total":1,"rows":[{"path":"upload/images/201710051324435024.jpg","size":386}]}}

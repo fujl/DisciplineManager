@@ -139,6 +139,7 @@
 		DF508A9C1F8B149A00F1D07C /* MSSBrowseZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF508A881F8B149A00F1D07C /* MSSBrowseZoomScrollView.m */; };
 		DF508A9D1F8B149A00F1D07C /* UIImage+MSSScale.m in Sources */ = {isa = PBXBuildFile; fileRef = DF508A8A1F8B149A00F1D07C /* UIImage+MSSScale.m */; };
 		DF508A9E1F8B149A00F1D07C /* UIView+MSSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DF508A8C1F8B149A00F1D07C /* UIView+MSSLayout.m */; };
+		DF508AA11F8B192800F1D07C /* DMModifyFaceRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF508AA01F8B192800F1D07C /* DMModifyFaceRequester.m */; };
 		DF50A1531EE7F3320091E098 /* DMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A1481EE7F3320091E098 /* DMJson.m */; };
 		DF50A1541EE7F3320091E098 /* DMWeakReferencesArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A14A1EE7F3320091E098 /* DMWeakReferencesArray.m */; };
 		DF50A1551EE7F3320091E098 /* NSString+DMMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DF50A14B1EE7F3320091E098 /* NSString+DMMD5.m */; };
@@ -472,6 +473,8 @@
 		DF508A8A1F8B149A00F1D07C /* UIImage+MSSScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MSSScale.m"; sourceTree = "<group>"; };
 		DF508A8B1F8B149A00F1D07C /* UIView+MSSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MSSLayout.h"; sourceTree = "<group>"; };
 		DF508A8C1F8B149A00F1D07C /* UIView+MSSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MSSLayout.m"; sourceTree = "<group>"; };
+		DF508A9F1F8B192800F1D07C /* DMModifyFaceRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMModifyFaceRequester.h; sourceTree = "<group>"; };
+		DF508AA01F8B192800F1D07C /* DMModifyFaceRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMModifyFaceRequester.m; sourceTree = "<group>"; };
 		DF50A1441EE7EC780091E098 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DF50A1471EE7F3320091E098 /* DMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMJson.h; sourceTree = "<group>"; };
 		DF50A1481EE7F3320091E098 /* DMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMJson.m; sourceTree = "<group>"; };
@@ -1439,6 +1442,8 @@
 				18411EFD1F87C17000CE7750 /* DMSearchExhRequester.m */,
 				18BE5BA31F8A792400089078 /* DMExhPraiseRequester.h */,
 				18BE5BA41F8A792400089078 /* DMExhPraiseRequester.m */,
+				DF508A9F1F8B192800F1D07C /* DMModifyFaceRequester.h */,
+				DF508AA01F8B192800F1D07C /* DMModifyFaceRequester.m */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -2050,6 +2055,7 @@
 				18BE5BA51F8A792400089078 /* DMExhPraiseRequester.m in Sources */,
 				DFED74B41EEA73CB006DDEE8 /* DMMainViewController.m in Sources */,
 				188ED8D91F448D11009BF26D /* DMModifyPasswordViewController.m in Sources */,
+				DF508AA11F8B192800F1D07C /* DMModifyFaceRequester.m in Sources */,
 				180EDE091F88BECA00DD1812 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				DF6A9BDF1F048CA50075F100 /* DMHttpManager.m in Sources */,
 				185194461F85EBA1003C8A52 /* DMImageUploadReuester.m in Sources */,

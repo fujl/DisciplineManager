@@ -12,13 +12,13 @@
 
 @implementation DMImageUploadReuester
 
-- (void)upload:(NSString *)imagePath callback:(void (^)(DMResultCode code, id data))callback {
+- (void)upload:(NSString *)imagePath isFace:(BOOL)isFace callback:(void (^)(DMResultCode code, id data))callback {
     DMNetworkManager *netWorkManager = getManager(DMNetworkManager);
     if(![netWorkManager hasNet]){
         callback(ResultCodeNetError,nil);
         return;
     }
-    NSString *url = [NSString stringWithFormat:@"%@%@", [[DMConfig mainConfig] getServerUrl], @"api/upload/images.do"];
+    NSString *url = [NSString stringWithFormat:@"%@%@", [[DMConfig mainConfig] getServerUrl], isFace ? @"api/upload/face.do" : @"api/upload/images.do"];
     
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
 //    AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
