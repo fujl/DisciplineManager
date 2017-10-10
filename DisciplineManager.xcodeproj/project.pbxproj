@@ -51,6 +51,19 @@
 		18C1592A1F434A10005B98C0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159291F434A10005B98C0 /* UserNotifications.framework */; };
 		18C1592F1F434BAB005B98C0 /* GTSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1592D1F434BAB005B98C0 /* GTSDK.framework */; };
 		18C159311F43510B005B98C0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159301F43510B005B98C0 /* AdSupport.framework */; };
+		18C51FDC1F8CDB3100EC9D10 /* DMRepastTimeRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FDB1F8CDB3100EC9D10 /* DMRepastTimeRequester.m */; };
+		18C51FDF1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FDE1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m */; };
+		18C51FE21F8CDB9F00EC9D10 /* DMSearchDishesRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FE11F8CDB9F00EC9D10 /* DMSearchDishesRequester.m */; };
+		18C51FE51F8CDBC500EC9D10 /* DMStatTotalRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FE41F8CDBC500EC9D10 /* DMStatTotalRequester.m */; };
+		18C51FE81F8CDBED00EC9D10 /* DMStatVoteRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FE71F8CDBED00EC9D10 /* DMStatVoteRequester.m */; };
+		18C51FEB1F8CDDB100EC9D10 /* DMRepastTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FEA1F8CDDB100EC9D10 /* DMRepastTimeModel.m */; };
+		18C51FEE1F8CE18600EC9D10 /* DMStatTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FED1F8CE18600EC9D10 /* DMStatTotalModel.m */; };
+		18C51FF11F8D019800EC9D10 /* DMStatVoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FF01F8D019800EC9D10 /* DMStatVoteModel.m */; };
+		18C51FF41F8D0B9900EC9D10 /* DMRepastTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FF31F8D0B9900EC9D10 /* DMRepastTitleView.m */; };
+		18C51FF71F8D117400EC9D10 /* DMNumberDinersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FF61F8D117400EC9D10 /* DMNumberDinersView.m */; };
+		18C51FFA1F8D138400EC9D10 /* DMNumberDinersContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FF91F8D138400EC9D10 /* DMNumberDinersContentView.m */; };
+		18C51FFD1F8D13A100EC9D10 /* DMNumberDinersItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FFC1F8D13A100EC9D10 /* DMNumberDinersItemView.m */; };
+		18C520001F8D1B5A00EC9D10 /* DMSignTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C51FFF1F8D1B5A00EC9D10 /* DMSignTimeView.m */; };
 		18D7A6221F66B54000B48BCD /* DMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D7A6211F66B54000B48BCD /* DMHomeViewController.m */; };
 		18E8EE6F1F84B39100E42CD2 /* DMExhibitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8EE6E1F84B39100E42CD2 /* DMExhibitionViewController.m */; };
 		18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8EE711F84B62300E42CD2 /* DMExhibitionPublishController.m */; };
@@ -345,6 +358,32 @@
 		18C159291F434A10005B98C0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		18C1592D1F434BAB005B98C0 /* GTSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTSDK.framework; sourceTree = "<group>"; };
 		18C159301F43510B005B98C0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		18C51FDA1F8CDB3100EC9D10 /* DMRepastTimeRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMRepastTimeRequester.h; sourceTree = "<group>"; };
+		18C51FDB1F8CDB3100EC9D10 /* DMRepastTimeRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRepastTimeRequester.m; sourceTree = "<group>"; };
+		18C51FDD1F8CDB6A00EC9D10 /* DMSubmitSignRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSubmitSignRequester.h; sourceTree = "<group>"; };
+		18C51FDE1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSubmitSignRequester.m; sourceTree = "<group>"; };
+		18C51FE01F8CDB9F00EC9D10 /* DMSearchDishesRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSearchDishesRequester.h; sourceTree = "<group>"; };
+		18C51FE11F8CDB9F00EC9D10 /* DMSearchDishesRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSearchDishesRequester.m; sourceTree = "<group>"; };
+		18C51FE31F8CDBC500EC9D10 /* DMStatTotalRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMStatTotalRequester.h; sourceTree = "<group>"; };
+		18C51FE41F8CDBC500EC9D10 /* DMStatTotalRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMStatTotalRequester.m; sourceTree = "<group>"; };
+		18C51FE61F8CDBED00EC9D10 /* DMStatVoteRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMStatVoteRequester.h; sourceTree = "<group>"; };
+		18C51FE71F8CDBED00EC9D10 /* DMStatVoteRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMStatVoteRequester.m; sourceTree = "<group>"; };
+		18C51FE91F8CDDB100EC9D10 /* DMRepastTimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMRepastTimeModel.h; sourceTree = "<group>"; };
+		18C51FEA1F8CDDB100EC9D10 /* DMRepastTimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRepastTimeModel.m; sourceTree = "<group>"; };
+		18C51FEC1F8CE18600EC9D10 /* DMStatTotalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMStatTotalModel.h; sourceTree = "<group>"; };
+		18C51FED1F8CE18600EC9D10 /* DMStatTotalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMStatTotalModel.m; sourceTree = "<group>"; };
+		18C51FEF1F8D019800EC9D10 /* DMStatVoteModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMStatVoteModel.h; sourceTree = "<group>"; };
+		18C51FF01F8D019800EC9D10 /* DMStatVoteModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMStatVoteModel.m; sourceTree = "<group>"; };
+		18C51FF21F8D0B9900EC9D10 /* DMRepastTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMRepastTitleView.h; sourceTree = "<group>"; };
+		18C51FF31F8D0B9900EC9D10 /* DMRepastTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRepastTitleView.m; sourceTree = "<group>"; };
+		18C51FF51F8D117400EC9D10 /* DMNumberDinersView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNumberDinersView.h; sourceTree = "<group>"; };
+		18C51FF61F8D117400EC9D10 /* DMNumberDinersView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNumberDinersView.m; sourceTree = "<group>"; };
+		18C51FF81F8D138400EC9D10 /* DMNumberDinersContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNumberDinersContentView.h; sourceTree = "<group>"; };
+		18C51FF91F8D138400EC9D10 /* DMNumberDinersContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNumberDinersContentView.m; sourceTree = "<group>"; };
+		18C51FFB1F8D13A100EC9D10 /* DMNumberDinersItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNumberDinersItemView.h; sourceTree = "<group>"; };
+		18C51FFC1F8D13A100EC9D10 /* DMNumberDinersItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNumberDinersItemView.m; sourceTree = "<group>"; };
+		18C51FFE1F8D1B5A00EC9D10 /* DMSignTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSignTimeView.h; sourceTree = "<group>"; };
+		18C51FFF1F8D1B5A00EC9D10 /* DMSignTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSignTimeView.m; sourceTree = "<group>"; };
 		18D7A6201F66B54000B48BCD /* DMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHomeViewController.h; sourceTree = "<group>"; };
 		18D7A6211F66B54000B48BCD /* DMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHomeViewController.m; sourceTree = "<group>"; };
 		18E8EE6D1F84B39100E42CD2 /* DMExhibitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMExhibitionViewController.h; sourceTree = "<group>"; };
@@ -821,6 +860,40 @@
 			path = GtSdkLib;
 			sourceTree = "<group>";
 		};
+		18C51FD81F8CDA3B00EC9D10 /* Repast */ = {
+			isa = PBXGroup;
+			children = (
+				18C51FF21F8D0B9900EC9D10 /* DMRepastTitleView.h */,
+				18C51FF31F8D0B9900EC9D10 /* DMRepastTitleView.m */,
+				18C51FF51F8D117400EC9D10 /* DMNumberDinersView.h */,
+				18C51FF61F8D117400EC9D10 /* DMNumberDinersView.m */,
+				18C51FF81F8D138400EC9D10 /* DMNumberDinersContentView.h */,
+				18C51FF91F8D138400EC9D10 /* DMNumberDinersContentView.m */,
+				18C51FFB1F8D13A100EC9D10 /* DMNumberDinersItemView.h */,
+				18C51FFC1F8D13A100EC9D10 /* DMNumberDinersItemView.m */,
+				18C51FFE1F8D1B5A00EC9D10 /* DMSignTimeView.h */,
+				18C51FFF1F8D1B5A00EC9D10 /* DMSignTimeView.m */,
+			);
+			path = Repast;
+			sourceTree = "<group>";
+		};
+		18C51FD91F8CDA4B00EC9D10 /* Repast */ = {
+			isa = PBXGroup;
+			children = (
+				18C51FDA1F8CDB3100EC9D10 /* DMRepastTimeRequester.h */,
+				18C51FDB1F8CDB3100EC9D10 /* DMRepastTimeRequester.m */,
+				18C51FDD1F8CDB6A00EC9D10 /* DMSubmitSignRequester.h */,
+				18C51FDE1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m */,
+				18C51FE01F8CDB9F00EC9D10 /* DMSearchDishesRequester.h */,
+				18C51FE11F8CDB9F00EC9D10 /* DMSearchDishesRequester.m */,
+				18C51FE31F8CDBC500EC9D10 /* DMStatTotalRequester.h */,
+				18C51FE41F8CDBC500EC9D10 /* DMStatTotalRequester.m */,
+				18C51FE61F8CDBED00EC9D10 /* DMStatVoteRequester.h */,
+				18C51FE71F8CDBED00EC9D10 /* DMStatVoteRequester.m */,
+			);
+			path = Repast;
+			sourceTree = "<group>";
+		};
 		18D7A61C1F66B44800B48BCD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +924,12 @@
 			children = (
 				18411EFF1F87C1D900CE7750 /* DMExhListModel.h */,
 				18411F001F87C1D900CE7750 /* DMExhListModel.m */,
+				18C51FE91F8CDDB100EC9D10 /* DMRepastTimeModel.h */,
+				18C51FEA1F8CDDB100EC9D10 /* DMRepastTimeModel.m */,
+				18C51FEC1F8CE18600EC9D10 /* DMStatTotalModel.h */,
+				18C51FED1F8CE18600EC9D10 /* DMStatTotalModel.m */,
+				18C51FEF1F8D019800EC9D10 /* DMStatVoteModel.h */,
+				18C51FF01F8D019800EC9D10 /* DMStatVoteModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -858,6 +937,7 @@
 		18D7A61F1F66B44800B48BCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18C51FD81F8CDA3B00EC9D10 /* Repast */,
 				18E8EEE01F84B7ED00E42CD2 /* MsgInterviewImageContainer.h */,
 				18E8EEDF1F84B7ED00E42CD2 /* MsgInterviewImageContainer.m */,
 				18468E0E1F838784006B36D1 /* DMHomeHeadView.h */,
@@ -1466,6 +1546,7 @@
 		DF6A9BDC1F048C6D0075F100 /* Requester */ = {
 			isa = PBXGroup;
 			children = (
+				18C51FD91F8CDA4B00EC9D10 /* Repast */,
 				DF508AA91F8B22C100F1D07C /* Exh */,
 				DF508AA21F8B1FA700F1D07C /* Vote */,
 				188ED8E31F4497A8009BF26D /* DMCMSDetailRequester.h */,
@@ -2109,10 +2190,14 @@
 				1802F06B1F8B9C7400E74FB6 /* DMVoteDetailController.m in Sources */,
 				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
 				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
+				18C51FF41F8D0B9900EC9D10 /* DMRepastTitleView.m in Sources */,
+				18C51FFA1F8D138400EC9D10 /* DMNumberDinersContentView.m in Sources */,
 				180EDDFE1F88BB8F00DD1812 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				DF8FD74D1EEA47E50060FE34 /* DMLinearViewController.m in Sources */,
 				188ED8DC1F449506009BF26D /* DMCmsContentRequster.m in Sources */,
+				18C51FEE1F8CE18600EC9D10 /* DMStatTotalModel.m in Sources */,
 				DF6A9BF51F04F33B0075F100 /* DMSearchApplyOutRequester.m in Sources */,
+				18C51FF11F8D019800EC9D10 /* DMStatVoteModel.m in Sources */,
 				18E8EEB51F84B77F00E42CD2 /* CutAvatarImgViewController.m in Sources */,
 				DF6A9BF21F04D7F20075F100 /* DMCommitApplyOutRequester.m in Sources */,
 				18E8EECA1F84B77F00E42CD2 /* LMDPhotosManager.m in Sources */,
@@ -2127,6 +2212,7 @@
 				1802F0711F8BA6ED00E74FB6 /* DMVoteDetailInfo.m in Sources */,
 				DFE4C7301F678BB3004F4184 /* DMNewsViewController.m in Sources */,
 				18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */,
+				18C51FE21F8CDB9F00EC9D10 /* DMSearchDishesRequester.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
 				DF508A941F8B149A00F1D07C /* MSSBrowseActionSheetCell.m in Sources */,
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
@@ -2143,6 +2229,7 @@
 				DF54440E1EF3D2D9000EE89F /* DMEntryView.m in Sources */,
 				DF84E5EE1EF77CC300F8A23A /* DMDBBaseManager.m in Sources */,
 				DF84E5F71EF7CC4D00F8A23A /* DMAddressPickerView.m in Sources */,
+				18C51FEB1F8CDDB100EC9D10 /* DMRepastTimeModel.m in Sources */,
 				DF508A931F8B149A00F1D07C /* MSSBrowseActionSheet.m in Sources */,
 				DF508AB11F8B22C200F1D07C /* DMSearchExhRequester.m in Sources */,
 				DF508A951F8B149A00F1D07C /* MSSBrowseBaseViewController.m in Sources */,
@@ -2175,7 +2262,9 @@
 				18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */,
 				18468E0D1F837F53006B36D1 /* DMNewsCell.m in Sources */,
 				DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */,
+				18C520001F8D1B5A00EC9D10 /* DMSignTimeView.m in Sources */,
 				DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */,
+				18C51FDF1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m in Sources */,
 				18E8EEE51F84EB9200E42CD2 /* DMVoteItemsView.m in Sources */,
 				DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */,
 				DF508A991F8B149A00F1D07C /* MSSBrowseModel.m in Sources */,
@@ -2202,6 +2291,7 @@
 				18E8EEC71F84B77F00E42CD2 /* LMDAlbumPickerViewController.m in Sources */,
 				1802F0771F8BA8A400E74FB6 /* DMVoteResultInfo.m in Sources */,
 				DF377CDA1EF2969D00522AF7 /* DMAddressBookViewController.m in Sources */,
+				18C51FE51F8CDBC500EC9D10 /* DMStatTotalRequester.m in Sources */,
 				DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */,
 				180EDE0A1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */,
@@ -2210,6 +2300,7 @@
 				DFB4533C1EE557060000DDC9 /* main.m in Sources */,
 				18E8EEDE1F84B77F00E42CD2 /* LMDPhotoPreviewCollectionViewCell.m in Sources */,
 				DF7864D11F25FCDC00477D3C /* DMSingleView.m in Sources */,
+				18C51FFD1F8D13A100EC9D10 /* DMNumberDinersItemView.m in Sources */,
 				18E8EEC81F84B77F00E42CD2 /* LMDPhotoPickerViewController.m in Sources */,
 				DF50A1581EE7F3320091E098 /* UIImage+DMColor.m in Sources */,
 				18E8EEC91F84B77F00E42CD2 /* LMDPhotoPreviewViewController.m in Sources */,
@@ -2232,6 +2323,7 @@
 				DF5ED6821F2360EF00374C8A /* DMLeaveTicketRequester.m in Sources */,
 				DF7B1DD21EF532010025A21C /* DMFillinApplyBusController.m in Sources */,
 				DF6A9BE21F048DC00075F100 /* DMHttpRequester.m in Sources */,
+				18C51FE81F8CDBED00EC9D10 /* DMStatVoteRequester.m in Sources */,
 				DF1F32301F0E2590004358E3 /* DMDetailApplyCompensatoryController.m in Sources */,
 				DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */,
 				DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */,
@@ -2243,6 +2335,7 @@
 				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
 				DF508A9D1F8B149A00F1D07C /* UIImage+MSSScale.m in Sources */,
 				DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */,
+				18C51FF71F8D117400EC9D10 /* DMNumberDinersView.m in Sources */,
 				DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */,
 				DFA4FA011F305AD8002258DD /* DMSubmitTaskBusRequester.m in Sources */,
 				DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */,
@@ -2258,6 +2351,7 @@
 				DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */,
 				188ED8E21F449722009BF26D /* DMWebViewController.m in Sources */,
 				DF8DA40C1F0F178900619AF0 /* DMFindHolidayRequester.m in Sources */,
+				18C51FDC1F8CDB3100EC9D10 /* DMRepastTimeRequester.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

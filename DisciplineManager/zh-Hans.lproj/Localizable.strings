@@ -152,3 +152,17 @@
 "CutoffTime" = "截止时间";
 "number_ticket" = "%zd票";
 "vote_option_empty" = "请选择投票项";
+
+"Sunday" = "星期日";
+"Monday" = "星期一";
+"Tuesday" = "星期二";
+"Wednesday" = "星期三";
+"Thursday" = "星期四";
+"Friday" = "星期五";
+"Saturday" = "星期六";
+
+"number_diners_format" = "%@ %@ 就餐人数";
+"breakfast" = "早餐";
+"lunch" = "午餐";
+"sign_time_title" = "剩余打卡时间";
+"dining_punch_obsolete" = "就餐打卡已结束";
