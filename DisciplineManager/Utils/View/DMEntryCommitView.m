@@ -49,4 +49,9 @@
         self.clickCommitBlock();
     }
 }
+
+- (void)setCommitTitle:(NSString *)title {
+    [self.commitBtn setTitle:title forState:UIControlStateNormal];
+}
+
 @end

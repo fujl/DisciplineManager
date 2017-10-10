@@ -11,6 +11,7 @@
 #import "DMVoteListCell.h"
 #import "DMSearchVoteRequester.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "DMVoteDetailController.h"
 
 @interface DMVoteViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -94,10 +95,10 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DMDetailApplyBusController *controller = [[DMDetailApplyBusController alloc] init];
-//    DMApplyOutListInfo *info = [self.dataSource objectAtIndex:indexPath.row];
-//    controller.abId = info.formId;
-//    [self.navigationController pushViewController:controller animated:YES];
+    DMVoteDetailController *controller = [[DMVoteDetailController alloc] init];
+    DMVoteListInfo *info = [self.dataSource objectAtIndex:indexPath.row];
+    controller.vlId = info.vlId;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)configureCell:(DMVoteListCell *)cell atIndexPath:(NSIndexPath *)indexPath {
