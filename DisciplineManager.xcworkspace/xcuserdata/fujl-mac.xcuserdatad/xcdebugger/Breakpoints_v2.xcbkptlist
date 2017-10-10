@@ -116,7 +116,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMFillinApplyLeaveController.m"
-                  timestampString = "529229134.612089"
+                  timestampString = "529296478.467905"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
@@ -131,7 +131,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMFillinApplyLeaveController.m"
-                  timestampString = "529229134.613313"
+                  timestampString = "529296478.46912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
@@ -244,7 +244,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "529229134.629325"
+                  timestampString = "529296478.484093"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "103"
@@ -259,7 +259,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "529229134.630826"
+                  timestampString = "529296478.485364"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "104"
@@ -292,7 +292,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "529229134.638905"
+                  timestampString = "529296478.488223"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -307,7 +307,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/Manager/User/DMUserManager.m"
-                  timestampString = "529229134.640496"
+                  timestampString = "529296478.489481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -420,7 +420,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMLeaveTicketViewController.m"
-                  timestampString = "529229135.251524"
+                  timestampString = "529296478.504004"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
@@ -435,7 +435,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyLeave/Controller/DMLeaveTicketViewController.m"
-                  timestampString = "529229135.252846"
+                  timestampString = "529296478.505296"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -516,7 +516,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/More/Controller/DMMoreViewController.m"
-                  timestampString = "529229135.380294"
+                  timestampString = "529296478.515223"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "37"
@@ -531,7 +531,7 @@
                   moduleName = "DisciplineManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/More/Controller/DMMoreViewController.m"
-                  timestampString = "529229135.381578"
+                  timestampString = "529296478.516486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
@@ -697,7 +697,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "@implementation AppDelegate"
+            landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
@@ -762,6 +762,22 @@
             startingLineNumber = "130"
             endingLineNumber = "130"
             landmarkName = "-loadNewData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/Vote/Controller/DMVoteDetailController.m"
+            timestampString = "529296466.808365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-loadSubviews"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

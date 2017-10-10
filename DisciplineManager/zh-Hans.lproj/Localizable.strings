@@ -151,3 +151,4 @@
 "total_ticket" = "共%zd票";
 "CutoffTime" = "截止时间";
 "number_ticket" = "%zd票";
+"vote_option_empty" = "请选择投票项";

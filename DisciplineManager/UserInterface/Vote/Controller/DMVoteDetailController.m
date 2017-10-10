@@ -13,6 +13,8 @@
 
 #import "DMVoteDetailInfo.h"
 
+#import "DMSubmitVoteRequester.h"
+
 @interface DMVoteDetailController ()
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -80,7 +82,7 @@
     [self.subviewList removeAllObjects];
     [self.subviewList addObject:self.headView];
     [self.subviewList addObject:self.optionsView];
-    if (!self.info.isEnd) {
+    if (!self.info.isEnd || self.info.myTicket <= 0) {
         [self.subviewList addObject:self.commitView];
     }
     [self setChildViews:self.subviewList];
@@ -138,7 +140,24 @@
 }
 
 - (void)vote {
-    
+    NSString *optionId = [self.optionsView getOptionIds];
+    if ([optionId isEqualToString:@""]) {
+        showToast(NSLocalizedString(@"vote_option_empty", @"请选择投票项"));
+        return;
+    }
+    DMSubmitVoteRequester *requester = [[DMSubmitVoteRequester alloc] init];
+    requester.voteId = self.info.vId;
+    requester.optionId = optionId;
+    showLoadingDialog();
+    [requester postRequest:^(DMResultCode code, id data) {
+        dismissLoadingDialog();
+        if (code == ResultCodeOK) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            NSString *errMsg = data;
+            showToast(errMsg);
+        }
+    }];
 }
 
 @end

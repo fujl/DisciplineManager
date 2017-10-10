@@ -12,7 +12,7 @@
 @interface DMVoteOptionView : UIView
 
 @property (nonatomic, readonly) UIButton * _Nonnull optionBtn;
-
+@property (nonatomic, strong) DMVoteOptionInfo * _Nonnull info;
 /**
  点击项事件
  */

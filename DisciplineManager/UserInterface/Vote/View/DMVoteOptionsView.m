@@ -11,6 +11,7 @@
 
 @interface DMVoteOptionsView ()
 
+@property (nonatomic, strong) NSMutableArray<DMVoteOptionView *> *optionsView;
 @property (nonatomic, strong) DMVoteOptionsHeadView *headView;
 @property (nonatomic, strong) DMSingleView *endView;
 
@@ -97,6 +98,21 @@
     } else {
         optionView.optionBtn.selected = !optionView.optionBtn.selected;
     }
+}
+
+- (NSString *)getOptionIds {
+    NSString *optionIds = @"";
+    NSInteger i = 0;
+    for (DMVoteOptionView *view in self.optionsView) {
+        if (view.optionBtn.selected) {
+            if (i++ == 0) {
+                optionIds = view.info.optionId;
+            } else {
+                optionIds = [NSString stringWithFormat:@"%@,%@", optionIds, view.info.optionId];
+            }
+        }
+    }
+    return optionIds;
 }
 
 @end

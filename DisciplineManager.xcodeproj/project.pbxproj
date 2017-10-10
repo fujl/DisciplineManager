@@ -241,6 +241,7 @@
 		DFCE28BB1F0634D000AD40AE /* DMCommitApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28BA1F0634D000AD40AE /* DMCommitApplyBusRequester.m */; };
 		DFCE28BE1F06350D00AD40AE /* DMSearchApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28BD1F06350D00AD40AE /* DMSearchApplyBusRequester.m */; };
 		DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28C01F06352300AD40AE /* DMDetailApplyBusRequester.m */; };
+		DFDFA7B21F8C683A00E34080 /* DMSubmitVoteRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDFA7B11F8C683A00E34080 /* DMSubmitVoteRequester.m */; };
 		DFE023CA1F063D95007BD7AC /* DMFormBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */; };
 		DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CC1F063F02007BD7AC /* DMApplyBusListInfo.m */; };
 		DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE023CF1F0641E6007BD7AC /* DMDetailApplyBusController.m */; };
@@ -692,6 +693,8 @@
 		DFCE28BD1F06350D00AD40AE /* DMSearchApplyBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchApplyBusRequester.m; sourceTree = "<group>"; };
 		DFCE28BF1F06352300AD40AE /* DMDetailApplyBusRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyBusRequester.h; sourceTree = "<group>"; };
 		DFCE28C01F06352300AD40AE /* DMDetailApplyBusRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyBusRequester.m; sourceTree = "<group>"; };
+		DFDFA7B01F8C683A00E34080 /* DMSubmitVoteRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSubmitVoteRequester.h; sourceTree = "<group>"; };
+		DFDFA7B11F8C683A00E34080 /* DMSubmitVoteRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSubmitVoteRequester.m; sourceTree = "<group>"; };
 		DFE023C81F063D95007BD7AC /* DMFormBaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFormBaseInfo.h; sourceTree = "<group>"; };
 		DFE023C91F063D95007BD7AC /* DMFormBaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFormBaseInfo.m; sourceTree = "<group>"; };
 		DFE023CB1F063F02007BD7AC /* DMApplyBusListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyBusListInfo.h; sourceTree = "<group>"; };
@@ -1343,6 +1346,8 @@
 				DF508AA71F8B202C00F1D07C /* DMSearchVoteRequester.m */,
 				1802F06C1F8BA0B800E74FB6 /* DMDetailVoteRequester.h */,
 				1802F06D1F8BA0B800E74FB6 /* DMDetailVoteRequester.m */,
+				DFDFA7B01F8C683A00E34080 /* DMSubmitVoteRequester.h */,
+				DFDFA7B11F8C683A00E34080 /* DMSubmitVoteRequester.m */,
 			);
 			path = Vote;
 			sourceTree = "<group>";
@@ -2082,6 +2087,7 @@
 				DFA4FA041F309370002258DD /* DMSubmitTaskOutRequester.m in Sources */,
 				DF84E5F11EF77CFB00F8A23A /* DMDBCommonManager.m in Sources */,
 				DF50A1571EE7F3320091E098 /* UIColor+DMDefine.m in Sources */,
+				DFDFA7B21F8C683A00E34080 /* DMSubmitVoteRequester.m in Sources */,
 				DFA276A21F26C1620063D8AA /* DMTodoCell.m in Sources */,
 				DF377CD71EF2965D00522AF7 /* DMTodoViewController.m in Sources */,
 				18E8EECB1F84B77F00E42CD2 /* LMDAssetModel.m in Sources */,

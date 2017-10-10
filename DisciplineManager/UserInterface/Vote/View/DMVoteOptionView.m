@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UILabel *numberLabel;
 
-@property (nonatomic, strong) DMVoteOptionInfo *info;
 @property (nonatomic, assign) BOOL isEnd;
 @end
 

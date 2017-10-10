@@ -13,7 +13,8 @@
 @interface DMVoteOptionsView : UIView
 
 @property (nonatomic, strong) DMVoteDetailInfo *info;
-@property (nonatomic, strong) NSMutableArray<DMVoteOptionView *> *optionsView;
+
 - (instancetype)initWithInfo:(DMVoteDetailInfo *)info;
+- (NSString *)getOptionIds;
 
 @end
