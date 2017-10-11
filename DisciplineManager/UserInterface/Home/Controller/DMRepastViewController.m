@@ -18,6 +18,8 @@
 #import "DMNumberDinersView.h"
 #import "DMSignTimeView.h"
 
+#import "DMMealBarView.h"
+
 @interface DMRepastViewController ()
 
 @property (nonatomic, strong) DMRepastTimeModel *repastTimeModel;
@@ -27,6 +29,8 @@
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMNumberDinersView *numberDinersView;
 @property (nonatomic, strong) DMSignTimeView *signTimeView;
+@property (nonatomic, strong) DMMealBarView *breakfastBarView;
+@property (nonatomic, strong) DMMealBarView *lunchBarView;
 
 @end
 
@@ -58,6 +62,13 @@
 - (void)loadSubviewsData {
     [self.numberDinersView setNumberDinersInfo:self.repastTimeModel statTotal:self.statTotalModel];
     self.signTimeView.repastTimeModel = self.repastTimeModel;
+    for (DMStatVoteModel *statVoteModel in self.dishesArray) {
+        if (statVoteModel.type == RepastTypeBreakfast) {
+            self.breakfastBarView.statVoteModel = statVoteModel;
+        } else {
+            self.lunchBarView.statVoteModel = statVoteModel;
+        }
+    }
 }
 
 #pragma mark - load data
@@ -130,6 +141,22 @@
         _signTimeView.lcHeight = 144;
     }
     return _signTimeView;
+}
+
+- (DMMealBarView *)breakfastBarView {
+    if (!_breakfastBarView) {
+        _breakfastBarView = [[DMMealBarView alloc] init];
+        _breakfastBarView.lcHeight = 144;
+    }
+    return _breakfastBarView;
+}
+
+- (DMMealBarView *)lunchBarView {
+    if (!_lunchBarView) {
+        _lunchBarView = [[DMMealBarView alloc] init];
+        _lunchBarView.lcHeight = 144;
+    }
+    return _lunchBarView;
 }
 
 @end
