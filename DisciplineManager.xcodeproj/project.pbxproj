@@ -173,6 +173,9 @@
 		DF377CE31EF2985500522AF7 /* DMApplyLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE21EF2985500522AF7 /* DMApplyLeaveViewController.m */; };
 		DF377CE61EF299C200522AF7 /* DMApplyOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE51EF299C200522AF7 /* DMApplyOutViewController.m */; };
 		DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF377CE81EF29A0500522AF7 /* DMMoreViewController.m */; };
+		DF4DF6751F8DEEE100519F73 /* DMDiningPunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4DF6741F8DEEE100519F73 /* DMDiningPunchController.m */; };
+		DF4DF6781F8DF0BB00519F73 /* DMDishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4DF6771F8DF0BB00519F73 /* DMDishModel.m */; };
+		DF4DF67B1F8DFB5A00519F73 /* DMMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4DF6791F8DFB5A00519F73 /* DMMarqueeView.m */; };
 		DF508A8D1F8B149A00F1D07C /* ic_title_back_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF508A6E1F8B149A00F1D07C /* ic_title_back_light@2x.png */; };
 		DF508A8E1F8B149A00F1D07C /* ic_title_back_light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF508A6F1F8B149A00F1D07C /* ic_title_back_light@3x.png */; };
 		DF508A8F1F8B149A00F1D07C /* ic_tittle_delete_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF508A701F8B149A00F1D07C /* ic_tittle_delete_light@2x.png */; };
@@ -608,6 +611,12 @@
 		DF377CE51EF299C200522AF7 /* DMApplyOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutViewController.m; sourceTree = "<group>"; };
 		DF377CE71EF29A0500522AF7 /* DMMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMoreViewController.h; sourceTree = "<group>"; };
 		DF377CE81EF29A0500522AF7 /* DMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMoreViewController.m; sourceTree = "<group>"; };
+		DF4DF6731F8DEEE100519F73 /* DMDiningPunchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDiningPunchController.h; sourceTree = "<group>"; };
+		DF4DF6741F8DEEE100519F73 /* DMDiningPunchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMDiningPunchController.m; sourceTree = "<group>"; };
+		DF4DF6761F8DF0BB00519F73 /* DMDishModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMDishModel.h; sourceTree = "<group>"; };
+		DF4DF6771F8DF0BB00519F73 /* DMDishModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMDishModel.m; sourceTree = "<group>"; };
+		DF4DF6791F8DFB5A00519F73 /* DMMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMarqueeView.m; sourceTree = "<group>"; };
+		DF4DF67A1F8DFB5A00519F73 /* DMMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMarqueeView.h; sourceTree = "<group>"; };
 		DF508A6E1F8B149A00F1D07C /* ic_title_back_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_title_back_light@2x.png"; sourceTree = "<group>"; };
 		DF508A6F1F8B149A00F1D07C /* ic_title_back_light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_title_back_light@3x.png"; sourceTree = "<group>"; };
 		DF508A701F8B149A00F1D07C /* ic_tittle_delete_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tittle_delete_light@2x.png"; sourceTree = "<group>"; };
@@ -1021,6 +1030,8 @@
 				18E8EE711F84B62300E42CD2 /* DMExhibitionPublishController.m */,
 				18E8EEEC1F8520B600E42CD2 /* DMRepastViewController.h */,
 				18E8EEED1F8520B600E42CD2 /* DMRepastViewController.m */,
+				DF4DF6731F8DEEE100519F73 /* DMDiningPunchController.h */,
+				DF4DF6741F8DEEE100519F73 /* DMDiningPunchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1036,6 +1047,8 @@
 				18C51FED1F8CE18600EC9D10 /* DMStatTotalModel.m */,
 				18C51FEF1F8D019800EC9D10 /* DMStatVoteModel.h */,
 				18C51FF01F8D019800EC9D10 /* DMStatVoteModel.m */,
+				DF4DF6761F8DF0BB00519F73 /* DMDishModel.h */,
+				DF4DF6771F8DF0BB00519F73 /* DMDishModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1793,6 +1806,8 @@
 		DF54440B1EF3D264000EE89F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF4DF67A1F8DFB5A00519F73 /* DMMarqueeView.h */,
+				DF4DF6791F8DFB5A00519F73 /* DMMarqueeView.m */,
 				DF7B1DCD1EF52A120025A21C /* DMDatePickerView.h */,
 				DF7B1DCE1EF52A120025A21C /* DMDatePickerView.m */,
 				DF54440C1EF3D2D9000EE89F /* DMEntryView.h */,
@@ -2487,6 +2502,7 @@
 				DF6A9BFC1F04F5CC0075F100 /* DMApplyOutListInfo.m in Sources */,
 				DF377CDD1EF296F100522AF7 /* DMApplyBusViewController.m in Sources */,
 				DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */,
+				DF4DF67B1F8DFB5A00519F73 /* DMMarqueeView.m in Sources */,
 				1802F06B1F8B9C7400E74FB6 /* DMVoteDetailController.m in Sources */,
 				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
 				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
@@ -2674,6 +2690,8 @@
 				DF5444111EF3D7AD000EE89F /* DMEntrySelectView.m in Sources */,
 				18468E101F838784006B36D1 /* DMHomeHeadView.m in Sources */,
 				18D7A6221F66B54000B48BCD /* DMHomeViewController.m in Sources */,
+				DF4DF6781F8DF0BB00519F73 /* DMDishModel.m in Sources */,
+				DF4DF6751F8DEEE100519F73 /* DMDiningPunchController.m in Sources */,
 				DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */,
 				18FCCFBC1F8E2F9F00563CBA /* ZFCircle.m in Sources */,
 				DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */,

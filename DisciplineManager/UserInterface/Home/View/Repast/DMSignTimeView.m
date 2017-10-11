@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSInteger timeDifference;
+@property (nonatomic, readwrite) BOOL canSign;
 
 @end
 
@@ -87,6 +88,7 @@
     NSDateComponents* comp = [gregorian components:unitFlags fromDate:dt];
     if ([self isObsolete:comp]) {
         self.contentLabel.text = NSLocalizedString(@"dining_punch_obsolete", @"就餐打卡已结束");
+        self.canSign = NO;
     } else {
         // 算倒计时
         NSTimeInterval timeInterval = [dt timeIntervalSince1970];
@@ -97,6 +99,7 @@
         if (self.timeDifference > 0) {
             [self showTimeDifference];
             [self startTimer];
+            self.canSign = YES;
         }
     }
 }
@@ -119,8 +122,12 @@
         self.timeDifference--;
         [self showTimeDifference];
     } else {
+        self.canSign = NO;
         [self closeTimer];
         self.contentLabel.text = NSLocalizedString(@"dining_punch_obsolete", @"就餐打卡已结束");
+        if (self.signObsoleteEvent) {
+            self.signObsoleteEvent();
+        }
     }
 }
 

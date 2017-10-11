@@ -41,6 +41,10 @@
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"repast", @"");
     [self addNavBackItem:@selector(goBack)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadRepastTime];
 }
 
@@ -54,8 +58,14 @@
 }
 
 - (void)loadSubviews {
+    [self.subviewList removeAllObjects];
     [self.subviewList addObject:self.numberDinersView];
     [self.subviewList addObject:self.signTimeView];
+    if (!self.statTotalModel.isSign) {
+        if (self.signTimeView.canSign) {
+            [self.subviewList addObject:self.commitView];
+        }
+    }
     [self setChildViews:self.subviewList];
 }
 
@@ -139,6 +149,10 @@
     if (!_signTimeView) {
         _signTimeView = [[DMSignTimeView alloc] init];
         _signTimeView.lcHeight = 144;
+        __weak typeof(self) weakSelf = self;
+        _signTimeView.signObsoleteEvent = ^{
+            [weakSelf loadSubviews];
+        };
     }
     return _signTimeView;
 }
