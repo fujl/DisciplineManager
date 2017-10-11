@@ -8,17 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, RepastType) {
-    /**
-     * 早餐
-     */
-    RepastTypeBreakfast,
-    /**
-     * 午餐
-     */
-    RepastTypeLunch,
-};
-
 @interface DMStatVoteModel : NSObject
 
 @property (nonatomic, assign) NSInteger total;

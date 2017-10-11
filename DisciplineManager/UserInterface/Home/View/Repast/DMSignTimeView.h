@@ -11,7 +11,13 @@
 
 @interface DMSignTimeView : UIView
 
-@property (nonatomic, strong) DMRepastTimeModel *repastTimeModel;
+@property (nonatomic, strong) DMRepastTimeModel * _Nonnull repastTimeModel;
+@property (nonatomic, readonly) BOOL canSign;
+
+/**
+ 点击项事件
+ */
+@property (nullable, nonatomic, copy) void (^signObsoleteEvent)();
 
 - (void)closeTimer;
 

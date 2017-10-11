@@ -18,6 +18,8 @@
 #import "DMNumberDinersView.h"
 #import "DMSignTimeView.h"
 
+#import "DMDiningPunchController.h"
+
 @interface DMRepastViewController ()
 
 @property (nonatomic, strong) DMRepastTimeModel *repastTimeModel;
@@ -27,6 +29,7 @@
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMNumberDinersView *numberDinersView;
 @property (nonatomic, strong) DMSignTimeView *signTimeView;
+@property (nonatomic, strong) DMEntryCommitView *commitView;
 
 @end
 
@@ -37,6 +40,10 @@
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"repast", @"");
     [self addNavBackItem:@selector(goBack)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadRepastTime];
 }
 
@@ -50,14 +57,25 @@
 }
 
 - (void)loadSubviews {
+    [self.subviewList removeAllObjects];
     [self.subviewList addObject:self.numberDinersView];
     [self.subviewList addObject:self.signTimeView];
+    if (!self.statTotalModel.isSign) {
+        if (self.signTimeView.canSign) {
+            [self.subviewList addObject:self.commitView];
+        }
+    }
     [self setChildViews:self.subviewList];
 }
 
 - (void)loadSubviewsData {
     [self.numberDinersView setNumberDinersInfo:self.repastTimeModel statTotal:self.statTotalModel];
-    self.signTimeView.repastTimeModel = self.repastTimeModel;
+    if (self.statTotalModel.isSign) {
+        // 已经打卡
+    } else {
+        // 没有打卡
+        self.signTimeView.repastTimeModel = self.repastTimeModel;
+    }
 }
 
 #pragma mark - load data
@@ -128,8 +146,33 @@
     if (!_signTimeView) {
         _signTimeView = [[DMSignTimeView alloc] init];
         _signTimeView.lcHeight = 144;
+        __weak typeof(self) weakSelf = self;
+        _signTimeView.signObsoleteEvent = ^{
+            [weakSelf loadSubviews];
+        };
     }
     return _signTimeView;
+}
+
+- (DMEntryCommitView *)commitView {
+    if (!_commitView) {
+        _commitView = [[DMEntryCommitView alloc] init];
+        _commitView.lcHeight = 64;
+        [_commitView setCommitTitle:NSLocalizedString(@"dining_punch", @"就餐打卡")];
+        __weak typeof(self) weakSelf = self;
+        _commitView.clickCommitBlock = ^{
+            NSLog(@"commit");
+            [AppWindow endEditing:YES];
+            [weakSelf commit];
+        };
+    }
+    return _commitView;
+}
+
+#pragma mark - event method
+- (void)commit {
+    DMDiningPunchController *controller = [[DMDiningPunchController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

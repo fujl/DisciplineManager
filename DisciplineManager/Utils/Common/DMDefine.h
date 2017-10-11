@@ -78,6 +78,17 @@ typedef NS_ENUM(NSUInteger, DMVoteType) {
     DMVoteTypeCheckbox
 };
 
+typedef NS_ENUM(NSUInteger, RepastType) {
+    /**
+     * 早餐
+     */
+    RepastTypeBreakfast,
+    /**
+     * 午餐
+     */
+    RepastTypeLunch,
+};
+
 #ifdef __OBJC__
 #define BEGIN_AUTORELEASE        NSAutoreleasePool* __lpPool = [[NSAutoreleasePool alloc] init];
 #define END_AUTORELEASE            [__lpPool drain];
