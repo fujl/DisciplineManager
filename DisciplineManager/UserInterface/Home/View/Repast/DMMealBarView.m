@@ -37,11 +37,13 @@
             make.left.equalTo(self);
             make.right.equalTo(self.mas_right);
             make.top.equalTo(self.titleView.mas_bottom);
-            make.height.equalTo(@(100));
+            make.height.equalTo(@(200));
         }];
         [self.barChart mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.contentView);
+            make.edges.equalTo(self.contentView);
         }];
+        
+        _dishs = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -64,38 +66,60 @@
 
 - (ZFBarChart *)barChart {
     if (!_barChart) {
-        _barChart = [[ZFBarChart alloc] init];
+        _barChart = [[ZFBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
         _barChart.dataSource = self;
         _barChart.delegate = self;
+        //_barChart.topicLabel.text = @"xx小学各年级人数";
+        _barChart.unit = @"票";
     }
     return _barChart;
 }
 
-- (void)setStatVoteModel:(DMStatVoteModel *)statVoteModel {
-    _statVoteModel = statVoteModel;
-    if (_statVoteModel.type == RepastTypeBreakfast) {
+- (void)setType:(RepastType)type {
+    _type = type;
+    if (self.type == RepastTypeBreakfast) {
         [self.titleView setTitle:[NSString stringWithFormat:@"%@%@", NSLocalizedString(@"breakfast", @"早餐"), NSLocalizedString(@"dish_chart", @"菜品分布")]];
     } else {
         [self.titleView setTitle:[NSString stringWithFormat:@"%@%@", NSLocalizedString(@"lunch", @"午餐"), NSLocalizedString(@"dish_chart", @"菜品分布")]];
     }
 }
 
+- (void)strokePath {
+    [self.barChart strokePath];
+}
+
 #pragma mark - ZFGenericChartDataSource
 
 - (NSArray *)valueArrayInGenericChart:(ZFGenericChart *)chart{
-    return @[@"123", @"256", @"300", @"283", @"490", @"236"];
+    NSMutableArray *values = [[NSMutableArray alloc] init];
+    for (DMStatVoteModel *svModel in self.dishs) {
+        [values addObject:[NSString stringWithFormat:@"%zd", svModel.total]];
+    }
+    return values;
+//    return @[@"123", @"256", @"300", @"283", @"490", @"236"];
 }
 
 - (NSArray *)nameArrayInGenericChart:(ZFGenericChart *)chart{
-    return @[@"一年级", @"二年级", @"三年级", @"四年级", @"五年级", @"六年级"];
+    NSMutableArray *names = [[NSMutableArray alloc] init];
+    for (DMStatVoteModel *svModel in self.dishs) {
+        [names addObject:svModel.dishesName];
+    }
+    return names;
+//    return @[@"一年级", @"二年级", @"三年级", @"四年级", @"五年级", @"六年级"];
 }
 
-- (NSArray *)colorArrayInGenericChart:(ZFGenericChart *)chart{
+- (NSArray *)colorArrayInGenericChart:(ZFGenericChart *)chart {
     return @[ZFMagenta];
 }
 
-- (CGFloat)axisLineMaxValueInGenericChart:(ZFGenericChart *)chart{
-    return 500;
+- (CGFloat)axisLineMaxValueInGenericChart:(ZFGenericChart *)chart {
+    CGFloat max = 0;
+    for (DMStatVoteModel *svModel in self.dishs) {
+        if (svModel.total > max) {
+            max = svModel.total;
+        }
+    }
+    return max;
 }
 
 //- (CGFloat)axisLineMinValueInGenericChart:(ZFGenericChart *)chart{

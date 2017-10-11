@@ -11,6 +11,9 @@
 
 @interface DMMealBarView : UIView
 
-@property (nonatomic, strong) DMStatVoteModel *statVoteModel;
+@property (nonatomic, strong) NSMutableArray<DMStatVoteModel *> *dishs;
+@property (nonatomic, assign) RepastType type;
+
+- (void)strokePath;
 
 @end

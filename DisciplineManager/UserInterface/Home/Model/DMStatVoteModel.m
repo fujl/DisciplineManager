@@ -13,7 +13,8 @@
 - (instancetype)initWithDict:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        self.total = [parseNumberFromObject([dict objectForKey:@"total"]) integerValue];
+//        self.total = [parseNumberFromObject([dict objectForKey:@"total"]) integerValue];
+        self.total = 10;
         self.dishesName = parseStringFromObject([dict objectForKey:@"dishesName"]);
         self.type = [parseNumberFromObject([dict objectForKey:@"type"]) integerValue];
     }

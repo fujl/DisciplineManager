@@ -56,6 +56,12 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.breakfastBarView strokePath];
+    [self.lunchBarView strokePath];
+}
+
 - (void)dealloc {
     NSLog(@"DMRepastViewController dealloc");
 }
@@ -64,6 +70,8 @@
     [self.subviewList removeAllObjects];
     [self.subviewList addObject:self.numberDinersView];
     [self.subviewList addObject:self.signTimeView];
+    [self.subviewList addObject:self.breakfastBarView];
+    [self.subviewList addObject:self.lunchBarView];
     if (!self.statTotalModel.isSign) {
         if (self.signTimeView.canSign) {
             [self.subviewList addObject:self.commitView];
@@ -80,11 +88,15 @@
         // 没有打卡
         self.signTimeView.repastTimeModel = self.repastTimeModel;
     }
+    [self.breakfastBarView.dishs removeAllObjects];
+    [self.lunchBarView.dishs removeAllObjects];
+    self.breakfastBarView.type = RepastTypeBreakfast;
+    self.lunchBarView.type = RepastTypeLunch;
     for (DMStatVoteModel *statVoteModel in self.dishesArray) {
         if (statVoteModel.type == RepastTypeBreakfast) {
-            self.breakfastBarView.statVoteModel = statVoteModel;
+            [self.breakfastBarView.dishs addObject:statVoteModel];
         } else {
-            self.lunchBarView.statVoteModel = statVoteModel;
+            [self.lunchBarView.dishs addObject:statVoteModel];
         }
     }
 }
@@ -168,7 +180,7 @@
 - (DMMealBarView *)breakfastBarView {
     if (!_breakfastBarView) {
         _breakfastBarView = [[DMMealBarView alloc] init];
-        _breakfastBarView.lcHeight = 144;
+        _breakfastBarView.lcHeight = 244;
     }
     return _breakfastBarView;
 }
@@ -176,7 +188,7 @@
 - (DMMealBarView *)lunchBarView {
     if (!_lunchBarView) {
         _lunchBarView = [[DMMealBarView alloc] init];
-        _lunchBarView.lcHeight = 144;
+        _lunchBarView.lcHeight = 244;
     }
     return _lunchBarView;
 }
