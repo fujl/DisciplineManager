@@ -37,8 +37,8 @@
     if (self.serverName == ServerNameNormal) {
         return @"http://m.xygs.gov.cn:8088/";
     } else {
-//        return @"http://m.xygs.gov.cn:8099/";
-        return @"http://38434122.ngrok.cc/jgxt/";
+        return @"http://m.xygs.gov.cn:8099/";
+//        return @"http://38434122.ngrok.cc/jgxt/";
     }
 }
 

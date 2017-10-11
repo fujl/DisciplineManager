@@ -19,6 +19,7 @@
 #import "DMSignTimeView.h"
 
 #import "DMMealBarView.h"
+#import "DMDiningPunchController.h"
 
 @interface DMRepastViewController ()
 
@@ -31,6 +32,8 @@
 @property (nonatomic, strong) DMSignTimeView *signTimeView;
 @property (nonatomic, strong) DMMealBarView *breakfastBarView;
 @property (nonatomic, strong) DMMealBarView *lunchBarView;
+
+@property (nonatomic, strong) DMEntryCommitView *commitView;
 
 @end
 
@@ -71,7 +74,12 @@
 
 - (void)loadSubviewsData {
     [self.numberDinersView setNumberDinersInfo:self.repastTimeModel statTotal:self.statTotalModel];
-    self.signTimeView.repastTimeModel = self.repastTimeModel;
+    if (self.statTotalModel.isSign) {
+        // 已经打卡
+    } else {
+        // 没有打卡
+        self.signTimeView.repastTimeModel = self.repastTimeModel;
+    }
     for (DMStatVoteModel *statVoteModel in self.dishesArray) {
         if (statVoteModel.type == RepastTypeBreakfast) {
             self.breakfastBarView.statVoteModel = statVoteModel;
@@ -171,6 +179,27 @@
         _lunchBarView.lcHeight = 144;
     }
     return _lunchBarView;
+}
+
+- (DMEntryCommitView *)commitView {
+    if (!_commitView) {
+        _commitView = [[DMEntryCommitView alloc] init];
+        _commitView.lcHeight = 64;
+        [_commitView setCommitTitle:NSLocalizedString(@"dining_punch", @"就餐打卡")];
+        __weak typeof(self) weakSelf = self;
+        _commitView.clickCommitBlock = ^{
+            NSLog(@"commit");
+            [AppWindow endEditing:YES];
+            [weakSelf commit];
+        };
+    }
+    return _commitView;
+}
+
+#pragma mark - event method
+- (void)commit {
+    DMDiningPunchController *controller = [[DMDiningPunchController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
