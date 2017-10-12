@@ -225,6 +225,8 @@
 		DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BF81F04F48D0075F100 /* DMListBaseModel.m */; };
 		DF6A9BFC1F04F5CC0075F100 /* DMApplyOutListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BFB1F04F5CC0075F100 /* DMApplyOutListInfo.m */; };
 		DF6A9BFF1F04FADD0075F100 /* DMApplyOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6A9BFE1F04FADD0075F100 /* DMApplyOutCell.m */; };
+		DF7843601F8F14BA00D9F002 /* chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78435F1F8F14BA00D9F002 /* chart.swift */; };
+		DF7844951F8F1EF300D9F002 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7844941F8F1EF300D9F002 /* Charts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DF7864CE1F25F80A00477D3C /* DMDetailApplyLeaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864CD1F25F80900477D3C /* DMDetailApplyLeaveController.m */; };
 		DF7864D11F25FCDC00477D3C /* DMSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D01F25FCDC00477D3C /* DMSingleView.m */; };
 		DF7864D41F2607DA00477D3C /* DMTaskTracksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D31F2607DA00477D3C /* DMTaskTracksModel.m */; };
@@ -318,6 +320,19 @@
 			remoteInfo = DisciplineManager;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF78435D1F8F144800D9F002 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1802F0691F8B9C7400E74FB6 /* DMVoteDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMVoteDetailController.h; sourceTree = "<group>"; };
@@ -712,6 +727,9 @@
 		DF6A9BFB1F04F5CC0075F100 /* DMApplyOutListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutListInfo.m; sourceTree = "<group>"; };
 		DF6A9BFD1F04FADD0075F100 /* DMApplyOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMApplyOutCell.h; sourceTree = "<group>"; };
 		DF6A9BFE1F04FADD0075F100 /* DMApplyOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMApplyOutCell.m; sourceTree = "<group>"; };
+		DF78435E1F8F14BA00D9F002 /* DisciplineManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DisciplineManager-Bridging-Header.h"; sourceTree = "<group>"; };
+		DF78435F1F8F14BA00D9F002 /* chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chart.swift; sourceTree = "<group>"; };
+		DF7844941F8F1EF300D9F002 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		DF7864CC1F25F80900477D3C /* DMDetailApplyLeaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyLeaveController.h; sourceTree = "<group>"; };
 		DF7864CD1F25F80900477D3C /* DMDetailApplyLeaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDetailApplyLeaveController.m; sourceTree = "<group>"; };
 		DF7864CF1F25FCDC00477D3C /* DMSingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSingleView.h; sourceTree = "<group>"; };
@@ -882,6 +900,7 @@
 				186360501F30E88200E2FE23 /* CoreGraphics.framework in Frameworks */,
 				1863604E1F30E87900E2FE23 /* CoreTelephony.framework in Frameworks */,
 				1863604C1F30E86A00E2FE23 /* libz.tbd in Frameworks */,
+				DF7844951F8F1EF300D9F002 /* Charts.framework in Frameworks */,
 				1863604A1F30E85B00E2FE23 /* SystemConfiguration.framework in Frameworks */,
 				2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */,
 			);
@@ -1769,6 +1788,7 @@
 		DF50A1451EE7F3320091E098 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DF7843581F8F133700D9F002 /* Charts */,
 				18FCCF531F8E2F9E00563CBA /* ZFChart */,
 				DF508A6D1F8B149A00F1D07C /* MSSBrowse */,
 				180EDDFF1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell */,
@@ -1953,6 +1973,14 @@
 				18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DF7843581F8F133700D9F002 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				DF7844941F8F1EF300D9F002 /* Charts.framework */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		DF84E5E01EF75DFB00F8A23A /* Resources */ = {
@@ -2163,6 +2191,8 @@
 			children = (
 				DFB4533B1EE557060000DDC9 /* main.m */,
 				DF8FD7431EEA45B40060FE34 /* Localizable.strings */,
+				DF78435F1F8F14BA00D9F002 /* chart.swift */,
+				DF78435E1F8F14BA00D9F002 /* DisciplineManager-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2240,6 +2270,7 @@
 				DFB453351EE557060000DDC9 /* Resources */,
 				4440ED56E0A325E039486615 /* [CP] Embed Pods Frameworks */,
 				F4F36E5473A72F64E90F540C /* [CP] Copy Pods Resources */,
+				DF78435D1F8F144800D9F002 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2299,6 +2330,7 @@
 					DFB453361EE557060000DDC9 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = X7N27ZW4ED;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -2581,6 +2613,7 @@
 				DF5A04661F316F5B00A2D8BC /* DMBindPushRequester.m in Sources */,
 				188ED8E51F4497A8009BF26D /* DMCMSDetailRequester.m in Sources */,
 				DF508A971F8B149A00F1D07C /* MSSBrowseLoadingImageView.m in Sources */,
+				DF7843601F8F14BA00D9F002 /* chart.swift in Sources */,
 				18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */,
 				18FCCFBE1F8E2F9F00563CBA /* ZFLineChart.m in Sources */,
 				18468E0D1F837F53006B36D1 /* DMNewsCell.m in Sources */,
@@ -2863,12 +2896,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/GtSdkLib",
+					"$(PROJECT_DIR)/DisciplineManager/Utils/Charts",
 				);
 				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
@@ -2880,6 +2915,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2891,12 +2929,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DisciplineManager/Manager/Push/GtSdkLib",
+					"$(PROJECT_DIR)/DisciplineManager/Utils/Charts",
 				);
 				GCC_PREFIX_HEADER = DisciplineManager/PrefixHeader.pch;
 				INFOPLIST_FILE = DisciplineManager/Info.plist;
@@ -2908,6 +2948,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -2915,6 +2957,7 @@
 		DFB453681EE557070000DDC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerTests/Info.plist;
@@ -2929,6 +2972,7 @@
 		DFB453691EE557070000DDC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerTests/Info.plist;
@@ -2943,6 +2987,7 @@
 		DFB4536B1EE557070000DDC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2955,6 +3000,7 @@
 		DFB4536C1EE557070000DDC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QP647MDN7U;
 				INFOPLIST_FILE = DisciplineManagerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
