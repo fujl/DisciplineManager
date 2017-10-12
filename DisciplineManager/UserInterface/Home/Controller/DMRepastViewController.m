@@ -90,8 +90,7 @@
     }
     [self.breakfastBarView.dishs removeAllObjects];
     [self.lunchBarView.dishs removeAllObjects];
-    self.breakfastBarView.type = RepastTypeBreakfast;
-    self.lunchBarView.type = RepastTypeLunch;
+    
     for (DMStatVoteModel *statVoteModel in self.dishesArray) {
         if (statVoteModel.type == RepastTypeBreakfast) {
             [self.breakfastBarView.dishs addObject:statVoteModel];
@@ -99,6 +98,9 @@
             [self.lunchBarView.dishs addObject:statVoteModel];
         }
     }
+    
+    self.breakfastBarView.type = RepastTypeBreakfast;
+    self.lunchBarView.type = RepastTypeLunch;
 }
 
 #pragma mark - load data
