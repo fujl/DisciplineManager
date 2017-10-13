@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSMutableArray<DMStatVoteModel *> *dishs;
 @property (nonatomic, assign) RepastType type;
 
-- (void)strokePath;
+- (void)strokeChart;
 
 @end

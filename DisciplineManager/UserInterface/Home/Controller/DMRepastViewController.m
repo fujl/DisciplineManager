@@ -58,8 +58,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.breakfastBarView strokePath];
-    [self.lunchBarView strokePath];
+    [self.breakfastBarView strokeChart];
+    [self.lunchBarView strokeChart];
 }
 
 - (void)dealloc {

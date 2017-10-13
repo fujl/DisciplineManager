@@ -8,15 +8,13 @@
 
 #import "DMMealBarView.h"
 #import "DMRepastTitleView.h"
-#import "ZFChart.h"
-#import "DisciplineManager-Bridging-Header.h"
-#import "DisciplineManager-Swift.h"
+#import "PNChart.h"
 
-@interface DMMealBarView () <ChartViewDelegate>
+@interface DMMealBarView ()
 
 @property (nonatomic, strong) DMRepastTitleView *titleView;
 @property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) BarChartView * barChartView;
+@property (nonatomic, strong) PNBarChart * barChartView;
 
 @end
 
@@ -66,13 +64,22 @@
     return _contentView;
 }
 
-- (BarChartView *)barChartView {
+- (PNBarChart *)barChartView {
     if (!_barChartView) {
-        _barChartView = [[BarChartView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
-//        _barChart.dataSource = self;
-        _barChartView.delegate = self;
-        //_barChart.topicLabel.text = @"xx小学各年级人数";
-//        _barChart.unit = @"票";
+        _barChartView = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+        //Y坐标label宽度(微调)
+        _barChartView.yChartLabelWidth = 20.0;
+        _barChartView.chartMarginLeft = 30.0;
+        _barChartView.chartMarginRight = 10.0;
+        _barChartView.chartMarginTop = 5.0;
+        _barChartView.chartMarginBottom = 10.0;
+        //X坐标刻度的上边距
+        _barChartView.labelMarginTop = 2.0;
+        _barChartView.showLabel = YES;
+        _barChartView.showChartBorder = YES; // 坐标轴
+        
+        _barChartView.isGradientShow = NO; // 立体效果
+        _barChartView.isShowNumbers = YES; // 显示各条状图的数值
     }
     return _barChartView;
 }
@@ -84,19 +91,22 @@
     } else {
         [self.titleView setTitle:[NSString stringWithFormat:@"%@%@", NSLocalizedString(@"lunch", @"午餐"), NSLocalizedString(@"dish_chart", @"菜品分布")]];
     }
+    [self setChartData];
 }
 
-- (void)strokePath {
-//    [self.barChart strokePath];
+- (void)setChartData {
+    NSMutableArray *xLabels = [[NSMutableArray alloc] init];
+    NSMutableArray *yValue = [[NSMutableArray alloc] init];
+    for (DMStatVoteModel *mdl in self.dishs) {
+        [xLabels addObject:mdl.dishesName];
+        [yValue addObject:@(mdl.total)];
+    }
+    [self.barChartView setXLabels:xLabels];
+    [self.barChartView setYValues:yValue];
 }
 
-#pragma mark - ChartViewDelegate
-- (void)chartValueSelected:(ChartViewBase * __nonnull)chartView entry:(ChartDataEntry * __nonnull)entry highlight:(ChartHighlight * __nonnull)highlight {
-    NSLog(@"chartValueSelected");
-}
-
-- (void)chartValueNothingSelected:(ChartViewBase * __nonnull)chartView {
-    NSLog(@"chartValueNothingSelected");
+- (void)strokeChart {
+    [self.barChartView strokeChart];
 }
 
 @end
