@@ -173,3 +173,5 @@
 "lunch_dish_empty" = "请选择午餐菜";
 "dish_vote" = "菜品投票";
 "signed_vote" = "您已确认需要就餐";
+
+"publish_notice" = "发布通知";

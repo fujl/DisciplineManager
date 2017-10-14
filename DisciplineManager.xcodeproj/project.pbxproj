@@ -124,6 +124,8 @@
 		18FCCFC91F8E306B00563CBA /* DMMealBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCCFC81F8E306B00563CBA /* DMMealBarView.m */; };
 		18FF3CA81F925DF4006AF4AE /* DMExhMostRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CA71F925DF4006AF4AE /* DMExhMostRequester.m */; };
 		18FF3CAB1F925F3E006AF4AE /* DMExhMostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CAA1F925F3E006AF4AE /* DMExhMostModel.m */; };
+		18FF3CB01F9268CD006AF4AE /* DMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CAF1F9268CD006AF4AE /* DMNoticeViewController.m */; };
+		18FF3CB31F9269B8006AF4AE /* DMNoticePublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CB21F9269B8006AF4AE /* DMNoticePublishController.m */; };
 		2EEA18986B685FDA258C9881 /* Pods_DisciplineManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */; };
 		DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322C1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m */; };
 		DF1F32301F0E2590004358E3 /* DMDetailApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F322F1F0E2590004358E3 /* DMDetailApplyCompensatoryController.m */; };
@@ -495,6 +497,10 @@
 		18FF3CA71F925DF4006AF4AE /* DMExhMostRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMExhMostRequester.m; sourceTree = "<group>"; };
 		18FF3CA91F925F3E006AF4AE /* DMExhMostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMExhMostModel.h; sourceTree = "<group>"; };
 		18FF3CAA1F925F3E006AF4AE /* DMExhMostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMExhMostModel.m; sourceTree = "<group>"; };
+		18FF3CAE1F9268CD006AF4AE /* DMNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNoticeViewController.h; sourceTree = "<group>"; };
+		18FF3CAF1F9268CD006AF4AE /* DMNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNoticeViewController.m; sourceTree = "<group>"; };
+		18FF3CB11F9269B8006AF4AE /* DMNoticePublishController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMNoticePublishController.h; sourceTree = "<group>"; };
+		18FF3CB21F9269B8006AF4AE /* DMNoticePublishController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNoticePublishController.m; sourceTree = "<group>"; };
 		30A223FD905002D7494D91AA /* Pods-DisciplineManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.release.xcconfig"; sourceTree = "<group>"; };
 		BA36FAF67584546C059C14AD /* Pods-DisciplineManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DisciplineManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DisciplineManager/Pods-DisciplineManager.debug.xcconfig"; sourceTree = "<group>"; };
 		DEF4019AA79BDB081FB7B490 /* Pods_DisciplineManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DisciplineManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1140,6 +1146,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18FF3CAC1F9268AC006AF4AE /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				18FF3CAD1F9268AC006AF4AE /* Controller */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		18FF3CAD1F9268AC006AF4AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18FF3CAE1F9268CD006AF4AE /* DMNoticeViewController.h */,
+				18FF3CAF1F9268CD006AF4AE /* DMNoticeViewController.m */,
+				18FF3CB11F9269B8006AF4AE /* DMNoticePublishController.h */,
+				18FF3CB21F9269B8006AF4AE /* DMNoticePublishController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5FEC93F4EA6BF16E2E62F3DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1782,6 +1807,7 @@
 		DF8FD72F1EEA42CD0060FE34 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				18FF3CAC1F9268AC006AF4AE /* Notice */,
 				DFE4C72C1F678BB3004F4184 /* News */,
 				DFE4C7271F67874B004F4184 /* Vote */,
 				18D7A61C1F66B44800B48BCD /* Home */,
@@ -2216,6 +2242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2E43DD1F28BC1E00C0BFBA /* DMUserDetailRequester.m in Sources */,
+				18FF3CB01F9268CD006AF4AE /* DMNoticeViewController.m in Sources */,
 				DF1F323F1F0E2F30004358E3 /* DMSearchApplyLeaveRequester.m in Sources */,
 				DF50A1551EE7F3320091E098 /* NSString+DMMD5.m in Sources */,
 				DF7A8B091EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m in Sources */,
@@ -2378,6 +2405,7 @@
 				DF9A0D481F2B0E410015CD27 /* DMOrganizationStructureCell.m in Sources */,
 				DF54440A1EF3CF75000EE89F /* DMFillinApplyOutController.m in Sources */,
 				DF8877161F276F280048F3AA /* DMTaskOperatorView.m in Sources */,
+				18FF3CB31F9269B8006AF4AE /* DMNoticePublishController.m in Sources */,
 				DF377CB51EF281A100522AF7 /* DMLaunchViewController.m in Sources */,
 				DF7864D71F26105200477D3C /* DMTaskTracksView.m in Sources */,
 				DF1F32361F0E25D8004358E3 /* DMDetailApplyCompensatoryRequester.m in Sources */,

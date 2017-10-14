@@ -32,6 +32,8 @@
 #import "MSSBrowseModel.h"
 #import "MSSBrowseNetworkViewController.h"
 
+#import "DMNoticeViewController.h"
+
 @interface DMHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIView *titleView;
 @property (nonatomic, strong) DMHomeHeadView *headView;
@@ -223,8 +225,8 @@
             break;
         default:
         {
-//            DMMoreViewController *controller = [[DMMoreViewController alloc] init];
-//            [self.navigationController pushViewController:controller animated:YES];
+            DMNoticeViewController *controller = [[DMNoticeViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
     }
