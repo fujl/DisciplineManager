@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define TEXTCOLOR [UIColor colorWithRGB:0xd9534f]
+#define TEXTCOLOR [UIColor colorWithRGB:0xffffff]
 #define TEXTFONTSIZE 14
 
 @interface DMMarqueeView : UIView

@@ -84,6 +84,7 @@
     [self.numberDinersView setNumberDinersInfo:self.repastTimeModel statTotal:self.statTotalModel];
     if (self.statTotalModel.isSign) {
         // 已经打卡
+        [self.signTimeView signedVote];
     } else {
         // 没有打卡
         self.signTimeView.repastTimeModel = self.repastTimeModel;
@@ -199,7 +200,7 @@
     if (!_commitView) {
         _commitView = [[DMEntryCommitView alloc] init];
         _commitView.lcHeight = 64;
-        [_commitView setCommitTitle:NSLocalizedString(@"dining_punch", @"就餐打卡")];
+        [_commitView setCommitTitle:NSLocalizedString(@"dining_punch", @"需要就餐")];
         __weak typeof(self) weakSelf = self;
         _commitView.clickCommitBlock = ^{
             NSLog(@"commit");

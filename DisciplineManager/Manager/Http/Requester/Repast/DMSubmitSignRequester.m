@@ -46,6 +46,8 @@
     params[@"userId"] = userId;
     params[@"isNeedBreakfast"] = @(self.isNeedBreakfast);
     params[@"isNeedLunch"] = @(self.isNeedLunch);
+    params[@"breakfasts"] = self.breakfasts;
+    params[@"lunchs"] = self.lunchs;
 }
 
 - (BOOL)onPostJson {

@@ -23,7 +23,7 @@
 - (instancetype)initWithTitle:(NSString*)title {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor colorWithRGB:0xfd9a70];
         self.clipsToBounds = YES;
         
         self.marqueeLabel.text = title;

@@ -104,6 +104,12 @@
     }
 }
 
+- (void)signedVote {
+    [self.titleView setTitle:NSLocalizedString(@"sign_time_title", @"剩余打卡时间")];
+    self.contentLabel.text = NSLocalizedString(@"signed_vote", @"您已确认需要就餐");
+    self.canSign = NO;
+}
+
 - (BOOL)isObsolete:(NSDateComponents *)comp {
     if (comp.hour >= 18) {
         return YES;
