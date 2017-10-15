@@ -10,6 +10,7 @@
 
 @interface DMEntrySelectView ()
 @property (nonatomic, strong) UILabel *valueLabel;
+@property (nonatomic, copy) NSString *placeholder;
 @end
 
 @implementation DMEntrySelectView
@@ -20,6 +21,7 @@
         
         [self.valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(10);
+            make.width.equalTo(@(SCREEN_WIDTH-20));
             make.centerY.equalTo(self);
         }];
         
@@ -38,17 +40,29 @@
         _valueLabel.backgroundColor = [UIColor clearColor];
         _valueLabel.textAlignment = NSTextAlignmentLeft;
         _valueLabel.font = kMainFont;
+        _valueLabel.numberOfLines = 0;
     }
     return _valueLabel;
 }
 
 - (void)setValue:(NSString *)value {
     _value = value;
-    self.valueLabel.text = value;
-    self.valueLabel.textColor = [UIColor blackColor];
+    if ([value isEqualToString:@""]) {
+        [self setPlaceholder:self.placeholder];
+    } else {
+        self.valueLabel.text = value;
+        self.valueLabel.textColor = [UIColor blackColor];
+        CGFloat height = [value heightForFont:kMainFont width:SCREEN_WIDTH-20];
+        if (height > 24) {
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.equalTo(@(height+20));
+            }];
+        }
+    }
 }
 
 - (void)setPlaceholder:(NSString *)placeholder {
+    _placeholder = placeholder;
     self.valueLabel.text = placeholder;
     self.valueLabel.textColor = [UIColor colorWithRGB:0xc4c7cc];
 }

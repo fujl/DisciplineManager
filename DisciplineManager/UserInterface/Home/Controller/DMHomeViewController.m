@@ -297,7 +297,9 @@
     //    controller.cmsModel = mdl;
     //    [self.navigationController pushViewController:controller animated:YES];
     if (index == 0) {
-        [self showImage];
+        if (self.exhMostList.count > 0) {
+            [self showImage];
+        }
     }
 }
 

@@ -33,6 +33,11 @@
 		184862B41F91BFB900B93578 /* DMSelectDinnersContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184862B31F91BFB900B93578 /* DMSelectDinnersContentView.m */; };
 		184862B71F91BFD200B93578 /* DMSelectDinnerItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184862B61F91BFD200B93578 /* DMSelectDinnerItemView.m */; };
 		185194461F85EBA1003C8A52 /* DMImageUploadReuester.m in Sources */ = {isa = PBXBuildFile; fileRef = 185194451F85EBA1003C8A52 /* DMImageUploadReuester.m */; };
+		185CDF661F93138700BCF75F /* DMSelectUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CDF651F93138700BCF75F /* DMSelectUserController.m */; };
+		185CDF6A1F93144A00BCF75F /* DMOrgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CDF691F93144A00BCF75F /* DMOrgView.m */; };
+		185CDF6D1F9314B500BCF75F /* DMReceiverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CDF6C1F9314B500BCF75F /* DMReceiverView.m */; };
+		185CDF701F931A7D00BCF75F /* DMOrgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CDF6F1F931A7D00BCF75F /* DMOrgCell.m */; };
+		185CDF731F93288500BCF75F /* DMReceiverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CDF721F93288500BCF75F /* DMReceiverCell.m */; };
 		186360401F30E75A00E2FE23 /* DMPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863603F1F30E75A00E2FE23 /* DMPushManager.m */; };
 		1863604A1F30E85B00E2FE23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186360491F30E85B00E2FE23 /* SystemConfiguration.framework */; };
 		1863604C1F30E86A00E2FE23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1863604B1F30E86A00E2FE23 /* libz.tbd */; };
@@ -359,6 +364,16 @@
 		184862B61F91BFD200B93578 /* DMSelectDinnerItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSelectDinnerItemView.m; sourceTree = "<group>"; };
 		185194441F85EBA1003C8A52 /* DMImageUploadReuester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMImageUploadReuester.h; sourceTree = "<group>"; };
 		185194451F85EBA1003C8A52 /* DMImageUploadReuester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMImageUploadReuester.m; sourceTree = "<group>"; };
+		185CDF641F93138700BCF75F /* DMSelectUserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSelectUserController.h; sourceTree = "<group>"; };
+		185CDF651F93138700BCF75F /* DMSelectUserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSelectUserController.m; sourceTree = "<group>"; };
+		185CDF681F93144A00BCF75F /* DMOrgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOrgView.h; sourceTree = "<group>"; };
+		185CDF691F93144A00BCF75F /* DMOrgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOrgView.m; sourceTree = "<group>"; };
+		185CDF6B1F9314B500BCF75F /* DMReceiverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMReceiverView.h; sourceTree = "<group>"; };
+		185CDF6C1F9314B500BCF75F /* DMReceiverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMReceiverView.m; sourceTree = "<group>"; };
+		185CDF6E1F931A7D00BCF75F /* DMOrgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMOrgCell.h; sourceTree = "<group>"; };
+		185CDF6F1F931A7D00BCF75F /* DMOrgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMOrgCell.m; sourceTree = "<group>"; };
+		185CDF711F93288500BCF75F /* DMReceiverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMReceiverCell.h; sourceTree = "<group>"; };
+		185CDF721F93288500BCF75F /* DMReceiverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMReceiverCell.m; sourceTree = "<group>"; };
 		1863603D1F30E64800E2FE23 /* DisciplineManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DisciplineManager.entitlements; sourceTree = "<group>"; };
 		1863603E1F30E75A00E2FE23 /* DMPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPushManager.h; sourceTree = "<group>"; };
 		1863603F1F30E75A00E2FE23 /* DMPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPushManager.m; sourceTree = "<group>"; };
@@ -888,6 +903,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		185CDF671F93142900BCF75F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185CDF681F93144A00BCF75F /* DMOrgView.h */,
+				185CDF691F93144A00BCF75F /* DMOrgView.m */,
+				185CDF6B1F9314B500BCF75F /* DMReceiverView.h */,
+				185CDF6C1F9314B500BCF75F /* DMReceiverView.m */,
+				185CDF6E1F931A7D00BCF75F /* DMOrgCell.h */,
+				185CDF6F1F931A7D00BCF75F /* DMOrgCell.m */,
+				185CDF711F93288500BCF75F /* DMReceiverCell.h */,
+				185CDF721F93288500BCF75F /* DMReceiverCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1863603C1F30E61900E2FE23 /* Push */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,6 +1179,7 @@
 		18FF3CAC1F9268AC006AF4AE /* Notice */ = {
 			isa = PBXGroup;
 			children = (
+				185CDF671F93142900BCF75F /* View */,
 				18FF3CAD1F9268AC006AF4AE /* Controller */,
 			);
 			path = Notice;
@@ -1161,6 +1192,8 @@
 				18FF3CAF1F9268CD006AF4AE /* DMNoticeViewController.m */,
 				18FF3CB11F9269B8006AF4AE /* DMNoticePublishController.h */,
 				18FF3CB21F9269B8006AF4AE /* DMNoticePublishController.m */,
+				185CDF641F93138700BCF75F /* DMSelectUserController.h */,
+				185CDF651F93138700BCF75F /* DMSelectUserController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2292,6 +2325,7 @@
 				DF6A9BF21F04D7F20075F100 /* DMCommitApplyOutRequester.m in Sources */,
 				18E8EECA1F84B77F00E42CD2 /* LMDPhotosManager.m in Sources */,
 				DF9A0D511F2B15720015CD27 /* DMUserBookViewController.m in Sources */,
+				185CDF6D1F9314B500BCF75F /* DMReceiverView.m in Sources */,
 				DF508AB61F8B231200F1D07C /* DMVoteListInfo.m in Sources */,
 				DF8877131F276D490048F3AA /* DMUserModel.m in Sources */,
 				1802F0831F8BC2B400E74FB6 /* DMVoteOptionView.m in Sources */,
@@ -2305,6 +2339,7 @@
 				18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */,
 				18C51FE21F8CDB9F00EC9D10 /* DMSearchDishesRequester.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
+				185CDF731F93288500BCF75F /* DMReceiverCell.m in Sources */,
 				DF508A941F8B149A00F1D07C /* MSSBrowseActionSheetCell.m in Sources */,
 				DFA2769F1F26BFCE0063D8AA /* DMActivitiTaskRequester.m in Sources */,
 				188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */,
@@ -2339,6 +2374,7 @@
 				18411F041F87C79900CE7750 /* DMExhibitionCell.m in Sources */,
 				DF508A961F8B149A00F1D07C /* MSSBrowseCollectionViewCell.m in Sources */,
 				18E8EEDD1F84B77F00E42CD2 /* LMDPhotoPickCollectionViewCell.m in Sources */,
+				185CDF701F931A7D00BCF75F /* DMOrgCell.m in Sources */,
 				DF508AA51F8B1FFE00F1D07C /* DMReleaseVoteRequester.m in Sources */,
 				DF84E5EB1EF75F7E00F8A23A /* DMDBManager.m in Sources */,
 				1802F06E1F8BA0B800E74FB6 /* DMDetailVoteRequester.m in Sources */,
@@ -2385,6 +2421,7 @@
 				18C51FE51F8CDBC500EC9D10 /* DMStatTotalRequester.m in Sources */,
 				DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */,
 				180EDE0A1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				185CDF6A1F93144A00BCF75F /* DMOrgView.m in Sources */,
 				DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */,
 				DF50A1531EE7F3320091E098 /* DMJson.m in Sources */,
 				DF8FD72E1EEA3DB70060FE34 /* DMUserManager.m in Sources */,
@@ -2400,6 +2437,7 @@
 				DF7864DA1F2610D600477D3C /* DMTaskTracksItemView.m in Sources */,
 				DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */,
 				18E8EEEB1F84EBCD00E42CD2 /* DMAddVoteItemView.m in Sources */,
+				185CDF661F93138700BCF75F /* DMSelectUserController.m in Sources */,
 				DF508AB91F8B24F300F1D07C /* DMVoteListCell.m in Sources */,
 				DF7B1DD81EF5370C0025A21C /* DMSingleTextView.m in Sources */,
 				DF9A0D481F2B0E410015CD27 /* DMOrganizationStructureCell.m in Sources */,

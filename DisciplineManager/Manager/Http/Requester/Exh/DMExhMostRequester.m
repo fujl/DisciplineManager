@@ -26,7 +26,7 @@
 #pragma mark - HlwyyRequesterDelegate
 - (id)onDumpData:(NSDictionary *)jsonObject {
     DMListBaseModel *listModel = [[DMListBaseModel alloc] init];
-    NSDictionary *errData = [jsonObject objectForKey:@"errData"];
+    NSDictionary *errData = parseDictionaryFromObject([jsonObject objectForKey:@"errData"]);
     NSArray *rows = [errData objectForKey:@"attrs"];
     listModel.rows = [[NSMutableArray alloc] init];
     for (NSDictionary *dict in rows) {
