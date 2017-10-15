@@ -12,5 +12,7 @@
 
 @property (nonatomic, assign) NSInteger isNeedBreakfast;// 必须 是否需要早餐 1 是 0 否 默认0
 @property (nonatomic, assign) NSInteger isNeedLunch;//
+@property (nonatomic, strong) NSArray *breakfasts;
+@property (nonatomic, strong) NSArray *lunchs;
 
 @end

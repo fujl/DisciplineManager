@@ -17,5 +17,6 @@ void dismissLoadingDialog();
 
 #pragma mark - parse Object
 NSString *parseStringFromObject(id obj);
+NSDictionary *parseDictionaryFromObject(id obj);
 NSArray *parseArrayFromObject(id obj);
 NSNumber *parseNumberFromObject(id obj);

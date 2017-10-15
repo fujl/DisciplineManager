@@ -19,6 +19,8 @@
  */
 @property (nullable, nonatomic, copy) void (^signObsoleteEvent)();
 
+- (void)signedVote;
+
 - (void)closeTimer;
 
 @end

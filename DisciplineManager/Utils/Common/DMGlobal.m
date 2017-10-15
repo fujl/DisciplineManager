@@ -69,6 +69,18 @@ NSString *parseStringFromObject(id obj) {
     }
 }
 
+NSDictionary *parseDictionaryFromObject(id obj) {
+    if ([obj isEqual:[NSNull null]]) {
+        return @{};
+    } else {
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            return obj;
+        } else {
+            return @{};
+        }
+    }
+}
+
 NSArray *parseArrayFromObject(id obj) {
     if ([obj isEqual:[NSNull null]]) {
         return @[];

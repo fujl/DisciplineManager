@@ -166,6 +166,19 @@
 "lunch" = "午餐";
 "sign_time_title" = "剩余打卡时间";
 "dining_punch_obsolete" = "就餐打卡已结束";
-"dining_punch" = "就餐打卡";
+"dining_punch" = "需要就餐";
 "dishes_paoma" = "请认真选择明天需要的菜品, 有助于我们购买食材, 杜绝浪费";
-"dish_chart" = "菜品分布";
+"dish_chart" = "分布图";
+"breakfast_dish_empty" = "请选择早餐菜";
+"lunch_dish_empty" = "请选择午餐菜";
+"dish_vote" = "菜品投票";
+"signed_vote" = "您已确认需要就餐";
+
+"publish_notice" = "发布通知";
+"Notice_Header_Tip" = "温馨提示：接收人不选择默认发送全部";
+"receiver" = "接收人";
+"Select_User" = "选择用户";
+"NoticeTitle" = "通知标题";
+"NoticeTitlePlaceholder" = "必填，请输入通知标题";
+"NoticeContent" = "通知内容";
+"NoticeContentPlaceholder" = "必填，请输入通知内容";

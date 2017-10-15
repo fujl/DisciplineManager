@@ -86,7 +86,7 @@
                            [NSURL URLWithString:@"http://gbres.dfcfw.com/Files/picture/20140507/size500/024FDDE0195A318FC88E185936C1A24D.jpg"],
                            [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150924/b_12511282_1443057242001.jpg"],
                            [NSURL URLWithString:@"http://i0.peopleurl.cn/nmsgimage/20150626/b_12511282_1435306319621.jpg"]*/];
-        _logoView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kLogoHeight) delegate:self placeholderImage:[UIImage imageNamed:@"HomeLogo"]];
+        _logoView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kLogoHeight) delegate:self placeholderImage:[UIImage imageNamed:@"icon_error"]];
         
         _logoView.infiniteLoop = YES;
         _logoView.autoScrollTimeInterval = 5;
