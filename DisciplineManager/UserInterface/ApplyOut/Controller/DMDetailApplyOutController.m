@@ -16,6 +16,7 @@
 #import "DMUserBookModel.h"
 #import "DMSearchUserRequester.h"
 #import "DMSearchOfficialCarRequester.h"
+#import "DMMultiLineView.h"
 
 @interface DMDetailApplyOutController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -23,7 +24,7 @@
 @property (nonatomic, strong) DMSingleView *stateView;
 @property (nonatomic, strong) DMSingleView *outTimeView;
 @property (nonatomic, strong) DMSingleView *returnTimeView;
-@property (nonatomic, strong) DMSingleView *addressView;
+@property (nonatomic, strong) DMMultiLineView *addressView;
 @property (nonatomic, strong) DMSingleView *driverNameView;
 @property (nonatomic, strong) DMSingleView *officialCarView;
 @property (nonatomic, strong) DMSingleView *needBusView;
@@ -104,7 +105,7 @@
                 } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]) {
                     [self.taskOperatorView refreshJsyView];
                 } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
-                    [self.taskOperatorView refreshView:YES];
+                    [self.taskOperatorView refreshView:NO];
                 } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_TJLD]
                            || [self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
                     [self.taskOperatorView refreshView:NO];
@@ -261,9 +262,9 @@
     return _officialCarView;
 }
 
-- (DMSingleView *)addressView {
+- (DMMultiLineView *)addressView {
     if (!_addressView) {
-        _addressView = [[DMSingleView alloc] init];
+        _addressView = [[DMMultiLineView alloc] init];
         _addressView.lcHeight = 44;
     }
     return _addressView;
@@ -317,7 +318,7 @@
         _leaderView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _leaderView.clickEntryBlock = ^(NSString *value) {
-            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
+            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicLeaderArr]];
             if (weakSelf.leader) {
                 [pickerView selectID:weakSelf.leader.userId];
             } else {
@@ -520,7 +521,6 @@
     requester.message = [self.commentTextView getMultiLineText];
     
     if (taskOperator == TaskOperator_Agree) {
-        requester.state = @([self getAgree]);
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
             if (!self.driver) {
                 showToast(@"请选择司机");
@@ -534,6 +534,17 @@
                 return;
             }
             requester.officialCarId = self.officialCar.ocId;
+            requester.state = @([self getAgree]);
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
+            if (!self.leader) {
+                requester.state = @([self getAgree]);
+            } else {
+                // 转批
+                requester.state = @(4);
+                requester.leaderId = self.leader.userId;
+            }
+        } else {
+            requester.state = @([self getAgree]);
         }
     } else if (taskOperator == TaskOperator_Rejected) {
         requester.state = @(ACTIVITI_STATE_REJECTED);
@@ -569,6 +580,15 @@
         }
     }
     return 2;
+}
+
+- (NSMutableArray *)dicLeaderArr {
+    NSMutableArray *dicArr = [[NSMutableArray alloc] init];
+    for (DMUserBookModel *mdl in self.leaderList) {
+        NSDictionary *dic = @{@"name":mdl.name,@"value":[NSString stringWithFormat:@"%@",mdl.userId]};
+        [dicArr addObject:dic];
+    }
+    return dicArr;
 }
 
 - (NSMutableArray *)dicArr {

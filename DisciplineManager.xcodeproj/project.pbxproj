@@ -217,6 +217,7 @@
 		DF7864DA1F2610D600477D3C /* DMTaskTracksItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7864D91F2610D600477D3C /* DMTaskTracksItemView.m */; };
 		DF79A72E1F943FC9005BA879 /* DMNoticeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79A72D1F943FC9005BA879 /* DMNoticeDetailController.m */; };
 		DF79A7311F9452E6005BA879 /* DMSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79A7301F9452E6005BA879 /* DMSwitchView.m */; };
+		DF79A7341F949589005BA879 /* DMMultiLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF79A7331F949589005BA879 /* DMMultiLineView.m */; };
 		DF7A8B091EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A8B081EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m */; };
 		DF7A8B0C1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A8B0B1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.m */; };
 		DF7B1DCC1EF521B40025A21C /* DMEntryCommitView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7B1DCB1EF521B40025A21C /* DMEntryCommitView.m */; };
@@ -694,6 +695,8 @@
 		DF79A72D1F943FC9005BA879 /* DMNoticeDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMNoticeDetailController.m; sourceTree = "<group>"; };
 		DF79A72F1F9452E6005BA879 /* DMSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSwitchView.h; sourceTree = "<group>"; };
 		DF79A7301F9452E6005BA879 /* DMSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSwitchView.m; sourceTree = "<group>"; };
+		DF79A7321F949589005BA879 /* DMMultiLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMultiLineView.h; sourceTree = "<group>"; };
+		DF79A7331F949589005BA879 /* DMMultiLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMultiLineView.m; sourceTree = "<group>"; };
 		DF7A8B071EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyCompensatoryController.h; sourceTree = "<group>"; };
 		DF7A8B081EFCB1CC0072CCD8 /* DMFillinApplyCompensatoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMFillinApplyCompensatoryController.m; sourceTree = "<group>"; };
 		DF7A8B0A1EFCBACB0072CCD8 /* DMFillinApplyLeaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFillinApplyLeaveController.h; sourceTree = "<group>"; };
@@ -1696,6 +1699,8 @@
 				18411EF41F87691800CE7750 /* DMSelectItemView.m */,
 				DF79A72F1F9452E6005BA879 /* DMSwitchView.h */,
 				DF79A7301F9452E6005BA879 /* DMSwitchView.m */,
+				DF79A7321F949589005BA879 /* DMMultiLineView.h */,
+				DF79A7331F949589005BA879 /* DMMultiLineView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2487,6 +2492,7 @@
 				DF6A9BF91F04F48D0075F100 /* DMListBaseModel.m in Sources */,
 				DF50A1531EE7F3320091E098 /* DMJson.m in Sources */,
 				DF8FD72E1EEA3DB70060FE34 /* DMUserManager.m in Sources */,
+				DF79A7341F949589005BA879 /* DMMultiLineView.m in Sources */,
 				DFB4533C1EE557060000DDC9 /* main.m in Sources */,
 				18E8EEDE1F84B77F00E42CD2 /* LMDPhotoPreviewCollectionViewCell.m in Sources */,
 				DF132BAE1F93A22A00FC3651 /* DMNoticeInfo.m in Sources */,
