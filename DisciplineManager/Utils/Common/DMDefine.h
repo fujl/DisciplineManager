@@ -89,6 +89,12 @@ typedef NS_ENUM(NSUInteger, RepastType) {
     RepastTypeLunch,
 };
 
+typedef NS_ENUM(NSUInteger, NoticeType) {
+    NoticeTypeUnread,
+    NoticeTypeRead,
+    NoticeTypeMine,
+};
+
 #ifdef __OBJC__
 #define BEGIN_AUTORELEASE        NSAutoreleasePool* __lpPool = [[NSAutoreleasePool alloc] init];
 #define END_AUTORELEASE            [__lpPool drain];

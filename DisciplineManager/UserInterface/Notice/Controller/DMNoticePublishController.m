@@ -9,6 +9,7 @@
 #import "DMNoticePublishController.h"
 #import "DMSelectUserController.h"
 #import "DMUserBookModel.h"
+#import "DMSubmitNoticeRequester.h"
 
 @interface DMNoticePublishController ()
 
@@ -42,12 +43,13 @@
     [self.subviewList addObject:self.titleView];
     [self.subviewList addObject:self.contentTitleView];
     [self.subviewList addObject:self.contentTextView];
-    [self.subviewList addObject:self.commitView];
+//    [self.subviewList addObject:self.commitView];
     [self setChildViews:self.subviewList];
 }
 
 - (void)clickCommit {
-    
+    [AppWindow endEditing:YES];
+    [self commitData];
 }
 
 - (void)selectDetails {
@@ -155,6 +157,42 @@
 }
 
 - (void)commitData {
+    NSString *title = [self.titleView getSingleText];
+    NSString *content = [self.contentTextView getMultiLineText];
+    if ([title isEqualToString:@""]) {
+        showToast(NSLocalizedString(@"NoticeTitlePlaceholder", @"必填，请输入通知标题"));
+        return;
+    }
+    if ([content isEqualToString:@""]) {
+        showToast(NSLocalizedString(@"NoticeContentPlaceholder", @"必填，请输入通知内容"));
+        return;
+    }
+    
+    DMSubmitNoticeRequester *requester = [[DMSubmitNoticeRequester alloc] init];
+    requester.title = title;
+    requester.content = content;
+    if (!self.selectedUserDictionary) {
+        requester.details = @[@{@"toUserId":@"-1"}];
+    } else {
+        if (self.selectedUserDictionary.count == 0) {
+            requester.details = @[@{@"toUserId":@"-1"}];
+        } else {
+            NSMutableArray *details = [[NSMutableArray alloc] init];
+            for (NSString *userId in [self.selectedUserDictionary allKeys]) {
+                [details addObject:@{@"toUserId":userId}];
+            }
+        }
+    }
+    showLoadingDialog();
+    [requester postRequest:^(DMResultCode code, id data) {
+        dismissLoadingDialog();
+        if (code == ResultCodeOK) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            NSString *errMsg = data;
+            showToast(errMsg);
+        }
+    }];
 }
 
 - (void)setSelectedUserDictionary:(NSMutableDictionary *)selectedUserDictionary {
