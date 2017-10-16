@@ -10,8 +10,20 @@
 #import "DMFindHolidayRequester.h"
 #import "DMLeaveTicketViewController.h"
 #import "DMCommitApplyLeaveRequester.h"
+#import "MsgInterviewImageContainer.h"
+#import "LMDAlbumPickerViewController.h"
+#import "CameraController.h"
+#import "CutAvatarImgViewController.h"
+#import "ImageUtil.h"
+#import "LMDPhotosManager.h"
+#import "DMImageUploadReuester.h"
 
-@interface DMFillinApplyLeaveController () <UIActionSheetDelegate>
+#define kActionSheetLeaveTypeTag   1000
+#define kActionSheetChoosePictureTag   1001
+
+#define MAX_IMAGE_COUNT 9
+
+@interface DMFillinApplyLeaveController () <UIActionSheetDelegate, LMDImagePickerDelegate, CameraControllerDelegate, CutAvatarImgViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMEntryView *leaveTypeTitleView;
 @property (nonatomic, strong) DMEntrySelectView *leaveTypeView;
@@ -27,6 +39,8 @@
 @property (nonatomic, strong) DMEntrySelectView *leaveTicketNumberView;
 @property (nonatomic, strong) DMEntryView *leaveReasonTitleView;
 @property (nonatomic, strong) DMMultiLineTextView *leaveReasonTextView;
+@property (nonatomic, strong) DMEntryView *imgTitleView;
+@property (nonatomic, strong) MsgInterviewImageContainer *imgContainer;
 @property (nonatomic, strong) DMEntryCommitView *commitView;
 
 @property (nonatomic, assign) DMLeaveType type;
@@ -39,6 +53,8 @@
 @property (nonatomic, strong) NSMutableArray<DMLeaveTicketModel *> *leaveTickets;
 @property (nonatomic, assign) CGFloat leaveTicketDays;
 @property (nonatomic, strong) NSString *tickets;
+
+@property (nonatomic, strong) NSMutableArray *attrArray; // 上传图片使用
 
 @end
 
@@ -71,6 +87,8 @@
     }
     [self.subviewList addObject:self.leaveReasonTitleView];
     [self.subviewList addObject:self.leaveReasonTextView];
+    [self.subviewList addObject:self.imgTitleView];
+    [self.subviewList addObject:self.imgContainer];
     [self.subviewList addObject:self.commitView];
     [self setChildViews:self.subviewList];
 }
@@ -91,6 +109,13 @@
     return _subviewList;
 }
 
+- (NSMutableArray *)attrArray {
+    if (!_attrArray) {
+        _attrArray = [[NSMutableArray alloc] init];
+    }
+    return _attrArray;
+}
+
 - (DMEntryView *)leaveTypeTitleView {
     if (!_leaveTypeTitleView) {
         _leaveTypeTitleView = [[DMEntryView alloc] init];
@@ -109,6 +134,7 @@
         __weak typeof(self) weakSelf = self;
         _leaveTypeView.clickEntryBlock = ^(NSString *value) {
             UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:weakSelf cancelButtonTitle:NSLocalizedString(@"Cancel", @"取消") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Leave", nil), NSLocalizedString(@"Vacation", nil), nil];
+            actionSheet.tag = kActionSheetLeaveTypeTag;
             [actionSheet showInView:weakSelf.view];
         };
     }
@@ -278,6 +304,29 @@
     return _leaveReasonTextView;
 }
 
+- (DMEntryView *)imgTitleView {
+    if (!_imgTitleView) {
+        _imgTitleView = [[DMEntryView alloc] init];
+        [_imgTitleView setTitle:NSLocalizedString(@"LeaveImgTip", @"温馨提示:图片附件最多允许9张")];
+        _imgTitleView.lcHeight = 44;
+    }
+    return _imgTitleView;
+}
+
+- (MsgInterviewImageContainer *)imgContainer {
+    if (!_imgContainer) {
+        _imgContainer = [[MsgInterviewImageContainer alloc] initWithMaxImageCount:MAX_IMAGE_COUNT columns:3 itemMargin:7];
+        _imgContainer.lcHeight = (SCREEN_WIDTH / 3) * 3;
+        __weak typeof(self) weakSelf = self;
+        
+        _imgContainer.choosePicture = ^{
+            [AppWindow endEditing:YES];
+            [weakSelf showChoosePictureDialog];
+        };
+    }
+    return _imgContainer;
+}
+
 - (DMEntryCommitView *)commitView {
     if (!_commitView) {
         _commitView = [[DMEntryCommitView alloc] init];
@@ -286,7 +335,13 @@
         _commitView.clickCommitBlock = ^{
             NSLog(@"commit");
             [AppWindow endEditing:YES];
-            [weakSelf commitData];
+            if (weakSelf.imgContainer.pictures.count > 0) {
+                // 上传图片
+                [weakSelf.attrArray removeAllObjects];
+                [weakSelf uploadImage:0];
+            } else {
+                [weakSelf commitData];
+            }
         };
     }
     return _commitView;
@@ -447,19 +502,29 @@
 
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            self.type = LeaveTypeDefault;
-            self.leaveTypeView.value = NSLocalizedString(@"Leave", nil);
-            [self refreshView];
-            break;
-        case 1:
-            self.type = LeaveTypeVacation;
-            self.leaveTypeView.value = NSLocalizedString(@"Vacation", nil);
-            [self refreshView];
-            break;
-        default:
-            break;
+    if (kActionSheetLeaveTypeTag == actionSheet.tag) {
+        switch (buttonIndex) {
+            case 0:
+                self.type = LeaveTypeDefault;
+                self.leaveTypeView.value = NSLocalizedString(@"Leave", nil);
+                [self refreshView];
+                break;
+            case 1:
+                self.type = LeaveTypeVacation;
+                self.leaveTypeView.value = NSLocalizedString(@"Vacation", nil);
+                [self refreshView];
+                break;
+            default:
+                break;
+        }
+    } else if (kActionSheetChoosePictureTag == actionSheet.tag) {
+        if (buttonIndex == 0) { //拍照
+            [self takePhoto];
+        } else if (buttonIndex == 1) { //相册
+            NSInteger count = MAX_IMAGE_COUNT - self.imgContainer.pictures.count;
+            LMDAlbumPickerViewController *controller = [[LMDAlbumPickerViewController alloc] initWithMaxImagesCount:count delegate:self];
+            [self presentViewController:controller animated:YES completion:nil];
+        }
     }
 }
 
@@ -501,7 +566,9 @@
     if (self.type == LeaveTypeVacation) {
         requester.ticket = self.leaveTicketNumberView.value;
     }
-    
+    if (self.attrArray.count > 0) {
+        requester.attrs = self.attrArray;
+    }
     if (self.type == LeaveTypeVacation) {
         if (self.leaveTickets.count > 0) {
             if (self.leaveTicketDays < requester.days) {
@@ -554,4 +621,110 @@
         }
     }];
 }
+
+#pragma mark 选择照片弹窗
+- (void)showChoosePictureDialog {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"取消") destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"TakePhoto", nil), NSLocalizedString(@"ChooseFromGallery", nil), nil];
+    actionSheet.delegate = self;
+    actionSheet.tag = kActionSheetChoosePictureTag;
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - 拍照
+- (void)takePhoto {
+    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        showToast(NSLocalizedString(@"你的设备不支持摄像头，请在相册中选择！", nil));
+        return ;
+    }
+    
+    CameraController *ctrl = [[CameraController alloc] init];
+    ctrl.cameraDelegate = self;
+    ctrl.hiddenPhotoBtn = YES;
+    ctrl.useFrontCamera = YES;
+    [self presentViewController:ctrl animated:YES completion:^(){
+        [UIView animateWithDuration:0.5 animations:^(){
+            [[UIApplication sharedApplication] setStatusBarHidden:YES];
+        }];
+    }];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+}
+
+#pragma mark - CameraControllerDelegate
+//图片回调。
+-(void)cameraController:(CameraController *)camera didFinishImage:(UIImage *)image {
+    if(UIImageOrientationUp != image.imageOrientation) {
+        image = [ImageUtil AdjustOrientationToUpReturnNew:image];
+    }
+    CutAvatarImgViewController *cutpic = [[CutAvatarImgViewController alloc] init];
+    cutpic.delegate = self;
+    cutpic.sourceImage = image;
+    cutpic.backImageViewRect = CGRectMake(0, 50, SCREEN_WIDTH, SCREEN_WIDTH);
+    //    cutpic.healthType = enumHealthTypeFace;
+    [camera pushViewController:cutpic animated:YES];
+}
+
+//取消回调。
+-(void)cameraControllerDidCancel:(CameraController *)camera {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];//这句话必须放在dismissViewControllerAnimated之前，否则会闪出一下白条。
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - CutAvatarImgViewControllerDelegate
+-(void)cutImgFinish:(UIImage*)image {
+    NSLog(@"图片剪切完成");
+    // 显示
+    //    self.faceImage = image;
+    //
+    //    [self refreshView];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    [[LMDPhotosManager sharedInstance] writeToFileWithArray:@[imageData] andCompletion:^(NSArray *photos) {
+        for (NSString *path in photos) {
+            [self.imgContainer addItem:path];
+        }
+    }];
+}
+
+#pragma mark - LMDImagePickerDelegate
+- (void)imagePickerController:(LMDAlbumPickerViewController *)picker didFinishPickingPhotos:(NSArray<NSString *> *)photos {
+    for (NSString *path in photos) {
+        [self.imgContainer addItem:path];
+        //        self.tipLabel.hidden = YES;
+    }
+}
+
+#pragma mark - upload image
+- (void)uploadImage:(NSInteger)index {
+    DMImageUploadReuester *requester = [[DMImageUploadReuester alloc] init];
+    NSString *filePath = self.imgContainer.pictures[index];
+    [requester upload:filePath isFace:NO callback:^(DMResultCode code, id data) {
+        NSDictionary *dataDict = data;
+        if (code == ResultCodeOK) {
+            // {"errCode":2,"errMsg":"success","errData":{"total":1,"rows":[{"path":"upload/images/201710051324435024.jpg","size":386}]}}
+            NSDictionary *errData = [dataDict objectForKey:@"errData"];
+            NSArray *rows = [errData objectForKey:@"rows"];
+            for (NSDictionary *itemDict in rows) {
+                NSString *path = [itemDict objectForKey:@"path"];
+                [self.attrArray addObject:@{@"path":path, @"number":@(index)}];
+            }
+            NSInteger nextIndex = index+1;
+            if (nextIndex < self.imgContainer.pictures.count) {
+                [self uploadImage:nextIndex];
+            } else {
+                NSLog(@"上传完成");
+                [self commitData];
+            }
+            NSLog(@"resultString:%@", dataDict);
+        } else {
+            dismissLoadingDialog();
+            if (data) {
+                NSString *errMsg = [dataDict objectForKey:@"errMsg"];
+                showToast(errMsg);
+            } else {
+                showToast(NSLocalizedString(@"", @""));
+            }
+        }
+    }];
+}
+
 @end

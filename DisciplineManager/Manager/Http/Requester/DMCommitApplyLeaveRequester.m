@@ -54,6 +54,9 @@
     params[@"startTime"] = self.startTime;
     params[@"endTime"] = self.endTime;
     params[@"reason"] = self.reason;
+    if (self.attrs) {
+        params[@"attrs"] = self.attrs;
+    }
 }
 
 - (BOOL)onPostJson {

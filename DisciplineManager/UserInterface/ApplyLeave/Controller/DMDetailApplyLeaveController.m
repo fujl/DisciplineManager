@@ -71,7 +71,8 @@
             [self.actualLeaveNumberView setTitle:NSLocalizedString(@"ActualLeaveNumber", @"实际请(休)假天数") detail:[NSString stringWithFormat:@"%0.1f天", self.info.days]];
             self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
-                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING];
+//                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING];
+                [self.taskOperatorView refreshView:NO];
             } else {
                 self.taskTracksView.taskTracks = self.info.taskTracks;
             }
@@ -346,6 +347,14 @@
             if(self.info.days <= 3) {
                 requester.state = ACTIVITI_STATE_COMPLETE;
             } else {
+                requester.state = ACTIVITI_STATE_PENDING;
+            }
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]) {
+            if (!self.leader) {
+                // showToast(@"请选择转批领导");
+                requester.state = ACTIVITI_STATE_COMPLETE;
+            } else {
+                requester.leaderId = self.leader.userId;
                 requester.state = ACTIVITI_STATE_PENDING;
             }
         } else {
