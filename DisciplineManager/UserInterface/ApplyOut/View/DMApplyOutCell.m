@@ -96,7 +96,16 @@
 
 - (void)setInfo:(DMFormBaseInfo *)info {
     _info = info;
-    self.reasonView.text = info.reason;
+    if ([info isKindOfClass:[DMApplyOutListInfo class]]) {
+        DMApplyOutListInfo *outInfo = (DMApplyOutListInfo *)info;
+        if (outInfo.isNeedCar == 1) {
+            self.reasonView.text = [NSString stringWithFormat:@"[公车]%@", info.reason];
+        } else {
+            self.reasonView.text = info.reason;
+        }
+    } else {
+        self.reasonView.text = info.reason;
+    }
     self.createDateView.text = info.createDate;
     switch (info.state) {
         case ACTIVITI_STATE_SAVE:

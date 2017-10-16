@@ -19,4 +19,21 @@
  "processInstanceId": "50038"
  */
 
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    self = [super initWithDict:dict];
+    if (self) {
+        self.province = parseStringFromObject([dict objectForKey:@"province"]);
+        self.city = parseStringFromObject([dict objectForKey:@"city"]);
+        self.county = parseStringFromObject([dict objectForKey:@"county"]);
+        self.address = parseStringFromObject([dict objectForKey:@"address"]);
+        self.isNeedCar = [parseNumberFromObject([dict objectForKey:@"isNeedCar"]) integerValue];
+        if (self.isNeedCar == 1) {
+            self.driverId = parseStringFromObject([dict objectForKey:@"driverId"]);
+            self.driverName = parseStringFromObject([dict objectForKey:@"driverName"]);
+            self.officialCar = parseStringFromObject([dict objectForKey:@"officialCar"]);
+        }
+    }
+    return self;
+}
+
 @end

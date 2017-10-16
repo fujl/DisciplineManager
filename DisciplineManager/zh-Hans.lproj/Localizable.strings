@@ -48,6 +48,7 @@
 "Agree" = "同意";
 "CompleteOnGuard" = "完成回岗";
 "TransferComment" = "转批";
+"IsNeedBus" = "是否需要公车";
 
 "FillinApplyBus" = "填写公车申请单";
 "OutAddress" = "外出地址";
@@ -184,3 +185,6 @@
 "NoticeContentPlaceholder" = "必填，请输入通知内容";
 "unread" = "未读";
 "read" = "已读";
+
+"need" = "需要";
+"no_need" = "不需要";

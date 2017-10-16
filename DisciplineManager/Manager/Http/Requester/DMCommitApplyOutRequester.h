@@ -11,6 +11,11 @@
 @interface DMCommitApplyOutRequester : DMHttpRequester
 
 @property (nonatomic, strong) NSString *startTime;
+@property (nonatomic, strong) NSString *province;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *area;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, assign) NSInteger isNeedCar;
 @property (nonatomic, strong) NSString *reason;
 
 @end

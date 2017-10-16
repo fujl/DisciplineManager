@@ -90,11 +90,20 @@
         [self gotoQJSQDetail:mdl];
     } else if([mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
         [self gotoGCSQDetail:mdl];
-    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyWCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
+    } else if ([self wcsq:mdl.definitionKey]) {
         [self gotoWCSQDetail:mdl];
     } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
         [self gotoBXPDetail:mdl];
     }
+}
+
+// 外出申请条件
+- (BOOL)wcsq:(NSString *)definitionKey {
+    return [definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]
+    || [definitionKey isEqualToString:kDefinitionKeyWCSQ_TJLD]
+    || [definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]
+    || [definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]
+    || [definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG];
 }
 
 #pragma mark - load data

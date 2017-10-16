@@ -32,7 +32,7 @@
 }
 
 - (NSString *)getChildrenUrl {
-    return @"jgxt/api/goOut/submitTask.do";
+    return @"jgxt/api/egressionApply/submitTask.do";
 }
 
 /**
@@ -47,6 +47,18 @@
     params[@"id"] = self.businessId;
     params[@"taskId"] = self.taskId;
     params[@"message"] = self.message;
+    if (self.leaderId) {
+        params[@"leaderId"] = self.leaderId;
+    }
+    if (self.driverId) {
+        params[@"driverId"] = self.driverId;
+    }
+    if (self.driverName) {
+        params[@"driverName"] = self.driverName;
+    }
+    if (self.officialCarId) {
+        params[@"officialCarId"] = self.officialCarId;
+    }
     if (self.state != nil) {
         params[@"state"] = self.state;
     }

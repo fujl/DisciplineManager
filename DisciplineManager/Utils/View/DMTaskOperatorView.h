@@ -23,4 +23,6 @@ typedef NS_ENUM(NSInteger, DMTaskOperator) {
 
 - (void)refreshFinishHuigangView;
 
+- (void)refreshJsyView;
+
 @end

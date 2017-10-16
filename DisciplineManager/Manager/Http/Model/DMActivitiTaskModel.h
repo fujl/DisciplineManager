@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DMUserModel.h"
 
-#define kDefinitionKeyWCSQ_SJLD  @"wcsq_sjld"
-#define kDefinitionKeyWCSQ_WCHG  @"wcsq_wchg"
+//#define kDefinitionKeyWCSQ_SJLD  @"wcsq_sjld"
+#define kDefinitionKeyWCSQ_BMLD @"wcsq_bmld" // 部门领导
+#define kDefinitionKeyWCSQ_TJLD @"wcsq_tjld" // 同级领导
+#define kDefinitionKeyWCSQ_BGSSP @"wcsq_bgssp" // 办公室审批
+#define kDefinitionKeyWCSQ_JSY @"wcsq_jsy" // 驾驶员
+#define kDefinitionKeyWCSQ_WCHG  @"wcsq_wchg" // 完成回岗
 
 #define kDefinitionKeyQJSQ_BMLD  @"qjsp_bmld"
 #define kDefinitionKeyQJSQ_FGLD  @"qjsp_fgld"

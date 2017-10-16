@@ -8,22 +8,50 @@
 
 #import "DMFillinApplyOutController.h"
 #import "DMCommitApplyOutRequester.h"
+#import "DMSwitchView.h"
+#import "DMAddressPickerView.h"
 
 @interface DMFillinApplyOutController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMEntryView *outTimeTitleView;
 @property (nonatomic, strong) DMEntrySelectView *outTimeView;
-//@property (nonatomic, strong) DMEntryView *returnTimeTitleView;
-//@property (nonatomic, strong) DMEntrySelectView *returnTimeView;
+
+@property (nonatomic, strong) DMEntryView *outAddressTitleView;
+@property (nonatomic, strong) DMEntrySelectView *outAddressView;
+@property (nonatomic, strong) DMEntryView *outDetailAddressTitleView;
+@property (nonatomic, strong) DMSingleTextView *outDetailAddressView;
+
+@property (nonatomic, strong) DMSwitchView *busSwitchView;
+
 @property (nonatomic, strong) DMEntryView *outReasonTitleView;
 @property (nonatomic, strong) DMMultiLineTextView *outReasonTextView;
 @property (nonatomic, strong) DMEntryCommitView *commitView;
 
 @property (nonatomic, assign) NSTimeInterval outTimeInterval;
 @property (nonatomic, assign) NSTimeInterval returnTimeInterval;
+
+@property (nonatomic, strong) DMAddressInfo *province;
+@property (nonatomic, strong) DMAddressInfo *city;
+@property (nonatomic, strong) DMAddressInfo *area;
+
+@property (nonatomic, assign) BOOL isBus;       // 是否需要公车
 @end
 
 @implementation DMFillinApplyOutController
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.province = [[DMAddressInfo alloc] init];
+        self.province.addressId = 2585;
+        self.city = [[DMAddressInfo alloc] init];
+        self.city.addressId = 2644;
+        self.area = [[DMAddressInfo alloc] init];
+        self.area.addressId = 2645;
+        self.isBus = NO;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,8 +59,11 @@
     self.title = NSLocalizedString(@"FillinApplyOut",@"填写外出申请单");
     [self.subviewList addObject:self.outTimeTitleView];
     [self.subviewList addObject:self.outTimeView];
-//    [self.subviewList addObject:self.returnTimeTitleView];
-//    [self.subviewList addObject:self.returnTimeView];
+    [self.subviewList addObject:self.outAddressTitleView];
+    [self.subviewList addObject:self.outAddressView];
+    [self.subviewList addObject:self.outDetailAddressTitleView];
+    [self.subviewList addObject:self.outDetailAddressView];
+    [self.subviewList addObject:self.busSwitchView];
     [self.subviewList addObject:self.outReasonTitleView];
     [self.subviewList addObject:self.outReasonTextView];
     [self.subviewList addObject:self.commitView];
@@ -87,40 +118,80 @@
     return _outTimeView;
 }
 
-//- (DMEntryView *)returnTimeTitleView {
-//    if (!_returnTimeTitleView) {
-//        _returnTimeTitleView = [[DMEntryView alloc] init];
-//        [_returnTimeTitleView setTitle:NSLocalizedString(@"ReturnTime", @"回岗时间")];
-//        _returnTimeTitleView.lcHeight = 44;
-//    }
-//    return _returnTimeTitleView;
-//}
-//
-//- (DMEntrySelectView *)returnTimeView {
-//    if (!_returnTimeView) {
-//        _returnTimeView = [[DMEntrySelectView alloc] init];
-//        _returnTimeView.backgroundColor = [UIColor whiteColor];
-//        [_returnTimeView setPlaceholder:NSLocalizedString(@"ReturnTimePlaceholder", @"必选，请选择回岗时间")];
-//        _returnTimeView.lcHeight = 44;
-//        __weak typeof(self) weakSelf = self;
-//        _returnTimeView.clickEntryBlock = ^(NSString *value) {
-//            // 选择时间
-//            NSLog(@"选择时间");
-//            [AppWindow endEditing:YES];
-//            DMDatePickerView *picker = [[DMDatePickerView alloc] init];
-//            picker.datePicker.date = [NSDate dateWithTimeIntervalSince1970:weakSelf.returnTimeInterval];
-//            picker.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
-//            picker.onCompleteClick = ^(DMDatePickerView *datePicker, NSDate *date) {
-//                weakSelf.returnTimeInterval = [date timeIntervalSince1970];
-//                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//                formatter.dateFormat = @"yyyy年MM月dd日 HH时mm分";
-//                weakSelf.returnTimeView.value = [formatter stringFromDate:date];
-//            };
-//            [picker show];
-//        };
-//    }
-//    return _returnTimeView;
-//}
+- (DMEntryView *)outAddressTitleView {
+    if (!_outAddressTitleView) {
+        _outAddressTitleView = [[DMEntryView alloc] init];
+        [_outAddressTitleView setTitle:NSLocalizedString(@"OutAddress", @"外出地址")];
+        _outAddressTitleView.lcHeight = 44;
+    }
+    return _outAddressTitleView;
+}
+
+- (DMEntrySelectView *)outAddressView {
+    if (!_outAddressView) {
+        _outAddressView = [[DMEntrySelectView alloc] init];
+        _outAddressView.backgroundColor = [UIColor whiteColor];
+        [_outAddressView setPlaceholder:NSLocalizedString(@"OutAddressPlaceholder", @"必选，请选择外出地址")];
+        _outAddressView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _outAddressView.clickEntryBlock = ^(NSString *value) {
+            [AppWindow endEditing:YES];
+            DMAddressManager *manager = getManager([DMAddressManager class]);
+            [manager getAllAddress:^(NSMutableArray<DMAddressInfo *> *addressList) {
+                DMAddressPickerView *pickerView = [[DMAddressPickerView alloc] init];
+                if (weakSelf.province.addressId > 0 && weakSelf.city.addressId > 0 && weakSelf.area.addressId > 0) {
+                    [pickerView selected:weakSelf.province.addressId city:weakSelf.city.addressId area:weakSelf.area.addressId];
+                }
+                [pickerView refreshData];
+                
+                pickerView.onCompleteClick = ^(DMAddressInfo *provinceInfo, DMAddressInfo *cityInfo, DMAddressInfo *areaInfo) {
+                    weakSelf.province = provinceInfo;
+                    weakSelf.city = cityInfo;
+                    weakSelf.area = areaInfo;
+                    [weakSelf.outAddressView setValue:[NSString stringWithFormat:@"%@, %@, %@", provinceInfo.name, cityInfo.name, areaInfo.name]];
+                };
+                
+                [pickerView show];
+            }];
+        };
+    }
+    return _outAddressView;
+}
+
+- (DMEntryView *)outDetailAddressTitleView {
+    if (!_outDetailAddressTitleView) {
+        _outDetailAddressTitleView = [[DMEntryView alloc] init];
+        [_outDetailAddressTitleView setTitle:NSLocalizedString(@"OutDetailAddress", @"外出详细地址")];
+        _outDetailAddressTitleView.lcHeight = 44;
+    }
+    return _outDetailAddressTitleView;
+}
+
+- (DMSingleTextView *)outDetailAddressView {
+    if (!_outDetailAddressView) {
+        _outDetailAddressView = [[DMSingleTextView alloc] init];
+        _outDetailAddressView.lcHeight = 44;
+        _outDetailAddressView.backgroundColor = [UIColor whiteColor];
+        [_outDetailAddressView setPlaceholder:NSLocalizedString(@"DetailAddressPlaceholder", @"必填，请输入详细地址")];
+    }
+    return _outDetailAddressView;
+}
+
+- (DMSwitchView *)busSwitchView {
+    if (!_busSwitchView) {
+        _busSwitchView = [[DMSwitchView alloc] init];
+        _busSwitchView.lcHeight = 44;
+        _busSwitchView.lcTopMargin = 5;
+        [_busSwitchView hiddenBottomLine:YES];
+        [_busSwitchView setTitle:NSLocalizedString(@"IsNeedBus", @"是否需要公车")];
+        [_busSwitchView setIsOn:self.isBus];
+        __weak typeof(self) weakSelf = self;
+        _busSwitchView.onSwitchChangeBlock = ^(BOOL isOn) {
+            weakSelf.isBus = isOn;
+        };
+    }
+    return _busSwitchView;
+}
 
 - (DMEntryView *)outReasonTitleView {
     if (!_outReasonTitleView) {
@@ -160,6 +231,14 @@
         showToast(@"请选择外出时间");
         return;
     }
+    if ([self.outAddressView.value isEqualToString:@""]) {
+        showToast(@"请选择外出地址");
+        return;
+    }
+    if ([[self.outDetailAddressView getSingleText] isEqualToString:@""]) {
+        showToast(@"请输入外出详细地址");
+        return;
+    }
     if ([[self.outReasonTextView getMultiLineText] isEqualToString:@""]) {
         showToast(@"请输入外出事由");
         return;
@@ -173,6 +252,11 @@
     
     DMCommitApplyOutRequester *requester = [[DMCommitApplyOutRequester alloc] init];
     requester.startTime = [formatter stringFromDate:dt];
+    requester.province = self.province.name;
+    requester.city = self.city.name;
+    requester.area = self.area.name;
+    requester.address = [self.outDetailAddressView getSingleText];
+    requester.isNeedCar = self.isBus ? 1 : 0;
     requester.reason = [self.outReasonTextView getMultiLineText];
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {

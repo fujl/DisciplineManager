@@ -12,7 +12,12 @@
 
 @property (nonatomic, strong) NSString *businessId;
 @property (nonatomic, strong) NSString *taskId;
+@property (nonatomic, strong) NSString *driverId;
+@property (nonatomic, strong) NSString *leaderId;
+@property (nonatomic, strong) NSString *driverName;
+@property (nonatomic, strong) NSString *officialCarId;
 @property (nonatomic, strong) NSString *message;
+
 @property (nonatomic, strong) NSNumber *state;
 
 @end

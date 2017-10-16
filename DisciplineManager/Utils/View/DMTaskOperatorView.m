@@ -82,6 +82,21 @@
     }];
 }
 
+- (void)refreshJsyView {
+    self.agreeButton.hidden = NO;
+    self.rejectedButton.hidden = YES;
+    self.transferCommentButton.hidden = YES;
+    self.finishButton.hidden = YES;
+    CGFloat sep = 20;
+    CGFloat width = SCREEN_WIDTH-2*sep;
+    [self.agreeButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self);
+        make.top.equalTo(self).offset(10);
+        make.width.equalTo(@(width));
+        make.height.equalTo(@44);
+    }];
+}
+
 - (UIButton *)agreeButton {
     if (!_agreeButton) {
         _agreeButton = [[UIButton alloc] init];

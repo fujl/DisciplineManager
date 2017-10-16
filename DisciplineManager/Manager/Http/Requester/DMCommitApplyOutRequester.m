@@ -32,7 +32,7 @@
 }
 
 - (NSString *)getChildrenUrl {
-    return @"jgxt/api/goOut/submit.do";
+    return @"jgxt/api/egressionApply/submit.do";
 }
 
 /**
@@ -45,6 +45,11 @@
     [params removeAllObjects];
     params[@"userId"] = userId;
     params[@"startTime"] = self.startTime;
+    params[@"province"] = self.province;
+    params[@"city"] = self.city;
+    params[@"county"] = self.area;
+    params[@"address"] = self.address;
+    params[@"isNeedCar"] = @(self.isNeedCar);
     params[@"reason"] = self.reason;
 }
 

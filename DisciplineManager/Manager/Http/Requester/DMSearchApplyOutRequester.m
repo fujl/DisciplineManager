@@ -44,7 +44,7 @@
 }
 
 - (NSString *)getChildrenUrl {
-    return @"jgxt/api/goOut/search.do";
+    return @"jgxt/api/egressionApply/search.do";
 }
 
 /**
@@ -56,6 +56,7 @@
     NSString *userId = [params objectForKey:@"userId"];
     [params removeAllObjects];
     params[@"userId"] = userId;
+    params[@"isNeedCar"] = @(-1);
     params[@"offset"] = @(self.offset);
     params[@"limit"] = @(self.limit);
     params[@"state"] = @(-1);// -1  代表查询所有

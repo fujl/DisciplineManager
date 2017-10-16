@@ -35,7 +35,7 @@
 }
 
 - (NSString *)getChildrenUrl {
-    return @"jgxt/api/goOut/get.do";
+    return @"jgxt/api/egressionApply/get.do";
 }
 
 /**
