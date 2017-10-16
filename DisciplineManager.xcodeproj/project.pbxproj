@@ -2160,7 +2160,7 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = X7N27ZW4ED;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2712,6 +2712,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2729,6 +2731,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7f1f3800-bedb-49c8-acce-164998a6fd1b";
+				PROVISIONING_PROFILE_SPECIFIER = com.gzstkj.cn.DisciplineManager;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2745,6 +2749,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DisciplineManager/DisciplineManager.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X7N27ZW4ED;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2762,6 +2768,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7f1f3800-bedb-49c8-acce-164998a6fd1b";
+				PROVISIONING_PROFILE_SPECIFIER = com.gzstkj.cn.DisciplineManager;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
