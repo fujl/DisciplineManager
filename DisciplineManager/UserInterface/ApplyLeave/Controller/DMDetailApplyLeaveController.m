@@ -14,6 +14,7 @@
 #import "DMSearchUserRequester.h"
 #import "DMUserBookModel.h"
 #import "DMPickerView.h"
+#import "DMImageCollectionView.h"
 
 @interface DMDetailApplyLeaveController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -26,6 +27,8 @@
 @property (nonatomic, strong) DMSingleView *actualLeaveNumberView;
 @property (nonatomic, strong) DMEntryView *leaveReasonTitleView;
 @property (nonatomic, strong) DMDetailView *leaveReasonDetailView;
+@property (nonatomic, strong) DMEntryView *imgTitleView;
+@property (nonatomic, strong) DMImageCollectionView *imgView;
 @property (nonatomic, strong) DMTaskTracksView *taskTracksView;
 
 @property (nonatomic, strong) DMEntryView *leaderTitleView;
@@ -70,6 +73,13 @@
             [self.holidaysView setTitle:NSLocalizedString(@"Holidays", @"节假日") detail:self.info.holiday];
             [self.actualLeaveNumberView setTitle:NSLocalizedString(@"ActualLeaveNumber", @"实际请(休)假天数") detail:[NSString stringWithFormat:@"%0.1f天", self.info.days]];
             self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:self.info.reason];
+            if (self.info.attrs.count > 0) {
+                NSMutableArray *attr = [[NSMutableArray alloc] init];
+                for (DMExhMostModel *mdl in self.info.attrs) {
+                    [attr addObject:mdl.path];
+                }
+                self.imgView.imageStringList = attr;
+            }
             if (self.activitiTaskModel) {
 //                [self.taskOperatorView refreshView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING];
                 [self.taskOperatorView refreshView:NO];
@@ -102,6 +112,10 @@
     
     [self.subviewList addObject:self.leaveReasonTitleView];
     [self.subviewList addObject:self.leaveReasonDetailView];
+    if (self.info.attrs.count > 0) {
+        [self.subviewList addObject:self.imgTitleView];
+        [self.subviewList addObject:self.imgView];
+    }
     if (self.activitiTaskModel) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING) {
             [self loadLeaderData];
@@ -197,6 +211,23 @@
         _leaveReasonDetailView = [[DMDetailView alloc] init];
     }
     return _leaveReasonDetailView;
+}
+
+- (DMEntryView *)imgTitleView {
+    if (!_imgTitleView) {
+        _imgTitleView = [[DMEntryView alloc] init];
+        [_imgTitleView setTitle:NSLocalizedString(@"PictureAccessories", @"图片附件")];
+        _imgTitleView.lcHeight = 44;
+    }
+    return _imgTitleView;
+}
+
+- (DMImageCollectionView *)imgView {
+    if (!_imgView) {
+        _imgView = [[DMImageCollectionView alloc] init];
+        _imgView.backgroundColor = [UIColor whiteColor];
+    }
+    return _imgView;
 }
 
 - (DMTaskTracksView *)taskTracksView {

@@ -86,7 +86,7 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DMActivitiTaskModel *mdl = [self.dataSource objectAtIndex:indexPath.row];
-    if ([mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyQJSQ_TJFGLD]) {
+    if ([self qjsq:mdl.definitionKey]) {
         [self gotoQJSQDetail:mdl];
     } else if([mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_SJLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_BGSSP] || [mdl.definitionKey isEqualToString:kDefinitionKeyGCSQ_JSY]) {
         [self gotoGCSQDetail:mdl];
@@ -95,6 +95,13 @@
     } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
         [self gotoBXPDetail:mdl];
     }
+}
+
+// 请假申请条件
+- (BOOL)qjsq:(NSString *)definitionKey {
+    return [definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]
+    || [definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]
+    || [definitionKey isEqualToString:kDefinitionKeyQJSQ_TJFGLD];
 }
 
 // 外出申请条件

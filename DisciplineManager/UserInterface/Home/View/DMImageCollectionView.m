@@ -48,6 +48,12 @@
         i++;
         [self addSubview:cell];
     }
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        NSInteger count = _imageStringList.count;
+        NSInteger remainder = i%3;
+        NSInteger quotient = count/3+(remainder==0?0:1);
+        make.height.equalTo(@(quotient*ITEM_HEIGHT+(quotient+1)*ITEM_INTERVAL));
+    }];
 }
 
 - (void)clickImage:(NSInteger)index fileName:(NSString *)fileName {

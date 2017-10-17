@@ -253,7 +253,7 @@ static const int MAX_IMAGE_COUNT = 9;
                 NSString *errMsg = [dataDict objectForKey:@"errMsg"];
                 showToast(errMsg);
             } else {
-                showToast(NSLocalizedString(@"", @""));
+                showToast(NSLocalizedString(@"unkown_error", @""));
             }
         }
     }];

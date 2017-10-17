@@ -19,6 +19,12 @@
         self.holiday = parseStringFromObject([dict objectForKey:@"holiday"]);
         self.days = [parseNumberFromObject([dict objectForKey:@"days"]) floatValue];
         self.ticket = parseStringFromObject([dict objectForKey:@"ticket"]);
+        self.attrs = [[NSMutableArray alloc] init];
+        NSArray *attrArray = parseArrayFromObject([dict objectForKey:@"attrs"]);
+        for (NSDictionary *dic in attrArray) {
+            DMExhMostModel *mdl = [[DMExhMostModel alloc] initWithDict:dic];
+            [self.attrs addObject:mdl];
+        }
     }
     return self;
 }

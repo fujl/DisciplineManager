@@ -16,8 +16,8 @@
 #define kDefinitionKeyWCSQ_JSY @"wcsq_jsy" // 驾驶员
 #define kDefinitionKeyWCSQ_WCHG  @"wcsq_wchg" // 完成回岗
 
-#define kDefinitionKeyQJSQ_BMLD  @"qjsp_bmld"
-#define kDefinitionKeyQJSQ_FGLD  @"qjsp_fgld"
+#define kDefinitionKeyQJSQ_BMLD  @"qjsq_bmld"
+#define kDefinitionKeyQJSQ_FGLD  @"qjsq_fgld"
 #define kDefinitionKeyQJSQ_TJFGLD @"qjsq_tjfgld"
 
 #define kDefinitionKeyBXP   @"bxp_fgld"

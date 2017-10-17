@@ -721,7 +721,7 @@
                 NSString *errMsg = [dataDict objectForKey:@"errMsg"];
                 showToast(errMsg);
             } else {
-                showToast(NSLocalizedString(@"", @""));
+                showToast(NSLocalizedString(@"unkown_error", @""));
             }
         }
     }];
