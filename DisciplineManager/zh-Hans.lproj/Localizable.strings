@@ -191,3 +191,6 @@
 
 "LeaveImgTip" = "温馨提示:图片附件最多允许9张";
 "PictureAccessories" = "图片附件";
+
+"FillinSupervise" = "填写督办任务单";
+"Deadline" = "截止日期";

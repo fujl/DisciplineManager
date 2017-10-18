@@ -50,6 +50,12 @@
 		188ED8DF1F449551009BF26D /* DMCmsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8DE1F449551009BF26D /* DMCmsContentModel.m */; };
 		188ED8E21F449722009BF26D /* DMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8E11F449722009BF26D /* DMWebViewController.m */; };
 		188ED8E51F4497A8009BF26D /* DMCMSDetailRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ED8E41F4497A8009BF26D /* DMCMSDetailRequester.m */; };
+		18ACD0F51F97810A0059034A /* DMSuperviseGetRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0EE1F97810A0059034A /* DMSuperviseGetRequester.m */; };
+		18ACD0F61F97810A0059034A /* DMSuperviseSearchRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0F01F97810A0059034A /* DMSuperviseSearchRequester.m */; };
+		18ACD0F71F97810A0059034A /* DMSuperviseSubmitRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0F21F97810A0059034A /* DMSuperviseSubmitRequester.m */; };
+		18ACD0F81F97810A0059034A /* DMSuperviseSubmitTaskRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0F41F97810A0059034A /* DMSuperviseSubmitTaskRequester.m */; };
+		18ACD0FB1F97813F0059034A /* DMSuperviseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0FA1F97813F0059034A /* DMSuperviseViewController.m */; };
+		18ACD0FE1F9781EB0059034A /* DMSuperviseFillinController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ACD0FD1F9781EB0059034A /* DMSuperviseFillinController.m */; };
 		18C1591E1F43499F005B98C0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591D1F43499F005B98C0 /* libc++.tbd */; };
 		18C159201F4349B4005B98C0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */; };
 		18C159221F4349C3005B98C0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C159211F4349C3005B98C0 /* Security.framework */; };
@@ -403,6 +409,18 @@
 		188ED8E11F449722009BF26D /* DMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWebViewController.m; sourceTree = "<group>"; };
 		188ED8E31F4497A8009BF26D /* DMCMSDetailRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCMSDetailRequester.h; sourceTree = "<group>"; };
 		188ED8E41F4497A8009BF26D /* DMCMSDetailRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCMSDetailRequester.m; sourceTree = "<group>"; };
+		18ACD0ED1F97810A0059034A /* DMSuperviseGetRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSuperviseGetRequester.h; sourceTree = "<group>"; };
+		18ACD0EE1F97810A0059034A /* DMSuperviseGetRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseGetRequester.m; sourceTree = "<group>"; };
+		18ACD0EF1F97810A0059034A /* DMSuperviseSearchRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSuperviseSearchRequester.h; sourceTree = "<group>"; };
+		18ACD0F01F97810A0059034A /* DMSuperviseSearchRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseSearchRequester.m; sourceTree = "<group>"; };
+		18ACD0F11F97810A0059034A /* DMSuperviseSubmitRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSuperviseSubmitRequester.h; sourceTree = "<group>"; };
+		18ACD0F21F97810A0059034A /* DMSuperviseSubmitRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseSubmitRequester.m; sourceTree = "<group>"; };
+		18ACD0F31F97810A0059034A /* DMSuperviseSubmitTaskRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSuperviseSubmitTaskRequester.h; sourceTree = "<group>"; };
+		18ACD0F41F97810A0059034A /* DMSuperviseSubmitTaskRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseSubmitTaskRequester.m; sourceTree = "<group>"; };
+		18ACD0F91F97813F0059034A /* DMSuperviseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSuperviseViewController.h; sourceTree = "<group>"; };
+		18ACD0FA1F97813F0059034A /* DMSuperviseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseViewController.m; sourceTree = "<group>"; };
+		18ACD0FC1F9781EB0059034A /* DMSuperviseFillinController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSuperviseFillinController.h; sourceTree = "<group>"; };
+		18ACD0FD1F9781EB0059034A /* DMSuperviseFillinController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseFillinController.m; sourceTree = "<group>"; };
 		18C1591D1F43499F005B98C0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		18C1591F1F4349B4005B98C0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18C159211F4349C3005B98C0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -957,6 +975,41 @@
 				1863603F1F30E75A00E2FE23 /* DMPushManager.m */,
 			);
 			path = Push;
+			sourceTree = "<group>";
+		};
+		18ACD0EA1F9780BA0059034A /* Supervise */ = {
+			isa = PBXGroup;
+			children = (
+				18ACD0EB1F97810A0059034A /* Controller */,
+				18ACD0EC1F97810A0059034A /* Requester */,
+			);
+			path = Supervise;
+			sourceTree = "<group>";
+		};
+		18ACD0EB1F97810A0059034A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18ACD0F91F97813F0059034A /* DMSuperviseViewController.h */,
+				18ACD0FA1F97813F0059034A /* DMSuperviseViewController.m */,
+				18ACD0FC1F9781EB0059034A /* DMSuperviseFillinController.h */,
+				18ACD0FD1F9781EB0059034A /* DMSuperviseFillinController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18ACD0EC1F97810A0059034A /* Requester */ = {
+			isa = PBXGroup;
+			children = (
+				18ACD0ED1F97810A0059034A /* DMSuperviseGetRequester.h */,
+				18ACD0EE1F97810A0059034A /* DMSuperviseGetRequester.m */,
+				18ACD0EF1F97810A0059034A /* DMSuperviseSearchRequester.h */,
+				18ACD0F01F97810A0059034A /* DMSuperviseSearchRequester.m */,
+				18ACD0F11F97810A0059034A /* DMSuperviseSubmitRequester.h */,
+				18ACD0F21F97810A0059034A /* DMSuperviseSubmitRequester.m */,
+				18ACD0F31F97810A0059034A /* DMSuperviseSubmitTaskRequester.h */,
+				18ACD0F41F97810A0059034A /* DMSuperviseSubmitTaskRequester.m */,
+			);
+			path = Requester;
 			sourceTree = "<group>";
 		};
 		18C1592B1F434BAB005B98C0 /* GtSdkLib */ = {
@@ -1901,6 +1954,7 @@
 		DF8FD72F1EEA42CD0060FE34 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				18ACD0EA1F9780BA0059034A /* Supervise */,
 				18FF3CAC1F9268AC006AF4AE /* Notice */,
 				DFE4C72C1F678BB3004F4184 /* News */,
 				DFE4C7271F67874B004F4184 /* Vote */,
@@ -2347,6 +2401,7 @@
 				DF9A0D4B1F2B11ED0015CD27 /* DMSearchUserRequester.m in Sources */,
 				18E8EEB41F84B77F00E42CD2 /* CameraController.m in Sources */,
 				DF6A9BEC1F0499490075F100 /* DMUserInfo.m in Sources */,
+				18ACD0F71F97810A0059034A /* DMSuperviseSubmitRequester.m in Sources */,
 				DFA4FA041F309370002258DD /* DMSubmitTaskOutRequester.m in Sources */,
 				DF84E5F11EF77CFB00F8A23A /* DMDBCommonManager.m in Sources */,
 				DF50A1571EE7F3320091E098 /* UIColor+DMDefine.m in Sources */,
@@ -2371,6 +2426,7 @@
 				DF377CDD1EF296F100522AF7 /* DMApplyBusViewController.m in Sources */,
 				DFB36A1E1F1F0056001A25CF /* DMLeaveTicketViewController.m in Sources */,
 				DF4DF67B1F8DFB5A00519F73 /* DMMarqueeView.m in Sources */,
+				18ACD0F61F97810A0059034A /* DMSuperviseSearchRequester.m in Sources */,
 				1802F06B1F8B9C7400E74FB6 /* DMVoteDetailController.m in Sources */,
 				DF8FD7371EEA42F80060FE34 /* DMBaseViewController.m in Sources */,
 				DF1F32451F0E30AC004358E3 /* DMApplyLeaveListInfo.m in Sources */,
@@ -2445,6 +2501,7 @@
 				DFA4F9FE1F3040CD002258DD /* DMPickerView.m in Sources */,
 				DF9A0D541F2B16840015CD27 /* DMUserBookCell.m in Sources */,
 				DF1F322D1F0E1CDF004358E3 /* DMCommitApplyCompensatoryRequester.m in Sources */,
+				18ACD0FB1F97813F0059034A /* DMSuperviseViewController.m in Sources */,
 				DF8FD72D1EEA3DB70060FE34 /* UIApplication+Manager.m in Sources */,
 				DFE023CD1F063F02007BD7AC /* DMApplyBusListInfo.m in Sources */,
 				DF5A04661F316F5B00A2D8BC /* DMBindPushRequester.m in Sources */,
@@ -2505,6 +2562,7 @@
 				18E8EEE11F84B7ED00E42CD2 /* MsgInterviewImageContainer.m in Sources */,
 				DF7864DA1F2610D600477D3C /* DMTaskTracksItemView.m in Sources */,
 				DFE023D01F0641E6007BD7AC /* DMDetailApplyBusController.m in Sources */,
+				18ACD0FE1F9781EB0059034A /* DMSuperviseFillinController.m in Sources */,
 				18E8EEEB1F84EBCD00E42CD2 /* DMAddVoteItemView.m in Sources */,
 				185CDF661F93138700BCF75F /* DMSelectUserController.m in Sources */,
 				DF508AB91F8B24F300F1D07C /* DMVoteListCell.m in Sources */,
@@ -2534,6 +2592,7 @@
 				1802F0801F8BBAAE00E74FB6 /* DMVoteOptionsHeadView.m in Sources */,
 				18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */,
 				DF377CE91EF29A0500522AF7 /* DMMoreViewController.m in Sources */,
+				18ACD0F51F97810A0059034A /* DMSuperviseGetRequester.m in Sources */,
 				DF508A9D1F8B149A00F1D07C /* UIImage+MSSScale.m in Sources */,
 				DF6A9BEF1F04AC040075F100 /* DMLoginInfo.m in Sources */,
 				DF132BB11F93A75800FC3651 /* DMNoticeHeadView.m in Sources */,
@@ -2542,6 +2601,7 @@
 				DF8A22151F29E8D000617974 /* DMAvatarViewController.m in Sources */,
 				DFA4FA011F305AD8002258DD /* DMSubmitTaskBusRequester.m in Sources */,
 				DFCE28C11F06352300AD40AE /* DMDetailApplyBusRequester.m in Sources */,
+				18ACD0F81F97810A0059034A /* DMSuperviseSubmitTaskRequester.m in Sources */,
 				18E8EEB61F84B77F00E42CD2 /* ImageUtil.m in Sources */,
 				DF8A220F1F29E27900617974 /* DMUserDetailViewController.m in Sources */,
 				180EDE0B1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
