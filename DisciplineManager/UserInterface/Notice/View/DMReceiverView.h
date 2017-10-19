@@ -12,6 +12,7 @@
 
 @interface DMReceiverView : UIView
 
+@property (nonatomic, assign) BOOL isRadio;
 @property (nonatomic, strong) DMOrgModel *orgInfo;
 @property (nonatomic, strong) NSMutableDictionary *selectedUserDictionary;
 

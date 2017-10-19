@@ -133,6 +133,9 @@
 		18FBAB631F30C37F00E6E67B /* DMOfficialCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB621F30C37F00E6E67B /* DMOfficialCarModel.m */; };
 		18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */; };
 		18FCCFC91F8E306B00563CBA /* DMMealBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCCFC81F8E306B00563CBA /* DMMealBarView.m */; };
+		18FDB7E81F98DDFC007C67E7 /* DMSuperviselistInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FDB7E71F98DDFC007C67E7 /* DMSuperviselistInfo.m */; };
+		18FDB7EB1F98E176007C67E7 /* DMAssistInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FDB7EA1F98E176007C67E7 /* DMAssistInfo.m */; };
+		18FDB7EE1F98E3EC007C67E7 /* DMSuperviseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FDB7ED1F98E3EC007C67E7 /* DMSuperviseDetailController.m */; };
 		18FF3CA81F925DF4006AF4AE /* DMExhMostRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CA71F925DF4006AF4AE /* DMExhMostRequester.m */; };
 		18FF3CAB1F925F3E006AF4AE /* DMExhMostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CAA1F925F3E006AF4AE /* DMExhMostModel.m */; };
 		18FF3CB01F9268CD006AF4AE /* DMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FF3CAF1F9268CD006AF4AE /* DMNoticeViewController.m */; };
@@ -535,6 +538,12 @@
 		18FBAB651F30C51B00E6E67B /* DMSearchOfficialCarRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchOfficialCarRequester.m; sourceTree = "<group>"; };
 		18FCCFC71F8E306B00563CBA /* DMMealBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMealBarView.h; sourceTree = "<group>"; };
 		18FCCFC81F8E306B00563CBA /* DMMealBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMealBarView.m; sourceTree = "<group>"; };
+		18FDB7E61F98DDFC007C67E7 /* DMSuperviselistInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSuperviselistInfo.h; sourceTree = "<group>"; };
+		18FDB7E71F98DDFC007C67E7 /* DMSuperviselistInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSuperviselistInfo.m; sourceTree = "<group>"; };
+		18FDB7E91F98E176007C67E7 /* DMAssistInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAssistInfo.h; sourceTree = "<group>"; };
+		18FDB7EA1F98E176007C67E7 /* DMAssistInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAssistInfo.m; sourceTree = "<group>"; };
+		18FDB7EC1F98E3EC007C67E7 /* DMSuperviseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSuperviseDetailController.h; sourceTree = "<group>"; };
+		18FDB7ED1F98E3EC007C67E7 /* DMSuperviseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSuperviseDetailController.m; sourceTree = "<group>"; };
 		18FF3CA61F925DF4006AF4AE /* DMExhMostRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMExhMostRequester.h; sourceTree = "<group>"; };
 		18FF3CA71F925DF4006AF4AE /* DMExhMostRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMExhMostRequester.m; sourceTree = "<group>"; };
 		18FF3CA91F925F3E006AF4AE /* DMExhMostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMExhMostModel.h; sourceTree = "<group>"; };
@@ -980,6 +989,7 @@
 		18ACD0EA1F9780BA0059034A /* Supervise */ = {
 			isa = PBXGroup;
 			children = (
+				18FDB7E51F98DDBC007C67E7 /* Model */,
 				18ACD0EB1F97810A0059034A /* Controller */,
 				18ACD0EC1F97810A0059034A /* Requester */,
 			);
@@ -993,6 +1003,8 @@
 				18ACD0FA1F97813F0059034A /* DMSuperviseViewController.m */,
 				18ACD0FC1F9781EB0059034A /* DMSuperviseFillinController.h */,
 				18ACD0FD1F9781EB0059034A /* DMSuperviseFillinController.m */,
+				18FDB7EC1F98E3EC007C67E7 /* DMSuperviseDetailController.h */,
+				18FDB7ED1F98E3EC007C67E7 /* DMSuperviseDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1258,6 +1270,17 @@
 				1802F0821F8BC2B400E74FB6 /* DMVoteOptionView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18FDB7E51F98DDBC007C67E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18FDB7E61F98DDFC007C67E7 /* DMSuperviselistInfo.h */,
+				18FDB7E71F98DDFC007C67E7 /* DMSuperviselistInfo.m */,
+				18FDB7E91F98E176007C67E7 /* DMAssistInfo.h */,
+				18FDB7EA1F98E176007C67E7 /* DMAssistInfo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18FF3CAC1F9268AC006AF4AE /* Notice */ = {
@@ -2418,6 +2441,7 @@
 				DF377CE31EF2985500522AF7 /* DMApplyLeaveViewController.m in Sources */,
 				18411F011F87C1D900CE7750 /* DMExhListModel.m in Sources */,
 				DFED74B11EEA71F5006DDEE8 /* DMGlobal.m in Sources */,
+				18FDB7EE1F98E3EC007C67E7 /* DMSuperviseDetailController.m in Sources */,
 				180EDDFA1F88B79200DD1812 /* DMImageCollectionCell.m in Sources */,
 				18E8EEDC1F84B77F00E42CD2 /* LMDAlbumListCell.m in Sources */,
 				180EDDF71F889D5200DD1812 /* DMImageCollectionView.m in Sources */,
@@ -2526,12 +2550,14 @@
 				DFCE28BB1F0634D000AD40AE /* DMCommitApplyBusRequester.m in Sources */,
 				DF508A9B1F8B149A00F1D07C /* MSSBrowseRemindView.m in Sources */,
 				DF79A7311F9452E6005BA879 /* DMSwitchView.m in Sources */,
+				18FDB7EB1F98E176007C67E7 /* DMAssistInfo.m in Sources */,
 				DFC2A6661F7A54CC00067C46 /* DMPublishVoteViewController.m in Sources */,
 				DF377CB81EF284CF00522AF7 /* DMMainItemView.m in Sources */,
 				DF508A981F8B149A00F1D07C /* MSSBrowseLocalViewController.m in Sources */,
 				DF8FD72C1EEA3DB70060FE34 /* DMBaseManager.m in Sources */,
 				DF8A22121F29E2EF00617974 /* DMUserDetailHeadView.m in Sources */,
 				18E8EEB31F84B77F00E42CD2 /* BaseUIImagePickerController.m in Sources */,
+				18FDB7E81F98DDFC007C67E7 /* DMSuperviselistInfo.m in Sources */,
 				DF79A72E1F943FC9005BA879 /* DMNoticeDetailController.m in Sources */,
 				DFB4533F1EE557070000DDC9 /* AppDelegate.m in Sources */,
 				DF84E5E81EF75F6800F8A23A /* DMAddressManager.m in Sources */,

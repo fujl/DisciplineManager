@@ -33,6 +33,7 @@
 #import "MSSBrowseNetworkViewController.h"
 
 #import "DMNoticeViewController.h"
+#import "DMSuperviseViewController.h"
 
 @interface DMHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIView *titleView;
@@ -196,7 +197,8 @@
             break;
         case kMainItemTemporaryTask:
         {
-            
+            DMSuperviseViewController *controller = [[DMSuperviseViewController alloc] init];
+            [self.navigationController pushViewController:controller animated:YES];
         }
             break;
         case kMainItemExhibition:

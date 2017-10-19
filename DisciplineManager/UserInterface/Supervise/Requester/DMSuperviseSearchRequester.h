@@ -10,4 +10,7 @@
 
 @interface DMSuperviseSearchRequester : DMHttpRequester
 
+@property (nonatomic, assign) NSInteger offset;
+@property (nonatomic, assign) NSInteger limit;
+
 @end

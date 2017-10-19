@@ -163,6 +163,9 @@
 
 #pragma mark - selected data
 - (void)selectUser:(DMUserBookModel *)user selectedUser:(BOOL)selectedUser {
+    if (self.isRadio) {
+        [self.selectedUserDictionary removeAllObjects];
+    }
     DMUserBookModel *mdl = [self.selectedUserDictionary objectForKey:user.userId];
     if (mdl) {
         if (!selectedUser) {
@@ -172,6 +175,9 @@
         if (selectedUser) {
             [self.selectedUserDictionary setObject:user forKey:user.userId];
         }
+    }
+    if (self.isRadio) {
+        [self.tableView reloadData];
     }
 }
 

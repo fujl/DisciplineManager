@@ -10,4 +10,6 @@
 
 @interface DMSuperviseGetRequester : DMHttpRequester
 
+@property (nonatomic, strong) NSString *slId;
+
 @end

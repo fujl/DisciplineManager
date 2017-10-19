@@ -19,6 +19,14 @@
 
 @implementation DMSelectUserController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.isRadio = NO; // 默认多选
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -63,6 +71,11 @@
         _receiverView.backgroundColor = [UIColor whiteColor];
     }
     return _receiverView;
+}
+
+- (void)setIsRadio:(BOOL)isRadio {
+    _isRadio = isRadio;
+    self.receiverView.isRadio = isRadio;
 }
 
 - (void)clickSure {

@@ -10,6 +10,7 @@
 
 @interface DMSelectUserController : DMBaseViewController
 
+@property (nonatomic, assign) BOOL isRadio;
 @property (nonatomic, copy) void (^onSelectUserBlock)(NSMutableDictionary *userDict);
 
 @end
