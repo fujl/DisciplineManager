@@ -23,6 +23,8 @@
 		180EDE091F88BECA00DD1812 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDE031F88BECA00DD1812 /* UITableView+FDKeyedHeightCache.m */; };
 		180EDE0A1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDE051F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m */; };
 		180EDE0B1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EDE071F88BECA00DD1812 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		181470E31F9A40CC00DA12DE /* DMUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181470E21F9A40CC00DA12DE /* DMUserInfoViewController.m */; };
+		181470E61F9A418500DA12DE /* DMUserInfoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181470E51F9A418500DA12DE /* DMUserInfoHeadView.m */; };
 		18411EF51F87691800CE7750 /* DMSelectItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18411EF41F87691800CE7750 /* DMSelectItemView.m */; };
 		18411F011F87C1D900CE7750 /* DMExhListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18411F001F87C1D900CE7750 /* DMExhListModel.m */; };
 		18411F041F87C79900CE7750 /* DMExhibitionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18411F031F87C79900CE7750 /* DMExhibitionCell.m */; };
@@ -362,6 +364,10 @@
 		180EDE051F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		180EDE061F88BECA00DD1812 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		180EDE071F88BECA00DD1812 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		181470E11F9A40CC00DA12DE /* DMUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMUserInfoViewController.h; sourceTree = "<group>"; };
+		181470E21F9A40CC00DA12DE /* DMUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMUserInfoViewController.m; sourceTree = "<group>"; };
+		181470E41F9A418500DA12DE /* DMUserInfoHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMUserInfoHeadView.h; sourceTree = "<group>"; };
+		181470E51F9A418500DA12DE /* DMUserInfoHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMUserInfoHeadView.m; sourceTree = "<group>"; };
 		18411EF31F87691800CE7750 /* DMSelectItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSelectItemView.h; sourceTree = "<group>"; };
 		18411EF41F87691800CE7750 /* DMSelectItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMSelectItemView.m; sourceTree = "<group>"; };
 		18411EFF1F87C1D900CE7750 /* DMExhListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMExhListModel.h; sourceTree = "<group>"; };
@@ -1367,6 +1373,8 @@
 				DF377CD91EF2969D00522AF7 /* DMAddressBookViewController.m */,
 				DF9A0D4F1F2B15720015CD27 /* DMUserBookViewController.h */,
 				DF9A0D501F2B15720015CD27 /* DMUserBookViewController.m */,
+				181470E11F9A40CC00DA12DE /* DMUserInfoViewController.h */,
+				181470E21F9A40CC00DA12DE /* DMUserInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1385,6 +1393,8 @@
 				DF9A0D471F2B0E410015CD27 /* DMOrganizationStructureCell.m */,
 				DF9A0D521F2B16840015CD27 /* DMUserBookCell.h */,
 				DF9A0D531F2B16840015CD27 /* DMUserBookCell.m */,
+				181470E41F9A418500DA12DE /* DMUserInfoHeadView.h */,
+				181470E51F9A418500DA12DE /* DMUserInfoHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2482,6 +2492,7 @@
 				18FF3CA81F925DF4006AF4AE /* DMExhMostRequester.m in Sources */,
 				18E8EE721F84B62300E42CD2 /* DMExhibitionPublishController.m in Sources */,
 				18C51FE21F8CDB9F00EC9D10 /* DMSearchDishesRequester.m in Sources */,
+				181470E61F9A418500DA12DE /* DMUserInfoHeadView.m in Sources */,
 				DF7B1DCF1EF52A120025A21C /* DMDatePickerView.m in Sources */,
 				185CDF731F93288500BCF75F /* DMReceiverCell.m in Sources */,
 				DF508A941F8B149A00F1D07C /* MSSBrowseActionSheetCell.m in Sources */,
@@ -2612,6 +2623,7 @@
 				DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */,
 				DF1F32421F0E2F41004358E3 /* DMDetailApplyLeaveRequester.m in Sources */,
 				18E8EE6F1F84B39100E42CD2 /* DMExhibitionViewController.m in Sources */,
+				181470E31F9A40CC00DA12DE /* DMUserInfoViewController.m in Sources */,
 				1802F07D1F8BB95C00E74FB6 /* DMVoteOptionsView.m in Sources */,
 				DF377CE01EF2980500522AF7 /* DMApplyCompensatoryController.m in Sources */,
 				184862B71F91BFD200B93578 /* DMSelectDinnerItemView.m in Sources */,

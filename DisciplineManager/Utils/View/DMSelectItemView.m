@@ -47,6 +47,13 @@
     return self;
 }
 
+- (void)hiddenArrow {
+    self.arrowView.hidden = YES;
+    [self.valueLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-10);
+        make.centerY.equalTo(self);
+    }];
+}
 #pragma mark - getters and setters
 - (UILabel *)titleLabel {
     if (!_titleLabel) {

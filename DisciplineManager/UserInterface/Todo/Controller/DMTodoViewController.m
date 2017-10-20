@@ -95,7 +95,8 @@
         [self gotoWCSQDetail:mdl];
     } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
         [self gotoBXPDetail:mdl];
-    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLRW]) {
+    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLRW]
+               || [mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLZPRW]) {
         [self gotoSuperviseDetail:mdl];
     }
 }

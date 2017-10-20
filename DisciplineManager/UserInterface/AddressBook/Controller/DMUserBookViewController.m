@@ -9,6 +9,8 @@
 #import "DMUserBookViewController.h"
 #import "DMUserBookCell.h"
 #import "DMSearchUserRequester.h"
+#import "DMUserDetailViewController.h"
+#import "DMUserInfoViewController.h"
 
 @interface DMUserBookViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -84,27 +86,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 拨打电话
     DMUserBookModel *userInfo = [self.dataSource objectAtIndex:indexPath.row];
-    NSInteger systemVersion = (NSInteger)([[[UIDevice currentDevice] systemVersion] floatValue] * 100);
-    NSString *phoneStr = [userInfo.mobile stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    NSString *callPhone = [NSString stringWithFormat:@"tel://%@", phoneStr];
-    NSURL *url = [NSURL URLWithString:callPhone];
-    if (systemVersion >= 1020) {
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    } else {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:NSLocalizedString(@"call_phone_number", @"呼叫%@"), userInfo.mobile] preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            return;
-        }]];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"call_phone", @"呼叫") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            if ([[UIApplication sharedApplication] canOpenURL:url]) {
-                [[UIApplication sharedApplication] openURL:url];
-            }
-        }]];
-        [AppRootViewController presentViewController:alertController animated:YES completion:nil];
-    }
+    DMUserInfoViewController *controller = [[DMUserInfoViewController alloc] init];
+    controller.userInfo = userInfo;
+    [self.navigationController pushViewController:controller animated:YES];
 }
+
+
 
 #pragma mark - load data
 - (void)setRefreshView {

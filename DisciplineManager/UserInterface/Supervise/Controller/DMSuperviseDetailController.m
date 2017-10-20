@@ -368,9 +368,9 @@
     requester.businessId = self.slId;
     requester.taskId = self.activitiTaskModel.atId;
     requester.message = [self.commentTextView getMultiLineText];
+    NSString *assistsId = @"";
     if (self.selectedCoOrganizerDictionary) {
         if (self.selectedCoOrganizerDictionary.count > 0) {
-            NSString *assistsId = @"";
             for (DMUserBookModel *user in [self.selectedCoOrganizerDictionary allValues]) {
                 if ([assistsId isEqualToString:@""]) {
                     assistsId = [NSString stringWithFormat:@"%@@%@", user.userId, user.name];
@@ -378,9 +378,9 @@
                     assistsId = [NSString stringWithFormat:@"%@,%@@%@", assistsId, user.userId, user.name];
                 }
             }
-            requester.assistsId = assistsId;
         }
     }
+    requester.assistsId = assistsId;
     if (taskOperator == TaskOperator_Agree) {
         requester.state = 2;
     } else if (taskOperator == TaskOperator_TransferComment) {

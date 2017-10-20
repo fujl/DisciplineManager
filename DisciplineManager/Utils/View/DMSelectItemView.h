@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
 
+- (void)hiddenArrow;
+
 @end

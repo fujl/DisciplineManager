@@ -15,6 +15,7 @@
     if (self) {
         self.userId = parseStringFromObject([dict objectForKey:@"userId"]);
         self.name = parseStringFromObject([dict objectForKey:@"name"]);
+        self.face = parseStringFromObject([dict objectForKey:@"face"]);
         self.pinyin = parseStringFromObject([dict objectForKey:@"pinyin"]);
         self.mobile = parseStringFromObject([dict objectForKey:@"mobile"]);
         self.email = parseStringFromObject([dict objectForKey:@"email"]);
@@ -32,6 +33,7 @@
         self.goOutState = [parseNumberFromObject([dict objectForKey:@"goOutState"]) integerValue];
         self.ocarState = [parseNumberFromObject([dict objectForKey:@"ocarState"]) integerValue];
         self.leaveState = [parseNumberFromObject([dict objectForKey:@"leaveState"]) integerValue];
+        self.leaveState2 = [parseNumberFromObject([dict objectForKey:@"leaveState2"]) integerValue];
         self.gender = [parseNumberFromObject([dict objectForKey:@"gender"]) integerValue];
         self.jobName = parseStringFromObject([dict objectForKey:@"jobName"]);
     }
