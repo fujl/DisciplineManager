@@ -10,4 +10,11 @@
 
 @interface DMSuperviseSubmitTaskRequester : DMHttpRequester
 
+@property (nonatomic, strong) NSString *businessId;
+@property (nonatomic, strong) NSString *taskId;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, assign) DMActivitiState state;
+@property (nonatomic, strong) NSString *assistsId;
+@property (nonatomic, strong) NSString *agentId;
+
 @end
