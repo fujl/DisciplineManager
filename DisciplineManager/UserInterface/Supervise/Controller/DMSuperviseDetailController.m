@@ -10,14 +10,14 @@
 #import "DMSuperviseGetRequester.h"
 #import "DMTaskTracksView.h"
 #import "DMSuperviselistInfo.h"
-
+#import "DMMultiLineView.h"
 @interface DMSuperviseDetailController ()
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMSingleView *userView;
 @property (nonatomic, strong) DMSingleView *stateView;
 @property (nonatomic, strong) DMSingleView *sponsorView;
-@property (nonatomic, strong) DMSingleView *coOrganizerView;
+@property (nonatomic, strong) DMMultiLineView *coOrganizerView;
 @property (nonatomic, strong) DMSingleView *deadlineView;
 @property (nonatomic, strong) DMEntryView *contentTitleView;
 @property (nonatomic, strong) DMDetailView *contentDetailView;
@@ -183,10 +183,9 @@
     return _sponsorView;
 }
 
-- (DMSingleView *)coOrganizerView {
+- (DMMultiLineView *)coOrganizerView {
     if (!_coOrganizerView) {
-        _coOrganizerView = [[DMSingleView alloc] init];
-        _coOrganizerView.lcHeight = 44;
+        _coOrganizerView = [[DMMultiLineView alloc] init];
     }
     return _coOrganizerView;
 }
