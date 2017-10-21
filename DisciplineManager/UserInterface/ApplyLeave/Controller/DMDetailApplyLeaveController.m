@@ -15,6 +15,7 @@
 #import "DMUserBookModel.h"
 #import "DMPickerView.h"
 #import "DMImageCollectionView.h"
+#import "DMSelectUserController.h"
 
 @interface DMDetailApplyLeaveController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -41,6 +42,8 @@
 @property (nonatomic, strong) DMApplyLeaveListInfo *info;
 @property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *leaderList;
 @property (nonatomic, strong) DMUserBookModel *leader;
+
+@property (nonatomic, strong) NSMutableDictionary *selectedTransferDealerDictionary;
 
 @end
 
@@ -119,6 +122,9 @@
     if (self.activitiTaskModel) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD] && self.info.state==ACTIVITI_STATE_PENDING) {
             [self loadLeaderData];
+            [self.subviewList addObject:self.leaderTitleView];
+            [self.subviewList addObject:self.leaderView];
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]) {
             [self.subviewList addObject:self.leaderTitleView];
             [self.subviewList addObject:self.leaderView];
         }
@@ -254,22 +260,26 @@
         _leaderView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _leaderView.clickEntryBlock = ^(NSString *value) {
-            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
-            if (weakSelf.leader) {
-                [pickerView selectID:weakSelf.leader.userId];
+            if ([weakSelf.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]) {
+                [weakSelf selectTransferDealer];
             } else {
-                [pickerView selectID:weakSelf.leaderList.firstObject.userId];
-            }
-            pickerView.onCompleteClick = ^(NSDictionary *dic){
-                for (DMUserBookModel *mdl in weakSelf.leaderList) {
-                    if ([mdl.userId isEqualToString:dic[@"value"]]) {
-                        weakSelf.leader = mdl;
-                        break;
-                    }
+                DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicArr]];
+                if (weakSelf.leader) {
+                    [pickerView selectID:weakSelf.leader.userId];
+                } else {
+                    [pickerView selectID:weakSelf.leaderList.firstObject.userId];
                 }
-                [weakSelf.leaderView setValue:weakSelf.leader.name];
-            };
-            [pickerView showPickerView];
+                pickerView.onCompleteClick = ^(NSDictionary *dic){
+                    for (DMUserBookModel *mdl in weakSelf.leaderList) {
+                        if ([mdl.userId isEqualToString:dic[@"value"]]) {
+                            weakSelf.leader = mdl;
+                            break;
+                        }
+                    }
+                    [weakSelf.leaderView setValue:weakSelf.leader.name];
+                };
+                [pickerView showPickerView];
+            }
         };
     }
     return _leaderView;
@@ -304,6 +314,19 @@
         };
     }
     return _taskOperatorView;
+}
+
+- (void)setSelectedTransferDealerDictionary:(NSMutableDictionary *)selectedTransferDealerDictionary {
+    _selectedTransferDealerDictionary = selectedTransferDealerDictionary;
+    NSString *transferDealerString = @"";
+    for (DMUserBookModel *mdl in [selectedTransferDealerDictionary allValues]) {
+        if ([transferDealerString isEqualToString:@""]) {
+            transferDealerString = mdl.name;
+        } else {
+            transferDealerString = [NSString stringWithFormat:@"%@,%@", transferDealerString, mdl.name];
+        }
+    }
+    self.leaderView.value = transferDealerString;
 }
 
 #pragma mark - get data
@@ -375,10 +398,22 @@
     requester.message = [self.commentTextView getMultiLineText];
     if (taskOperator == TaskOperator_Agree) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]) {
-            if(self.info.days <= 3) {
-                requester.state = ACTIVITI_STATE_COMPLETE;
+            NSString *leader = @"";
+            if (self.selectedTransferDealerDictionary) {
+                for (DMUserBookModel *user in [self.selectedTransferDealerDictionary allValues]) {
+                    leader = user.userId;
+                }
+            }
+            if ([leader isEqualToString:@""]) {
+                if(self.info.days <= 3) {
+                    requester.state = ACTIVITI_STATE_COMPLETE;
+                } else {
+                    requester.state = ACTIVITI_STATE_PENDING;
+                }
             } else {
-                requester.state = ACTIVITI_STATE_PENDING;
+                // 转批
+                requester.state = ACTIVITI_STATE_TRANSFERDEALER;
+                requester.leaderId2 = leader;
             }
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]) {
             if (!self.leader) {
@@ -421,4 +456,16 @@
     }
     return dicArr;
 }
+
+#pragma mark - 事件
+- (void)selectTransferDealer {
+    DMSelectUserController *controller = [[DMSelectUserController alloc] init];
+    controller.isRadio = YES;
+    __weak typeof(self) weakSelf = self;
+    controller.onSelectUserBlock = ^(NSMutableDictionary *userDict) {
+        weakSelf.selectedTransferDealerDictionary = userDict;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 @end

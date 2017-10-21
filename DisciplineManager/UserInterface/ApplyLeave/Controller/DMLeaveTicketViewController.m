@@ -20,12 +20,22 @@
 
 @implementation DMLeaveTicketViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.isProvideSelect = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"MyLeaveTicket", @"我的休假票");
     
-    [self addNavRightItem:@selector(clickSure) andTitle:NSLocalizedString(@"sure",@"确定")];
+    if (self.isProvideSelect) {
+        [self addNavRightItem:@selector(clickSure) andTitle:NSLocalizedString(@"sure",@"确定")];
+    }
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -93,17 +103,20 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.isProvideSelect = self.isProvideSelect;
     cell.leaveTicketModel = [self.dataSource objectAtIndex:indexPath.row];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DMLeaveTicketCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    DMLeaveTicketModel *leaveTicketModel = [self.dataSource objectAtIndex:indexPath.row];
-    leaveTicketModel.selected = !leaveTicketModel.selected;
-    if (cell.leaveTicketModel.ltId == leaveTicketModel.ltId) {
-        [cell selectedTicket];
+    if (self.isProvideSelect) {
+        DMLeaveTicketCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        DMLeaveTicketModel *leaveTicketModel = [self.dataSource objectAtIndex:indexPath.row];
+        leaveTicketModel.selected = !leaveTicketModel.selected;
+        if (cell.leaveTicketModel.ltId == leaveTicketModel.ltId) {
+            [cell selectedTicket];
+        }
     }
 }
 

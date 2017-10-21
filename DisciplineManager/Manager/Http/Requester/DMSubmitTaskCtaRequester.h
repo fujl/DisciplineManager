@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, assign) DMActivitiState state;
 @property (nonatomic, strong) NSString *emp;
+@property (nonatomic, strong) NSString *leaderId;
 
 @end

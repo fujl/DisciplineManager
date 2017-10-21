@@ -58,7 +58,7 @@
         _firstView = [[UILabel alloc] init];
         _firstView.backgroundColor = [UIColor clearColor];
         _firstView.textAlignment = NSTextAlignmentCenter;
-        _firstView.font = [UIFont systemFontOfSize:27];
+        _firstView.font = [UIFont systemFontOfSize:38];
         _firstView.textColor = [UIColor whiteColor];
     }
     return _firstView;

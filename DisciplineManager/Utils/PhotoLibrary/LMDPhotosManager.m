@@ -211,7 +211,7 @@
 
 - (NSData *)conpressImage:(NSData *)data {
     UIImage *nextImage = [UIImage imageWithData:data];
-    return UIImageJPEGRepresentation(nextImage, 0.8);
+    return UIImageJPEGRepresentation(nextImage, 0.7);
 }
 
 #pragma mark cut image

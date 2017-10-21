@@ -60,6 +60,9 @@
     if (self.emp) {
         params[@"emp"] = self.emp;
     }
+    if (self.leaderId) {
+        params[@"leaderId"] = self.leaderId;
+    }
 }
 
 - (BOOL)onPostJson {

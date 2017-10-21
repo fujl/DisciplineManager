@@ -10,6 +10,8 @@
 #import "DMDetailApplyCompensatoryRequester.h"
 #import "DMTaskTracksView.h"
 #import "DMSubmitTaskCtaRequester.h"
+#import "DMSelectUserController.h"
+#import "DMUserBookModel.h"
 
 @interface DMDetailApplyCompensatoryController ()
 
@@ -37,9 +39,13 @@
 @property (nonatomic, strong) DMMultiLineTextView *commentTextView;
 @property (nonatomic, strong) DMTaskOperatorView *taskOperatorView;
 
+@property (nonatomic, strong) DMEntryView *transferDealerTitleView;
+@property (nonatomic, strong) DMEntrySelectView *transferDealerView;
+
 @property (nonatomic, strong) DMApplyCompensatoryListInfo *info;
 @property (nonatomic, assign) NSTimeInterval expiryDateInterval;
 
+@property (nonatomic, strong) NSMutableDictionary *selectedTransferDealerDictionary;
 
 @end
 
@@ -105,6 +111,9 @@
             [self.subviewList addObject:self.dayTextView];
             [self.subviewList addObject:self.expiryDateTitleView];
             [self.subviewList addObject:self.expiryDateView];
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD]) {
+            [self.subviewList addObject:self.transferDealerTitleView];
+            [self.subviewList addObject:self.transferDealerView];
         }
         
         [self.subviewList addObject:self.commentTitleView];
@@ -292,6 +301,29 @@
     return _expiryDateView;
 }
 
+- (DMEntryView *)transferDealerTitleView {
+    if (!_transferDealerTitleView) {
+        _transferDealerTitleView = [[DMEntryView alloc] init];
+        [_transferDealerTitleView setTitle:NSLocalizedString(@"transfer_dealer", @"转批办理人")];
+        _transferDealerTitleView.lcHeight = 44;
+    }
+    return _transferDealerTitleView;
+}
+
+- (DMEntrySelectView *)transferDealerView {
+    if (!_transferDealerView) {
+        _transferDealerView = [[DMEntrySelectView alloc] init];
+        _transferDealerView.backgroundColor = [UIColor whiteColor];
+        [_transferDealerView setPlaceholder:NSLocalizedString(@"transfer_dealer_placeholder", @"请选择转批办理人(转批时必选)")];
+        _transferDealerView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _transferDealerView.clickEntryBlock = ^(NSString *value) {
+            [weakSelf selectTransferDealer];
+        };
+    }
+    return _transferDealerView;
+}
+
 - (DMEntryView *)commentTitleView {
     if (!_commentTitleView) {
         _commentTitleView = [[DMEntryView alloc] init];
@@ -384,7 +416,20 @@
             requester.emp = @"HR";
             requester.state = ACTIVITI_STATE_PENDING;
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD]) {
-            requester.state = ACTIVITI_STATE_PENDING;
+            NSString *leader = @"";
+            if (self.selectedTransferDealerDictionary) {
+                for (DMUserBookModel *user in [self.selectedTransferDealerDictionary allValues]) {
+                    leader = user.userId;
+                }
+            }
+            if ([leader isEqualToString:@""]) {
+                requester.state = ACTIVITI_STATE_PENDING;
+            } else {
+                // 转批
+                requester.state = ACTIVITI_STATE_TRANSFERDEALER;
+                requester.leaderId = leader;
+            }
+            
         }
     }
     
@@ -397,6 +442,17 @@
             showToast(data);
         }
     }];
+}
+
+#pragma mark - 事件
+- (void)selectTransferDealer {
+    DMSelectUserController *controller = [[DMSelectUserController alloc] init];
+    controller.isRadio = YES;
+    __weak typeof(self) weakSelf = self;
+    controller.onSelectUserBlock = ^(NSMutableDictionary *userDict) {
+        weakSelf.selectedTransferDealerDictionary = userDict;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

@@ -11,5 +11,6 @@
 
 @interface DMLeaveTicketCell : UITableViewCell
 @property (nonatomic, strong) DMLeaveTicketModel *leaveTicketModel;
+@property (nonatomic, assign) BOOL isProvideSelect;
 - (void)selectedTicket;
 @end

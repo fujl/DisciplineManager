@@ -2841,7 +2841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7f1f3800-bedb-49c8-acce-164998a6fd1b";
+				PROVISIONING_PROFILE = "6728559f-9a78-48f1-bd6e-a1b5a3a4c451";
 				PROVISIONING_PROFILE_SPECIFIER = com.gzstkj.cn.DisciplineManager;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2878,7 +2878,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzstkj.cn.DisciplineManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7f1f3800-bedb-49c8-acce-164998a6fd1b";
+				PROVISIONING_PROFILE = "6728559f-9a78-48f1-bd6e-a1b5a3a4c451";
 				PROVISIONING_PROFILE_SPECIFIER = com.gzstkj.cn.DisciplineManager;
 				SWIFT_OBJC_BRIDGING_HEADER = "DisciplineManager/DisciplineManager-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

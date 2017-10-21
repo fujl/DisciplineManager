@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, assign) DMActivitiState state;
 @property (nonatomic, strong) NSString *leaderId;
+@property (nonatomic, strong) NSString *leaderId2;// 转批领导ID, 部门领导转批时必须传递此参数
+
 @end
