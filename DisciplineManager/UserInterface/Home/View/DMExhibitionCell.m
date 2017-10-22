@@ -154,6 +154,7 @@
         CGFloat w = ITEM_INTERVAL*4+3*ITEM_WIDTH;
         CGFloat h = ITEM_INTERVAL*(info.imagePaths.count/3+2)+(info.imagePaths.count/3+1)*ITEM_HEIGHT;
         self.imageContainView.hidden = NO;
+        self.imageContainView.content = self.info.content;
         [self.imageContainView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@(w));
             make.height.equalTo(@(h));

@@ -40,4 +40,12 @@
     return self;
 }
 
+- (NSString *)getStateString {
+    return @"";
+}
+
+- (UIColor *)getStateColor {
+    return [UIColor whiteColor];
+}
+
 @end

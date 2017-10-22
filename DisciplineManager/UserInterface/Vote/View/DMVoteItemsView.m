@@ -9,7 +9,7 @@
 #import "DMVoteItemsView.h"
 #import "DMAddVoteItemView.h"
 
-#define kMaxItemCount   5
+#define kMaxItemCount   50
 
 @interface DMVoteItemsView ()
 

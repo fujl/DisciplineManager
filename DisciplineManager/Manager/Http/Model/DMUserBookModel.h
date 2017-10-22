@@ -37,4 +37,7 @@
 @property (nonatomic, strong) NSString *jobName;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
+- (NSString *)getStateString;
+- (UIColor *)getStateColor;
+
 @end

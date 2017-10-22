@@ -29,6 +29,9 @@
 @property (nonatomic,strong)MSSBrowseRemindView *browseRemindView;
 @property (nonatomic,strong)UIView *navBar;
 @property (nonatomic,strong)UILabel *navTitle;
+
+@property (nonatomic,strong)UILabel *contentLabel;// 当前图片位置
+
 @end
 
 @implementation MSSBrowseBaseViewController
@@ -208,10 +211,19 @@
     if (!_showNav) {
         _countLabel = [[UILabel alloc]init];
         _countLabel.textColor = [UIColor whiteColor];
-        _countLabel.frame = CGRectMake(0, _screenHeight - 50, _screenWidth, 50);
+        _countLabel.frame = CGRectMake(10, _screenHeight - 60, _screenWidth-20, 20);
         _countLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)_currentIndex + 1,(long)_browseItemArray.count];
         _countLabel.textAlignment = NSTextAlignmentCenter;
         [_bgView addSubview:_countLabel];
+        _contentLabel = [[UILabel alloc]init];
+        _contentLabel.textColor = [UIColor whiteColor];
+        _contentLabel.numberOfLines = 2;
+        _contentLabel.font = [UIFont systemFontOfSize:12];
+        _contentLabel.frame = CGRectMake(0, _screenHeight - 40, _screenWidth, 40);
+        _contentLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)_currentIndex + 1,(long)_browseItemArray.count];
+        _contentLabel.text = self.content;
+        _contentLabel.textAlignment = NSTextAlignmentLeft;
+        [_bgView addSubview:_contentLabel];
     } else {
         _navTitle.text = [NSString stringWithFormat:@"%ld/%ld",(long)_currentIndex + 1,(long)_browseItemArray.count];
     }
@@ -285,6 +297,7 @@
     {
         _currentIndex = scrollView.contentOffset.x / (_screenWidth + kBrowseSpace);
         _countLabel.text = [NSString stringWithFormat:@"%ld/%ld",(long)_currentIndex + 1,(long)_browseItemArray.count];
+        _contentLabel.text = self.content;
         _navTitle.text = [NSString stringWithFormat:@"%ld/%ld",(long)_currentIndex + 1,(long)_browseItemArray.count];
     }
     _isRotate = NO;
@@ -317,7 +330,8 @@
     }
     [_countLabel removeFromSuperview];
     _countLabel = nil;
-    
+    [_contentLabel removeFromSuperview];
+    _contentLabel = nil;
     NSIndexPath *indexPath = [_collectionView indexPathForCell:browseCell];
     browseCell.zoomScrollView.zoomScale = 1.0f;
     MSSBrowseModel *browseItem = _browseItemArray[indexPath.row];
@@ -420,7 +434,8 @@
         {
             [_browseActionSheet updateFrame];
         }
-        _countLabel.frame = CGRectMake(0, _screenHeight - 50, _screenWidth, 50);
+        _countLabel.frame = CGRectMake(0, _screenHeight - 60, _screenWidth, 20);
+        _contentLabel.frame = CGRectMake(10, _screenHeight - 40, _screenWidth, 40);
         [_collectionView.collectionViewLayout invalidateLayout];
         _collectionView.frame = CGRectMake(0, 0, _screenWidth + kBrowseSpace, _screenHeight);
         _collectionView.contentOffset = CGPointMake((_screenWidth + kBrowseSpace) * _currentIndex, 0);

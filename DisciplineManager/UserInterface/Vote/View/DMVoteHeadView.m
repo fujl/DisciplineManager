@@ -70,7 +70,7 @@
 - (UILabel *)stateLabel {
     if (!_stateLabel) {
         _stateLabel = [[UILabel alloc] init];
-        _stateLabel.font = [UIFont systemFontOfSize:11];
+        _stateLabel.font = [UIFont systemFontOfSize:13];
         _stateLabel.textColor = [UIColor whiteColor];
         _stateLabel.backgroundColor = [UIColor colorWithRGB:0x123456];
         _stateLabel.textAlignment = NSTextAlignmentCenter;
@@ -91,7 +91,7 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.numberOfLines = 0;
-        _contentLabel.font = [UIFont systemFontOfSize:12];
+        _contentLabel.font = [UIFont systemFontOfSize:14];
         _contentLabel.textColor = [UIColor blackColor];
     }
     return _contentLabel;
