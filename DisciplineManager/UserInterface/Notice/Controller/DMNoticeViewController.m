@@ -153,6 +153,7 @@
     } else {
         DMUserManager *manager = getManager([DMUserManager class]);
         requester.userId = manager.loginInfo.userId;
+        requester.isReadSign = -1;
     }
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
@@ -181,6 +182,7 @@
     } else {
         DMUserManager *manager = getManager([DMUserManager class]);
         requester.userId = manager.loginInfo.userId;
+        requester.isReadSign = -1;
     }
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];

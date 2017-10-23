@@ -203,3 +203,4 @@
 "transfer_dealer" = "转批办理人";
 "transfer_dealer_placeholder" = "请选择转批办理人(转批时必选)";
 "add_co_organizer" = "新增协办人员";
+"Timeout" = "超时";

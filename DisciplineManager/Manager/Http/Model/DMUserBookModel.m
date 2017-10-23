@@ -30,22 +30,82 @@
         self.deptUserName = parseStringFromObject([dict objectForKey:@"deptUserName"]);
         self.orgId = parseStringFromObject([dict objectForKey:@"orgId"]);
         self.orgName = parseStringFromObject([dict objectForKey:@"orgName"]);
-        self.goOutState = [parseNumberFromObject([dict objectForKey:@"goOutState"]) integerValue];
-        self.ocarState = [parseNumberFromObject([dict objectForKey:@"ocarState"]) integerValue];
-        self.leaveState = [parseNumberFromObject([dict objectForKey:@"leaveState"]) integerValue];
-        self.leaveState2 = [parseNumberFromObject([dict objectForKey:@"leaveState2"]) integerValue];
+        self.orgCode = parseStringFromObject([dict objectForKey:@"orgCode"]);
         self.gender = [parseNumberFromObject([dict objectForKey:@"gender"]) integerValue];
         self.jobName = parseStringFromObject([dict objectForKey:@"jobName"]);
+        
+        self.startTime = parseStringFromObject([dict objectForKey:@"startTime"]);
+        self.reason = parseStringFromObject([dict objectForKey:@"reason"]);
+        self.leaveTime = parseStringFromObject([dict objectForKey:@"leaveTime"]);
+        self.leaveReason = parseStringFromObject([dict objectForKey:@"leaveReason"]);
+        self.leaveType = [parseNumberFromObject([dict objectForKey:@"leaveType"]) integerValue];
     }
     return self;
 }
 
 - (NSString *)getStateString {
-    return @"";
+//    String eaReason = item.optString("reason"); // 外出事由
+//    String startTime = item.optString("startTime"); // 外出时间
+//    String leaveReason = item.optString("leaveReason"); // 请休假事由
+//    String leaveTime = item.optString("leaveTime"); // 请休假时间
+//    int leaveType = item.optInt("leaveType"); // 请假类别
+    
+    //if (StringUtils.isNotBlank(eaReason) && !"null".equals(eaReason) && StringUtils.isNotBlank(startTime) && !"null".equals(startTime)) {
+    if (![self.reason isEqualToString:@""] && ![self.startTime isEqualToString:@""]) {
+        // 外出
+        return @"外出";
+    //} else if (StringUtils.isNotBlank(leaveReason) && !"null".equals(leaveReason) && StringUtils.isNotBlank(leaveTime) && !"null".equals(leaveTime)) {
+        } else if (![self.leaveReason isEqualToString:@""] && ![self.leaveTime isEqualToString:@""]) {
+        if(self.leaveType == 0) {
+            // 请假
+            return @"请假";
+        } else if(self.leaveType == 1) {
+            // 休假
+            return @"休假";
+        } else {
+            return @"未知";
+        }
+    } else {
+        // 在岗
+        return @"在岗";
+    }
 }
 
+
+/*
+ if (isOut) {
+ self.stateView.text = NSLocalizedString(@"Out", @"外出");
+ self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+ } else if (userInfo.leaveState2 > 0) {
+ self.stateView.text = NSLocalizedString(@"Vacation", @"休假");
+ self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
+ } else if (userInfo.leaveState > 0) {
+ self.stateView.text = NSLocalizedString(@"Leave", @"请假");
+ self.stateView.backgroundColor = [UIColor colorWithRGB:0x5bc0de];
+ } else {
+ self.stateView.text = NSLocalizedString(@"OnGuard", @"在岗");
+ self.stateView.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+ }
+ */
 - (UIColor *)getStateColor {
-    return [UIColor whiteColor];
+    if (![self.reason isEqualToString:@""] && ![self.startTime isEqualToString:@""]) {
+        // 外出
+        return [UIColor colorWithRGB:0x0073b7];
+        //} else if (StringUtils.isNotBlank(leaveReason) && !"null".equals(leaveReason) && StringUtils.isNotBlank(leaveTime) && !"null".equals(leaveTime)) {
+    } else if (![self.leaveReason isEqualToString:@""] && ![self.leaveTime isEqualToString:@""]) {
+        if(self.leaveType == 0) {
+            // 请假
+            return [UIColor colorWithRGB:0xd9534f];
+        } else if(self.leaveType == 1) {
+            // 休假
+            return [UIColor colorWithRGB:0xFE9C6D];
+        } else {
+            return [UIColor colorWithRGB:0x777777];
+        }
+    } else {
+        // 在岗
+        return [UIColor colorWithRGB:0x5cb85c];
+    }
 }
 
 @end

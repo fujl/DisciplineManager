@@ -24,9 +24,9 @@
         self.taskTracks = [[NSMutableArray alloc] init];
         
         if (self.state > ACTIVITI_STATE_SAVE) {
-            NSArray *tracks = self.state == ACTIVITI_STATE_PENDING ? [dict objectForKey:@"taskTracks"] : [dict objectForKey:@"hiTasks"];
+            NSArray *tracks = !(self.state == ACTIVITI_STATE_COMPLETE || self.state == ACTIVITI_STATE_REJECTED) ? [dict objectForKey:@"taskTracks"] : [dict objectForKey:@"hiTasks"];
             for (NSDictionary *dic in tracks) {
-                DMTaskTracksModel *ttModel = [[DMTaskTracksModel alloc] initWithDict:dic taskTracks:self.state == ACTIVITI_STATE_PENDING];
+                DMTaskTracksModel *ttModel = [[DMTaskTracksModel alloc] initWithDict:dic taskTracks:!(self.state == ACTIVITI_STATE_COMPLETE || self.state == ACTIVITI_STATE_REJECTED)];
                 [self.taskTracks addObject:ttModel];
             }
         }

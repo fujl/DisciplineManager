@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DMFormBaseInfo.h"
+#import "DMOfficialCarModel.h"
 
 @interface DMApplyOutListInfo : DMFormBaseInfo
 
@@ -18,7 +19,7 @@
 @property (nonatomic, assign) NSInteger isNeedCar;//": 是否需要公车 1 需要 0 不需要, 其他为错误,
 @property (nonatomic, strong) NSString *driverId;//": '司机ID, 当isNeedCar=1时有效',
 @property (nonatomic, strong) NSString *driverName;//": '司机姓名, 当isNeedCar=1时有效',
-@property (nonatomic, strong) NSString *officialCar;//": '车辆信息对象, 当isNeedCar=1时有效'
+@property (nonatomic, strong) DMOfficialCarModel *officialCar;//": '车辆信息对象, 当isNeedCar=1时有效'
 
 
 @end

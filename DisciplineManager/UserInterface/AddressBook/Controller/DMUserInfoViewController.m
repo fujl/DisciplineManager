@@ -21,6 +21,8 @@
 @property (nonatomic, strong) DMSingleView *emailView;
 @property (nonatomic, strong) DMSingleView *addressView;
 @property (nonatomic, strong) DMSingleView *detailView;
+@property (nonatomic, strong) DMSingleView *reasonView;
+@property (nonatomic, strong) DMSingleView *timeView;
 
 @end
 
@@ -47,24 +49,42 @@
     [self.emailView setTitle:@"电子邮箱" detail:self.userInfo.email];
     [self.addressView setTitle:@"地区" detail:[NSString stringWithFormat:@"%@%@%@", self.userInfo.province, self.userInfo.city, self.userInfo.county]];
     [self.detailView setTitle:@"详细地址" detail:self.userInfo.address];
+    
+    if (![self.userInfo.reason isEqualToString:@""] && ![self.userInfo.startTime isEqualToString:@""]) {
+        // 外出
+        [self.reasonView setTitle:@"外出事由" detail:self.userInfo.reason];
+        [self.timeView setTitle:@"外出时间" detail:self.userInfo.startTime];
+    } else if (![self.userInfo.leaveReason isEqualToString:@""] && ![self.userInfo.leaveTime isEqualToString:@""]) {
+        if(self.userInfo.leaveType == 0) {
+            // 请假
+            [self.reasonView setTitle:@"请假事由" detail:self.userInfo.leaveReason];
+            [self.timeView setTitle:@"请假时间" detail:self.userInfo.leaveTime];
+        } else if(self.userInfo.leaveType == 1) {
+            // 休假
+            [self.reasonView setTitle:@"休假事由" detail:self.userInfo.leaveReason];
+            [self.timeView setTitle:@"休假时间" detail:self.userInfo.leaveTime];
+        }
+    }
 }
 
 - (void)refreshState {
     self.stateView.detailLabel.textColor = [UIColor whiteColor];
-    BOOL isOut = self.userInfo.goOutState > 0;
-    if (isOut) {
-        self.stateView.detailLabel.text = NSLocalizedString(@"Out", @"外出");
-        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
-    } else if (self.userInfo.leaveState2 > 0) {
-        self.stateView.detailLabel.text = NSLocalizedString(@"Vacation", @"休假");
-        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0xd9534f];
-    } else if (self.userInfo.leaveState > 0) {
-        self.stateView.detailLabel.text = NSLocalizedString(@"Leave", @"请假");
-        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5bc0de];
-    } else {
-        self.stateView.detailLabel.text = NSLocalizedString(@"OnGuard", @"在岗");
-        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
-    }
+    self.stateView.detailLabel.text = [self.userInfo getStateString];
+    self.stateView.detailLabel.backgroundColor = [self.userInfo getStateColor];
+//    BOOL isOut = self.userInfo.goOutState > 0;
+//    if (isOut) {
+//        self.stateView.detailLabel.text = NSLocalizedString(@"Out", @"外出");
+//        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+//    } else if (self.userInfo.leaveState2 > 0) {
+//        self.stateView.detailLabel.text = NSLocalizedString(@"Vacation", @"休假");
+//        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0xd9534f];
+//    } else if (self.userInfo.leaveState > 0) {
+//        self.stateView.detailLabel.text = NSLocalizedString(@"Leave", @"请假");
+//        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5bc0de];
+//    } else {
+//        self.stateView.detailLabel.text = NSLocalizedString(@"OnGuard", @"在岗");
+//        self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+//    }
     [self.stateView refreshSize:CGSizeMake(50, 30)];
     self.stateView.detailLabel.textAlignment = NSTextAlignmentCenter;
 }
@@ -80,6 +100,21 @@
     [self.subviewList addObject:self.emailView];
     [self.subviewList addObject:self.addressView];
     [self.subviewList addObject:self.detailView];
+    if (![self.userInfo.reason isEqualToString:@""] && ![self.userInfo.startTime isEqualToString:@""]) {
+        // 外出
+        [self.subviewList addObject:self.reasonView];
+        [self.subviewList addObject:self.timeView];
+    } else if (![self.userInfo.leaveReason isEqualToString:@""] && ![self.userInfo.leaveTime isEqualToString:@""]) {
+        if(self.userInfo.leaveType == 0) {
+            // 请假
+            [self.subviewList addObject:self.reasonView];
+            [self.subviewList addObject:self.timeView];
+        } else if(self.userInfo.leaveType == 1) {
+            // 休假
+            [self.subviewList addObject:self.reasonView];
+            [self.subviewList addObject:self.timeView];
+        }
+    }
     [self setChildViews:self.subviewList];
 }
 
@@ -160,6 +195,22 @@
         _detailView.lcHeight = 44;
     }
     return _detailView;
+}
+
+- (DMSingleView *)reasonView {
+    if (!_reasonView) {
+        _reasonView = [[DMSingleView alloc] init];
+        _reasonView.lcHeight = 44;
+    }
+    return _reasonView;
+}
+
+- (DMSingleView *)timeView {
+    if (!_timeView) {
+        _timeView = [[DMSingleView alloc] init];
+        _timeView.lcHeight = 44;
+    }
+    return _timeView;
 }
 
 - (void)callPhone:(DMUserBookModel *)userInfo {

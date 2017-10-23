@@ -128,9 +128,13 @@
             self.stateView.text = NSLocalizedString(@"Rejected", @"驳回");
             self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
             break;
+        case ACTIVITI_STATE_TIMEOUT:
+            self.stateView.text = NSLocalizedString(@"Timeout", @"超时");
+            self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
+            break;
         default:
             self.stateView.text = NSLocalizedString(@"DataError", @"错误数据");
-            self.stateView.backgroundColor = [UIColor colorWithRGB:0x777777];
+            self.stateView.backgroundColor = [UIColor colorWithRGB:0xd9534f];
             break;
     }
 }

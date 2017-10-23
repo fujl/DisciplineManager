@@ -91,10 +91,10 @@
                 if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
                     if (self.info.isNeedCar == 1) {
                         [self.driverNameView setTitle:@"司机姓名" detail:self.info.driverName];
-                        [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar];
+                        [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
                     }
                 } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]) {
-                    [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar];
+                    [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
                 }
             }
             self.outReasonDetailView.lcHeight = [self.outReasonDetailView getHeightFromDetail:self.info.reason];
@@ -131,20 +131,12 @@
         [self.subviewList addObject:self.userView];
     }
     [self.subviewList addObject:self.outTimeView];
-    if (self.activitiTaskModel) {
-        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
-            [self.subviewList addObject:self.driverNameView];
-            [self.subviewList addObject:self.officialCarView];
-        }
-    }
     [self.subviewList addObject:self.returnTimeView];
     [self.subviewList addObject:self.addressView];
     [self.subviewList addObject:self.needBusView];
     if (self.activitiTaskModel) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
             if (self.info.isNeedCar == 1) {
-                [self loadDriverData];
-                [self loadOfficialCarData];
                 [self.subviewList addObject:self.driverNameView];
                 [self.subviewList addObject:self.officialCarView];
             }
@@ -159,6 +151,13 @@
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
             [self.subviewList addObject:self.leaderTitleView];
             [self.subviewList addObject:self.leaderView];
+        } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
+            [self loadDriverData];
+            [self loadOfficialCarData];
+            [self.subviewList addObject:self.driverTitleView];
+            [self.subviewList addObject:self.driverView];
+            [self.subviewList addObject:self.officialCarIdTitleView];
+            [self.subviewList addObject:self.officialCarIdView];
         }
         [self.subviewList addObject:self.commentTitleView];
         [self.subviewList addObject:self.commentTextView];

@@ -62,7 +62,7 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.font = [UIFont systemFontOfSize:14];
-        _nameLabel.textColor = [UIColor colorWithRGB:0x010101];
+        _nameLabel.textColor = [UIColor colorWithRGB:0x596B93];
     }
     return _nameLabel;
 }
@@ -91,7 +91,7 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.numberOfLines = 0;
-        _contentLabel.font = [UIFont systemFontOfSize:14];
+        _contentLabel.font = [UIFont systemFontOfSize:13];
         _contentLabel.textColor = [UIColor blackColor];
     }
     return _contentLabel;

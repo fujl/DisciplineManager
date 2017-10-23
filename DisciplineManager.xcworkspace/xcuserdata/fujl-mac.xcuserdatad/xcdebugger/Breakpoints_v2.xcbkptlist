@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Notice/Controller/DMNoticeViewController.m"
-            timestampString = "529845702.240064"
+            timestampString = "530431641.65234"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Notice/Controller/DMNoticeViewController.m"
-            timestampString = "529845702.240124"
+            timestampString = "530431641.652402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Notice/Controller/DMNoticeViewController.m"
-            timestampString = "529845702.240189"
+            timestampString = "530431641.652448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Notice/Controller/DMNoticeViewController.m"
-            timestampString = "529845702.240239"
+            timestampString = "530431641.652489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
-            timestampString = "529845702.240359"
+            timestampString = "530431641.652556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-loadSubview"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
-            timestampString = "529845702.240404"
+            timestampString = "530431641.652605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
-            landmarkName = "-loadLeaderData"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
+            landmarkName = "-submitTask:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
-            timestampString = "529845702.240445"
+            timestampString = "530431641.652649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
-            landmarkName = "-loadLeaderData"
+            startingLineNumber = "504"
+            endingLineNumber = "504"
+            landmarkName = "-submitTask:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,13 +154,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
-            timestampString = "529845702.240484"
+            timestampString = "530431641.652693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
             landmarkName = "-leaderView"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[DMDetailApplyOutController leaderView]_block_invoke"
+                  moduleName = "DisciplineManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
+                  timestampString = "530428789.154833"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.229"
+                  moduleName = "DisciplineManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
+                  timestampString = "530428789.156108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.230"
+                  moduleName = "DisciplineManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fujl-mac/Documents/study/iOS/ProjectFile/proj/DisciplineManager/github/DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
+                  timestampString = "530428789.157415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "320"
+                  endingLineNumber = "320"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,7 +217,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Todo/Controller/DMTodoViewController.m"
-            timestampString = "529909815.778004"
+            timestampString = "530425774.37653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -186,11 +233,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
-            timestampString = "529845702.24057"
+            timestampString = "530431641.652757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
             landmarkName = "-submitTask:"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,12 +281,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DisciplineManager/UserInterface/Todo/Controller/DMTodoViewController.m"
-            timestampString = "529909815.778185"
+            timestampString = "530425774.376645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "-qjsq:"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/UserInterface/ApplyOut/Controller/DMDetailApplyOutController.m"
+            timestampString = "530431641.652855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-refreshView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DisciplineManager/Manager/Http/Model/DMFormBaseInfo.m"
+            timestampString = "530431641.652906"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-initWithDict:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

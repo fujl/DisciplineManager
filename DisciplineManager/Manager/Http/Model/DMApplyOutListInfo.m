@@ -30,7 +30,7 @@
         if (self.isNeedCar == 1) {
             self.driverId = parseStringFromObject([dict objectForKey:@"driverId"]);
             self.driverName = parseStringFromObject([dict objectForKey:@"driverName"]);
-            self.officialCar = parseStringFromObject([dict objectForKey:@"officialCar"]);
+            self.officialCar = [[DMOfficialCarModel alloc] initWithDict:[dict objectForKey:@"officialCar"]];
         }
     }
     return self;
