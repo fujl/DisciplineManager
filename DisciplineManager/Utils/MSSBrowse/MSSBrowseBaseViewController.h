@@ -21,6 +21,7 @@ typedef void(^deleteAction)(NSInteger index);
 @property (nonatomic,assign)CGFloat screenWidth;
 @property (nonatomic,assign)CGFloat screenHeight;
 @property (nonatomic,copy) deleteAction deleteBlock;
+@property (nonatomic,copy) NSString *content;
 
 - (instancetype)initWithBrowseItemArray:(NSArray *)browseItemArray currentIndex:(NSInteger)currentIndex;
 - (void)showBrowseViewController;

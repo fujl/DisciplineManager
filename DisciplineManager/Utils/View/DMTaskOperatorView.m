@@ -97,6 +97,39 @@
     }];
 }
 
+- (void)refreshSupervisionTaskView:(BOOL)showTransferComment {
+    self.agreeButton.hidden = NO;
+    self.rejectedButton.hidden = YES;
+    self.transferCommentButton.hidden = !showTransferComment;
+    self.finishButton.hidden = YES;
+    [self.agreeButton setTitle:NSLocalizedString(@"Agree", @"同意") forState:UIControlStateNormal];
+    [self.transferCommentButton setTitle:NSLocalizedString(@"TransferComment", @"转批") forState:UIControlStateNormal];
+    CGFloat sep = 20;
+    CGFloat width = (SCREEN_WIDTH-(showTransferComment?3:2)*sep)/2.0;
+    
+    if (showTransferComment) {
+        [self.agreeButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(sep);
+            make.top.equalTo(self).offset(10);
+            make.width.equalTo(@(width));
+            make.height.equalTo(@44);
+        }];
+        [self.transferCommentButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.mas_right).offset(-sep);
+            make.top.equalTo(self).offset(10);
+            make.width.equalTo(@(width));
+            make.height.equalTo(@44);
+        }];
+    } else {
+        [self.agreeButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self);
+            make.top.equalTo(self).offset(10);
+            make.width.equalTo(@(width));
+            make.height.equalTo(@44);
+        }];
+    }
+}
+
 - (UIButton *)agreeButton {
     if (!_agreeButton) {
         _agreeButton = [[UIButton alloc] init];

@@ -51,6 +51,9 @@
     if (self.leaderId) {
         params[@"leaderId"] = self.leaderId;
     }
+    if (self.leaderId2) {
+        params[@"leaderId2"] = self.leaderId2;
+    }
 }
 
 - (BOOL)onPostJson {

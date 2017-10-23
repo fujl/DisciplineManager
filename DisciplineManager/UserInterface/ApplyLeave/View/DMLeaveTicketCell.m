@@ -37,15 +37,12 @@
     [self.bgView addSubview:self.leaveCountView];
     [self.bgView addSubview:self.expiryDateView];
     
-    UIImage *selected = [UIImage imageNamed:@"album_imagepick_unchoose"];
-    [self.selectedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView.mas_left).offset(10);
-        make.centerY.equalTo(self.contentView);
-        make.width.equalTo(@(selected.size.width));
-        make.height.equalTo(@(selected.size.width));
-    }];
-    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.selectedBtn.mas_right).offset(10);
+    [self.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (self.isProvideSelect) {
+            make.left.equalTo(self.selectedBtn.mas_right).offset(10);
+        } else {
+            make.left.equalTo(self.contentView).offset(10);
+        }
         make.top.equalTo(self.contentView).offset(10);
         make.right.equalTo(self.contentView.mas_right).offset(-10);
         make.height.equalTo(@(70));
@@ -128,6 +125,31 @@
     [self selectedTicket];
 }
 
+- (void)setIsProvideSelect:(BOOL)isProvideSelect {
+    _isProvideSelect = isProvideSelect;
+    if (self.isProvideSelect) {
+        self.selectedBtn.hidden = NO;
+        UIImage *selected = [UIImage imageNamed:@"album_imagepick_unchoose"];
+        [self.selectedBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).offset(10);
+            make.centerY.equalTo(self.contentView);
+            make.width.equalTo(@(selected.size.width));
+            make.height.equalTo(@(selected.size.width));
+        }];
+    } else {
+        self.selectedBtn.hidden = YES;
+    }
+    [self.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (_isProvideSelect) {
+            make.left.equalTo(self.selectedBtn.mas_right).offset(10);
+        } else {
+            make.left.equalTo(self.contentView).offset(10);
+        }
+        make.top.equalTo(self.contentView).offset(10);
+        make.right.equalTo(self.contentView.mas_right).offset(-10);
+        make.height.equalTo(@(70));
+    }];
+}
 - (void)selectedTicket {
     if (_leaveTicketModel.selected) {
         self.selectedBtn.image = [UIImage imageNamed:@"album_imagepick_choosed"];

@@ -91,6 +91,10 @@
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@(detailHeight+20));
         }];
+    } else {
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(44));
+        }];
     }
 }
 

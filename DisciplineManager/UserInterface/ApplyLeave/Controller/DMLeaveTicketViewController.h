@@ -10,5 +10,6 @@
 #import "DMLeaveTicketModel.h"
 
 @interface DMLeaveTicketViewController : DMBaseViewController
+@property (nonatomic, assign) BOOL isProvideSelect;
 @property (nonatomic, copy) void (^selectedLeaveTicketBlock)(NSMutableArray<DMLeaveTicketModel *> *leaveTickets);
 @end

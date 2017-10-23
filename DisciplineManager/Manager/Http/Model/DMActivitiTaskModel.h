@@ -34,6 +34,9 @@
 #define kDefinitionKeyBXP_FGLD      @"bxp_fgld"
 #define kDefinitionKeyBXP_RSK       @"bxp_rsk"
 
+#define kDefinitionKeyDBRW_BLRW       @"dbrw_blrw"
+#define kDefinitionKeyDBRW_BLZPRW       @"dbrw_blzprw"
+
 @interface DMActivitiTaskModel : NSObject
 @property (nonatomic, strong) NSString *atId;
 @property (nonatomic, strong) NSString *createDate;

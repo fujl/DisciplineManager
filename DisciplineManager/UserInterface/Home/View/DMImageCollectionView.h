@@ -16,5 +16,6 @@
 @interface DMImageCollectionView : UIView
 
 @property (nonatomic, strong) NSMutableArray *imageStringList;
+@property (nonatomic, copy) NSString *content;
 
 @end

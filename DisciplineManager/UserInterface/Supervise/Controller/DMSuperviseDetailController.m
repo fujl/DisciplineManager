@@ -11,6 +11,10 @@
 #import "DMTaskTracksView.h"
 #import "DMSuperviselistInfo.h"
 #import "DMMultiLineView.h"
+#import "DMSelectUserController.h"
+#import "DMUserBookModel.h"
+#import "DMSuperviseSubmitTaskRequester.h"
+
 @interface DMSuperviseDetailController ()
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -24,7 +28,19 @@
 
 @property (nonatomic, strong) DMTaskTracksView *taskTracksView;
 
+@property (nonatomic, strong) DMEntryView *transferDealerTitleView;
+@property (nonatomic, strong) DMEntrySelectView *transferDealerView;
+@property (nonatomic, strong) DMEntryView *coOrganizerTitleView;
+@property (nonatomic, strong) DMEntrySelectView *coOrganizerSelectView;
+
+@property (nonatomic, strong) DMEntryView *commentTitleView;
+@property (nonatomic, strong) DMMultiLineTextView *commentTextView;
+@property (nonatomic, strong) DMTaskOperatorView *taskOperatorView;
+
 @property (nonatomic, strong) DMSuperviselistInfo *info;
+
+@property (nonatomic, strong) NSMutableDictionary *selectedTransferDealerDictionary;
+@property (nonatomic, strong) NSMutableDictionary *selectedCoOrganizerDictionary;
 
 @end
 
@@ -62,17 +78,7 @@
             [self.deadlineView setTitle:NSLocalizedString(@"Deadline", @"截止日期") detail:self.info.endTime];
             self.contentDetailView.lcHeight = [self.contentDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
-//                if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
-//                    // 完成回岗
-//                    [self.taskOperatorView refreshFinishHuigangView];
-//                } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]) {
-//                    [self.taskOperatorView refreshJsyView];
-//                } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
-//                    [self.taskOperatorView refreshView:NO];
-//                } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_TJLD]
-//                           || [self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
-//                    [self.taskOperatorView refreshView:NO];
-//                }
+                
             } else {
                 self.taskTracksView.taskTracks = self.info.taskTracks;
             }
@@ -89,27 +95,19 @@
         [self.subviewList addObject:self.userView];
     }
     [self.subviewList addObject:self.sponsorView];
-    if (self.activitiTaskModel) {
-//        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
-//            [self.subviewList addObject:self.driverNameView];
-//            [self.subviewList addObject:self.officialCarView];
-//        }
-    }
     [self.subviewList addObject:self.coOrganizerView];
     [self.subviewList addObject:self.deadlineView];
     [self.subviewList addObject:self.contentTitleView];
     [self.subviewList addObject:self.contentDetailView];
     
     if (self.activitiTaskModel) {
-//        if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
-//            [self loadLeaderData];
-//            [self.subviewList addObject:self.leaderTitleView];
-//            [self.subviewList addObject:self.leaderView];
-//        }
-//        [self.subviewList addObject:self.commentTitleView];
-//        [self.subviewList addObject:self.commentTextView];
-//        [self.subviewList addObject:self.taskOperatorView];
-//
+        [self.subviewList addObject:self.transferDealerTitleView];
+        [self.subviewList addObject:self.transferDealerView];
+        [self.subviewList addObject:self.coOrganizerTitleView];
+        [self.subviewList addObject:self.coOrganizerSelectView];
+        [self.subviewList addObject:self.commentTitleView];
+        [self.subviewList addObject:self.commentTextView];
+        [self.subviewList addObject:self.taskOperatorView];
     } else {
         [self.subviewList addObject:self.taskTracksView];
     }
@@ -221,6 +219,110 @@
     return _taskTracksView;
 }
 
+- (DMEntryView *)transferDealerTitleView {
+    if (!_transferDealerTitleView) {
+        _transferDealerTitleView = [[DMEntryView alloc] init];
+        [_transferDealerTitleView setTitle:NSLocalizedString(@"transfer_dealer", @"转批办理人")];
+        _transferDealerTitleView.lcHeight = 44;
+    }
+    return _transferDealerTitleView;
+}
+
+- (DMEntrySelectView *)transferDealerView {
+    if (!_transferDealerView) {
+        _transferDealerView = [[DMEntrySelectView alloc] init];
+        _transferDealerView.backgroundColor = [UIColor whiteColor];
+        [_transferDealerView setPlaceholder:NSLocalizedString(@"transfer_dealer_placeholder", @"请选择转批办理人(转批时必选)")];
+        _transferDealerView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _transferDealerView.clickEntryBlock = ^(NSString *value) {
+            [weakSelf selectTransferDealer];
+        };
+    }
+    return _transferDealerView;
+}
+
+- (DMEntryView *)coOrganizerTitleView {
+    if (!_coOrganizerTitleView) {
+        _coOrganizerTitleView = [[DMEntryView alloc] init];
+        [_coOrganizerTitleView setTitle:NSLocalizedString(@"add_co_organizer", @"新增协办人员")];
+        _coOrganizerTitleView.lcHeight = 44;
+    }
+    return _coOrganizerTitleView;
+}
+
+- (DMEntrySelectView *)coOrganizerSelectView {
+    if (!_coOrganizerSelectView) {
+        _coOrganizerSelectView = [[DMEntrySelectView alloc] init];
+        _coOrganizerSelectView.backgroundColor = [UIColor whiteColor];
+        [_coOrganizerSelectView setPlaceholder:NSLocalizedString(@"co_organizer_placeholder", @"请选择协办人员(可选,多选)")];
+        _coOrganizerSelectView.lcHeight = 44;
+        __weak typeof(self) weakSelf = self;
+        _coOrganizerSelectView.clickEntryBlock = ^(NSString *value) {
+            [weakSelf selectCoOrganizer];
+        };
+    }
+    return _coOrganizerSelectView;
+}
+
+- (DMEntryView *)commentTitleView {
+    if (!_commentTitleView) {
+        _commentTitleView = [[DMEntryView alloc] init];
+        [_commentTitleView setTitle:@"批注"];
+        _commentTitleView.lcHeight = 44;
+    }
+    return _commentTitleView;
+}
+
+- (DMMultiLineTextView *)commentTextView {
+    if (!_commentTextView) {
+        _commentTextView = [[DMMultiLineTextView alloc] init];
+        _commentTextView.lcHeight = 200;
+        _commentTextView.backgroundColor = [UIColor whiteColor];
+        [_commentTextView setPlaceholder:@"请输入批注(最多200字)"];
+    }
+    return _commentTextView;
+}
+
+-(DMTaskOperatorView *)taskOperatorView {
+    if (!_taskOperatorView) {
+        _taskOperatorView = [[DMTaskOperatorView alloc] init];
+        _taskOperatorView.lcHeight = 64;
+        [_taskOperatorView refreshSupervisionTaskView:[self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyDBRW_BLRW]];
+        __weak typeof(self) weakSelf = self;
+        _taskOperatorView.clickTaskOperatorBlock = ^(DMTaskOperator taskOperator) {
+            [weakSelf submitTask:taskOperator];
+        };
+    }
+    return _taskOperatorView;
+}
+
+- (void)setSelectedTransferDealerDictionary:(NSMutableDictionary *)selectedTransferDealerDictionary {
+    _selectedTransferDealerDictionary = selectedTransferDealerDictionary;
+    NSString *transferDealerString = @"";
+    for (DMUserBookModel *mdl in [selectedTransferDealerDictionary allValues]) {
+        if ([transferDealerString isEqualToString:@""]) {
+            transferDealerString = mdl.name;
+        } else {
+            transferDealerString = [NSString stringWithFormat:@"%@,%@", transferDealerString, mdl.name];
+        }
+    }
+    self.transferDealerView.value = transferDealerString;
+}
+
+- (void)setSelectedCoOrganizerDictionary:(NSMutableDictionary *)selectedCoOrganizerDictionary {
+    _selectedCoOrganizerDictionary = selectedCoOrganizerDictionary;
+    NSString *coOrganizerString = @"";
+    for (DMUserBookModel *mdl in [selectedCoOrganizerDictionary allValues]) {
+        if ([coOrganizerString isEqualToString:@""]) {
+            coOrganizerString = mdl.name;
+        } else {
+            coOrganizerString = [NSString stringWithFormat:@"%@,%@", coOrganizerString, mdl.name];
+        }
+    }
+    self.coOrganizerSelectView.value = coOrganizerString;
+}
+
 #pragma mark - get data
 - (void)getDetailInfo:(void (^)(DMResultCode code, id data))callback {
     DMSuperviseGetRequester *requester = [[DMSuperviseGetRequester alloc] init];
@@ -232,6 +334,80 @@
             NSString *errMsg = data;
             showToast(errMsg);
             callback(code, errMsg);
+        }
+    }];
+}
+
+#pragma mark - 事件
+- (void)selectTransferDealer {
+    DMSelectUserController *controller = [[DMSelectUserController alloc] init];
+    controller.isRadio = YES;
+    __weak typeof(self) weakSelf = self;
+    controller.onSelectUserBlock = ^(NSMutableDictionary *userDict) {
+        weakSelf.selectedTransferDealerDictionary = userDict;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)selectCoOrganizer {
+    DMSelectUserController *controller = [[DMSelectUserController alloc] init];
+    __weak typeof(self) weakSelf = self;
+    controller.onSelectUserBlock = ^(NSMutableDictionary *userDict) {
+        weakSelf.selectedCoOrganizerDictionary = userDict;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark - 审核
+- (void)submitTask:(DMTaskOperator)taskOperator {
+    if ([[self.commentTextView getMultiLineText] isEqualToString:@""]) {
+        showToast(@"请输入批注");
+        return;
+    }
+    DMSuperviseSubmitTaskRequester *requester = [[DMSuperviseSubmitTaskRequester alloc] init];
+    requester.businessId = self.slId;
+    requester.taskId = self.activitiTaskModel.atId;
+    requester.message = [self.commentTextView getMultiLineText];
+    NSString *assistsId = @"";
+    if (self.selectedCoOrganizerDictionary) {
+        if (self.selectedCoOrganizerDictionary.count > 0) {
+            for (DMUserBookModel *user in [self.selectedCoOrganizerDictionary allValues]) {
+                if ([assistsId isEqualToString:@""]) {
+                    assistsId = [NSString stringWithFormat:@"%@@%@", user.userId, user.name];
+                } else {
+                    assistsId = [NSString stringWithFormat:@"%@,%@@%@", assistsId, user.userId, user.name];
+                }
+            }
+        }
+    }
+    requester.assistsId = assistsId;
+    if (taskOperator == TaskOperator_Agree) {
+        requester.state = 2;
+    } else if (taskOperator == TaskOperator_TransferComment) {
+        NSString *agentId = @"";
+        if (self.selectedTransferDealerDictionary) {
+            for (DMUserBookModel *user in [self.selectedTransferDealerDictionary allValues]) {
+                agentId = user.userId;
+            }
+        }
+        if ([agentId isEqualToString:@""]) {
+            showToast(@"请选择转批办理人员");
+            return;
+        }
+        requester.state = 4;
+        requester.agentId = agentId;
+    } else {
+        showToast(@"逻辑错误");
+        return;
+    }
+    
+    showLoadingDialog();
+    [requester postRequest:^(DMResultCode code, id data) {
+        dismissLoadingDialog();
+        if (code == ResultCodeOK) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            showToast(data);
         }
     }];
 }

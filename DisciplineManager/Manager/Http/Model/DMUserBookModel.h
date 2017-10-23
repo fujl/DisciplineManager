@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) NSString *userId; // ": "8ECA10C3DBFD4712AAF288CBBFDBF348",
 @property (nonatomic, strong) NSString *name; // ": "陈宽斌",
+@property (nonatomic, strong) NSString *face;
 @property (nonatomic, strong) NSString *pinyin; // ": null,
 @property (nonatomic, strong) NSString *mobile; // ": "13985980009",
 @property (nonatomic, strong) NSString *email; // ": "",
@@ -31,8 +32,12 @@
 @property (nonatomic, assign) NSInteger goOutState; // ": 0,  //如果大于0 通讯录人员状态为 外出
 @property (nonatomic, assign) NSInteger ocarState; // ": 0,  // 如果大于0 通讯录人员状态为 外出
 @property (nonatomic, assign) NSInteger leaveState; // ": 0  // 如果大于0 通讯录人员状态为 请假
+@property (nonatomic, assign) NSInteger leaveState2;
 @property (nonatomic, assign) DMGender gender;
 @property (nonatomic, strong) NSString *jobName;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
+- (NSString *)getStateString;
+- (UIColor *)getStateColor;
+
 @end

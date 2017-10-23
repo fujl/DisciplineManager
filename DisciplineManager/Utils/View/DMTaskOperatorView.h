@@ -25,4 +25,6 @@ typedef NS_ENUM(NSInteger, DMTaskOperator) {
 
 - (void)refreshJsyView;
 
+- (void)refreshSupervisionTaskView:(BOOL)showTransferComment;
+
 @end

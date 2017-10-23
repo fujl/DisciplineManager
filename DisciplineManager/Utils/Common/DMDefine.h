@@ -54,6 +54,7 @@ typedef NS_ENUM(NSInteger, DMActivitiState) {
     ACTIVITI_STATE_PENDING              = 1,                // 审批状态, 审核中
     ACTIVITI_STATE_COMPLETE             = 2,                // 审批状态, 审批完成 通过
     ACTIVITI_STATE_RATIFIED             = 3,                // 审批状态, 已经批准
+    ACTIVITI_STATE_TRANSFERDEALER       = 4,                // 转批
     ACTIVITI_STATE_REJECTED             = 9,               // 审批状态, 审批完成 驳回
 };
 

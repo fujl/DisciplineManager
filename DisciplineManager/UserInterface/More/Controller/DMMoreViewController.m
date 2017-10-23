@@ -12,11 +12,14 @@
 #import "DMUserModel.h"
 #import "DMUserDetailViewController.h"
 #import "DMModifyPasswordViewController.h"
+#import "DMLeaveTicketViewController.h"
+
 @interface DMMoreViewController ()
 
 @property (nonatomic, strong) NSMutableArray *subviewList;
 @property (nonatomic, strong) DMMineItemView *mineView;
-@property (nonatomic, strong) UIButton *updatePwdView;
+@property (nonatomic, strong) DMSelectItemView *updatePwdView;
+@property (nonatomic, strong) DMSelectItemView *myTicketView;
 @property (nonatomic, strong) UIButton *logoutView;
 
 @property (nonatomic, strong) DMUserModel *user;
@@ -31,6 +34,7 @@
     
     [self.subviewList addObject:self.mineView];
     [self.subviewList addObject:self.updatePwdView];
+    [self.subviewList addObject:self.myTicketView];
     [self.subviewList addObject:self.logoutView];
     [self setChildViews:self.subviewList];
     
@@ -59,18 +63,39 @@
     return _mineView;
 }
 
-- (UIButton *)updatePwdView {
+- (DMSelectItemView *)updatePwdView {
     if (!_updatePwdView) {
-        _updatePwdView = [[UIButton alloc] init];
-        [_updatePwdView setTitle:NSLocalizedString(@"ModifyPassword", @"修改密码") forState:UIControlStateNormal];
-        [_updatePwdView setTitleColor:[UIColor colorWithRGB:0xd9534f] forState:UIControlStateNormal];
-        [_updatePwdView setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
-        _updatePwdView.titleLabel.font = [UIFont systemFontOfSize:16];
+        _updatePwdView = [[DMSelectItemView alloc] init];
+        _updatePwdView.title = NSLocalizedString(@"ModifyPassword", @"修改密码");
         _updatePwdView.lcHeight = 44;
-        _updatePwdView.lcTopMargin = 10;
-        [_updatePwdView addTarget:self action:@selector(clickUpdatePwd) forControlEvents:UIControlEventTouchUpInside];
+        _updatePwdView.lcTopMargin = 0.5;
+        __weak typeof(self) weakSelf = self;
+        _updatePwdView.clickEntryBlock = ^(NSString *value) {
+            [weakSelf clickUpdatePwd];
+        };
+//        [_updatePwdView setTitle:NSLocalizedString(@"ModifyPassword", @"修改密码") forState:UIControlStateNormal];
+//        [_updatePwdView setTitleColor:[UIColor colorWithRGB:0xd9534f] forState:UIControlStateNormal];
+//        [_updatePwdView setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+//        _updatePwdView.titleLabel.font = [UIFont systemFontOfSize:16];
+//        _updatePwdView.lcHeight = 44;
+//        _updatePwdView.lcTopMargin = 10;
+//        [_updatePwdView addTarget:self action:@selector(clickUpdatePwd) forControlEvents:UIControlEventTouchUpInside];
     }
     return _updatePwdView;
+}
+
+- (DMSelectItemView *)myTicketView {
+    if (!_myTicketView) {
+        _myTicketView = [[DMSelectItemView alloc] init];
+        _myTicketView.title = NSLocalizedString(@"MyLeaveTicket", @"我的休假票");
+        _myTicketView.lcHeight = 44;
+        _myTicketView.lcTopMargin = 0.5;
+        __weak typeof(self) weakSelf = self;
+        _myTicketView.clickEntryBlock = ^(NSString *value) {
+            [weakSelf clickMyTicket];
+        };
+    }
+    return _myTicketView;
 }
 
 - (UIButton *)logoutView {
@@ -124,4 +149,9 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)clickMyTicket {
+    DMLeaveTicketViewController *controller = [[DMLeaveTicketViewController alloc] init];
+    controller.isProvideSelect = NO;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end

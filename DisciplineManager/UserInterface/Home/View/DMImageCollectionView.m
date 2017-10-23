@@ -67,6 +67,7 @@
         MSSBrowseModel *model = [imageArray objectAtIndex:i];
         if ([model.bigImageUrl isEqualToString:[NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, fileName]]) {
             MSSBrowseNetworkViewController *controller = [[MSSBrowseNetworkViewController alloc] initWithBrowseItemArray:imageArray currentIndex:i];
+            controller.content = self.content;
             [controller showBrowseViewController];
             break;
         }

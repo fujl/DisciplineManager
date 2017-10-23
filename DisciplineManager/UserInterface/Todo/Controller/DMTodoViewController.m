@@ -14,6 +14,7 @@
 #import "DMDetailApplyBusController.h"
 #import "DMDetailApplyOutController.h"
 #import "DMDetailApplyCompensatoryController.h"
+#import "DMSuperviseDetailController.h"
 
 @interface DMTodoViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -94,6 +95,9 @@
         [self gotoWCSQDetail:mdl];
     } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
         [self gotoBXPDetail:mdl];
+    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLRW]
+               || [mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLZPRW]) {
+        [self gotoSuperviseDetail:mdl];
     }
 }
 
@@ -198,6 +202,13 @@
 - (void)gotoBXPDetail:(DMActivitiTaskModel *)model {
     DMDetailApplyCompensatoryController *controller = [[DMDetailApplyCompensatoryController alloc] init];
     controller.acId = model.businessId;
+    controller.activitiTaskModel = model;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)gotoSuperviseDetail:(DMActivitiTaskModel *)model {
+    DMSuperviseDetailController *controller = [[DMSuperviseDetailController alloc] init];
+    controller.slId = model.businessId;
     controller.activitiTaskModel = model;
     [self.navigationController pushViewController:controller animated:YES];
 }

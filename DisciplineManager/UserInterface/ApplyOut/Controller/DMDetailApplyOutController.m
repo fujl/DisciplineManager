@@ -17,6 +17,7 @@
 #import "DMSearchUserRequester.h"
 #import "DMSearchOfficialCarRequester.h"
 #import "DMMultiLineView.h"
+#import "DMSelectUserController.h"
 
 @interface DMDetailApplyOutController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -54,8 +55,7 @@
 @property (nonatomic, strong) NSMutableArray<DMOfficialCarModel*> *officialCarList;
 @property (nonatomic, strong) DMOfficialCarModel *officialCar;
 
-@property (nonatomic, strong) NSMutableArray<DMUserBookModel*> *leaderList;
-@property (nonatomic, strong) DMUserBookModel *leader;
+@property (nonatomic, strong) NSMutableDictionary *selectedTransferDealerDictionary;
 
 @end
 
@@ -157,7 +157,6 @@
     
     if (self.activitiTaskModel) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
-            [self loadLeaderData];
             [self.subviewList addObject:self.leaderTitleView];
             [self.subviewList addObject:self.leaderView];
         }
@@ -318,22 +317,7 @@
         _leaderView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _leaderView.clickEntryBlock = ^(NSString *value) {
-            DMPickerView *pickerView = [[DMPickerView alloc] initWithArr:[weakSelf dicLeaderArr]];
-            if (weakSelf.leader) {
-                [pickerView selectID:weakSelf.leader.userId];
-            } else {
-                [pickerView selectID:weakSelf.leaderList.firstObject.userId];
-            }
-            pickerView.onCompleteClick = ^(NSDictionary *dic){
-                for (DMUserBookModel *mdl in weakSelf.leaderList) {
-                    if ([mdl.userId isEqualToString:dic[@"value"]]) {
-                        weakSelf.leader = mdl;
-                        break;
-                    }
-                }
-                [weakSelf.leaderView setValue:weakSelf.leader.name];
-            };
-            [pickerView showPickerView];
+            [weakSelf selectTransferDealer];
         };
     }
     return _leaderView;
@@ -454,6 +438,19 @@
     return _taskOperatorView;
 }
 
+- (void)setSelectedTransferDealerDictionary:(NSMutableDictionary *)selectedTransferDealerDictionary {
+    _selectedTransferDealerDictionary = selectedTransferDealerDictionary;
+    NSString *transferDealerString = @"";
+    for (DMUserBookModel *mdl in [selectedTransferDealerDictionary allValues]) {
+        if ([transferDealerString isEqualToString:@""]) {
+            transferDealerString = mdl.name;
+        } else {
+            transferDealerString = [NSString stringWithFormat:@"%@,%@", transferDealerString, mdl.name];
+        }
+    }
+    self.leaderView.value = transferDealerString;
+}
+
 #pragma mark - get data
 - (void)getDetailInfo:(void (^)(DMResultCode code, id data))callback {
     DMDetailApplyOutRequester *requester = [[DMDetailApplyOutRequester alloc] init];
@@ -494,21 +491,6 @@
     }];
 }
 
-- (void)loadLeaderData {
-    DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
-    requester.limit = kPageSize;
-    requester.offset = 0;
-    // 转批领导人员选择接口传递参数: 001001
-    // requester.orgId = @"001002";
-    requester.orgId = @"001001";
-    [requester postRequest:^(DMResultCode code, id data) {
-        if (code == ResultCodeOK) {
-            DMListBaseModel *listModel = data;
-            self.leaderList = listModel.rows;
-        }
-    }];
-}
-
 #pragma mark - 审核
 - (void)submitTask:(DMTaskOperator)taskOperator {
     if ([[self.commentTextView getMultiLineText] isEqualToString:@""]) {
@@ -536,12 +518,18 @@
             requester.officialCarId = self.officialCar.ocId;
             requester.state = @([self getAgree]);
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
-            if (!self.leader) {
+            NSString *leader = @"";
+            if (self.selectedTransferDealerDictionary) {
+                for (DMUserBookModel *user in [self.selectedTransferDealerDictionary allValues]) {
+                    leader = user.userId;
+                }
+            }
+            if ([leader isEqualToString:@""]) {
                 requester.state = @([self getAgree]);
             } else {
                 // 转批
                 requester.state = @(4);
-                requester.leaderId = self.leader.userId;
+                requester.leaderId = leader;
             }
         } else {
             requester.state = @([self getAgree]);
@@ -553,11 +541,17 @@
     } else if (taskOperator == TaskOperator_TransferComment) {
         requester.state = @(4);
         // 转批
-        if (!self.leader) {
+        NSString *leader = @"";
+        if (self.selectedTransferDealerDictionary) {
+            for (DMUserBookModel *user in [self.selectedTransferDealerDictionary allValues]) {
+                leader = user.userId;
+            }
+        }
+        if ([leader isEqualToString:@""]) {
             showToast(@"请选择转批领导");
             return;
         }
-        requester.leaderId = self.leader.userId;
+        requester.leaderId = leader;
     }
     showLoadingDialog();
     [requester postRequest:^(DMResultCode code, id data) {
@@ -582,15 +576,6 @@
     return 2;
 }
 
-- (NSMutableArray *)dicLeaderArr {
-    NSMutableArray *dicArr = [[NSMutableArray alloc] init];
-    for (DMUserBookModel *mdl in self.leaderList) {
-        NSDictionary *dic = @{@"name":mdl.name,@"value":[NSString stringWithFormat:@"%@",mdl.userId]};
-        [dicArr addObject:dic];
-    }
-    return dicArr;
-}
-
 - (NSMutableArray *)dicArr {
     NSMutableArray *dicArr = [[NSMutableArray alloc] init];
     for (DMUserBookModel *mdl in self.driverList) {
@@ -607,6 +592,17 @@
         [dicArr addObject:dic];
     }
     return dicArr;
+}
+
+#pragma mark - 事件
+- (void)selectTransferDealer {
+    DMSelectUserController *controller = [[DMSelectUserController alloc] init];
+    controller.isRadio = YES;
+    __weak typeof(self) weakSelf = self;
+    controller.onSelectUserBlock = ^(NSMutableDictionary *userDict) {
+        weakSelf.selectedTransferDealerDictionary = userDict;
+    };
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
