@@ -131,9 +131,11 @@
     if (!_praiseBtn) {
         _praiseBtn = [[UIButton alloc] init];
         [_praiseBtn setImage:[UIImage imageNamed:@"ic_action_thumb_up"] forState:UIControlStateNormal];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ic_action_thumb_up_pressed"] forState:UIControlStateSelected];
+        [_praiseBtn setImage:[UIImage imageNamed:@"ic_action_thumb_up_pressed"] forState:UIControlStateDisabled];
         [_praiseBtn addTarget:self action:@selector(clickPraiseEvent) forControlEvents:UIControlEventTouchUpInside];
-
+        _praiseBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_praiseBtn setTitleColor:[UIColor colorWithRGB:0x858585] forState:UIControlStateNormal];
+        [_praiseBtn setTitleColor:[UIColor colorWithRGB:0xc7645c] forState:UIControlStateDisabled];
     }
     return _praiseBtn;
 }
@@ -149,7 +151,8 @@
     self.nameLabel.text = info.userName;
     self.contentLabel.text = info.content;
     self.timeLabel.text = info.timeTxt;
-    self.praiseBtn.selected = info.userIsPraise;
+    // self.praiseBtn.selected = info.userIsPraise;
+    [self setPraiseView];
     if (info.imagePaths.count > 0) {
         CGFloat w = ITEM_INTERVAL*4+3*ITEM_WIDTH;
         CGFloat h = ITEM_INTERVAL*(info.imagePaths.count/3+2)+(info.imagePaths.count/3+1)*ITEM_HEIGHT;
@@ -177,6 +180,29 @@
     }
 }
 
+- (void)setPraiseView {
+    if (self.info.userIsPraise) {
+        self.praiseBtn.enabled = NO;
+    } else {
+        self.praiseBtn.enabled = YES;
+    }
+    NSString *praiseTotal = [NSString stringWithFormat:@"%zd", self.info.praiseTotal];
+    
+    CGFloat width = [praiseTotal widthForFont:[UIFont systemFontOfSize:14]];
+    UIImage *praise = [UIImage imageNamed:@"ic_action_thumb_up"];
+    // top, left, bottom, right
+    //[self.praiseBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, praise.size.width, 0, 0)];
+    [self.praiseBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, width+20)];
+    [self.praiseBtn setTitle:praiseTotal forState:UIControlStateNormal];
+    [self.praiseBtn setTitle:praiseTotal forState:UIControlStateDisabled];
+    [self.praiseBtn.titleLabel sizeToFit];
+    [self.praiseBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.timeLabel);
+        make.width.equalTo(@(praise.size.width+width+20));
+        make.height.equalTo(@(praise.size.height));
+        make.right.equalTo(self.bgView.mas_right).offset(-5);
+    }];
+}
 - (void)clickPraiseEvent {
     DMExhPraiseRequester *requester = [[DMExhPraiseRequester alloc] init];
     requester.exhId = self.info.elId;
@@ -186,7 +212,12 @@
         dismissLoadingDialog();
         if (code == ResultCodeOK) {
             self.info.userIsPraise = !self.info.userIsPraise;
-            self.praiseBtn.selected = self.info.userIsPraise;
+            if (self.info.userIsPraise) {
+                self.info.praiseTotal++;
+            } else {
+                self.info.praiseTotal--;
+            }
+            [self setPraiseView];
         }
     }];
 }
