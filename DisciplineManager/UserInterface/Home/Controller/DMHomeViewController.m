@@ -41,7 +41,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray<DMCmsContentModel *> *cmsContentList;
-@property (nonatomic, strong) NSMutableArray<DMExhMostModel *> *exhMostList;
+@property (nonatomic, strong) DMExhMostModel *exhMostModel;
 @end
 
 @implementation DMHomeViewController
@@ -173,13 +173,6 @@
     return _cmsContentList;
 }
 
-- (NSMutableArray<DMExhMostModel *> *)exhMostList {
-    if (!_exhMostList) {
-        _exhMostList = [[NSMutableArray<DMExhMostModel *> alloc] init];
-    }
-    return _exhMostList;
-}
-
 - (void)clickItemEvent:(NSInteger)tag {
     switch (tag) {
         case kMainItemTodo:
@@ -243,9 +236,7 @@
     DMExhMostRequester *requester = [[DMExhMostRequester alloc] init];
     [requester postRequest:^(DMResultCode code, id data) {
         if (code == ResultCodeOK) {
-            [self.exhMostList removeAllObjects];
-            DMListBaseModel *listModel = data;
-            [self.exhMostList addObjectsFromArray:listModel.rows];
+            self.exhMostModel = data;
             [self loadCMSContent:17];
         }
     }];
@@ -259,14 +250,23 @@
     
     DMCmsContentRequster *requester = [[DMCmsContentRequster alloc] init];
     requester.channelId = channelId;
+    if (channelId != 17) {
+        requester.offset = 0;
+        requester.limit = 3;
+    } else {
+        requester.offset = 0;
+        requester.limit = kPageSize;
+    }
     [requester postRequest:^(DMResultCode code, id data) {
         if (code == ResultCodeOK) {
             DMListBaseModel *listModel = data;
             NSMutableArray *imagesURLStrings = [[NSMutableArray alloc] init];
             if (channelId == 17) {
-                DMExhMostModel *exhModel = [self.exhMostList firstObject];
-                if (exhModel) {
-                    [imagesURLStrings addObject:[NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, exhModel.path]];
+                if (self.exhMostModel.attrs.count > 0) {
+                    DMAttrModel *attrModel = [self.exhMostModel.attrs firstObject];
+                    if (attrModel) {
+                        [imagesURLStrings addObject:[NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, attrModel.path]];
+                    }
                 }
             }
             for (DMCmsContentModel *mdl in listModel.rows) {
@@ -299,7 +299,7 @@
     //    controller.cmsModel = mdl;
     //    [self.navigationController pushViewController:controller animated:YES];
     if (index == 0) {
-        if (self.exhMostList.count > 0) {
+        if (self.exhMostModel.attrs.count > 0) {
             [self showImage];
         }
     }
@@ -307,13 +307,14 @@
 
 - (void)showImage {
     NSMutableArray *imageArray = [[NSMutableArray alloc] init];
-    for (DMExhMostModel *exhMostModel in self.exhMostList) {
+    for (DMAttrModel *attrModel in self.exhMostModel.attrs) {
         MSSBrowseModel *model = [[MSSBrowseModel alloc] init];
-        model.bigImageUrl = [NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, exhMostModel.path];
+        model.bigImageUrl = [NSString stringWithFormat:@"%@%@", [DMConfig mainConfig].getServerUrl, attrModel.path];
         [imageArray addObject:model];
     }
 
     MSSBrowseNetworkViewController *controller = [[MSSBrowseNetworkViewController alloc] initWithBrowseItemArray:imageArray currentIndex:0];
+    controller.content = self.exhMostModel.content;
     [controller showBrowseViewController];
 }
 

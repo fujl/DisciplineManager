@@ -22,7 +22,7 @@
         self.attrs = [[NSMutableArray alloc] init];
         NSArray *attrArray = parseArrayFromObject([dict objectForKey:@"attrs"]);
         for (NSDictionary *dic in attrArray) {
-            DMExhMostModel *mdl = [[DMExhMostModel alloc] initWithDict:dic];
+            DMAttrModel *mdl = [[DMAttrModel alloc] initWithDict:dic];
             [self.attrs addObject:mdl];
         }
     }

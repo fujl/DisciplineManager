@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"temporary_task", @"督办任务");
-    [self addNavRightItem:@selector(clickApply) andTitle:NSLocalizedString(@"Apply",@"申请")];
+    [self addNavRightItem:@selector(clickApply) andTitle:NSLocalizedString(@"initiate",@"发起")];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view);

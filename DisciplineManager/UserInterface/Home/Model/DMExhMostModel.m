@@ -8,7 +8,7 @@
 
 #import "DMExhMostModel.h"
 
-@implementation DMExhMostModel
+@implementation DMAttrModel
 
 - (instancetype)initWithDict:(NSDictionary *)dict {
     self = [super init];
@@ -17,6 +17,24 @@
         self.path = parseStringFromObject([dict objectForKey:@"path"]);
         self.number = [parseNumberFromObject([dict objectForKey:@"number"]) integerValue];
         self.optLock = [parseNumberFromObject([dict objectForKey:@"optLock"]) integerValue];
+    }
+    return self;
+}
+
+@end
+
+@implementation DMExhMostModel
+
+- (instancetype)initWithDict:(NSDictionary *)dict {
+    self = [super init];
+    if (self) {
+        self.content = parseStringFromObject([dict objectForKey:@"content"]);
+        self.attrs = [[NSMutableArray alloc] init];
+        NSArray *attrs = parseArrayFromObject([dict objectForKey:@"attrs"]);
+        for (NSDictionary *dic in attrs) {
+            DMAttrModel *mdl = [[DMAttrModel alloc] initWithDict:dic];
+            [self.attrs addObject:mdl];
+        }
     }
     return self;
 }

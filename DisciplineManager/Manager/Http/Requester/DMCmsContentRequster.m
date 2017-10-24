@@ -55,8 +55,8 @@
 - (void)onPutParams:(NSMutableDictionary *)params {
     //params[@"recommend"] = @(1); //  是否推荐 默认 -1 全部 0 否 1 是 健康伴侣 传递 1
     params[@"channelId"] = @(self.channelId); // 栏目ID 健康伴侣 传递 2, 国税APP 传递8
-//    params[@"offset"] = @(self.offset);
-//    params[@"limit"] = @(self.limit);
+    params[@"offset"] = @(self.offset);
+    params[@"limit"] = @(self.limit);
 }
 
 - (BOOL)onPostJson {

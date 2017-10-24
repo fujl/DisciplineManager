@@ -78,7 +78,7 @@
             self.leaveReasonDetailView.lcHeight = [self.leaveReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.info.attrs.count > 0) {
                 NSMutableArray *attr = [[NSMutableArray alloc] init];
-                for (DMExhMostModel *mdl in self.info.attrs) {
+                for (DMAttrModel *mdl in self.info.attrs) {
                     [attr addObject:mdl.path];
                 }
                 self.imgView.imageStringList = attr;

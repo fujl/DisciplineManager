@@ -25,18 +25,9 @@
 
 #pragma mark - HlwyyRequesterDelegate
 - (id)onDumpData:(NSDictionary *)jsonObject {
-    DMListBaseModel *listModel = [[DMListBaseModel alloc] init];
     NSDictionary *errData = parseDictionaryFromObject([jsonObject objectForKey:@"errData"]);
-    NSArray *rows = [errData objectForKey:@"attrs"];
-    listModel.rows = [[NSMutableArray alloc] init];
-    for (NSDictionary *dict in rows) {
-        DMExhMostModel *emInfo = [[DMExhMostModel alloc] initWithDict:dict];
-        [listModel.rows addObject:emInfo];
-    }
-    listModel.total = [[errData objectForKey:@"total"] integerValue];
-    listModel.totalPage = [[errData objectForKey:@"totalPage"] integerValue];
-    listModel.pageSize = [[errData objectForKey:@"pageSize"] integerValue];
-    return listModel;
+    DMExhMostModel *exhMostModel = [[DMExhMostModel alloc] initWithDict:errData];
+    return exhMostModel;
 }
 
 - (id)onDumpErrorData:(NSDictionary *)jsonObject {

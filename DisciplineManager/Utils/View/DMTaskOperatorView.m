@@ -102,8 +102,8 @@
     self.rejectedButton.hidden = YES;
     self.transferCommentButton.hidden = !showTransferComment;
     self.finishButton.hidden = YES;
-    [self.agreeButton setTitle:NSLocalizedString(@"Agree", @"同意") forState:UIControlStateNormal];
-    [self.transferCommentButton setTitle:NSLocalizedString(@"TransferComment", @"转批") forState:UIControlStateNormal];
+    [self.agreeButton setTitle:NSLocalizedString(@"finish_task", @"完成任务") forState:UIControlStateNormal];
+    [self.transferCommentButton setTitle:NSLocalizedString(@"Turn_to_do", @"转办") forState:UIControlStateNormal];
     CGFloat sep = 20;
     CGFloat width = (SCREEN_WIDTH-(showTransferComment?3:2)*sep)/2.0;
     

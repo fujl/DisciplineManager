@@ -17,6 +17,6 @@
 @property (nonatomic, assign) CGFloat days;           // 请假天数, 根据开始日期, 结束日期, 日期类别计算, 如果小于等于0 不允许提交
 @property (nonatomic, strong) NSString *ticket;         // 当type=1时必须, 所选电子票ID, 多条数据用逗号分隔
 
-@property (nonatomic, strong) NSMutableArray<DMExhMostModel *> *attrs;
+@property (nonatomic, strong) NSMutableArray<DMAttrModel *> *attrs;
 
 @end

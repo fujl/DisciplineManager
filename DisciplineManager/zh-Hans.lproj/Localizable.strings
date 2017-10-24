@@ -205,6 +205,8 @@
 "add_co_organizer" = "新增协办人员";
 "Timeout" = "超时";
 
-
+"finish_task" = "完成任务";
+"Turn_to_do" = "转办";
 "gongxiu_ticket" = "公休假票";
 "buxiu_ticket" = "补休假票";
+"initiate" = "发起";

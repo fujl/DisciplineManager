@@ -110,9 +110,9 @@
                            || [self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
                     [self.taskOperatorView refreshView:NO];
                 }
-            } else {
+            } //else {
                 self.taskTracksView.taskTracks = self.info.taskTracks;
-            }
+            //}
             
             [self loadSubview];
         } else {
@@ -163,9 +163,9 @@
         [self.subviewList addObject:self.commentTextView];
         [self.subviewList addObject:self.taskOperatorView];
         
-    } else {
+    } //else {
         [self.subviewList addObject:self.taskTracksView];
-    }
+    //}
     
     [self setChildViews:self.subviewList];
 }
