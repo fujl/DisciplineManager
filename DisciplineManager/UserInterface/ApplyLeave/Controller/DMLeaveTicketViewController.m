@@ -10,12 +10,18 @@
 #import "DMLeaveTicketRequester.h"
 #import "DMLeaveTicketModel.h"
 #import "DMLeaveTicketCell.h"
+#import "DMLeaveTicketHeadView.h"
+#import "DMStatTicketRequester.h"
 
 @interface DMLeaveTicketViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, assign) NSInteger currentPage;
+
+@property (nonatomic, strong) DMLeaveTicketHeadView *headView;
+@property (nonatomic, strong) DMListBaseModel *statTicketModel;
+
 @end
 
 @implementation DMLeaveTicketViewController
@@ -35,11 +41,23 @@
     
     if (self.isProvideSelect) {
         [self addNavRightItem:@selector(clickSure) andTitle:NSLocalizedString(@"sure",@"确定")];
+    } else {
+        [self.view addSubview:self.headView];
+        [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view);
+            make.width.equalTo(self.view);
+            make.height.equalTo(@(100));
+        }];
     }
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view);
+        if (self.isProvideSelect) {
+            make.top.equalTo(self.view);
+        } else {
+            make.top.equalTo(self.headView.mas_bottom).offset(5);
+        }
         make.left.width.equalTo(self.view);
         make.bottom.equalTo(self.view);
     }];
@@ -84,6 +102,13 @@
         _dataSource = [[NSMutableArray alloc] init];
     }
     return _dataSource;
+}
+
+- (DMLeaveTicketHeadView *)headView {
+    if (!_headView) {
+        _headView = [[DMLeaveTicketHeadView alloc] init];
+    }
+    return _headView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -137,6 +162,9 @@
 }
 
 - (void)loadNewData {
+    if (!self.isProvideSelect) {
+        [self loadStatTicket];
+    }
     self.currentPage = 0;
     DMLeaveTicketRequester *requester = [[DMLeaveTicketRequester alloc] init];
     requester.limit = kPageSize;
@@ -162,7 +190,7 @@
 - (void)loadMoreData {
     DMLeaveTicketRequester *requester = [[DMLeaveTicketRequester alloc] init];
     requester.limit = kPageSize;
-    requester.offset = self.currentPage+1;
+    requester.offset = (self.currentPage+1)*kPageSize;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_footer endRefreshing];
         if (code == ResultCodeOK) {
@@ -180,4 +208,13 @@
     }];
 }
 
+- (void)loadStatTicket {
+    DMStatTicketRequester *requester = [[DMStatTicketRequester alloc] init];
+    [requester postRequest:^(DMResultCode code, id data) {
+        if (code == ResultCodeOK) {
+            self.statTicketModel = data;
+            self.headView.statTicketModel = self.statTicketModel;
+        }
+    }];
+}
 @end

@@ -138,7 +138,7 @@
 - (void)loadMoreData {
     DMSearchApplyCompensatoryRequester *requester = [[DMSearchApplyCompensatoryRequester alloc] init];
     requester.limit = kPageSize;
-    requester.offset = self.currentPage+1;
+    requester.offset = (self.currentPage+1)*kPageSize;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
         if (code == ResultCodeOK) {

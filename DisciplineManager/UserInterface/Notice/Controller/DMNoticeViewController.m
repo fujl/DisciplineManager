@@ -176,7 +176,7 @@
 - (void)loadMoreData {
     DMSearchNoticeRequester *requester = [[DMSearchNoticeRequester alloc] init];
     requester.limit = kPageSize;
-    requester.offset = self.currentPage+1;
+    requester.offset = (self.currentPage+1)*kPageSize;
     if (self.headView.type != NoticeTypeMine) {
         requester.isReadSign = self.headView.type == NoticeTypeUnread ? 0 : 1;
     } else {

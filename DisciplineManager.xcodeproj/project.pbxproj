@@ -283,6 +283,10 @@
 		DFB453551EE557070000DDC9 /* DisciplineManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB453541EE557070000DDC9 /* DisciplineManagerTests.m */; };
 		DFB453601EE557070000DDC9 /* DisciplineManagerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB4535F1EE557070000DDC9 /* DisciplineManagerUITests.m */; };
 		DFBCD6D91F2B0B92009FAA24 /* DMSearchOrgRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */; };
+		DFC0AB701F9F1A4400143C95 /* DMLeaveTicketHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0AB6F1F9F1A4400143C95 /* DMLeaveTicketHeadView.m */; };
+		DFC0AB741F9F1C4A00143C95 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0AB731F9F1C4A00143C95 /* UICountingLabel.m */; };
+		DFC0AB781F9F246100143C95 /* DMStatTicketRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0AB771F9F246100143C95 /* DMStatTicketRequester.m */; };
+		DFC0AB7F1F9F26EA00143C95 /* DMTicketStatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0AB7E1F9F26EA00143C95 /* DMTicketStatModel.m */; };
 		DFC2A6661F7A54CC00067C46 /* DMPublishVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */; };
 		DFCE28B21F05DEAC00AD40AE /* DMDetailApplyOutRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B11F05DEAC00AD40AE /* DMDetailApplyOutRequester.m */; };
 		DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCE28B41F05DF9C00AD40AE /* DMDetailApplyOutController.m */; };
@@ -839,6 +843,14 @@
 		DFB453611EE557070000DDC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBCD6D71F2B0B92009FAA24 /* DMSearchOrgRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSearchOrgRequester.h; sourceTree = "<group>"; };
 		DFBCD6D81F2B0B92009FAA24 /* DMSearchOrgRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSearchOrgRequester.m; sourceTree = "<group>"; };
+		DFC0AB6E1F9F1A4400143C95 /* DMLeaveTicketHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMLeaveTicketHeadView.h; sourceTree = "<group>"; };
+		DFC0AB6F1F9F1A4400143C95 /* DMLeaveTicketHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMLeaveTicketHeadView.m; sourceTree = "<group>"; };
+		DFC0AB721F9F1C4A00143C95 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		DFC0AB731F9F1C4A00143C95 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		DFC0AB761F9F246100143C95 /* DMStatTicketRequester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMStatTicketRequester.h; sourceTree = "<group>"; };
+		DFC0AB771F9F246100143C95 /* DMStatTicketRequester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMStatTicketRequester.m; sourceTree = "<group>"; };
+		DFC0AB7D1F9F26EA00143C95 /* DMTicketStatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTicketStatModel.h; sourceTree = "<group>"; };
+		DFC0AB7E1F9F26EA00143C95 /* DMTicketStatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTicketStatModel.m; sourceTree = "<group>"; };
 		DFC2A6641F7A54CC00067C46 /* DMPublishVoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMPublishVoteViewController.h; sourceTree = "<group>"; };
 		DFC2A6651F7A54CC00067C46 /* DMPublishVoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMPublishVoteViewController.m; sourceTree = "<group>"; };
 		DFCE28B01F05DEAC00AD40AE /* DMDetailApplyOutRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDetailApplyOutRequester.h; sourceTree = "<group>"; };
@@ -1478,8 +1490,8 @@
 		DF377CC51EF2963800522AF7 /* ApplyLeave */ = {
 			isa = PBXGroup;
 			children = (
+				DFC0AB7C1F9F26EA00143C95 /* Model */,
 				DF377CC61EF2963800522AF7 /* Controller */,
-				DF377CC71EF2963800522AF7 /* Model */,
 				DF377CC81EF2963800522AF7 /* View */,
 			);
 			path = ApplyLeave;
@@ -1500,18 +1512,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		DF377CC71EF2963800522AF7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		DF377CC81EF2963800522AF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				DFB2029F1F2C18160063AE30 /* DMLeaveTicketCell.h */,
 				DFB202A01F2C18160063AE30 /* DMLeaveTicketCell.m */,
+				DFC0AB6E1F9F1A4400143C95 /* DMLeaveTicketHeadView.h */,
+				DFC0AB6F1F9F1A4400143C95 /* DMLeaveTicketHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1719,6 +1726,7 @@
 		DF50A1451EE7F3320091E098 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DFC0AB711F9F1C4A00143C95 /* UICountingLabel */,
 				DF508A6D1F8B149A00F1D07C /* MSSBrowse */,
 				180EDDFF1F88BECA00DD1812 /* UITableView+FDTemplateLayoutCell */,
 				180EDDFB1F88BB8F00DD1812 /* CollectionViewLeftAlignedLayout */,
@@ -1808,6 +1816,7 @@
 		DF6A9BDC1F048C6D0075F100 /* Requester */ = {
 			isa = PBXGroup;
 			children = (
+				DFC0AB751F9F244000143C95 /* Ticket */,
 				DF132BA11F939DA600FC3651 /* Notice */,
 				18C51FD91F8CDA4B00EC9D10 /* Repast */,
 				DF508AA91F8B22C100F1D07C /* Exh */,
@@ -2139,6 +2148,33 @@
 				DFB453611EE557070000DDC9 /* Info.plist */,
 			);
 			path = DisciplineManagerUITests;
+			sourceTree = "<group>";
+		};
+		DFC0AB711F9F1C4A00143C95 /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DFC0AB721F9F1C4A00143C95 /* UICountingLabel.h */,
+				DFC0AB731F9F1C4A00143C95 /* UICountingLabel.m */,
+			);
+			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		DFC0AB751F9F244000143C95 /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				DFC0AB761F9F246100143C95 /* DMStatTicketRequester.h */,
+				DFC0AB771F9F246100143C95 /* DMStatTicketRequester.m */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		DFC0AB7C1F9F26EA00143C95 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFC0AB7D1F9F26EA00143C95 /* DMTicketStatModel.h */,
+				DFC0AB7E1F9F26EA00143C95 /* DMTicketStatModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DFE4C7271F67874B004F4184 /* Vote */ = {
@@ -2543,12 +2579,14 @@
 				188ED8E51F4497A8009BF26D /* DMCMSDetailRequester.m in Sources */,
 				DF508A971F8B149A00F1D07C /* MSSBrowseLoadingImageView.m in Sources */,
 				18FBAB661F30C51B00E6E67B /* DMSearchOfficialCarRequester.m in Sources */,
+				DFC0AB7F1F9F26EA00143C95 /* DMTicketStatModel.m in Sources */,
 				18468E0D1F837F53006B36D1 /* DMNewsCell.m in Sources */,
 				DFCE28B51F05DF9C00AD40AE /* DMDetailApplyOutController.m in Sources */,
 				18C520001F8D1B5A00EC9D10 /* DMSignTimeView.m in Sources */,
 				DF1F32331F0E25C1004358E3 /* DMSearchApplyCompensatoryRequester.m in Sources */,
 				18C51FDF1F8CDB6A00EC9D10 /* DMSubmitSignRequester.m in Sources */,
 				18E8EEE51F84EB9200E42CD2 /* DMVoteItemsView.m in Sources */,
+				DFC0AB781F9F246100143C95 /* DMStatTicketRequester.m in Sources */,
 				DF8877101F27633B0048F3AA /* DMSubmitTaskLeaveRequester.m in Sources */,
 				DF508A991F8B149A00F1D07C /* MSSBrowseModel.m in Sources */,
 				DF50A1541EE7F3320091E098 /* DMWeakReferencesArray.m in Sources */,
@@ -2564,6 +2602,7 @@
 				18FDB7EB1F98E176007C67E7 /* DMAssistInfo.m in Sources */,
 				DFC2A6661F7A54CC00067C46 /* DMPublishVoteViewController.m in Sources */,
 				DF377CB81EF284CF00522AF7 /* DMMainItemView.m in Sources */,
+				DFC0AB741F9F1C4A00143C95 /* UICountingLabel.m in Sources */,
 				DF508A981F8B149A00F1D07C /* MSSBrowseLocalViewController.m in Sources */,
 				DF8FD72C1EEA3DB70060FE34 /* DMBaseManager.m in Sources */,
 				DF8A22121F29E2EF00617974 /* DMUserDetailHeadView.m in Sources */,
@@ -2603,6 +2642,7 @@
 				18E8EEEB1F84EBCD00E42CD2 /* DMAddVoteItemView.m in Sources */,
 				185CDF661F93138700BCF75F /* DMSelectUserController.m in Sources */,
 				DF508AB91F8B24F300F1D07C /* DMVoteListCell.m in Sources */,
+				DFC0AB701F9F1A4400143C95 /* DMLeaveTicketHeadView.m in Sources */,
 				DF7B1DD81EF5370C0025A21C /* DMSingleTextView.m in Sources */,
 				DF9A0D481F2B0E410015CD27 /* DMOrganizationStructureCell.m in Sources */,
 				DF54440A1EF3CF75000EE89F /* DMFillinApplyOutController.m in Sources */,

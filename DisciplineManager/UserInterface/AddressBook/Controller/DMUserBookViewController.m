@@ -137,7 +137,7 @@
 - (void)loadMoreData {
     DMSearchUserRequester *requester = [[DMSearchUserRequester alloc] init];
     requester.limit = kPageSize;
-    requester.offset = self.currentPage+1;
+    requester.offset = (self.currentPage+1)*kPageSize;
     requester.orgId = self.orgInfo.code;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
