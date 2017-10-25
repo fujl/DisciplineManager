@@ -194,6 +194,7 @@
 
 "FillinSupervise" = "填写督办任务单";
 "Deadline" = "截止日期";
+"DeadlinePlaceholder" = "必选，请选择截止时间";
 "transactor" = "任务办理人";
 "transactor_placeholder" = "请选择任务办理人(必选)";
 "co_organizer" = "协办人员";

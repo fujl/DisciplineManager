@@ -76,7 +76,7 @@
     if (!_deadlineView) {
         _deadlineView = [[DMEntrySelectView alloc] init];
         _deadlineView.backgroundColor = [UIColor whiteColor];
-        [_deadlineView setPlaceholder:NSLocalizedString(@"OutTimePlaceholder", @"必选，请选择外出时间")];
+        [_deadlineView setPlaceholder:NSLocalizedString(@"DeadlinePlaceholder", @"必选，请选择截止时间")];
         _deadlineView.lcHeight = 44;
         __weak typeof(self) weakSelf = self;
         _deadlineView.clickEntryBlock = ^(NSString *value) {
