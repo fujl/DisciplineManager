@@ -18,6 +18,7 @@
 
 #define kDefinitionKeyQJSQ_BMLD  @"qjsq_bmld"
 #define kDefinitionKeyQJSQ_FGLD  @"qjsq_fgld"
+#define kDefinitionKeyQJSQ_TJLD  @"qjsq_tjld"
 #define kDefinitionKeyQJSQ_TJFGLD @"qjsq_tjfgld"
 
 #define kDefinitionKeyBXP   @"bxp_fgld"
@@ -32,6 +33,7 @@
 */
 #define kDefinitionKeyBXP_BMLD      @"bxp_bmld"
 #define kDefinitionKeyBXP_FGLD      @"bxp_fgld"
+#define kDefinitionKeyBXP_TJLD      @"bxp_tjld"
 #define kDefinitionKeyBXP_RSK       @"bxp_rsk"
 
 #define kDefinitionKeyDBRW_BLRW       @"dbrw_blrw"

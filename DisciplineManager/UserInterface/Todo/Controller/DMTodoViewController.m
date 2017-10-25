@@ -93,7 +93,7 @@
         [self gotoGCSQDetail:mdl];
     } else if ([self wcsq:mdl.definitionKey]) {
         [self gotoWCSQDetail:mdl];
-    } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyBXP_BMLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_FGLD] || [mdl.definitionKey isEqualToString:kDefinitionKeyBXP_RSK]) {
+    } else if ([self bxp:mdl.definitionKey]) {
         [self gotoBXPDetail:mdl];
     } else if ([mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLRW]
                || [mdl.definitionKey isEqualToString:kDefinitionKeyDBRW_BLZPRW]) {
@@ -105,6 +105,7 @@
 - (BOOL)qjsq:(NSString *)definitionKey {
     return [definitionKey isEqualToString:kDefinitionKeyQJSQ_BMLD]
     || [definitionKey isEqualToString:kDefinitionKeyQJSQ_FGLD]
+    || [definitionKey isEqualToString:kDefinitionKeyQJSQ_TJLD]
     || [definitionKey isEqualToString:kDefinitionKeyQJSQ_TJFGLD];
 }
 
@@ -115,6 +116,13 @@
     || [definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]
     || [definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]
     || [definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG];
+}
+
+- (BOOL)bxp:(NSString *)definitionKey {
+    return [definitionKey isEqualToString:kDefinitionKeyBXP_BMLD]
+    || [definitionKey isEqualToString:kDefinitionKeyBXP_FGLD]
+    || [definitionKey isEqualToString:kDefinitionKeyBXP_TJLD]
+    || [definitionKey isEqualToString:kDefinitionKeyBXP_RSK];
 }
 
 #pragma mark - load data

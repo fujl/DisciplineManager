@@ -86,6 +86,7 @@
     unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitHour |  NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday;
     // 获取不同时间字段的信息
     NSDateComponents* comp = [gregorian components:unitFlags fromDate:dt];
+    [self closeTimer];
     if ([self isObsolete:comp]) {
         self.contentLabel.text = NSLocalizedString(@"dining_punch_obsolete", @"就餐打卡已结束");
         self.canSign = NO;
@@ -105,6 +106,7 @@
 }
 
 - (void)signedVote {
+    [self closeTimer];
     [self.titleView setTitle:NSLocalizedString(@"sign_time_title", @"剩余打卡时间")];
     self.contentLabel.text = NSLocalizedString(@"signed_vote", @"您已确认需要就餐");
     self.canSign = NO;
