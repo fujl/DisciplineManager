@@ -45,10 +45,26 @@
     [params removeAllObjects];
     params[@"userId"] = userId;
     params[@"startTime"] = self.startTime;
-    params[@"province"] = self.province;
-    params[@"city"] = self.city;
-    params[@"county"] = self.area;
-    params[@"address"] = self.address;
+    if (self.province) {
+        params[@"province"] = self.province;
+    } else {
+        params[@"province"] = @"贵州省";
+    }
+    if (self.city) {
+        params[@"city"] = self.city;
+    } else {
+        params[@"city"] = @"黔西南州";
+    }
+    if (self.area) {
+        params[@"county"] = self.area;
+    } else {
+        params[@"county"] = @"兴义市";
+    }
+    if (self.address) {
+        params[@"address"] = self.address;
+    } else {
+        params[@"address"] = @"";
+    }
     params[@"isNeedCar"] = @(self.isNeedCar);
     params[@"reason"] = self.reason;
 }

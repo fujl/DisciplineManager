@@ -12,4 +12,5 @@
 - (void)setPlaceholder:(NSString *)placeholder;
 - (NSString *)getMultiLineText;
 - (void)setMaxMultiLineTextLength:(NSInteger)maxMultiLineTextLength;
+- (void)setText:(NSString *)text;
 @end

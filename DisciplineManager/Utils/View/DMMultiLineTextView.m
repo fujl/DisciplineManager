@@ -67,6 +67,11 @@
     self.placeholderLabel.text = placeholder;
 }
 
+- (void)setText:(NSString *)text {
+    self.textView.text = text;
+    [self textViewDidChange:self.textView];
+}
+
 - (NSString *)getMultiLineText {
     return self.textView.text;
 }

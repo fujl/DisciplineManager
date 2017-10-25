@@ -59,10 +59,10 @@
     self.title = NSLocalizedString(@"FillinApplyOut",@"填写外出申请单");
     [self.subviewList addObject:self.outTimeTitleView];
     [self.subviewList addObject:self.outTimeView];
-    [self.subviewList addObject:self.outAddressTitleView];
-    [self.subviewList addObject:self.outAddressView];
-    [self.subviewList addObject:self.outDetailAddressTitleView];
-    [self.subviewList addObject:self.outDetailAddressView];
+//    [self.subviewList addObject:self.outAddressTitleView];
+//    [self.subviewList addObject:self.outAddressView];
+//    [self.subviewList addObject:self.outDetailAddressTitleView];
+//    [self.subviewList addObject:self.outDetailAddressView];
     [self.subviewList addObject:self.busSwitchView];
     [self.subviewList addObject:self.outReasonTitleView];
     [self.subviewList addObject:self.outReasonTextView];
@@ -231,14 +231,14 @@
         showToast(@"请选择外出时间");
         return;
     }
-    if ([self.outAddressView.value isEqualToString:@""]) {
-        showToast(@"请选择外出地址");
-        return;
-    }
-    if ([[self.outDetailAddressView getSingleText] isEqualToString:@""]) {
-        showToast(@"请输入外出详细地址");
-        return;
-    }
+//    if ([self.outAddressView.value isEqualToString:@""]) {
+//        showToast(@"请选择外出地址");
+//        return;
+//    }
+//    if ([[self.outDetailAddressView getSingleText] isEqualToString:@""]) {
+//        showToast(@"请输入外出详细地址");
+//        return;
+//    }
     if ([[self.outReasonTextView getMultiLineText] isEqualToString:@""]) {
         showToast(@"请输入外出事由");
         return;
@@ -252,10 +252,10 @@
     
     DMCommitApplyOutRequester *requester = [[DMCommitApplyOutRequester alloc] init];
     requester.startTime = [formatter stringFromDate:dt];
-    requester.province = self.province.name;
-    requester.city = self.city.name;
-    requester.area = self.area.name;
-    requester.address = [self.outDetailAddressView getSingleText];
+//    requester.province = self.province.name;
+//    requester.city = self.city.name;
+//    requester.area = self.area.name;
+//    requester.address = [self.outDetailAddressView getSingleText];
     requester.isNeedCar = self.isBus ? 1 : 0;
     requester.reason = [self.outReasonTextView getMultiLineText];
     showLoadingDialog();

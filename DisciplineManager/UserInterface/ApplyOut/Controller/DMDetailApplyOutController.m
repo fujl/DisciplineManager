@@ -83,8 +83,8 @@
             [self.outTimeView setTitle:NSLocalizedString(@"OutTime", @"外出时间") detail:self.info.startTime];
             NSString *returnTime = self.info.endTime && ![self.info.endTime isEqualToString:@""] ? self.info.endTime : @"未回岗";
             [self.returnTimeView setTitle:NSLocalizedString(@"ReturnTime", @"回岗时间") detail:returnTime];
-            NSString *address = [NSString stringWithFormat:@"%@%@%@%@", self.info.province, self.info.city, self.info.county, self.info.address];
-            [self.addressView setTitle:NSLocalizedString(@"OutAddress", @"外出地址") detail:address];
+//            NSString *address = [NSString stringWithFormat:@"%@%@%@%@", self.info.province, self.info.city, self.info.county, self.info.address];
+//            [self.addressView setTitle:NSLocalizedString(@"OutAddress", @"外出地址") detail:address];
             NSString *needBus = self.info.isNeedCar == 1 ? NSLocalizedString(@"need", @"需要") : NSLocalizedString(@"no_need", @"不需要");
             [self.needBusView setTitle:NSLocalizedString(@"IsNeedBus", @"是否需要公车") detail:needBus];
             if (self.activitiTaskModel) {
@@ -132,7 +132,7 @@
     }
     [self.subviewList addObject:self.outTimeView];
     [self.subviewList addObject:self.returnTimeView];
-    [self.subviewList addObject:self.addressView];
+//    [self.subviewList addObject:self.addressView];
     [self.subviewList addObject:self.needBusView];
     if (self.activitiTaskModel) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_WCHG]) {
@@ -421,6 +421,7 @@
         _commentTextView.lcHeight = 200;
         _commentTextView.backgroundColor = [UIColor whiteColor];
         [_commentTextView setPlaceholder:@"请输入批注(最多200字)"];
+        [_commentTextView setText:@"同意"];
     }
     return _commentTextView;
 }

@@ -300,6 +300,7 @@
         _commentTextView.lcHeight = 200;
         _commentTextView.backgroundColor = [UIColor whiteColor];
         [_commentTextView setPlaceholder:@"请输入批注(最多200字)"];
+        [_commentTextView setText:@"同意"];
     }
     return _commentTextView;
 }
