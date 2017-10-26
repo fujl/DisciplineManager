@@ -14,5 +14,6 @@
 @property (nonatomic, assign) NSInteger offset;
 @property (nonatomic, assign) NSInteger limit;
 @property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *toId;
 
 @end

@@ -111,6 +111,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.noticeInfo = [self.dataSource objectAtIndex:indexPath.row];
+    [cell hiddenBottomLine:indexPath.row == self.dataSource.count-1];
     return cell;
 }
 
@@ -148,10 +149,11 @@
     DMSearchNoticeRequester *requester = [[DMSearchNoticeRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = self.currentPage;
+    DMUserManager *manager = getManager([DMUserManager class]);
     if (self.headView.type != NoticeTypeMine) {
         requester.isReadSign = self.headView.type == NoticeTypeUnread ? 0 : 1;
+        requester.toId = manager.loginInfo.userId;
     } else {
-        DMUserManager *manager = getManager([DMUserManager class]);
         requester.userId = manager.loginInfo.userId;
         requester.isReadSign = -1;
     }
@@ -177,10 +179,11 @@
     DMSearchNoticeRequester *requester = [[DMSearchNoticeRequester alloc] init];
     requester.limit = kPageSize;
     requester.offset = (self.currentPage+1)*kPageSize;
+    DMUserManager *manager = getManager([DMUserManager class]);
     if (self.headView.type != NoticeTypeMine) {
         requester.isReadSign = self.headView.type == NoticeTypeUnread ? 0 : 1;
+        requester.toId = manager.loginInfo.userId;
     } else {
-        DMUserManager *manager = getManager([DMUserManager class]);
         requester.userId = manager.loginInfo.userId;
         requester.isReadSign = -1;
     }

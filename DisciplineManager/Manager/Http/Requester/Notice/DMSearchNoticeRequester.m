@@ -60,6 +60,9 @@
     if (self.userId) {
         params[@"userId"] = self.userId;
     }
+    if (self.toId) {
+        params[@"toId"] = self.toId;
+    }
 }
 
 - (BOOL)onPostJson {

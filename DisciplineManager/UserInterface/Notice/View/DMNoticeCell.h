@@ -12,5 +12,6 @@
 @interface DMNoticeCell : UITableViewCell
 
 @property (nonatomic, strong) DMNoticeInfo *noticeInfo;
+- (void)hiddenBottomLine:(BOOL)hidden;
 
 @end

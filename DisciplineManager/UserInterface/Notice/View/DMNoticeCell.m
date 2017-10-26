@@ -86,4 +86,8 @@
     self.createDateLabel.text = noticeInfo.createDate;
 }
 
+- (void)hiddenBottomLine:(BOOL)hidden {
+    self.line.hidden = hidden;
+}
+
 @end
