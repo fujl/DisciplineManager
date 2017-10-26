@@ -185,7 +185,7 @@
         requester.isReadSign = -1;
     }
     [requester postRequest:^(DMResultCode code, id data) {
-        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         if (code == ResultCodeOK) {
             self.currentPage++;
             DMListBaseModel *listModel = data;

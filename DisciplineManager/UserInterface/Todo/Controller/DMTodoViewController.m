@@ -144,7 +144,7 @@
 - (void)loadNewData {
     self.currentPage = 0;
     DMActivitiTaskRequester *requester = [[DMActivitiTaskRequester alloc] init];
-    requester.limit = kPageSize;
+    requester.limit = kPageSize*2;
     requester.offset = self.currentPage;
     [requester postRequest:^(DMResultCode code, id data) {
         [self.tableView.mj_header endRefreshing];
@@ -166,10 +166,10 @@
 
 - (void)loadMoreData {
     DMActivitiTaskRequester *requester = [[DMActivitiTaskRequester alloc] init];
-    requester.limit = kPageSize;
-    requester.offset = (self.currentPage+1)*kPageSize;
+    requester.limit = kPageSize*2;
+    requester.offset = (self.currentPage+1)*kPageSize*2;
     [requester postRequest:^(DMResultCode code, id data) {
-        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         if (code == ResultCodeOK) {
             self.currentPage++;
             DMListBaseModel *listModel = data;

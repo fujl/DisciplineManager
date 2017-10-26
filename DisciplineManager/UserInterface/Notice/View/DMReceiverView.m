@@ -145,7 +145,7 @@
     requester.offset = (self.currentPage+1)*kPageSize;
     requester.orgId = self.orgInfo.code;
     [requester postRequest:^(DMResultCode code, id data) {
-        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         if (code == ResultCodeOK) {
             self.currentPage++;
             DMListBaseModel *listModel = data;
