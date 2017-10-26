@@ -22,7 +22,7 @@
         self.face = parseStringFromObject([dict objectForKey:@"face"]);//:”头像地址”
         self.imagePaths = parseArrayFromObject([dict objectForKey:@"imagePaths"]);//: ["upload\\images\\2017100413120295.jpg", "upload\\images\\201710041306357864.jpg"],
         self.praiseTotal = [parseNumberFromObject([dict objectForKey:@"praiseTotal"]) integerValue]; // 点赞总数
-        self.praiseTotal = [parseNumberFromObject([dict objectForKey:@"userIsPraise"]) integerValue]; // 当前用户是否点赞
+        self.userIsPraise = [parseNumberFromObject([dict objectForKey:@"userIsPraise"]) boolValue]; // 当前用户是否点赞
         self.timeTxt = parseStringFromObject([dict objectForKey:@"timeTxt"]); //: "1天前"
     }
     return self;
