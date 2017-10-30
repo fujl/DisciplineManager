@@ -96,6 +96,11 @@
                 } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]) {
                     [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
                 }
+            } else {
+                if (self.info.isNeedCar == 1 && self.info.state == ACTIVITI_STATE_COMPLETE) {
+                    [self.driverNameView setTitle:@"司机姓名" detail:self.info.driverName];
+                    [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
+                }
             }
             self.outReasonDetailView.lcHeight = [self.outReasonDetailView getHeightFromDetail:self.info.reason];
             if (self.activitiTaskModel) {
@@ -143,6 +148,11 @@
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_JSY]) {
             [self.subviewList addObject:self.officialCarView];
         }
+    } else {
+        if (self.info.isNeedCar == 1 && self.info.state == ACTIVITI_STATE_COMPLETE) {
+            [self.subviewList addObject:self.driverNameView];
+            [self.subviewList addObject:self.officialCarView];
+        }
     }
     [self.subviewList addObject:self.outReasonTitleView];
     [self.subviewList addObject:self.outReasonDetailView];
@@ -162,10 +172,9 @@
         [self.subviewList addObject:self.commentTitleView];
         [self.subviewList addObject:self.commentTextView];
         [self.subviewList addObject:self.taskOperatorView];
-        
-    } //else {
-        [self.subviewList addObject:self.taskTracksView];
-    //}
+    }
+    
+    [self.subviewList addObject:self.taskTracksView];
     
     [self setChildViews:self.subviewList];
 }
