@@ -152,6 +152,7 @@
         if (self.info.isNeedCar == 1 && self.info.state == ACTIVITI_STATE_COMPLETE) {
             [self.subviewList addObject:self.driverNameView];
             [self.subviewList addObject:self.officialCarView];
+            [self.officialCarView hiddenBottomLine:YES];
         }
     }
     [self.subviewList addObject:self.outReasonTitleView];
