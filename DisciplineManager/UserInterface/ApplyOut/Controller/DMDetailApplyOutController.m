@@ -18,6 +18,7 @@
 #import "DMSearchOfficialCarRequester.h"
 #import "DMMultiLineView.h"
 #import "DMSelectUserController.h"
+#import "DMSwitchView.h"
 
 @interface DMDetailApplyOutController ()
 @property (nonatomic, strong) NSMutableArray *subviewList;
@@ -36,6 +37,8 @@
 
 @property (nonatomic, strong) DMEntryView *leaderTitleView;
 @property (nonatomic, strong) DMEntrySelectView *leaderView;
+
+@property (nonatomic, strong) DMSwitchView *switchView;
 
 @property (nonatomic, strong) DMEntryView *driverTitleView;
 @property (nonatomic, strong) DMEntrySelectView *driverView;
@@ -56,7 +59,7 @@
 @property (nonatomic, strong) DMOfficialCarModel *officialCar;
 
 @property (nonatomic, strong) NSMutableDictionary *selectedTransferDealerDictionary;
-
+@property (nonatomic, assign) BOOL isNeedAutoDriver;
 @end
 
 @implementation DMDetailApplyOutController
@@ -163,10 +166,13 @@
             [self.subviewList addObject:self.leaderTitleView];
             [self.subviewList addObject:self.leaderView];
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
-            [self loadDriverData];
+            [self.subviewList addObject:self.switchView];
+            if (!self.isNeedAutoDriver) {
+                [self loadDriverData];
+                [self.subviewList addObject:self.driverTitleView];
+                [self.subviewList addObject:self.driverView];
+            }
             [self loadOfficialCarData];
-            [self.subviewList addObject:self.driverTitleView];
-            [self.subviewList addObject:self.driverView];
             [self.subviewList addObject:self.officialCarIdTitleView];
             [self.subviewList addObject:self.officialCarIdView];
         }
@@ -330,6 +336,23 @@
         };
     }
     return _leaderView;
+}
+
+- (DMSwitchView *)switchView {
+    if (!_switchView) {
+        _switchView = [[DMSwitchView alloc] init];
+        _switchView.lcHeight = 44;
+        _switchView.lcTopMargin = 5;
+        [_switchView hiddenBottomLine:YES];
+        [_switchView setTitle:NSLocalizedString(@"IsNeedAutoDriver", @"是否自派驾驶员")];
+        [_switchView setIsOn:self.isNeedAutoDriver];
+        __weak typeof(self) weakSelf = self;
+        _switchView.onSwitchChangeBlock = ^(BOOL isOn) {
+            weakSelf.isNeedAutoDriver = isOn;
+            [weakSelf loadSubview];
+        };
+    }
+    return _switchView;
 }
 
 - (DMEntryView *)driverTitleView {
@@ -514,18 +537,23 @@
     
     if (taskOperator == TaskOperator_Agree) {
         if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BGSSP]) {
-            if (!self.driver) {
-                showToast(@"请选择司机");
-                return;
+            if (self.isNeedAutoDriver) {
+                requester.isOwnDispatch = @(1);
+            } else {
+                if (!self.driver) {
+                    showToast(@"请选择司机");
+                    return;
+                }
+                requester.isOwnDispatch = @(0);
+                requester.driverId = self.driver.userId;
+                requester.driverName = self.driver.name;
             }
-            requester.driverId = self.driver.userId;
-            requester.driverName = self.driver.name;
-            
             if (!self.officialCar) {
                 showToast(@"请选择车牌");
                 return;
             }
             requester.officialCarId = self.officialCar.ocId;
+            
             requester.state = @([self getAgree]);
         } else if ([self.activitiTaskModel.definitionKey isEqualToString:kDefinitionKeyWCSQ_BMLD]) {
             NSString *leader = @"";

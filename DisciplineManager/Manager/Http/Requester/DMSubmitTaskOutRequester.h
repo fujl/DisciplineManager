@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *message;
 
 @property (nonatomic, strong) NSNumber *state;
+@property (nonatomic, strong) NSNumber *isOwnDispatch;
 
 @end

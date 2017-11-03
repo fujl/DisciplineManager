@@ -61,8 +61,7 @@
         [weakSelf onNewMsg];
     };
     
-    [self loadExhMost];
-    [self loadCMSContent:18];
+    [self setRefreshView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,6 +69,16 @@
     if(!self.navigationController.navigationBar.hidden){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
+}
+
+- (void)setRefreshView {
+    __weak typeof(self) weakSelf = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadExhMost];
+    }];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -283,8 +292,14 @@
             }
             if (channelId == 17) {
                 [self.headView setImageURLStringsGroup:imagesURLStrings];
+                [self loadCMSContent:18];
             } else {
+                [self.tableView.mj_header endRefreshing];
                 [self.tableView reloadData];
+            }
+        } else {
+            if (channelId == 18) {
+                [self.tableView.mj_header endRefreshing];
             }
         }
     }];
