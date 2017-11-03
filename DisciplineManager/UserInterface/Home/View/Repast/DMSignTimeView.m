@@ -113,7 +113,7 @@
 }
 
 - (BOOL)isObsolete:(NSDateComponents *)comp {
-    if (comp.hour >= 18) {
+    if (comp.hour >= self.repastTimeModel.endHour) {
         return YES;
     } else {
         return NO;

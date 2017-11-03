@@ -49,12 +49,16 @@
     }];
     
     UIImage *launcher = [UIImage imageNamed:@"ic_launcher"];
+    //CGFloat sep = IPHONE5 ? 80 : 50;
     self.iconView.image = launcher;
-    CGFloat sep = IPHONE5 ? 80 : 50;
+    
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.headView);
-        make.width.equalTo(@(launcher.size.width-sep));
-        make.height.equalTo(@(launcher.size.height-sep));
+        CGFloat sep = IPHONE5 ? 20 : 10;
+        CGFloat w = launcher.size.width-sep;
+        CGFloat h = launcher.size.height-sep;
+        make.width.equalTo(@(w));
+        make.height.equalTo(@(h));
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.headView.mas_bottom).offset(-20);
