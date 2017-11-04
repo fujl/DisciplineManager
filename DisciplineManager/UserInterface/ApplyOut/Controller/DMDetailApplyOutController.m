@@ -100,7 +100,7 @@
                     [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
                 }
             } else {
-                if (self.info.isNeedCar == 1 && self.info.state == ACTIVITI_STATE_COMPLETE) {
+                if (self.info.isNeedCar == 1 && (self.info.state == ACTIVITI_STATE_COMPLETE || ACTIVITI_STATE_RATIFIED == self.info.state)) {
                     [self.driverNameView setTitle:@"司机姓名" detail:self.info.driverName];
                     [self.officialCarView setTitle:@"车牌号码" detail:self.info.officialCar.number];
                 }
@@ -152,7 +152,7 @@
             [self.subviewList addObject:self.officialCarView];
         }
     } else {
-        if (self.info.isNeedCar == 1 && self.info.state == ACTIVITI_STATE_COMPLETE) {
+        if (self.info.isNeedCar == 1 && (self.info.state == ACTIVITI_STATE_COMPLETE || ACTIVITI_STATE_RATIFIED == self.info.state)) {
             [self.subviewList addObject:self.driverNameView];
             [self.subviewList addObject:self.officialCarView];
             [self.officialCarView hiddenBottomLine:YES];
@@ -203,7 +203,7 @@
             break;
         case ACTIVITI_STATE_RATIFIED:
             self.stateView.detailLabel.text = NSLocalizedString(@"Ratified", @"已批准");
-            self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5cb85c];
+            self.stateView.detailLabel.backgroundColor = [UIColor colorWithRGB:0x5bc0de];
             break;
         case ACTIVITI_STATE_REJECTED:
             self.stateView.detailLabel.text = NSLocalizedString(@"Rejected", @"驳回");
