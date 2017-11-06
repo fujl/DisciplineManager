@@ -105,7 +105,11 @@
         make.top.equalTo(self.titleView.mas_bottom);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view.mas_right);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        if (IPHONEX) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-84);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        }
     }];
 }
 
