@@ -74,6 +74,7 @@
     self.finishButton.hidden = NO;
     CGFloat sep = 20;
     CGFloat width = SCREEN_WIDTH-2*sep;
+    [self.finishButton setTitle:NSLocalizedString(@"CompleteOnGuard", @"完成回岗") forState:UIControlStateNormal];
     [self.finishButton mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.top.equalTo(self).offset(10);

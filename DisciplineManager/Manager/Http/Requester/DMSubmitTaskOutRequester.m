@@ -62,6 +62,10 @@
     if (self.state != nil) {
         params[@"state"] = self.state;
     }
+    
+    if (self.isOwnDispatch) {
+        params[@"isOwnDispatch"] = self.isOwnDispatch;
+    }
 }
 
 - (BOOL)onPostJson {

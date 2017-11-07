@@ -16,6 +16,12 @@
         self.time = parseStringFromObject([dict objectForKey:@"time"]);
         self.date = parseStringFromObject([dict objectForKey:@"date"]);
         self.datetime = parseStringFromObject([dict objectForKey:@"datetime"]);
+        NSString *endHour = parseStringFromObject([dict objectForKey:@"endHour"]);
+        if ([endHour isEqualToString:@""]) {
+            self.endHour = [parseNumberFromObject([dict objectForKey:@"endHour"]) integerValue];
+        } else {
+            self.endHour = 18;
+        }
         self.week = [parseNumberFromObject([dict objectForKey:@"week"]) integerValue];
     }
     return self;

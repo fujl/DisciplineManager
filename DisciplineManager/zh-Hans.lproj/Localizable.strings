@@ -211,3 +211,4 @@
 "gongxiu_ticket" = "公休假票";
 "buxiu_ticket" = "补休假票";
 "initiate" = "发起";
+"IsNeedAutoDriver" = "自派驾驶员";

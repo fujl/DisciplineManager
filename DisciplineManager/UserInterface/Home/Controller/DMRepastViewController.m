@@ -48,7 +48,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadRepastTime];
+    [self setRefreshView];
 }
 
 - (void)goBack {
@@ -60,6 +60,16 @@
     [super viewDidAppear:animated];
     [self.breakfastBarView strokeChart];
     [self.lunchBarView strokeChart];
+}
+
+- (void)setRefreshView {
+    __weak typeof(self) weakSelf = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadRepastTime];
+    }];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.scrollView.mj_header = header;
+    [self.scrollView.mj_header beginRefreshing];
 }
 
 - (void)dealloc {
@@ -113,6 +123,7 @@
             self.repastTimeModel = data;
             [self loadStatTotal];
         } else {
+            [self.scrollView.mj_header endRefreshing];
             dismissLoadingDialog();
             NSString *errMsg = data;
             showToast(errMsg);
@@ -128,6 +139,7 @@
             self.statTotalModel = data;
             [self loadDishesArray];
         } else {
+            [self.scrollView.mj_header endRefreshing];
             dismissLoadingDialog();
             NSString *errMsg = data;
             showToast(errMsg);
@@ -139,11 +151,15 @@
 - (void)loadDishesArray {
     DMStatVoteRequester *requester = [[DMStatVoteRequester alloc] init];
     [requester postRequest:^(DMResultCode code, id data) {
+        [self.scrollView.mj_header endRefreshing];
         dismissLoadingDialog();
         if (code == ResultCodeOK) {
             self.dishesArray = data;
             [self loadSubviewsData];
             [self loadSubviews];
+            
+            [self.breakfastBarView strokeChart];
+            [self.lunchBarView strokeChart];
         } else {
             NSString *errMsg = data;
             showToast(errMsg);

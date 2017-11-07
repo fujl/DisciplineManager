@@ -12,7 +12,8 @@
 
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, copy) NSString *datetime;      
+@property (nonatomic, copy) NSString *datetime;
+@property (nonatomic, assign) NSInteger endHour;
 @property (nonatomic, assign) NSInteger week;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;

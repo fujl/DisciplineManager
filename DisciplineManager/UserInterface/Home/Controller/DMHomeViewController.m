@@ -61,8 +61,7 @@
         [weakSelf onNewMsg];
     };
     
-    [self loadExhMost];
-    [self loadCMSContent:18];
+    [self setRefreshView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,6 +69,16 @@
     if(!self.navigationController.navigationBar.hidden){
         [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
+}
+
+- (void)setRefreshView {
+    __weak typeof(self) weakSelf = self;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadExhMost];
+    }];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -96,7 +105,11 @@
         make.top.equalTo(self.titleView.mas_bottom);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view.mas_right);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        if (IPHONEX) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-84);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        }
     }];
 }
 
@@ -283,8 +296,14 @@
             }
             if (channelId == 17) {
                 [self.headView setImageURLStringsGroup:imagesURLStrings];
+                [self loadCMSContent:18];
             } else {
+                [self.tableView.mj_header endRefreshing];
                 [self.tableView reloadData];
+            }
+        } else {
+            if (channelId == 18) {
+                [self.tableView.mj_header endRefreshing];
             }
         }
     }];
