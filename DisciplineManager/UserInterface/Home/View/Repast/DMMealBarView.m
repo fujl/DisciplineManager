@@ -95,14 +95,16 @@
 }
 
 - (void)setChartData {
-    NSMutableArray *xLabels = [[NSMutableArray alloc] init];
-    NSMutableArray *yValue = [[NSMutableArray alloc] init];
-    for (DMStatVoteModel *mdl in self.dishs) {
-        [xLabels addObject:mdl.dishesName];
-        [yValue addObject:@(mdl.total)];
+    if (self.dishs.count > 0) {
+        NSMutableArray *xLabels = [[NSMutableArray alloc] init];
+        NSMutableArray *yValue = [[NSMutableArray alloc] init];
+        for (DMStatVoteModel *mdl in self.dishs) {
+            [xLabels addObject:mdl.dishesName];
+            [yValue addObject:@(mdl.total)];
+        }
+        [self.barChartView setXLabels:xLabels];
+        [self.barChartView setYValues:yValue];
     }
-    [self.barChartView setXLabels:xLabels];
-    [self.barChartView setYValues:yValue];
 }
 
 - (void)strokeChart {
